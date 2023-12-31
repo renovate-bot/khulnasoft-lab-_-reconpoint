@@ -1,0 +1,922 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_urls static admin_modify %}
+
+{% block extrahead %}{{ block.super }}
+<script type="text/javascript" src="{% url 'admin:jsi18n' %}"></script>
+
+
+
+
+{{ media }}
+{% endblock %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/forms.css" %}" />
+<link rel="stylesheet" type="text/css" href="{% static "admin/css/registration_main.css" %}" />
+
+{% endblock %}
+
+{% block coltype %}colM{% endblock %}
+
+{% block bodyclass %}{{ block.super }} app-{{ opts.app_label }} model-{{ opts.model_name }} change-form{% endblock %}
+
+{% if not is_popup %}
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+<a href="{% url 'admin:index' %}">{% trans 'HOME' %}</a>
+     <a href="/admin/registration/"> › REGISTRATION</a>
+    <a href="/admin/registation_panel/?type=programs"> › INSTITUTE REGISTRATION</a>
+<!--&rsaquo; <a href="{% url 'admin:app_list' app_label=opts.app_label %}">{{ opts.app_config.verbose_name }}</a>-->
+<!--&rsaquo; {% if has_change_permission %}<a href="{% url opts|admin_urlname:'changelist' %}">{{ opts.verbose_name_plural|capfirst }}</a>{% else %}{{ opts.verbose_name_plural|capfirst }}{% endif %}-->
+&rsaquo; {% if add %}{% blocktrans with name=opts.verbose_name %}ADD {{ name }}{% endblocktrans %}{% else %}{{ original|truncatewords:"18" }}{% endif %}
+</div>
+{% endblock %}
+{% endif %}
+
+{% block content %}<div id="content-main">
+
+
+        <input id="student_id" type="hidden" value="">
+        <input id="ins_id" type="hidden" value="{{request.GET.institution}}">
+        <input id="prog_id" type="hidden" value="{{request.GET.program_title}}">
+
+
+        <div class="serch_main">
+
+            {%if not original.id%}
+
+            {% if var != 'General' %}
+            <select id="program_id_src">
+
+
+            </select>
+
+                <input type="text" placeholder="Search" class="search_stu" name="no">
+
+            <button id="serc_button">SuBMIT</button>
+
+
+
+
+
+
+            {% endif %}
+
+            {% endif %}
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+{% block object-tools %}
+{% if change %}{% if not is_popup %}
+  <ul class="object-tools">
+    {% block object-tools-items %}
+
+
+
+    {% for p in program %}
+   <li> {{p.title}}</li>
+
+{% endfor %}
+
+        <li>{% for p in user.staff_status.all %}
+            <button type="submit" id="approvalBtn" onclick="myFunction()" class="bubbly-button" value="{{p.id}}">{{p.permission_name}}</button>
+            {% endfor %}
+        </li>
+      <!--{% for p in user.show_permission.Permission.all%}-->
+           <!--<li>p</li><button id="approvalBtn" value="{{user.p.id_no}}-{{ original.id }}">{{user.show_permission}}</button>-->
+      <!--{% endfor %}-->
+
+
+
+
+
+
+
+
+
+
+
+        {% url opts|admin_urlname:'history' original.pk|admin_urlquote as history_url %}
+        <a href="{% add_preserved_filters history_url %}" class="historylink">{% trans "History" %}</a>
+    </li>
+    {% if has_absolute_url %}<li><a href="{{ absolute_url }}" class="viewsitelink">{% trans "View on site" %}</a></li>{% endif %}
+    {% endblock %}
+  </ul>
+{% endif %}{% endif %}
+{% endblock %}
+<form {% if has_file_field %}enctype="multipart/form-data" {% endif %}action="{{ form_url }}"  method="post" id="{{ opts.model_name }}_form"  novalidate>{% csrf_token %}{% block form_top %}{% endblock %}
+<div>
+
+
+
+{% if is_popup %}<input type="hidden" name="{{ is_popup_var }}" value="1" />{% endif %}
+{% if to_field %}<input type="hidden" name="{{ to_field_var }}" value="{{ to_field }}" />{% endif %}
+{% if save_on_top %}{% block submit_buttons_top %}{% submit_row %}{% endblock %}{% endif %}
+{% if errors %}
+    <p class="errornote">
+    {% if errors|length == 1 %}{% trans "Please correct the error below." %}{% else %}{% trans "Please correct the errors below." %}{% endif %}
+    </p>
+    {{ adminform.form.non_field_errors }}
+{% endif %}
+
+{% block field_sets %}
+{% for fieldset in adminform %}
+  {% include "admin/includes/fieldset.html" %}
+
+
+{% endfor %}
+
+{% endblock %}
+
+{% block after_field_sets %}{% endblock %}
+
+{% block inline_field_sets %}
+{% for inline_admin_formset in inline_admin_formsets %}
+    {% include inline_admin_formset.opts.template %}
+{% endfor %}
+
+{% endblock %}
+
+
+
+
+
+{% block after_related_objects %}{% endblock %}
+
+{% block submit_buttons_bottom %}{% submit_row %}{% endblock %}
+
+{% block admin_change_form_document_ready %}
+    <script type="text/javascript"
+            id="django-admin-form-add-constants"
+            src="{% static 'admin/js/change_form.js' %}"
+            {% if adminform and add %}
+                data-model-name="{{ opts.model_name }}"
+            {% endif %}>
+    </script>
+
+
+    <script type="text/javascript">//<![CDATA[
+    $(function(){
+            $('img').on('error', function () {
+            $(this).remove();
+        })
+     });//]]>
+{%if not original.id%}
+     $('#student_registration_form').attr( 'target', '_blank' );
+    $("#id_created_by").val("{{request.user.id}}")
+{% endif %}
+</script>
+
+    <script>
+$('#id_registration_no').prop('readonly', true);
+
+$("#student_registration_form").submit(function(e)
+{
+    var seasson_value= $("#id_session").val();
+    if (seasson_value == null || seasson_value=="")
+    {
+        alert("select session");
+        e.preventDefault();
+
+
+    }
+});
+
+ $('td.field-file input').attr( 'accept', '.jpg, .jpeg' );
+    if(window.location.href.indexOf("source")>0){
+
+    $('#id_first_name').prop('readonly', true);
+    $('#id_last_name').prop('readonly', true);
+    $('#id_fathers_name').prop('readonly', true);
+    $('#id_date_of_birth').prop('readonly', true);
+    $('#id_fathers_name').prop('readonly', true);
+    $('#id_mothers_name').prop('readonly', true);
+    $('#id_guardians_name').prop('readonly', true);
+    $('#id_passport_no').prop('readonly', true);
+    $('#id_national_ID_No').prop('readonly', true);
+    $('#id_email_address').prop('readonly', true);
+    $('#id_village').prop('readonly', true);
+    $('#id_post_office').prop('readonly', true);
+    $('#id_village_snd').prop('readonly', true);
+    $('#id_post_office_snd').prop('readonly', true);
+    $('#id_village').prop('readonly', true);
+    $('#id_nationality').css({'pointer-events': "none"})
+
+
+
+    }
+
+
+        if(window.location.href.indexOf("migration")>0)
+
+
+
+{
+}
+else
+{
+    $("select#id_institution").css({'pointer-events':"none"})   
+    $(".field-migration_approval_bnmc").css({'display':"none"})
+    $(".field-new_institute").css({'display':"none"})
+    $(".field-old_institute").css({'display':"none"})
+    $(".field-migration_date").css({'display':"none"})
+    $(".field-old_institute").css({'display':"none"})
+    $(".field-approved").css({'display':"none"})
+    $(".field-migration").css({'display':"none"})
+    <!--$(".field-created_by").css({'display':"none"})-->
+    $(".field-student_id").css({'display':"none"})
+
+}
+
+    </script>
+
+
+
+    <script>
+
+
+
+
+
+{%if original.id%}
+
+$("#id_program_starting_date").val("{{original.session.session_start_date|date:'Y-m-d'}}");
+$("#id_program_completion_date").val("{{original.session.session_end_date|date:'Y-m-d'}}");
+
+
+     if(window.location.href.indexOf("migration")>0)
+
+
+
+{
+         $(".object-tools").css({'display':"none"})
+          $(".field-migration_approval_bnmc").css({'display':"block"})
+}
+else
+{
+    $("select#id_institution").css({'pointer-events':"none"})
+    $(".field-migration").css({'display':"block"})
+   
+    $(".field-new_institute").css({'display':"none"})
+    $(".field-old_institute").css({'display':"none"})
+    $(".field-migration_date").css({'display':"none"})
+
+}
+
+    $(".bubbly-button").click(function()
+    {
+            var permission_id = $(this).val();
+
+                $.ajax({
+                    type: "POST",
+                    url: "/changeStatus/",
+                    dataType: "json",
+                    data: { "permissionId": permission_id, "stdId":{{ original.id }}, 'csrfmiddlewaretoken': '{{ csrf_token }}' },
+                    success: function (data)
+
+
+                    {
+
+                       location.reload();
+
+                    }
+                });
+    })
+
+{%endif%}
+
+
+
+
+    $("button#serc_button").click(function (e)
+    {
+
+            var registation_number = $("input.search_stu").val();
+            var program_id=$("select#program_id_src").val();
+
+
+
+             if (program_id == ""){
+
+
+            $('#program_id_src').css('border','1px solid red');
+            }
+
+
+            if (registation_number == ""){
+
+
+               $('input.search_stu').css('border','1px solid red');
+            }
+
+
+
+
+
+
+
+            $.ajax({
+                type: "POST",
+                url: "/get_registation_student_info/",
+                dataType: "json",
+                data: { "registation_number": registation_number,"program_id":program_id,  'csrfmiddlewaretoken': '{{ csrf_token }}', },
+                success: function (data)
+                {
+                if(data[0]==true)
+                {
+
+
+
+
+
+
+
+                     $("#student_id").val(data[1]);
+
+
+                     var student_id = $("#student_id").val().trim();
+                     var institute_id=$("#ins_id").val().trim();
+                     var program_id=$("#prog_id").val().trim();
+                     var query_string = "?";
+                     if (String(student_id) != "0") {
+                          query_string += "source=" + student_id + "&"
+                      }
+
+
+                       if (String(institute_id) != "0") {
+                          query_string += "institution=" + institute_id + "&"
+                      }
+
+                        if (String(program_id) != "0") {
+                          query_string += "program_title=" + program_id + "&"
+                      }
+
+
+
+                      window.location.href = location.protocol + '//' + location.host + location.pathname + query_string;
+
+
+                     <!--$("#id_last_name").val(data[2]);-->
+                     <!--$("#id_fathers_name").val(data[3]);-->
+                     <!--$("#id_mothers_name").val(data[4]);-->
+                     <!--$("#id_sex").val(data[5]);-->
+                     <!--$("#id_religions").val(data[6]);-->
+                     <!--$("#id_guardians_name").val(data[7]);-->
+                     <!--$("#id_passport_no").val(data[8]);-->
+                     <!--$("#id_relation_to_guardians").val(data[9]);-->
+                     <!--$("#id_quota").val(data[10]);-->
+                     <!--$("#id_nationality").val(data[11]);-->
+                     <!--$("#id_marital_status").val(data[12]);-->
+                     <!--$("#id_national_ID_No").val(data[13]);-->
+                     <!--$("#id_students_mobile_no").val(data[14]);-->
+                     <!--$("#id_division").val(data[15]).delay( 1000 );-->
+                     <!--$("#id_division").trigger('change');-->
+                     <!--var evt = document.createEvent("HTMLEvents");-->
+                     <!--evt.initEvent("change", false, true);-->
+
+
+
+
+                    <!--$("#id_registration_no").val(data[13]);-->
+                    $("#id_students_mobile_no").val(data[14]);
+
+
+
+
+
+
+                 }
+
+                else
+                {
+
+                    alert('Student not found')
+
+                    $("#id_first_name").val("");
+                    $("#id_last_name").val("");
+                    $("#id_fathers_name").val("");
+                    $("#id_mothers_name").val("");
+                    $("#id_sex").val("");
+                    $("#id_religions").val("");
+                    $("#id_guardians_name").val("");
+                    $("#id_passport_no").val();
+                    $("#id_relation_to_guardians").val("");
+                    $("#id_quota").val("");
+                    $("#id_nationality").val("");
+                    $("#id_marital_status").val("");
+                    $("#id_national_ID_No").val("");
+                    $("#id_students_mobile_no").val("");
+                    $("#id_division").val("");
+                    $("#id_district").val("");
+                    $("#id_thana").val("");
+                    $("#id_district_snd").val("");
+                    $("#id_thana_snd").val("");
+
+
+
+
+
+
+
+
+            }
+                }
+            });
+    });
+
+
+    $(document).ready(function ()
+    {
+        $(document).on('change', 'input[Id="id_same_address"]', function (e)
+        {
+            if  ($(this).prop("checked") == true){
+
+            var divi_var= $('#id_division').val()
+             var thana_var= $('#id_thana').val()
+            var dis_var= $('#id_district').val()
+            $("#id_village_snd").val( $("#id_village").val())
+            $("#id_post_office_snd").val( $("#id_post_office").val())
+            $("#id_postal_code_snd").val( $("#id_postal_code").val())
+
+
+
+
+            var z = document.getElementById("id_division_snd").value  = divi_var;
+            var x = document.getElementById("id_district_snd").value  = dis_var;
+            var y = document.getElementById("id_thana_snd").value  = thana_var;
+
+
+            <!--$("#id_village_snd").val( $("#id_village").val())-->
+            <!--$("#id_post_office_snd").val( $("#id_post_office").val())-->
+            <!--$("#id_postal_code_snd").val( $("#id_postal_code").val())-->
+            <!--var division_index=$("#id_division option:selected").index();-->
+            <!--$("select#id_division_snd").prop('selectedIndex', division_index);-->
+            <!--var district_index=$("#id_district option:selected").index();-->
+            <!--var t=document.getElementById("id_district_snd").selectedIndex=district_index;-->
+            <!--var thana_var= $('#id_thana').val()-->
+            <!--var y = document.getElementById("id_thana_snd").selectedIndex = thana_var;-->
+            <!--alert(district_index)-->
+            <!--alert(t)-->
+
+
+
+
+
+
+
+
+            }
+
+
+            else if($(this).prop("checked") == false)
+            {
+              $("#id_village_snd").val('');
+              $("#id_post_office_snd").val('');
+              $("#id_postal_code_snd").val('');
+              $("#id_division_snd").val('');
+              $("#id_district_snd").val('');
+              $("#id_thana_snd").val('');
+            }
+        });
+
+                $( "#id_village" ).autocomplete({
+                    source: function(request, response) {
+                        $.ajax({
+                               type: "POST",
+                                url: "/search_village/",
+                                dataType: "json",
+                                data: { "search_key": $( "#id_village" ).val(),  'csrfmiddlewaretoken': '{{ csrf_token }}', },
+                                success: function (data)
+                                {
+                                    response(data);
+                                }
+                        });
+            },
+            minLength: 4,
+            select: function( event, ui )
+            {
+
+              <!--log( "Selected: " + ui.item.value + " aka " + ui.item.id );-->
+            }
+        });
+
+
+
+
+
+                $( "#id_post_office" ).autocomplete({
+                    source: function(request, response) {
+                        $.ajax({
+                               type: "POST",
+                                url: "/search_post/",
+                                dataType: "json",
+                                data: { "search_key": $( "#id_post_office" ).val(),  'csrfmiddlewaretoken': '{{ csrf_token }}', },
+                                success: function (data)
+                                {
+                                    response(data);
+                                }
+                        });
+            },
+            minLength: 4,
+            select: function( event, ui )
+            {
+
+
+              <!--log( "Selected: " + ui.item.value + ui.item.id );-->
+            }
+        });
+
+
+                $( "#id_village_snd" ).autocomplete({
+                    source: function(request, response) {
+                        $.ajax({
+                               type: "POST",
+                                url: "/search_snd_village/",
+                                dataType: "json",
+                                data: { "search_key": $( "#id_village_snd" ).val(),  'csrfmiddlewaretoken': '{{ csrf_token }}', },
+                                success: function (data)
+                                {
+                                    response(data);
+                                }
+                        });
+            },
+            minLength: 4,
+            select: function( event, ui )
+            {
+              <!--log( "Selected: " + ui.item.value + ui.item.id );-->
+            }
+        });
+           $( "#id_post_office_snd" ).autocomplete({
+                    source: function(request, response) {
+                        $.ajax({
+                               type: "POST",
+                                url: "/search_snd_post_office/",
+                                dataType: "json",
+                                data: { "search_key": $( "#id_post_office_snd" ).val(),  'csrfmiddlewaretoken': '{{ csrf_token }}', },
+                                success: function (data)
+                                {
+                                    response(data);
+                                }
+                        });
+            },
+            minLength: 4,
+            select: function( event, ui )
+            {
+            }
+        });
+    });
+
+
+    <!--let div1 = document.getElementById('id_thana');-->
+    <!--let align = div1.getAttribute('data-value');-->
+    <!--alert(align)-->
+
+
+         var get_data=document.getElementById("id_thana").getAttribute("data-value");
+
+             setTimeout(function(){
+
+              $('#id_thana').val(get_data);
+
+              }, 3000);
+
+
+
+
+
+</script>
+
+    <script>
+
+
+    var file_value = $('#student_file_set-group select').val();
+    if (file_value>0){
+
+     $('#student_file_set-group select').css({'pointer-events':"none"})
+
+    }
+
+    var qu = $('#id_educationqualification_set-0-level_of_educations').val();
+
+    if (qu >0){
+
+    $('#id_educationqualification_set-0-level_of_educations').css({'pointer-events':"none"})
+    }
+
+     var qu1 = $('#id_educationqualification_set-1-level_of_educations').val();
+
+    if (qu1 >0){
+
+    $('#id_educationqualification_set-1-level_of_educations').css({'pointer-events':"none"})
+    }
+
+
+     var qu2 = $('#id_educationqualification_set-2-level_of_educations').val();
+
+    if (qu2 >0){
+
+    $('#id_educationqualification_set-2-level_of_educations').css({'pointer-events':"none"})
+    }
+
+
+     var qu3 = $('#id_educationqualification_set-3-level_of_educations').val();
+
+
+    if (qu3 >0){
+
+    $('#id_educationqualification_set-3-level_of_educations').css({'pointer-events':"none"})
+    }
+
+
+    var qu4 = $('#id_educationqualification_set-4-level_of_educations').val();
+
+    if (qu4 >0){
+
+    $('#id_educationqualification_set-4-level_of_educations').css({'pointer-events':"none"})
+    }
+
+     var qu5 = $('#id_educationqualification_set-5-level_of_educations').val();
+
+    if (qu5 >0){
+
+    $('#id_educationqualification_set-5-level_of_educations').css({'pointer-events':"none"})
+    }
+
+     var qu6 = $('#id_educationqualification_set-6-level_of_educations').val();
+
+    if (qu6 >0){
+
+    $('#id_educationqualification_set-6-level_of_educations').css({'pointer-events':"none"})
+    }
+
+    var qu7 = $('#id_educationqualification_set-7-level_of_educations').val();
+    if (qu7 >0){
+
+    $('#id_educationqualification_set-7-level_of_educations').css({'pointer-events':"none"})
+    }
+
+
+     var qu8 = $('#id_educationqualification_set-8-level_of_educations').val();
+    if (qu8 >0){
+
+    $('#id_educationqualification_set-8-level_of_educations').css({'pointer-events':"none"})
+    }
+
+
+     var qu9 = $('#id_educationqualification_set-9-level_of_educations').val();
+    if (qu9 >0){
+
+    $('#id_educationqualification_set-9-level_of_educations').css({'pointer-events':"none"})
+    }
+
+
+     var qu10 = $('#id_educationqualification_set-10-level_of_educations').val();
+    if (qu10 >0){
+
+    $('#id_educationqualification_set-10-level_of_educations').css({'pointer-events':"none"})
+    }
+
+
+
+
+
+
+
+
+
+    $('#id_district_snd option').prop("hidden", true);
+    $("#id_division_snd").change(function()
+    {
+        var division_id = $('#id_division_snd').val();
+        var new_division = $('#id_division_snd').val();
+        $.ajax({
+                type: "POST",
+                url: "/get_division/",
+                dataType: "json",
+                data: { "division_id": division_id, 'csrfmiddlewaretoken': '{{ csrf_token }}' },
+                success: function (data)
+                {
+                    if (division_id == new_division){
+                    $('#id_district_snd option').prop("hidden", true);
+                    $('#id_district_snd').val('');
+                    $('#id_thana_snd').val('');
+
+
+                    for (var i = 0; i < data.length; i++)
+                    {
+                            $('#id_district_snd option[value='+data[i]+']').prop("hidden", false);
+                    }
+
+                    }
+
+
+                }
+            });
+    })
+
+
+
+
+
+
+
+$('#id_thana_snd option').prop("hidden", true);
+        $("#id_district_snd").change(function()
+    {
+        var district_id = $('#id_district_snd').val();
+        var new_district = $('#id_district_snd').val();
+        $.ajax({
+                type: "POST",
+                url: "/get_district/",
+                dataType: "json",
+                data: { "district_id": district_id, 'csrfmiddlewaretoken': '{{ csrf_token }}' },
+                success: function (data)
+                {
+                    if (district_id == new_district){
+                    $('#id_thana_snd option').prop("hidden", true);
+                    $('#id_thana_snd').val('');
+
+                    for (var i = 0; i < data.length; i++)
+                    {
+                            $('#id_thana_snd option[value='+data[i]+']').prop("hidden", false);
+                    }
+                    }
+
+                }
+            });
+    })
+
+
+
+    </script>
+
+
+<script>
+  $(function() {
+    $( "#id_date_of_birth" ).datepicker({
+      yearRange: "1900:2050",
+        changeYear: true,
+        changeMonth: true,
+      // You can put more options here.
+      dateFormat: 'yy-mm-dd'
+
+    });
+  });
+  </script>
+
+<script>
+  $(function() {
+    $( "#id_program_starting_date" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+      yearRange: "1900:2050",
+      // You can put more options here.
+      dateFormat: 'yy-mm-dd'
+
+    });
+  });
+
+
+
+
+$(function() {
+    $( "#id_bank_draft_date" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+      yearRange: "1900:2050",
+      // You can put more options here.
+      dateFormat: 'yy-mm-dd'
+
+    });
+  });
+  </script>
+
+
+    <script>
+  $(function() {
+    $( "#id_date_of_registration" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+      yearRange: "1900:2050",
+      // You can put more options here.
+      dateFormat: 'yy-mm-dd',
+       autocomplete: false
+
+    });
+  });
+  $("#id_date_of_registration").attr("autocomplete", "off");
+  </script>
+
+
+
+    <script>
+  $(function() {
+    $( "#id_program_completion_date" ).datepicker({
+        yearRange: "1900:2050",
+        changeYear: true,
+        changeMonth: true,
+        dateFormat: 'yy-mm-dd'
+
+
+      // You can put more options here.
+
+    });
+  });
+  </script>
+
+
+    <script>
+
+
+
+
+
+    </script>
+
+
+
+
+<script>
+
+$("#program_id_src").html($("#id_program_title").html());
+
+</script>
+
+        {% if not original.id %}
+
+
+     {% if var != 'General' %}
+         <script>
+
+                $("#id_first_name").prop('readonly', true);
+                $("#id_email_address").prop('readonly', true);
+                $("#id_village").prop('readonly', true);
+                $("#id_village_snd").prop('readonly', true);
+                $("#id_post_office_snd").prop('readonly', true);
+                $("#id_post_office_snd").prop('readonly', true);
+                $("#id_last_name").prop('readonly', true);
+                $("#id_fathers_name").prop('readonly', true);
+                $("#id_mothers_name").prop('readonly', true);
+                $("#id_sex").css({'pointer-events': "none"})
+                $("#id_religions").css({'pointer-events': "none"})
+                $("#id_guardians_name").prop('readonly', true);
+                $("#id_passport_no").prop('readonly', true);
+                $("#id_postal_code").prop('readonly', true);
+                $("#id_post_office").prop('readonly', true);
+                $("#post_office_snd").prop('readonly', true);
+                $("#id_postal_code_snd").prop('readonly', true);
+                $("#id_relation_to_guardians").css({'pointer-events': "none"})
+                $("#id_quota").css({'pointer-events': "none"})
+                $("#id_nationality").css({'pointer-events': "none"})
+                $("#id_marital_status").css({'pointer-events': "none"})
+                $("#id_national_ID_No").prop('readonly', true);
+                $("#id_division").css({'pointer-events': "none"})
+                $("#id_division_snd").css({'pointer-events': "none"})
+                $("#id_district").css({'pointer-events': "none"})
+                $("#id_thana").css({'pointer-events': "none"})
+                $("#id_district_snd").css({'pointer-events': "none"})
+                $("#id_thana_snd").css({'pointer-events': "none"})
+
+            </script>
+
+
+
+
+
+
+    {% endif %}
+
+    {% endif %}
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+{# JavaScript for prepopulated fields #}
+
+
+{% prepopulated_fields_js %}
+
+
+
+
+
+
+
+</div>
+</form></div>
+{% endblock %}

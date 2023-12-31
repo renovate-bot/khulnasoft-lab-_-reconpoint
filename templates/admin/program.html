@@ -1,0 +1,46 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/program.css" %}">{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block breadcrumbs %}
+
+<div class="breadcrumbs">
+    <a href="{% url 'admin:index' %}">{% trans 'HOME' %}</a>
+    {% if title %} &rsaquo; {{ title }}{% endif %}
+     <a href="/admin/settings/"> › SETTINGS</a>
+    <a href="/admin/setting/program/">› MANAGE PROGRAMS</a>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="institution_content">
+
+    <div class="program_in">
+       <label class="program">MANAGE PROGRAM</label>
+   </div>
+
+    <div class="manage_program">
+            <a href="/admin/bnmc_project/program/">
+            <img src="{% static '/admin/img/program.png' %}" class="manage_program_bnmc" href="{% url 'admin:index' %}"/>
+            <label CLASS="program_label">PROGRAM</label>
+            </a>
+    </div>
+
+
+    <div class="manage_program_cat">
+            <a href="/admin/bnmc_project/programcatagory/">
+            <img src="{% static '/admin/img/program_catagory.png' %}" class="manage_program_cat_bnmc" href="{% url 'admin:index' %}"/>
+            <label CLASS="ins_program_model">PROGRAM CATAGORY</label>
+            </a>
+    </div>
+
+</div>
+
+{% endblock %}

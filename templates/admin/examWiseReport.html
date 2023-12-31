@@ -1,0 +1,54 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/exam_wise_report.css" %}">{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block breadcrumbs %}
+  <div class="breadcrumbs">
+    <a href="{% url 'admin:index' %}">{% trans 'HOME' %}</a>
+    {% if title %} &rsaquo; {{ title }}{% endif %}
+    <a href="/admin/accounts/"> › ACCOUNTS</a>
+  </div>
+
+{% endblock %}
+
+{% block content %}
+<!--<div id="content-main">-->
+
+
+<form method="post">
+{% csrf_token %}
+<select name="exam" class="exam">
+
+    <option value="0">Select Exam</option>
+    {% for i in exam %}
+    <option value="{{i.id}}">{{i.exam_name}}</option>
+{% endfor %}
+</select>
+
+
+
+
+<select name="program" class="program">
+
+    <option value="0">Select Exam</option>
+    {% for i in program %}
+    <option value="{{i.id}}">{{i.title}}</option>
+{% endfor %}
+</select>
+
+    <button>Submit</button>
+
+</form>
+
+
+
+
+{% endblock %}
+
+
+</body>

@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teacher form</title>
+
+    <style>
+
+.main {
+    width: 1200px;
+    height: 1200px;
+    margin: auto;
+}
+
+
+ul#myList {
+    width: 60%;
+    display: block;
+    padding: 0;
+    height: 80px;
+    margin: auto;
+}
+
+input#bc {
+    width: 46%;
+    height: 30px;
+    border-radius: 6px 0px 0px 6px;
+    border: 1px solid;
+    color: green;
+    font-size: 20px;
+        margin-left: 10%;
+            display: inline-block;
+    float: left;
+}
+
+button#cl {
+    height: 34px;
+    border: 0;
+    background-color: green;
+    border-radius: 0px 6px 6px 0px;
+    color: #fff;
+        display: inline-block;
+    float: left;
+}
+
+form#teacher_form {
+    width: 69%;
+    margin: auto;
+    height: 100%;
+    background-color: #fff;
+}
+
+
+
+form#teacher_form select {
+    width: 280px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+        margin-top: 10px;
+}
+
+form#teacher_form input {
+    width: 280px;
+    height: 26px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+}
+
+.license_number {
+    display: inline-block;
+    float: left;
+    width: 50%;
+    height: 68px;
+    margin-left: 25px;
+}
+
+body {
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, sans-serif;
+        background-color: #eee;
+}
+
+
+.is {
+    padding-top: 10px;
+}
+
+.emial {
+    padding-top: 10px;
+}
+
+
+.institition {
+    padding-top: 10px;
+}
+
+
+img.img {
+    display: block;
+    width: 21%;
+    height: 60px;
+    background-image: url(/static/admin/img/Facebook-no-profile-picture-icon-620x389.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin: auto;
+    margin-top: 12px;
+        border: 1px solid greenyellow;
+}
+.file {
+    display: inline-block;
+    float: left;
+    width: 44%;
+}
+
+
+.file input {
+    margin: auto;
+    width: 200px!important;
+    display: block;
+    margin-top: 18px !important;
+    border: 0 !important;
+    margin-bottom: 20px;
+}
+
+.button {
+    bottom: 20%;
+    width: 100px;
+    height: 31px;
+    font-size: 17px;
+    background-color: #218421;
+    border: 0;
+    border-radius: 15px 15px;
+    color: #fff;
+    margin-left: 25px;
+    margin-top: 4%;
+}
+
+
+
+div#ui-datepicker-div {
+    background-color: green;
+    color: #fff;
+}
+
+table.ui-datepicker-calendar a {
+    color: #fff;
+}
+
+
+table, th, td {
+    border: 1px solid #ddd;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: center;
+}
+
+
+select.pro {
+    width: 50%;
+    display: inline-block;
+    float: left;
+    height: 32px;
+    border: 1px solid #ccc;
+}
+
+input#num {
+    width: 22%;
+    height: 28px;
+    border-left: 0;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding-left: 9px;
+}
+
+
+input#click {
+    width: 11%;
+    height: 32px;
+    margin-left: -4px;
+    border: 1px solid #ccc;
+    border-left: 0;
+}
+
+form.form_search {
+    width: 100%;
+    display: block;
+    height: 100%;
+    display: none;
+}
+
+.license_number label {
+    display: block;
+}
+
+.full_name label {
+    display: block;
+}
+
+
+.full_name {
+    display: inline-block;
+    float: left;
+    width: 46%;
+}
+
+.li_full {
+    width: 100%;
+    height: 111px;
+}
+
+.emial  {
+    width: 90%;
+    height: 68px;
+    margin-left: 25px;
+    padding-top: 10px;
+}
+
+.emial label {
+    display: block;
+}
+
+.emial input {
+    width: 93% !important;
+}
+
+.date_birth input {
+    width: 93% !important;
+}
+
+.date_birth label {
+    display: block;
+}
+
+.student_mob input {
+    width: 93% !important;
+}
+
+.student_mob label {
+    display: block;
+}
+
+
+.date_birth, .student_mob {
+    width: 90%;
+    height: 68px;
+    margin-left: 25px;
+    padding-top: 10px;
+}
+
+
+.father_name input {
+    width: 80% !important;
+}
+
+.father_name label {
+    display: block;
+}
+
+
+.father_name {
+    display: inline-block;
+    float: left;
+    height: 68px;
+    margin-left: 25px;
+    padding-top: 10px;
+    width: 30%;
+}
+
+
+.mother_name input {
+    width: 80% !important;
+}
+
+.mother_name label {
+    display: block;
+}
+
+
+.mother_name {
+    display: inline-block;
+    float: left;
+    height: 68px;
+    padding-top: 10px;
+    width: 30%;
+}
+
+
+.sex select {
+    width: 80% !important;
+}
+
+.sex label {
+    display: block;
+}
+
+
+.sex {
+    display: inline-block;
+    float: left;
+    height: 68px;
+    padding-top: 10px;
+    width: 30%;
+}
+
+
+.matarial_status label {
+    display: block;
+}
+
+.matarial_status {
+    display: inline-block;
+    float: left;
+    margin-left: 25px;
+    height: 68px;
+    width: 50%;
+    padding-top: 10px;
+}
+
+
+.nationality label {
+    display: block;
+}
+
+.nationality {
+    display: inline-block;
+    float: left;
+    width: 46%;
+    height: 68px;
+    padding-top: 10px;
+}
+
+
+.f_name_m_name {
+    width: 100%;
+    height: 170px;
+}
+
+.di_dis_vil {
+    display: block;
+    width: 100%;
+    height: 171px;
+}
+
+
+.division select {
+    width: 80% !important;
+}
+
+.division label {
+    display: block;
+}
+
+
+.division {
+    display: inline-block;
+    float: left;
+    height: 68px;
+    padding-top: 10px;
+    width: 30%;
+        margin-left: 25px;
+}
+
+
+.district select {
+    width: 80% !important;
+}
+
+.district label {
+    display: block;
+}
+
+
+.district {
+    display: inline-block;
+    float: left;
+    height: 68px;
+    padding-top: 10px;
+    width: 30%;
+}
+
+
+.thana select {
+    width: 80% !important;
+}
+
+.thana label {
+    display: block;
+}
+
+
+.thana {
+    display: inline-block;
+    float: left;
+    height: 68px;
+    padding-top: 10px;
+    width: 30%;
+}
+
+
+.village input {
+    display: block;
+    width: 79% !important;
+}
+
+.village label {
+    display: block;
+}
+
+
+.village {
+    width: 30%;
+    display: inline-block;
+    float: left;
+    height: 68px;
+    margin-left: 25px;
+    padding-top: 10px;
+}
+
+
+.postalcode input {
+    display: block;
+    width: 79% !important;
+}
+
+.postalcode label {
+    display: block;
+}
+
+
+.postalcode {
+    width: 30%;
+    display: inline-block;
+    float: left;
+    height: 68px;
+    padding-top: 10px;
+}
+
+
+.postoffice input {
+    display: block;
+    width: 79% !important;
+}
+
+.postoffice label {
+    display: block;
+}
+
+
+.postoffice {
+    width: 30%;
+    display: inline-block;
+    float: left;
+    height: 68px;
+    padding-top: 10px;
+}
+
+
+.institition select {
+    width: 93% !important;
+}
+
+.institition label {
+    display: block;
+}
+
+.institition {
+    width: 90%;
+    margin-left: 25px;
+}
+
+
+.employment_type select {
+    width: 93% !important;
+}
+
+.employment_type label {
+    display: block;
+}
+
+.employment_type {
+    width: 90%;
+    margin-left: 25px;
+    padding-top: 10px;
+}
+
+
+.designation select {
+    width: 93% !important;
+}
+
+.designation label {
+    display: block;
+}
+
+.designation {
+    width: 90%;
+    margin-left: 25px;
+    padding-top: 10px;
+}
+
+
+
+.f_w {
+    height: 100px;
+}
+
+
+.working_start_date label {
+    display: block;
+}
+
+.working_start_date {
+    padding-top: 10px;
+    display: inline-block;
+    float: left;
+    height: 68px;
+    margin-left: 25px;
+    width: 50%;
+}
+
+
+.f_idss label {
+    display: block;
+}
+
+.f_idss {
+    padding-top: 10px;
+    display: inline-block;
+    float: left;
+    height: 68px;
+    width: 45%;
+}
+
+.is {
+    display: inline-block;
+    float: left;
+    margin-left: 25px;
+        width: 44%;
+}
+
+
+.is_nu_photo {
+    height: 100px;
+}
+
+input#id_is_nurse {
+    width: 55px !important;
+}
+    </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+</head>
+<body>
+
+<div class="main">
+
+
+
+    <form method="post" id="teacher_form">
+{% csrf_token %}
+
+<input value="{{license_his.student_id.id}}" type="hidden" name="student_id">
+
+<div class="is_nu_photo">
+
+
+
+        <div class="is">
+            <label>Is Nurse:</label>
+            <input type="checkbox" id="id_is_nurse" name="nurse">
+            <input type="hidden" value="{{f}}" id="dis">
+            {% if f == 'true' %}
+            <script>
+
+                $('#id_is_nurse').attr( 'checked', 'checked' );
+            </script>
+
+            {% endif %}
+        </div>
+
+        <div class="file">
+            {% if f == 'true' and license_his.image %}
+            <img src="{{license_his.image.url}}" class="img">
+
+        {% else %}
+
+        <img src="" class="img">
+        {% endif %}
+
+        <input type="file" name="file">
+
+        </div>
+</div>
+
+
+        <div class="li_full">
+
+              <div class="license_number">
+
+            <label>License Number</label>
+            <input value="{{license_his.license_number}}" type="text" name="number" class="dis">
+        </div>
+
+         <div class="full_name">
+
+            <label>Full Name</label>
+            <input value="{{license_his.full_name_english}}" type="text" name="name" class="dis">
+        </div>
+        </div>
+
+
+
+
+        <div class="emial">
+
+            <label>Email</label>
+          <input class="dis" value="{% if license_his.email_address%} {{license_his.license_receive_id.students.email_address}} {% endif %}" type="email" name="email">
+        </div>
+
+         <div class="date_birth">
+
+            <label>Date Of Birth</label>
+           <input class="dis" value="{{license_his.date_of_birth}}" type="text" name="date_birth">
+        </div>
+
+        <div class="f_name_m_name">
+
+              <div class="father_name">
+
+            <label>Father Name</label>
+            <input class="dis" value="{{license_his.fathers_name}}" type="text" name="f_name">
+        </div>
+
+        <div class="mother_name">
+
+            <label>Mother Name</label>
+            <input class="dis" value="{{license_his.mothers_name}}" type="text" name="m_name">
+        </div>
+
+         <div class="sex">
+
+            <label>Sex</label>
+           <select class="di"  name="sex">
+               {% if f == 'true'%}
+
+
+               <option value="{{license_his.sex}}"
+                   selected="selected">{{license_his.license_receive_id.students.get_sex_display}}
+               </option>
+
+
+               {% else %}
+
+                     <option value="0">Select Sex</option>
+                  <option value="1">Male</option>
+                <option value="2">Female</option>
+                  <option value="3">Others</option>
+               {% endif %}
+
+           </select>
+        </div>
+
+
+         <div class="matarial_status">
+
+            <label>Marital Status</label>
+           <select id="matrial" class="di" name="matrtial">
+
+
+               <option value="{{license_his.marital_status}}"
+                   selected="selected">{{license_his.get_marital_status_display}}
+               </option>
+
+
+
+               <option value="0">Select Marital Status</option>
+                <option value="1">Single</option>
+              <option value="2">Married</option>
+              <option value="3">Widow</option>
+              <option value="4">Divorce</option>
+              <option value="5">Separated</option>
+           </select>
+        </div>
+
+
+        <div class="nationality">
+
+            <label>Nationality</label>
+           <select class="di" name="national">
+
+
+               {% for i in nationality %}
+               <option value="{{i.id}}">{{i.nationality_name}}</option>
+               {% endfor %}
+               <option selected value="{{license_his.nationality.id}}">{{license_his.nationality}}</option>
+           </select>
+        </div>
+        </div>
+
+
+
+
+         <div class="student_mob">
+
+            <label>Student Phone No</label>
+           <input class="dis" value="{{license_his.students_mobile_no}}" type="text" name="no">
+        </div>
+
+<div class="di_dis_vil">
+
+        <div class="division">
+            <label>Division</label>
+           <select class="di" name="division">
+
+
+               {% for i in div %}
+               <option value="{{i.id}}">{{i.name}}</option>
+
+               {% endfor %}
+                 <option selected value="{{license_his.division.id}}">{{license_his.division}}</option>
+           </select>
+        </div>
+
+
+
+         <div class="district">
+            <label>District</label>
+           <select class="di" name="district">
+
+
+
+               {% for i in dis %}
+               <option value="{{i.id}}">{{i.name}}</option>
+
+               {% endfor %}
+                <option selected value="{{license_his.district.id}}">{{license_his.district}}</option>
+           </select>
+        </div>
+
+
+         <div class="thana">
+            <label>Thana</label>
+           <select class="di" name="thana">
+
+
+
+               {% for i in thn %}
+               <option value="{{i.id}}">{{i.name}}</option>
+
+               {% endfor %}
+               <option selected value="{{license_his.thana.id}}">{{license_his.thana}}</option>
+           </select>
+        </div>
+
+
+          <div class="village">
+
+            <label>Village</label>
+           <input class="dis" value="{{license_his.village}}" type="text" name="village">
+        </div>
+
+
+
+         <div class="postalcode">
+
+            <label>Postal code</label>
+           <input class="dis" value="{{license_his.postal_code}}" type="text" name="post_code">
+        </div>
+
+         <div class="postoffice">
+
+            <label>Post Office</label>
+           <input class="dis" value="{{license_his.post_office}}" type="text" name="post_off">
+        </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="institition">
+
+            <label>Institution Name</label>
+            <select class="di" name="ins">
+
+                  {% if f == 'true'%}
+
+
+               <option value="{{license_his.institution.id}}"
+                   selected="selected">{{license_his.license_receive_id.students.institution}}
+               </option>
+            {% else %}
+
+                 <option value="0">Select Institution</option>
+               {% for i in institution %}
+               <option value="{{i.id}}">{{i.institution_name}}</option>
+               {% endfor %}
+                  {% endif %}
+            </select>
+        </div>
+
+
+        <div class="employment_type">
+
+            <label>Employment Type</label>
+            <select name="e_t">
+                <option value="0">Select Employment type</option>
+                 <option value="1">Nurse</option>
+                <option value="2" selected="">Non-Nurse</option>
+            </select>
+        </div>
+
+        <div class="designation">
+
+            <label>Designation</label>
+            <select name="designation">
+
+                <option value="0">Select Designation</option>
+               {% for i in designation %}
+               <option value="{{i.id}}">{{i.designation_name}}</option>
+               {% endfor %}
+            </select>
+        </div>
+
+
+        <div class="f_w">
+
+               <div class="working_start_date">
+
+            <label>Working Start Date</label>
+           <input type="text" name="w_start_date">
+        </div>
+
+
+
+          <div class="f_idss">
+
+            <label>Faculty Id</label>
+           <input type="text" name="f_id">
+        </div>
+        </div>
+
+
+
+
+
+    <button name="submit" class="button" type="submit">Submit</button>
+
+
+
+
+
+
+
+
+
+    </form>
+
+
+
+</div>
+
+{% if f == 'true' %}
+
+<table style="margin: auto;width: 55%;    font-size: 10px;margin-top: 5%;background-color: #fff;font-size: 10px;margin-bottom: 5%;">
+  <tr>
+    <th>Registration
+NO
+</th>
+    <th>Course Name</th>
+    <th>Institution</th>
+    <th>Date of Registration</th>
+    <th>Date of Renew</th>
+    <th>Renew Upto</th>
+    <th>Status</th>
+  </tr>
+     {% for i,n in  qr%}
+  <tr>
+
+        <td>{{i.license_number}}</td>
+        <td>{{i.program}}</td>
+        <td>{{i.institution}}</td>
+        <td>{{i.license_registration_date}}</td>
+        <td>{{i.license_start_date}}</td>
+        <td>{{i.license_end_date}}</td>
+
+
+
+            {% if n == 'Renewed' %}
+
+        <td style="color: green;"> {{n}}</td>
+
+
+
+            {% else %}
+       <td style="color: red;"> {{n}}</td>
+
+      {% endif %}
+
+
+  </tr>
+     {% endfor %}
+
+</table>
+
+
+{% endif %}
+
+
+
+
+
+
+  {% if f != 'true' %}
+            <script>
+
+
+   $(function() {
+    $( ".date_birth input" ).datepicker({
+        yearRange: "1900:2050",
+        changeYear: true,
+        changeMonth: true,
+        dateFormat: 'yy-mm-dd'
+
+
+      // You can put more options here.
+
+    });
+  });
+            </script>
+
+            {% endif %}
+
+<script>
+   $(function() {
+    $( ".working_start_date input" ).datepicker({
+        yearRange: "1900:2050",
+        changeYear: true,
+        changeMonth: true,
+        dateFormat: 'yy-mm-dd'
+
+
+      // You can put more options here.
+
+    });
+  });
+
+
+
+var dis = $('.dis').val()
+
+if (dis){
+ $('.dis').prop('readonly', true);
+                 $('.di').css({'pointer-events': "none"})
+}
+
+ $(document).on('change', 'input[Id="id_is_nurse"]', function (e)
+        {
+            if  ($(this).prop("checked") == true){
+
+
+                $('.form_search').css('display','block')
+
+
+
+
+
+
+            }
+
+
+            else if($(this).prop("checked") == false)
+            {
+                $('.form_search').css('display','none')
+
+
+
+            }
+        });
+
+
+
+</script>
+
+</body>
+</html>

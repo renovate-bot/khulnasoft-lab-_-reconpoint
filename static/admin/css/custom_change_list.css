@@ -1,0 +1,397 @@
+.custom {
+    width: 100px;
+    height: 100px;
+    background-color: aquamarine;
+}
+
+
+form#changelist-form {
+    margin-top: 4%;
+    background-color: #fff;
+}
+
+.app-bnmc_project.model-student_registration.change-list .object-tools {
+    margin: 0;
+}
+
+.custom_body {
+    width: 1200px;
+    height: 200px;
+    background-color: #eee;
+    display: block;
+    margin: auto;
+}
+
+.custom {
+    width: 100px;
+    height: 100px;
+    background-color: aquamarine;
+    float: left;
+}
+
+
+
+
+#changelist {
+    width: 1200px !important;
+    margin: auto;
+}
+
+.reg_no {
+    width: 48%;
+    height: 100%;
+    display: inline-block;
+}
+
+.prog_name {
+    width: 50%;
+    display: inline-block;
+    height: 100%;
+}
+
+
+#changelist-search {
+    width: 41%;
+    display: inline-block;
+    margin-left: 12%;
+    height: 50%;
+}
+
+
+#changelist {
+    position: relative;
+}
+
+.program_content {
+    width: 90%;
+    margin: auto;
+}
+
+#changelist-search label {
+    display: none;
+}
+
+.reg_no {
+    position: absolute;
+}
+#changelist-search input[type="submit"] {
+    display: inline-block;
+}
+
+form#changelist-search {
+    position: absolute;
+    top: 0;
+}
+
+label.reg_no {
+    width: 130px;
+    height: 80px;
+    display: inline-block;
+    top: 30px;
+    left: 20px;
+    font-size: 17px;
+}
+
+.program_content {
+    margin-top: 4%;
+}
+
+.program_content label {
+    font-size: 17px;
+    margin-top: 8px;
+    display: inline-block;
+}
+
+.program_content .prog {
+    width: 320px;
+    height: 21px;
+    border-radius: 0;
+    margin-left: 30px;
+    font-size: 12px;
+}
+
+#toolbar {
+    width: 100%;
+    height: 150px;
+}
+
+body.app-bnmc_project.model-student_registration.change-list thead th {
+    background-color: #119146;
+    color: #fff !important;
+}
+body.app-bnmc_project.model-student_registration.change-list .text a:hover {
+    background-color: #119146 !important;
+}
+
+body.app-bnmc_project.model-student_registration.change-list .text a {
+    color: #fff !important;
+}
+
+.main_obj {
+   width: 100%;
+    background-color: #eee;
+}
+
+.type_ins {
+    width: 47%;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.type_program {
+    width: 49%;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+div#toolbar {
+    height: 300px;
+}
+
+.ins_cat {
+    width: 47%;
+    display: inline-block;
+    margin-top: 0%;
+    margin: 10px 4px 0px 8px;
+}
+
+.session_filter {
+    width: auto;
+    display: inline-block;
+    margin: 0px 0px 0px 65px;
+    
+}
+
+.program_cat {
+    width: 48%;
+    display: inline-block;
+    margin-top: 0%;
+    margin-left: 16px;
+}
+
+.session_filter select{
+    width: 294px;
+    height: 36px;
+    margin-left: 18.2%;
+}
+
+.reg_nooo input {
+    margin-left: 65px;
+    width: 200px;
+    height: 26px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px 6px;
+}
+
+
+.ins_cat select {
+    width: 294px;
+    height: 36px;
+    margin-left: 6.3%;
+}
+
+select.prog_cat_select {
+    width: 294px;
+    margin-left: 7.5%;
+    height: 36px;
+}
+
+.type_program select {
+    width: 294px;
+    height: 36px;
+    margin-left: 7%;
+}
+
+.type_ins select {
+    width: 294px;
+    height: 36px;
+    margin-left: 8.3%;
+}
+
+
+.ins_name {
+    width: 80%;
+    display: inline-block;
+    margin-top: 0%;
+    margin: 0px 0px 0px 28px;
+}
+
+select.ins_name__ {
+    width: 294px;
+    margin-left: 10%;
+    height: 36px;
+}
+button.cls {
+    display: block;
+    margin: auto;
+    width: 110px;
+    height: 30px;
+    background-color: #119146;
+    border: 0;
+    color: #fff;
+    margin-top: 10px;
+    font-size: 17px;
+    border-radius: 4px;
+    text-transform: uppercase;
+
+    font-weight: bold;
+}
+
+
+}
+form#change label {
+    font-size: 16px;
+}
+
+form#change {
+    width: 90%;
+    margin: auto;
+    height: 282px;
+}
+
+.reg_nooo {
+    width: auto;
+    margin: 10px;
+    display: inline-block;
+}
+
+input[type="number"] {
+    margin-left: 41px;
+    width: 278px;
+    height: 22px;
+}
+
+.ins_name_ {
+    height: 50px;
+}
+
+input#reg {
+    width: 57% !important;
+}
+
+div#changelist-filter {
+    display: none;
+}
+
+
+.model-examinationstudentregistration .results {
+
+    margin-right: 0 !important;
+
+}
+
+.model-examinationstudentregistration .object-tools {
+
+    margin-top: 14px;
+
+}
+
+.model-examinationstudentregistration #progeram_type {
+    margin-left: 14% !important;
+}
+
+.model-examinationstudentregistration #reg_no {
+    height: 26px !important;
+}
+
+
+.model-student_registration .main_obj {
+    height: 220px;
+}
+
+button.cls:before {
+    pointer-events: none;
+    position: absolute;
+    z-index: -1;
+    content: '';
+    top: 100%;
+    left: 5%;
+    height: 10px;
+    width: 90%;
+    opacity: 0;
+    background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform, opacity;
+    transition-property: transform, opacity;
+}
+
+button.cls {
+    padding: 4px 5px;
+    display: block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+
+
+button.cls:hover {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+
+
+
+button.cls:active {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+
+
+button.cls:focus {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+
+button.cls:visited {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+
+button.cls:hover:before {
+    opacity: 1;
+    -webkit-transform: translateY(5px);
+    transform: translateY(5px);
+}
+
+
+.model-student_registration .actions {
+    padding-right: 0 !important;
+    width: 1190px;
+}
+
+
+.model-intuitionprofile .results {
+    margin-right: 0 !important;
+    padding: 5px;
+}
+
+
+.model-intuitionprofile .object-tools {
+    margin: 0;
+    margin-top: 3%;
+    }
+
+
+.model-intuitionprofile .cls {
+    margin-top: 4% !important;
+}
+
+
+.model-intuitionprofile .main_obj {
+    padding: 10px 0px 1px 1px;
+}
+
+.model-intuitionprofile .paginator {
+    margin: 0 !important;
+    background-color: #eee !important;
+}

@@ -1,0 +1,72 @@
+#content {
+    width: 900px;
+    margin: auto;
+    background-color: #eee;
+    margin-top: 20px !important;
+}
+
+ul.object-tools {
+    margin-top: 1%;
+    z-index: 1000;
+}
+
+a.addlink {
+    border-radius: 0;
+}
+
+.actions {
+    background-color: #eee !important;
+}
+
+tr.row1 {
+    background-color: #eee;
+}
+
+#result_list tr {
+    background-color: #eee;
+}
+
+p.paginator {
+    background-color: #eee !important;
+}
+
+#changelist table tbody tr.selected {
+    background-color: #fff !important;
+}
+
+
+.form-row.field-minimum_qualification {
+    width: 100%;
+    display: block;
+    background-color: #eee;
+}
+
+
+.form-row.field-name input {
+    width: 300px;
+    height: 26px;
+}
+
+.submit-row {
+    background-color: #eee;
+}
+
+.form-row.field-relation {
+    background-color: #eee;
+}
+
+.form-row.field-quota_name {
+    background-color: #eee;
+}
+
+.form-row.field-nationality_name {
+    background-color: #eee;
+}
+
+fieldset.module.aligned {
+    background-color: #eee;
+}
+
+fieldset.module.aligned select {
+    width: 272px;
+}

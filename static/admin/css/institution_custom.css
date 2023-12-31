@@ -1,0 +1,88 @@
+#content {
+    width: 900px;
+    margin: auto;
+    background-color: #eee;
+        margin-top: 20px;
+}
+
+ul.object-tools {
+    margin-top: 1%;
+    z-index: 1000;
+}
+
+a.addlink {
+    border-radius: 0;
+}
+
+.actions {
+    background-color: #eee !important;
+}
+
+tr.row1 {
+    background-color: #eee;
+}
+
+#result_list tr {
+    background-color: #eee;
+}
+
+
+.module {
+    border: none;
+    margin-bottom: 30px;
+    background: #eee;
+
+}
+
+.form-row.field-division {
+    width: 65%;
+    display: inline-block;
+}
+
+.form-row.field-district {
+    width: 65%;
+    display: inline-block;
+}
+
+.form-row.field-thana {
+    width: 65%;
+    display: inline-block;
+}
+
+.form-row.field-village {
+    width: 60%;
+    display: inline-block;
+}
+
+.form-row.field-post_office {
+    width: 60%;
+    display: inline-block;
+}
+
+
+fieldset.module.aligned select {
+    width: 314px;
+    height: 36px;
+    border-radius: 4px;
+}
+
+p.paginator {
+    background-color: #eee !important;
+}
+
+.form-row input {
+    width: 300px;
+    height: 26px;
+}
+
+.form-row {
+    background-color: #eee;
+}
+
+.submit-row {
+    background-color: #eee;
+}
+
+.dashbord_in {
+    display: none;
+}

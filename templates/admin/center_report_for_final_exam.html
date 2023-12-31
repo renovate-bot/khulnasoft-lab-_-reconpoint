@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load i18n static %}
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/center_report.css">
+
+    <style>
+
+@media print {
+        @page {
+  size: landscape;
+  
+}
+
+table { page-break-inside:auto }
+tr    { page-break-inside:avoid; page-break-after:auto }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  border-right: 1px solid;
+    border-left: 1px solid;
+}
+
+}
+
+
+th.s_n {
+    width: 13%;
+}
+
+td.last_name {
+    width: 13%;
+
+}
+
+
+th.f_n {
+    width: 14%;
+}
+
+td.f_name {
+    width: 14%;
+}
+
+
+th.ins {
+    width: 17%;
+}
+
+
+td.ins {
+    width: 17%;
+}
+
+th.sig_sec {
+    font-size: 12px;
+    width: 3%;
+    border-right: 1px solid !important;
+}
+
+td.sig_sec {
+    width: 3%;
+    border-right: 1px solid !important;
+
+}
+
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  border-right: 1px solid;
+    border-left: 1px solid;
+}
+
+tbody {
+    border: 1px solid;
+}
+
+tr{
+border-bottom: 1px solid;
+}
+
+#profile_img{
+    width: 50px;
+    height: 50px;
+}
+
+
+img#sig {
+    width: 70px;
+    height: 40px;
+}
+    </style>
+</head>
+<body>
+
+<div class="header">
+
+    <label class="h1">Bangladesh Nursing and Midwifery Council </label>
+    <label class="h2">Final Examination-{{center.exam}}</label>
+    <div class="h3"><label>Date: {{center.exam.exam_date}}</label> <span>Time 10:00 AM</span></div>
+    <label class="h4">Center Name: {{center.center}}</label>
+    <!--<label class="h5">Location: {{center.hall_name}} Room No: {{center.room_name}}</label>-->
+    <label class="actendance_sheet">Attendance Sheet</label>
+
+</div>
+
+<div style="overflow-x:auto;">
+  <table>
+    <tr>
+      <th>Roll</th>
+      <th>STD Id</th>
+      <th>Picture</th>
+      <th>Student Name</th>
+      <th>Father's Name</th>
+      <th>NI/NC</th>
+      <th>Admit<br>Signature</th>
+         {% for p in exam_subs %}
+    <th style="font-size: 12px;">{{p}}</th>
+ {% endfor %}
+        {% if max_len > '2' %}
+         {% for p in range %}
+    <th style="font-size: 7px;">practical</th>
+ {% endfor %}
+
+
+        {% else %}
+        {% for p in range %}
+    <th style="font-size: 12px;">practical</th>
+ {% endfor %}
+
+        {% endif %}
+
+    </tr>
+      {% for i in license %}
+    <tr>
+      <td>{{i.roll_number}}</td>
+      <td>{{i.student_id}}</td>
+      <td>{% if i.student_registration.image %}<img id="profile_img" src="{{i.student_registration.image.url}}">{% endif %}</td>
+      <td>{{i.last_name}}</td>
+      <td>{{i.fathers_name}}</td>
+      <td>{{i.institute}}</td>
+      <td>{% if i.student_signature %}<img id="sig" src="{{i.student_signature.url}}">{% endif %}</td>
+
+        {% for p in exam_subs %}
+     <td></td>
+ {% endfor %}
+
+
+        {% if max_len > '2' %}
+         {% for p in range %}
+         <td style="font-size: 7px;></td>
+ {% endfor %}
+
+
+        {% else %}
+        {% for p in range %}
+    <td></td>
+ {% endfor %}
+
+        {% endif %}
+
+
+
+       {% endfor %}
+
+
+  </table>
+</div>
+
+
+<!--<table class="first_table">-->
+  <!--<tr>-->
+    <!--<th class="roll">Roll<br>Number</th>-->
+    <!--<th class="roll">Roll<br>Student Id</th>-->
+    <!--<th class="pic">Picture</th>-->
+    <!--<th class="s_n">Student Name</th>-->
+    <!--<th class="f_n">Father's Name</th>-->
+    <!--<th class="ins">NI/NC</th>-->
+    <!--<th class="sig">Admit<br>Signature</th>-->
+
+    <!--{% for p in range %}-->
+    <!--<th>Signature</th>-->
+ <!--{% endfor %}-->
+
+  <!--</tr>-->
+     <!--{% for i in license %}-->
+  <!--<tr>-->
+
+    <!--<td class="roll">{{i.rool_number}}</td>-->
+    <!--<td class="roll">{{i.student_id}}</td>-->
+    <!--<td class="img"><img src="{{i.image_sec.url}}"></td>-->
+    <!--<td class="last_name">{{i.last_name}}</td>-->
+    <!--<td class="f_name">{{i.fathers_name}}</td>-->
+    <!--<td class="ins">{{i.institution}}</td>-->
+
+    <!--<td class="sig">{% if i.signature_first %}<img src="{{i.signature_first.url}}">{% endif %}</td>-->
+    <!--{% for p in range %}-->
+    <!--<td width="100%"></td>-->
+       <!--{% endfor %}-->
+  <!--</tr>-->
+    <!--{% endfor %}-->
+
+<!--</table>-->
+
+<div class="foter">
+        <div> <label>Total Candidate = {{len}}</label><span class="sp">Absent=</span></div>
+
+<img class="att" src="/static/admin/img/attende.png">
+</div>
+
+
+
+
+
+</body>
+</html>

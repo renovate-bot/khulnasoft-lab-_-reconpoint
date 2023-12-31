@@ -1,0 +1,38 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="/static/admin/css/upload.css"> {% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <a href="{% url 'admin:index' %}">{% trans 'HOME' %}</a>
+    {% if title %} &rsaquo; {{ title }}{% endif %}
+    <a href="/admin/search_list/"> › SEARCH</a>
+</div>
+{% endblock %}
+{% block content %}
+
+
+     {% if user.is_superuser %}
+<form method="POST" enctype="multipart/form-data" class="upload_csv">
+    {% csrf_token %}
+    <select name="exams" class="select_exam">
+        {% for p in exam %}
+        <option value="{{p.id}}">{{p.exam_name}}</option>
+        {% endfor %}
+
+    </select>
+
+
+    <input type="file" name="file" class="upload" accept=".csv">
+    <input type="submit" name="submit">
+
+
+</form>
+ {% endif %}
+
+{% endblock %}

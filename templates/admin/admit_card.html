@@ -1,0 +1,200 @@
+﻿<html>
+<head><meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+span.cls_002{font-family:Arial,serif;font-size:15.8px;color:rgb(51,51,51);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_002{font-family:Arial,serif;font-size:15.8px;color:rgb(51,51,51);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_003{font-family:Arial,serif;font-size:8.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_003{font-family:Arial,serif;font-size:8.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_004{font-family:Arial,serif;font-size:8.3px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_004{font-family:Arial,serif;font-size:8.3px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_005{font-family:Arial,serif;font-size:8.3px;color:rgb(0,128,0);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_005{font-family:Arial,serif;font-size:8.3px;color:rgb(0,128,0);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_006{font-family:Arial,serif;font-size:9.8px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_006{font-family:Arial,serif;font-size:9.8px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_007{font-family:Arial,serif;font-size:8.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_007{font-family:Arial,serif;font-size:8.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+-->
+
+
+@media print {
+
+@page {
+        size: 8.27in 11.69in;
+        margin: 0px;
+         width: 21cm;
+
+}
+
+
+
+
+
+
+.main {
+    page-break-after: always;
+    width: 612px;
+    height: 792px;
+}
+
+body {
+    width: 612px;
+    margin: auto;
+    height: 792px;
+    overflow: hidden;
+}
+
+
+
+img.print_image {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+</style>
+<script type="text/javascript" src="3294e558-b268-11e8-b59b-0cc47a792c0a_id_3294e558-b268-11e8-b59b-0cc47a792c0a_files/wz_jsgraphics.js"></script>
+</head>
+<body>
+
+
+  {% for p in students %}
+
+<div class="main" style="position:relative;margin: auto;top:0px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+
+
+<img src="/static/admin/print/admit_beg.jpg" class="print_image" width=612 height=792></div>
+<div style="position:absolute;left:155.61px;top:36.50px" class="cls_002"><span class="cls_002">Bangladesh Nursing and Midwifery Council</span></div>
+<div style="position:absolute;left:183.76px;top:62.75px" class="cls_003"><span class="cls_003">203, Shaheed Sayed Nazrul Islam Sarani, Bijoynagar, Dhaka-1000</span></div>
+<div style="position:absolute;left:272.59px;top:71.00px" class="cls_003"><span class="cls_003"> </span><A HREF="http://www.bnmc.gov.bd/">www.bnmc.gov.bd</A> </div>
+<div style="position:absolute;left:228.73px;top:79.25px" class="cls_004"><span class="cls_004">Comprehensive/Licensing Examination</span></div>
+<div style="position:absolute;left:222.55px;top:95.75px" class="cls_005"><span class="cls_005">Diploma in Nursing Science and Midwifery</span></div>
+<div style="position:absolute;left:279.48px;top:111.50px" class="cls_006"><span class="cls_006">Admit Card</span></div>
+<div style="position:absolute;left:154.13px;top:129.50px" class="cls_004"><span class="cls_004">Examination Center</span></div>
+<div style="position:absolute;left:490.22px;top:28.50px" class="cls_004">
+    <span class="cls_004">
+        {%if p.image_sec %}
+            <img width="100px" height="100px" src="/media/{{p.image_sec}}" />
+        {% endif %}
+    </span>
+</div>
+
+<div style="position:absolute;left:515.22px;top:129.50px" class="cls_004"><span class="cls_004">Roll Number</span></div>
+<div style="position:absolute;left:391.52px;top:138.50px" class="cls_004"><span class="cls_004">Student ID: {{p.registration_no}}</span></div>
+<div style="position:absolute;left:525.98px;top:139.25px" class="cls_004"><span class="cls_004">{{p.rool_number}}</span></div>
+<div style="position:absolute;left:147.72px;top:140.75px" class="cls_005"><span class="cls_005">Dhaka Nursing College</span></div>
+<div style="position:absolute;left:99.82px;top:152.00px" class="cls_003"><span class="cls_003">Location: </span><span class="cls_005">Dhaka Nursing College (New Building)</span></div>
+<div style="position:absolute;left:388.06px;top:155.75px" class="cls_004"><span class="cls_004">Session: {{p.session}}</span></div>
+<div style="position:absolute;left:122.97px;top:163.25px" class="cls_003"><span class="cls_003">Room No:</span><span class="cls_005"> Class Room-1 (2nd Floor)</span></div>
+<div style="position:absolute;left:32.00px;top:179.00px" class="cls_003"><span class="cls_003">1. Name of Examinee:</span></div>
+<div style="position:absolute;left:164.75px;top:179.00px" class="cls_004"><span class="cls_004">{{p.first_name}} {{p.last_name}}</span></div>
+<div style="position:absolute;left:32.00px;top:190.25px" class="cls_003"><span class="cls_003">2. Father's Name:</span></div>
+<div style="position:absolute;left:164.75px;top:190.25px" class="cls_004"><span class="cls_004">{{p.fathers_name}}</span></div>
+<div style="position:absolute;left:32.00px;top:201.50px" class="cls_003"><span class="cls_003">3. Mother's Name:</span></div>
+<div style="position:absolute;left:164.75px;top:201.50px" class="cls_004"><span class="cls_004">{{p.mothers_name}}</span></div>
+<div style="position:absolute;left:32.00px;top:212.75px" class="cls_003"><span class="cls_003">4. Institute/ College:</span></div>
+<div style="position:absolute;left:164.75px;top:212.75px" class="cls_004"><span class="cls_004">{{p.institution}}</span></div>
+<div style="position:absolute;left:32.00px;top:224.00px" class="cls_003"><span class="cls_003">5. Examination Date:</span></div>
+<div style="position:absolute;left:164.75px;top:224.00px" class="cls_005"><span class="cls_005">{{p.program_title.exam_date|date}}</span></div>
+<div style="position:absolute;left:32.00px;top:235.25px" class="cls_003"><span class="cls_003">5. Examination Time:</span></div>
+<div style="position:absolute;left:164.75px;top:235.25px" class="cls_005"><span class="cls_005">{{p.program_title.exam_date|time}}</span></div>
+
+<div style="position:absolute;left:93.70px;top:248.25px" class="cls_004">
+    <span class="cls_004">
+        {% if p.signature_first %}
+        <img width="143px" height="23px" src="{{p.signature_first.url}}" />
+        {% endif %}
+    </span>
+</div>
+<div style="position:absolute;left:93.70px;top:265.25px" class="cls_004"><span class="cls_004">----------------------------------------------------</span></div>
+<div style="position:absolute;left:371.20px;top:265.25px" class="cls_004"><span class="cls_004">----------------------------------------------------</span></div>
+<div style="position:absolute;left:371.20px;top:245.25px" class="cls_004"><span class="cls_004">{{p.principal_signature.url}}</span></div>
+
+<div style="position:absolute;left:120.65px;top:273.50px" class="cls_004"><span class="cls_004">Signature of Examinee</span></div>
+<div style="position:absolute;left:424.51px;top:273.50px" class="cls_004"><span class="cls_004">Registrar</span></div>
+<div style="position:absolute;left:29.75px;top:289.25px" class="cls_007"><span class="cls_007"><b>পরীক্ষার্থীদের প্রতি নির্দেশাবলীঃ </b> </span></div>
+
+<div style="position:absolute;left:30.50px;top:299.00px" class="cls_007"><span class="cls_007">১</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:47.75px;top:299.00px" class="cls_007"><span class="cls_007">
+
+
+পরীীক্ষার্থীর উত্তরপত্রের নির্ধারিত অংশ বতীত নিজের নাম লিখলে বা অপ্রয়োজনীয় দাগ দিলে উত্তর পত্র বাতিল বলে গণ্য হবে।
+</span></div>
+<div style="position:absolute;left:69.76px;top:299.00px" class="cls_007"><span class="cls_007"></span></div>
+<div style="position:absolute;left:291.15px;top:299.00px" class="cls_007"><span class="cls_007"></span></div>
+<div style="position:absolute;left:30.50px;top:310.25px" class="cls_007"><span class="cls_007">২</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:47.75px;top:310.25px" class="cls_007"><span class="cls_007">উত্তরপত্রের নিদিষ্ট জায়গায় নিজ রোল নম্বর ও কাউন্সিলের Student ID নম্বর কালো কালির বলপেন দ্বারা লিখে নিচের সঠিক বৃও পূরণ করতে হবে।</span></div>
+<div style="position:absolute;left:231.91px;top:310.25px" class="cls_007"><span class="cls_007"></span><span class="cls_003">  </span><span class="cls_007"></span><span class="cls_003">  </span><span class="cls_007"></span><span class="cls_003"> </span><span class="cls_007"></span><span class="cls_003"> </span><span class="cls_007"></span><span class="cls_003"> </span><span class="cls_007"></span></div>
+<div style="position:absolute;left:390.85px;top:310.25px" class="cls_007"><span class="cls_007"></span></div>
+<div style="position:absolute;left:30.50px;top:321.50px" class="cls_007"><span class="cls_007">৩</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:47.75px;top:321.50px" class="cls_007"><span class="cls_007">বৃও সঠিকভাবে পূরণ না করা হলে উত্তর পত্র বাতিল বলে গণ্য হবে।</span></div>
+<div style="position:absolute;left:30.50px;top:332.75px" class="cls_007"><span class="cls_007">৪</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:47.75px;top:332.75px" class="cls_007"><span class="cls_007">পরীক্ষা চলাকালীন সময়ে কেন্দ্র প্রধানের সিদ্ধান্ত চূড়ান্ত বলে গণ্য হবে।</span></div>
+<div style="position:absolute;left:69.76px;top:332.75px" class="cls_007"><span class="cls_007"></span></div>
+<div style="position:absolute;left:162.45px;top:332.75px" class="cls_007"><span class="cls_007"></span></div>
+<div style="position:absolute;left:199.57px;top:332.75px" class="cls_007"><span class="cls_007"></span></div>
+<div style="position:absolute;left:210.76px;top:332.75px" class="cls_007"><span class="cls_007"></span></div>
+<div style="position:absolute;left:30.50px;top:344.00px" class="cls_007"><span class="cls_007">৫</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:47.75px;top:344.00px" class="cls_007"><span class="cls_007">পরীক্ষা শুরু হতে শেষ না হওয়া পর্যন্ত পরীক্ষার্থী হলের বাইরে যেতে পারবে না।</span></div>
+<div style="position:absolute;left:69.76px;top:344.00px" class="cls_007"><span class="cls_007"></span></div>
+
+
+<div style="position:absolute;left:91.32px;top:344.00px" class="cls_007"><span class="cls_007"></span></div>
+<div style="position:absolute;left:199.35px;top:344.00px" class="cls_007"><span class="cls_007"></span></div>
+<div style="position:absolute;left:30.50px;top:355.25px" class="cls_007"><span class="cls_007">৬</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:47.75px;top:355.25px" class="cls_007"><span class="cls_007">পরীক্ষার হলে যে কোন অসদুপায় অবলম্বন করলে কাউন্সিলের নিয়ম অনুযায়ী শাস্তি প্রদান করা হবে।</span></div>
+<div style="position:absolute;left:69.76px;top:355.25px" class="cls_007"><span class="cls_007"></span></div>
+<div style="position:absolute;left:250.79px;top:355.25px" class="cls_007"><span class="cls_007"></span></div>
+<div style="position:absolute;left:337.52px;top:355.25px" class="cls_007"><span class="cls_007"></span></div>
+<div style="position:absolute;left:47.75px;top:366.50px" class="cls_007"><span class="cls_007">পরীক্ষার হলে প্রবেশপত্র কলম পেন্সিল,স্কেল ব্যতীত অতিরিক্ত কাগজ, মোবাইল ফোন ও যেকোনো ইলেকট্রনিক্স ডিভাইস/ক্যালকুলেটর নিয়ে প্রবেশ</span></div>
+<div style="position:absolute;left:69.76px;top:366.50px" class="cls_007"><span class="cls_007"></span></div>
+<div style="position:absolute;left:102.58px;top:366.50px" class="cls_007"><span class="cls_007"></span></div>
+
+
+
+<div style="position:absolute;left:130.50px;top:366.50px" class="cls_003"><span class="cls_003">  </span><span class="cls_007"></span><span class="cls_003">  </span><span class="cls_007"></span><span class="cls_003">   </span><span class="cls_007"></span><span class="cls_003">    </span><span class="cls_007"></span><span class="cls_003"> </span><span class="cls_007"></span><span class="cls_003"> </span><span class="cls_007"></span><span class="cls_003"> </span><span class="cls_007"></span><span class="cls_003">   </span><span class="cls_007"></span><span class="cls_003">  </span><span class="cls_007"></span><span class="cls_003">  </span><span class="cls_007"></span><span class="cls_003"> </span><span class="cls_007"></span><span class="cls_003">  </span><span class="cls_007"></span><span class="cls_003"> </span><span class="cls_007"></span><span class="cls_003"> </span><span class="cls_007"></span><span class="cls_003">  </span><span class="cls_007"></span></div>
+<div style="position:absolute;left:454.44px;top:366.50px" class="cls_007"><span class="cls_007"></span><span class="cls_003"></span><span class="cls_007"></span><span class="cls_003"> </span><span class="cls_007"></span><span class="cls_003"> </span><span class="cls_007"></span></div>
+<div style="position:absolute;left:557.27px;top:366.50px" class="cls_007"><span class="cls_007"></span></div>
+<div style="position:absolute;left:30.50px;top:370.25px" class="cls_007"><span class="cls_007">ক</span><span class="cls_003">)</span></div>
+<div style="position:absolute;left:47.75px;top:374.75px" class="cls_007"><span class="cls_007">নিষেধ।</span></div>
+    <div style="position:absolute;left:47.75px;top:386.00px" class="cls_007"><span class="cls_007">পরীক্ষার হলে বা বাইের কোন পরীক্ষক বা পরীক্ষা সংশ্লিষ্ট কোন ব্যক্তির সাথে/অশোভন আচরণ/ভাষা ব্যাবহার /ভীতি প্রদর্শন করলে কাউন্সিলের সিদ্ধান্তক্রমে <br> পরীক্ষা হতে বহিস্কার করা হবে।</span></div>
+<div style="position:absolute;left:69.76px;top:386.00px" class="cls_007"><span class="cls_007"></span></div>
+<div style="position:absolute;left:211.67px;top:386.00px" class="cls_007"><span class="cls_007"></span></div>
+<div style="position:absolute;left:245.01px;top:386.00px" class="cls_007"><span class="cls_007"></span><span class="cls_003"> </span><span class="cls_007"></span><span class="cls_003"> </span><span class="cls_007"></span><span class="cls_003">   </span><span class="cls_007"></span><span class="cls_003"> </span><span class="cls_007"></span><span class="cls_003"></span><span class="cls_007"></span><span class="cls_003"> </span><span class="cls_007"></span><span class="cls_003"> </span><span class="cls_007"></span><span class="cls_003"> </span><span class="cls_007"></span><span class="cls_003"> </span><span class="cls_007"></span><span class="cls_003"> </span><span class="cls_007"></span><span class="cls_003">   </span><span class="cls_007"></span><span class="cls_003"> </span><span class="cls_007"></span><span class="cls_003"> </span><span class="cls_007"></span></div>
+<div style="position:absolute;left:515.15px;top:386.00px" class="cls_007"><span class="cls_007"></span></div>
+<div style="position:absolute;left:547.31px;top:386.00px" class="cls_007"><span class="cls_007"></span></div>
+<div style="position:absolute;left:565.18px;top:386.00px" class="cls_007"><span class="cls_007"></span></div>
+<div style="position:absolute;left:30.50px;top:389.75px" class="cls_007"><span class="cls_007">খ</span><span class="cls_003">)</span></div>
+<div style="position:absolute;left:47.75px;top:394.25px" class="cls_007"><span class="cls_007"></span></div>
+<div style="position:absolute;left:69.76px;top:394.25px" class="cls_007"><span class="cls_007"></span></div>
+<div style="position:absolute;left:110.41px;top:394.25px" class="cls_007"><span class="cls_007"></span></div>
+<div style="position:absolute;left:30.50px;top:405.50px" class="cls_007"><span class="cls_007">৭</span><span class="cls_003">.   </span><span class="cls_007">পরীক্ষার হলে ধূমপান সম্পূর্ণভাবে নিষেধ।</span></div>
+<div style="position:absolute;left:69.76px;top:405.50px" class="cls_007"><span class="cls_007"></span></div>
+<div style="position:absolute;left:187.39px;top:405.50px" class="cls_007"><span class="cls_007">।</span></div>
+</div>
+
+
+{% endfor %}
+
+</body>
+</html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>REGISTERED NURSE-MIDWIFE INFORMATION</title>
+</head>
+<div class="body">
+
+
+
+
+<form method="post">
+   {% csrf_token %}
+<div class="text">
+    <label>FIND REGISTERED NURSE</label>
+</div>
+
+<div class="reg">
+    <label>BNMC Registration #</label>
+    <span><input type="number" name="number"></span>
+
+
+</div>
+    <div class="pro">
+
+        <label>Registration Type:
+</label>
+        <span>
+
+            <select name="program">
+                <option value="0">Select Registration Type</option>
+    {% for i in program_objs %}
+    <option value="{{i.id}}">{{i}}</option>
+
+    {% endfor %}
+
+</select>
+
+        </span>
+
+    </div>
+
+    <div class="button">
+        <button>Search</button>
+
+    </div>
+</div>
+
+</form>
+
+{% if qr %}
+
+<div class="results">
+    <div class="t2"><span>REGISTERED NURSE-MIDWIFE INFORMATION</span></div>
+<div class="info">
+
+
+<div class="name">
+    <label>Full Name: (English): </label>
+    <strong>{{info_student.license_receive_id.last_name}}</strong>
+
+</div>
+
+
+    <div class="name">
+    <label>Father's Name:</label>
+    <strong>{{info_student.license_receive_id.fathers_name}}</strong>
+
+</div>
+
+
+    <div class="name">
+    <label>Mother's Name:</label>
+    <strong>{{info_student.license_receive_id.mothers_name}}</strong>
+
+</div>
+
+     <div class="p_add">
+    <label>Permanent Address:</label>
+    <strong>{{info_student.license_receive_id.village}}, {{info_student.license_receive_id.thana}}, {{info_student.license_receive_id.district}},  {{info_student.license_receive_id.division}}</strong>
+
+</div>
+
+
+    <div class="name">
+    <label>Working Place:</label>
+    <strong>Dhaka Medical College & Hospital</strong>
+
+</div>
+
+        <div class="position">
+    <label>Position:</label>
+    <strong>Dhaka Medical College & Hospital</strong>
+
+</div>
+
+</div>
+
+    <div class="img">
+
+        {% if info_student.license_receive_id.image %}
+
+      <img class="im" src='{{info_student.license_receive_id.image.url}}' style='width: 100px;'>
+        {% endif %}
+    </div>
+
+</div>
+
+
+<table style="width: 80%;margin: auto;">
+  <tr>
+    <th>Registration
+NO
+</th>
+    <th>Course Name</th>
+    <th>Institution</th>
+    <th>Date of Registration</th>
+    <th>Date of Renew</th>
+    <th>Renew Upto</th>
+    <th>Status</th>
+  </tr>
+     {% for i,n in  qr%}
+  <tr>
+
+        <td>{{i.license_number}}</td>
+        <td>{{i.program}}</td>
+        <td>{{i.institution}}</td>
+        <td>{{i.license_registration_date}}</td>
+        <td>{{i.license_start_date}}</td>
+        <td>{{i.license_end_date}}</td>
+
+
+
+            {% if n == 'Renewed' %}
+
+        <td style="color: green;"> {{n}}</td>
+
+
+
+            {% else %}
+       <td style="color: red;"> {{n}}</td>
+
+      {% endif %}
+
+
+  </tr>
+     {% endfor %}
+
+</table>
+
+{% endif %}
+
+
+</body>
+</html>
+
+
+<style>
+
+table, th, td {
+    border: dotted 1px;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+
+img.im {
+    margin-left: 17%;
+    margin-top: 10%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.img {
+    width: 30%;
+    display: inline-block;
+    height: 272px;
+}
+
+.p_add strong {
+    display: inline-block;
+    width: 40%;
+    height: 100%;
+    margin-left: 10px;
+}
+
+.position strong {
+    display: inline-block;
+    margin-left: 10px;
+    height: 100%;
+}
+
+.position label {
+    width: 35%;
+    display: inline-block;
+    height: 100%;
+    text-align: left;
+    text-indent: 10px;
+}
+.position {
+    height: 33px;
+    padding-top: 9px;
+
+    float: right;
+    width: 60%;
+}
+
+
+.p_add strong {
+    display: inline-block;
+    width: 60%;
+    height: 100%;
+        font-size: 14px;
+    margin-left: 10px;
+}
+.p_add label {
+    width: 35%;
+    display: inline-block;
+    height: 100%;
+    text-align: left;
+    text-indent: 10px;
+        float: left;
+}
+
+.p_add {
+
+    height: 56px;
+    float: right;
+    width: 60%;
+        padding-top: 9px;
+}
+.t2 span {
+    font-size: 18px;
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.t2 {
+    height: 40px;
+    text-align: center;
+    background-color: #F1F1F1;
+    margin-top: 34px;
+}
+
+.name strong {
+    display: inline-block;
+    margin-left: 10px;
+}
+.name label {
+    width: 35%;
+    display: inline-block;
+    height: 100%;
+    text-align: left;
+    text-indent: 10px;
+}
+
+
+.name {
+    height: 33px;
+    padding-top: 9px;
+
+    float: right;
+    width: 60%;
+}
+
+
+.info {
+    width: 60%;
+    height: 280px;
+    display: inline-block;
+        float: left;
+
+}
+.results {
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+}
+
+button {
+    float: right;
+    width: 70px;
+    height: 23px;
+    background-color: #50b750;
+    border: 0;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 2px;
+}
+.button {
+    width: 40.6%;
+    display: inline-block;
+}
+.pro select {
+    width: 35%;
+    height: 66%;
+    display: inline-block;
+    margin-left: 10px;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+}
+.pro span {
+    width: 60%;
+    display: inline-block;
+    height: 100%;
+}
+
+.pro label {
+    display: inline-block;
+    width: 35%;
+    text-align: right;
+}
+
+
+.reg input {
+    width: 35%;
+    height: 50%;
+    display: inline-block;
+    margin-left: 10px;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+}
+.reg span {
+    width: 60%;
+    display: inline-block;
+        height: 100%;
+}
+
+
+.pro {
+    display: inline-block;
+    width: 100%;
+    height: 50px;
+}
+.reg {
+    display: inline-block;
+    margin-top: 14%;
+    width: 100%;
+    height: 50px;
+}
+.reg label {
+    display: inline-block;
+    width: 35%;
+    text-align: right;
+}
+
+.body {
+    width: 100%;
+    height: 400px;
+-webkit-box-shadow: 7px 10px 21px -7px #777;
+    -moz-box-shadow: 7px 10px 21px -7px #777;
+    box-shadow: 7px 10px 21px -7px #777;
+        position: relative;
+}
+.text {
+    width: 95%;
+    height: 40px;
+    display: block;
+    margin: auto;
+    background-color: #3671AC;
+    color: #fff;
+    text-align: center;
+    font-size: 21px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.text label {
+    margin-top: 7px;
+    display: inline-block;
+}
+
+
+</style>

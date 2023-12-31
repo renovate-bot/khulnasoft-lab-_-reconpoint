@@ -1,0 +1,1250 @@
+
+#student_file_set-group tr.add-row {
+    display: none;
+}
+#educationqualification_set-group tr.add-row {
+    display: none;
+}
+form#student_registration_form {
+    width: 1200px;
+    margin: auto;
+}
+
+.form-row.field-email_address {
+    width: 46%;
+    display: inline-block;
+}
+.form-row.field-students_mobile_no {
+    width: 43%;
+    display: inline-block;
+    margin-bottom: 38px;
+    margin-left: -68px;
+    padding-left: 0;
+    border: 0;
+}
+.form-row.field-passport_no {
+    width: 46%;
+    display: inline-block;
+}
+
+.form-row.field-national_ID_No {
+    width: 55%;
+    display: inline-block;
+    padding-right: 0;
+}
+
+
+.form-row.field-institution:after {
+    content: 'Registration Information';
+    font-size: 20px;
+    float: right;
+    background-color: #119146;
+    padding: 3px;
+    color: #fff;
+    box-shadow: 0 8px 6px -6px black;
+    text-align: center;
+    margin-top: 18px;
+}
+.form-row.field-marital_status {
+    width: 46%;
+    display: inline-block;
+}
+
+.form-row.field-religions {
+    width: 46%;
+    display: inline-block;
+}
+
+.form-row.field-sex {
+    width: 46%;
+    display: inline-block;
+}
+
+.form-row.field-date_of_birth {
+    width: 46%;
+    display: inline-block;
+}
+
+.form-row.field-nationality {
+    width: 46%;
+    display: inline-block;
+        position: relative;
+}
+
+.form-row.field-quota {
+    width: 46%;
+    display: inline-block;
+}
+
+.form-row.field-relation_to_guardian {
+    width: 46%;
+    display: inline-block;
+}
+
+.form-row.field-guardians_name {
+    width: 46%;
+    display: inline-block;
+}
+
+.form-row.field-mothers_name {
+    width: 46%;
+    display: inline-block;
+}
+
+.form-row.field-fathers_name {
+    width: 46%;
+    display: inline-block;
+}
+
+.form-row.field-last_name {
+    width: 46%;
+    display: inline-block;
+}
+
+.form-row.field-first_name {
+    width: 46%;
+    display: inline-block;
+}
+
+.form-row.field-registration_no {
+    width: 46%;
+    display: inline-block;
+}
+
+form#student_registration_form input, select {
+    border-radius: 0;
+}
+
+body.app-bnmc_project.model-student_registration.change-form #content-main {
+    width: 1200px !important;
+    margin: auto;
+    float: none !important;
+}
+
+.form-row.field-profile_photo {
+    width: 46%;
+    margin: auto;
+    margin-bottom: 19px;
+    border-bottom: 0;
+}
+
+.form-row.field-division {
+    width: 46%;
+    display: inline-block;
+        position: relative;
+}
+
+.form-row.field-district {
+    width: 46%;
+    display: inline-block;
+        position: relative;
+}
+
+.form-row.field-thana {
+    width: 46%;
+    display: inline-block;
+        position: relative;
+}
+
+.form-row.field-village {
+    width: 46%;
+    display: inline-block;
+}
+
+.form-row.field-post_office {
+    width: 46%;
+    display: inline-block;
+}
+
+.form-row.field-postal_code {
+    width: 46%;
+    display: inline-block;
+}
+
+.form-row.field-institution {
+    width: 58%;
+    display: inline-block;
+    padding-right: 0;
+}
+.form-row.field-date_of_registration {
+    width: 46%;
+    display: inline-block;
+}
+
+.form-row.field-program_starting_date {
+    width: 46%;
+    display: inline-block;
+}
+
+.form-row.field-program_title {
+    width: 46%;
+    display: inline-block;
+    margin-bottom: 39px;
+    margin-left: -109px;
+    padding-left: 0;
+    padding-bottom: 18px;
+    border: 0;
+}
+.form-row.field-payment_method {
+    width: 46%;
+    display: inline-block;
+}
+
+.form-row.field-registration_fees {
+    width: 46%;
+    display: inline-block;
+}
+
+.form-row.field-program_completion_date {
+    width: 46%;
+    display: inline-block;
+}
+
+.form-row.field-session {
+    width: 46%;
+    display: inline-block;
+    position: relative
+}
+
+.form-row.field-status {
+    width: 46%;
+    display: inline-block;
+}
+
+fieldset.module.aligned {
+    background-color: #eee;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+fieldset.module.aligned select {
+    width: 314px;
+    height: 36px;
+}
+
+fieldset.module.aligned input {
+    height: 24px;
+    width: 300px;
+}
+
+input#image-clear_id {
+    width: 15px !important;
+}
+
+.form-row.field-image_tag {
+    width: 50%;
+    margin: auto;
+    display: block;
+}
+
+.form-row.field-image_tag label {
+    display: none;
+}
+
+.form-row.field-image {
+    width: 40%;
+    margin: auto;
+    display: block;
+    padding: 0;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.form-row.field-image label {
+    text-align: right;
+    margin-top: 0.5px;
+}
+
+.form-row input {
+    border-radius: 4px !important;
+}
+
+.form-row {
+    margin-left: 2%;
+}
+
+.form-row select {
+    border-radius: 4px;
+}
+
+.form-row.field-image a {
+    display: none;
+}
+
+.form-row.field-image_tag {
+    height: 130px;
+    width: 130px;
+    margin-top: 15px !important;
+    display: block;
+    background-image: url(/static/admin/img/Facebook-no-profile-picture-icon-620x389.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 0;
+}
+
+img.bc_im {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.form-row.field-relation_to_guardians {
+    width: 46%;
+    display: inline-block;
+        position: relative;
+}
+
+
+
+.form-row.field-division_snd {
+    width: 46%;
+    display: inline-block;
+        position: relative;
+}
+
+.form-row.field-village_snd {
+    width: 46%;
+    display: inline-block;
+}
+
+.form-row.field-district_snd {
+    width: 46%;
+    display: inline-block;
+        position: relative;
+}
+
+.form-row.field-post_office_snd {
+    width: 46%;
+    display: inline-block;
+}
+
+.form-row.field-thana_snd {
+    width: 46%;
+    display: inline-block;
+        position: relative;
+}
+
+.form-row.field-postal_code_snd {
+    width: 46%;
+    display: inline-block;
+}
+
+.readonly img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 130px;
+    height: 130px;
+}
+.form-row.field-quota {
+    width: 46%;
+    display: inline-block;
+        position: relative;
+}
+
+
+
+.form-row.field-national_ID_No::after {
+    content: "Permanent Address";
+    font-size: 20px;
+    float: right;
+    background-color: #119146;
+    padding: 3px;
+    color: #fff;
+    box-shadow: 0 8px 6px -6px black;
+    margin-top: 10px;
+}
+
+.form-row.field-same_address::before {
+    content: "Present Address";
+    font-size: 20px;
+    width: 14%;
+    background-color: #119146;
+    padding: 3px;
+    color: #fff;
+    box-shadow: 0 8px 6px -6px black;
+    text-align: center;
+    display: block;
+    margin: auto;
+}
+
+
+select#id_program_title {
+    pointer-events: none;
+    background-color: #eee;
+    margin-left: 8px;
+}
+
+input#id_registration_no {
+    pointer-events: none;
+}
+
+
+.education_qualification {
+    width: 1200px;
+    height: 300px;
+    margin: auto;
+    background-color: #eeeeee;
+}
+
+span.edu {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    display: block;
+    font-size: 20px;
+}
+
+table.ed_qualification th {
+    border: 1px solid;
+}
+
+fieldset.module h2 {
+    width: 1290px;
+    padding: 0;
+    height: 50px;
+    background-color: #eee;
+    color: #000;
+    font-size: 20px;
+    text-align: center;
+}
+
+fieldset.module th {
+    background-color: #eee;
+    color: #000;
+    border: 1px solid;
+}
+
+fieldset.module tr {
+    background-color: #eee;
+}
+
+fieldset.module td {
+    border: 1px solid;
+}
+
+
+td.field-cgpa {
+    width: 74px;
+    display: inline-block;
+}
+
+td.field-cgpa input {
+    width: 45px;
+}
+
+
+
+p.errornote {
+    display: none;
+}
+
+
+.form-row.errors.field-last_name {
+    margin-left: 2%;
+}
+
+.form-row.errors.field-date_of_birth {
+    margin-left: 2%;
+}
+
+.form-row.errors.field-first_name {
+    margin-left: 2%;
+}
+
+.form-row.errors.field-fathers_name {
+    margin-left: 2%;
+}
+
+.form-row.errors.field-sex {
+    margin-left: 2%;
+}
+
+.form-row.errors.field-mothers_name {
+    margin-left: 2%;
+}
+
+.form-row.errors.field-religions {
+    margin-left: 2%;
+}
+
+.form-row.errors.field-relation_to_guardians {
+    margin-left: 2%;
+        position: relative;
+}
+
+.form-row.errors.field-quota {
+    margin-left: 2%;
+    position: relative;
+}
+
+.form-row.errors.field-nationality {
+    margin-left: 2%;
+    position: relative;
+}
+
+.form-row.errors.field-marital_status {
+    margin-left: 2%;
+}
+
+.form-row.errors.field-division {
+    margin-left: 2%;
+    position: relative;
+}
+
+.form-row.errors.field-post_office {
+    margin-left: 2%;
+}
+
+.form-row.errors.field-thana {
+    margin-left: 2%;
+        position: relative;
+}
+.form-row.errors.field-thana::before {
+    font-family: FontAwesome;
+    content: "\f071";
+    float: right;
+    color: red;
+    font-size: 18px;
+    right: 103px;
+    position: absolute;
+    top: 1%;
+}
+
+
+.form-row.errors.field-village {
+    margin-left: 2%;
+
+
+}
+
+.form-row.errors.field-district {
+    margin-left: 2%;
+    position: relative;
+}
+.form-row.errors.field-district::before {
+    font-family: FontAwesome;
+    content: "\f071";
+    float: right;
+    color: red;
+    font-size: 18px;
+    right: 103px;
+    position: absolute;
+    top: 1%;
+}
+
+.form-row.errors.field-division_snd::before {
+    font-family: FontAwesome;
+    content: "\f071";
+    float: right;
+    color: red;
+    font-size: 18px;
+    right: 103px;
+    position: absolute;
+    top: 1%;
+}
+
+.form-row.errors.field-district_snd::before {
+    font-family: FontAwesome;
+    content: "\f071";
+    float: right;
+    color: red;
+    font-size: 18px;
+    right: 103px;
+    position: absolute;
+    top: 1%;
+}
+
+.form-row.errors.field-thana_snd::before {
+    font-family: FontAwesome;
+    content: "\f071";
+    float: right;
+    color: red;
+    font-size: 18px;
+    right: 103px;
+    position: absolute;
+    top: 1%;
+}
+
+
+.form-row.errors.field-village_snd {
+    margin-left: 2%;
+}
+
+.form-row.errors.field-division_snd {
+    margin-left: 2%;
+     position: relative;
+}
+
+.form-row.errors.field-district_snd {
+    margin-left: 2%;
+     position: relative;
+}
+
+.form-row.errors.field-post_office_snd {
+    margin-left: 2%;
+}
+
+.form-row.errors.field-thana_snd {
+    margin-left: 2%;
+        position: relative;
+}
+
+.form-row.errors.field-institution {
+    margin-left: 2%;
+}
+
+.form-row.errors.field-payment_method {
+    margin-left: 2%;
+}
+
+
+
+.form-row.errors.field-first_name::before {
+    font-family: FontAwesome;
+    content: "\f071";
+    float: right;
+    margin-right: 15%;
+    color: red;
+    font-size: 18px;
+    margin-top: -2px;
+}
+
+.form-row.errors.field-last_name::before {
+    font-family: FontAwesome;
+    content: "\f071";
+    float: right;
+    margin-right: 15%;
+    color: red;
+    font-size: 18px;
+    margin-top: -2px;
+}
+
+.form-row.errors.field-date_of_birth::before {
+  font-family: FontAwesome;
+    content: "\f071";
+    float: right;
+    margin-right: 15%;
+    color: red;
+    font-size: 18px;
+    margin-top: -2px;
+}
+
+.form-row.errors.field-fathers_name::before {
+   font-family: FontAwesome;
+    content: "\f071";
+    float: right;
+    margin-right: 15%;
+    color: red;
+    font-size: 18px;
+    margin-top: -2px;
+}
+
+.form-row.errors.field-sex::before {
+    font-family: FontAwesome;
+    content: "\f071";
+    float: right;
+    margin-right: 15%;
+    color: red;
+    font-size: 18px;
+    margin-top: -2px;
+}
+
+.form-row.errors.field-mothers_name::before {
+  font-family: FontAwesome;
+    content: "\f071";
+    float: right;
+    margin-right: 15%;
+    color: red;
+    font-size: 18px;
+    margin-top: -2px;
+}
+
+.form-row.errors.field-religions::before {
+   font-family: FontAwesome;
+    content: "\f071";
+    float: right;
+    margin-right: 15%;
+    color: red;
+    font-size: 18px;
+    margin-top: -2px;
+}
+
+.form-row.errors.field-relation_to_guardians::before {
+ font-family: FontAwesome;
+    content: "\f071";
+    float: right;
+    color: red;
+    font-size: 18px;
+    right: 103px;
+    position: absolute;
+    top: 1%;
+}
+
+
+.form-row.errors.field-quota::before {
+  font-family: FontAwesome;
+    content: "\f071";
+    float: right;
+    color: red;
+    font-size: 18px;
+    right: 103px;
+    position: absolute;
+    top: 1%;
+}
+
+.form-row.errors.field-nationality::before {
+ font-family: FontAwesome;
+    content: "\f071";
+    float: right;
+    color: red;
+    font-size: 18px;
+    right: 103px;
+    position: absolute;
+    top: 1%;
+}
+
+.form-row.errors.field-marital_status::before {
+   font-family: FontAwesome;
+    content: "\f071";
+    float: right;
+    margin-right: 15%;
+    color: red;
+    font-size: 18px;
+    margin-top: -2px;
+}
+
+.form-row.errors.field-students_mobile_no::before {
+ font-family: FontAwesome;
+    content: "\f071";
+    float: right;
+    margin-right: 5%;
+    color: red;
+    font-size: 18px;
+    margin-top: -2px;
+}
+
+.form-row.errors.field-division::before {
+   font-family: FontAwesome;
+    content: "\f071";
+    float: right;
+    color: red;
+    font-size: 18px;
+    right: 103px;
+    position: absolute;
+    top: 1%;
+}
+
+.form-row.field-first_name::before {
+    float: right;
+   margin-right: 8%;
+    color: red;
+    font-size: 18px;
+    margin-top: -2px;
+    content: "*";
+}
+
+.form-row.field-religions::before {
+    float: right;
+margin-right: 8%;
+    color: red;
+    font-size: 18px;
+    margin-top: -2px;
+    content: "*";
+}
+
+.form-row.field-mothers_name::before {
+    float: right;
+margin-right: 8%;
+    color: red;
+    font-size: 18px;
+    margin-top: -2px;
+    content: "*";
+}
+
+.form-row.field-sex:before {
+    float: right;
+margin-right: 8%;
+    color: red;
+    font-size: 18px;
+    margin-top: -2px;
+    content: "*";
+}
+
+.form-row.field-fathers_name::before {
+    float: right;
+margin-right: 8%;: red;
+    font-size: 18px;
+    margin-top: -2px;
+    content: "*";
+}
+
+.form-row.field-date_of_birth::before {
+    float: right;
+margin-right: 8%;
+    color: red;
+    font-size: 18px;
+    margin-top: -2px;
+    content: "*";
+}
+
+.form-row.field-last_name::before {
+    float: right;
+margin-right: 8%;
+    color: red;
+    font-size: 18px;
+    margin-top: -2px;
+    content: "*";
+}
+
+.form-row.field-date_of_birth .timezonewarning {
+    display: none;
+}
+
+.form-row.errors.field-post_office_snd::before {
+    font-family: FontAwesome;
+    content: "\f071";
+    float: right;
+    margin-right: 15%;
+    color: red;
+    font-size: 18px;
+    margin-top: -2px;
+}
+
+.form-row.errors.field-village_snd::before {
+    font-family: FontAwesome;
+    content: "\f071";
+    float: right;
+    margin-right: 15%;
+    color: red;
+    font-size: 18px;
+    margin-top: -2px;
+}
+
+.form-row.errors.field-village::before {
+    font-family: FontAwesome;
+    content: "\f071";
+    float: right;
+    margin-right: 15%;
+    color: red;
+    font-size: 18px;
+    margin-top: -2px;
+}
+
+.form-row.errors.field-post_office::before {
+    font-family: FontAwesome;
+    content: "\f071";
+    float: right;
+    margin-right: 15%;
+    color: red;
+    font-size: 18px;
+    margin-top: -2px;
+}
+
+.form-row.field-relation_to_guardians::before {
+    content: '*';
+    display: block;
+    position: absolute;
+    right: 10%;
+    color: red;
+    font-size: 18px;
+    top: 1%;
+}
+
+.form-row.field-nationality::after {
+    content: '*';
+    display: block;
+    position: absolute;
+    color: red;
+    font-size: 18px;
+    top: 1%;
+    right: 10%;
+}
+
+
+.form-row.field-quota::before {
+    content: '*';
+    display: block;
+    position: absolute;
+    right: 10%;
+    color: red;
+    font-size: 18px;
+    top: 1%;
+}
+
+.form-row.field-marital_status::before {
+    float: right;
+margin-right: 8%;
+    color: red;
+    font-size: 18px;
+    margin-top: -2px;
+    content: "*";
+}
+
+.form-row.field-students_mobile_no::before {
+    color: red;
+    font-size: 18px;
+    margin-top: -2px;
+    content: "*";
+    display: block;
+    float: right;
+}
+
+.form-row.field-thana::before {
+    content: '*';
+    display: block;
+    position: absolute;
+    right: 10%;
+    color: red;
+    font-size: 18px;
+    top: 1%;
+}
+
+.form-row.field-district::before {
+    content: '*';
+    display: block;
+    position: absolute;
+    right: 10%;
+    color: red;
+    font-size: 18px;
+    top: 1%;
+}
+
+.form-row.field-division::before {
+    content: '*';
+    display: block;
+    position: absolute;
+    right: 10%;
+    color: red;
+    font-size: 18px;
+    top: 1%;
+}
+
+.form-row.field-thana_snd::before {
+    content: '*';
+    display: block;
+    position: absolute;
+    right: 10%;
+    color: red;
+    font-size: 18px;
+    top: 1%;
+}
+
+.form-row.field-district_snd::before {
+    content: '*';
+    display: block;
+    position: absolute;
+    right: 10%;
+
+    font-size: 18px;
+    top: 1%;
+}
+
+.form-row.field-division_snd::before {
+    content: '*';
+    display: block;
+    position: absolute;
+    right: 10%;
+    color: red;
+    font-size: 18px;
+    top: 1%;
+}
+
+.form-row.field-post_office::before {
+    float: right;
+margin-right: 8%;
+    color: red;
+    font-size: 18px;
+    margin-top: -2px;
+    content: "*";
+}
+
+.form-row.field-village::before {
+    float: right;
+margin-right: 8%;
+    color: red;
+    font-size: 18px;
+    margin-top: -2px;
+    content: "*";
+}
+
+.form-row.field-post_office_snd::before {
+    float: right;
+margin-right: 8%;
+    color: red;
+    font-size: 18px;
+    margin-top: -2px;
+    content: "*";
+}
+
+.form-row.field-village_snd::before {
+    float: right;
+margin-right: 8%;
+    color: red;
+    font-size: 18px;
+    margin-top: -2px;
+    content: "*";
+}
+
+.form-row.errors.field-session {
+    margin-left: 2%;
+}
+
+span.date-icon {
+    display: none !important;
+}
+
+.form-row.field-session::before {
+    content: '*';
+    display: block;
+    position: absolute;
+    right: 10%;
+    color: red;
+    font-size: 18px;
+    top: 1%;
+}
+
+.form-row.field-payment_method::before {
+    float: right;
+margin-right: 8%;
+    color: red;
+    font-size: 18px;
+    margin-top: -2px;
+    content: "*";
+}
+.form-row.errors.field-session {
+    position: relative;
+}
+
+.form-row.errors.field-session::before {
+    font-family: FontAwesome;
+    content: "\f071";
+    float: right;
+    color: red;
+    font-size: 18px;
+    right: 103px;
+    position: absolute;
+    top: 1%;
+}
+
+.form-row.errors.field-payment_method::before {
+    font-family: FontAwesome;
+    content: "\f071";
+    float: right;
+margin-right: 8%;
+    color: red;
+    font-size: 18px;
+    margin-top: -2px;
+}
+
+input[name="_addanother"] {
+    display: none;
+}
+
+td.field-students {
+    display: none;
+}
+
+th:nth-child(13) {
+    display: none;
+}
+
+th:nth-child(2) {
+    display: none;
+}
+td.field-level_of_education {
+    display: none;
+}
+td.field-board input {
+    width: 110px;
+}
+
+
+.field-duration select {
+    width: 78px;
+}
+
+.field-institution_name a {
+    display: none;
+}
+
+
+.field-education_type select {
+    width: 90px;
+}
+td.field-roll input {
+    width: 75px;
+}
+
+td.field-level_of_education input {
+    width: 179px;
+}
+fieldset.module h2 {
+        width: 1200px;
+}
+
+.form-row.field-bank_draft_no {
+    width: 46%;
+    display: inline-block;
+}
+
+.form-row.field-bank_draft_date {
+    width: 46%;
+    display: inline-block;
+}
+
+span.timezonewarning {
+    display: none;
+}
+
+.serch_main {
+    width: 800px;
+    display: block;
+    height: 50px;
+    margin: auto;
+}
+
+
+input.search_stu {
+    width: 259px;
+    height: 26px;
+    margin-left: 1%;
+}
+.form-row.field-institution a {
+    display: none;
+}
+.form-row.field-program_title a {
+    display: none;
+}
+
+
+.form-row.field-institution a {
+    display: none;
+}
+.form-row.field-program_title a {
+    display: none;
+}
+
+.form-row.field-created_by {
+    display: none;
+}
+
+
+button#serc_button {
+    height: 36px;
+    background-color: #119146;
+    border: 0;
+    border-radius: 4px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-left: 1%;
+    width: 75px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+
+select#program_id_src {
+    width: 300px;
+    height: 36px;
+    border-radius: 4px;
+}
+
+
+.form-row.field-locked {
+    display: none;
+}
+
+.add-related {
+    display: none;
+}
+
+span.datetimeshortcuts {
+    display: none;
+}
+
+.change-related {
+    display: none;
+}
+
+.form-row.field-image_tag {
+
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 0 10px 6px -6px #777;
+
+}
+
+
+#id_district_snd option[disabled] {
+    display: none;
+}
+
+
+button#serc_button:hover {
+    background-color: #acd473;
+    box-shadow: 0px 15px 20px #acd473;
+    color: #fff;
+}
+
+
+.form-row.field-same_address .checkbox-row {
+    margin-top: 20px;
+}
+
+.form-row.field-same_address label {
+    padding-top: 7px;
+}
+
+
+h2 {
+    display: block;
+    background-color: #119146 !important;
+    color: #fff !important;
+    box-shadow: 0 8px 6px -6px black !important;
+    width: 30% !important;
+    height: 28px !important;
+    margin: 15px auto !important;
+    text-transform: capitalize !important;
+}
+
+
+.inline-group .tabular fieldset.module{
+background-color: #eee;
+}
+
+.readonly {
+    background-color: #fff;
+    width: 315px;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.39), 0 -1px 1px #FFF, 0 1px 0 #FFF;
+    height: 24px;
+    border-radius: 4px;
+    text-indent: 10px;
+}
+.select2-selection.select2-selection--single {
+    height: 34px !important;
+}
+
+.select2.select2-container.select2-container--default {
+    width: 314px !important;
+}
+
+input[name="_continue"] {
+
+    display: none;
+
+}
+
+
+.field-institution_name select {
+    width: 100px;
+}
+
+

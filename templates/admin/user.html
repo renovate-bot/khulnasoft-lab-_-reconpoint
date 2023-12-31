@@ -1,0 +1,58 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/user.css" %}">{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+ <a href="{% url 'admin:index' %}">{% trans 'HOME' %}</a>
+    <a href="/admin/settings/"> › SETTINGS</a>
+    <a href="/admin/setting/user/"> › MANAGE USER</a>
+    {% if title %} &rsaquo; {{ title }}{% endif %}
+    </div>
+{% endblock %}
+
+{% block content %}
+
+<body class="user">
+
+   <div class="user_in">
+       <label class="user_login">MANAGE USER permission</label>
+   </div>
+
+   `  <div class="user_content">
+
+       <div class="manage_group">
+            <a href="/admin/auth/group/">
+                <img src="{% static '/admin/img/user_manage.png' %}" class="manage_group_bnmc" href="{% url 'admin:index' %}"/>
+                <label CLASS="group_manage">USER GROUP</label>
+            </a>
+        </div>
+
+
+
+
+       <div class="user_permission">
+            <a href="/admin/bnmc_project/permission/">
+              <img src="{% static '/admin/img/permission.png' %}" class="user_permission_link" href="{% url 'admin:index' %}"/>
+              <label CLASS="maintain_permission">USER PERMISSION</label>
+            </a>
+        </div>
+
+       <div class="user_permission">
+            <a href="/admin/bnmc_project/user/">
+              <img src="{% static '/admin/img/user_manage.png' %}" class="user_permission_link" href="{% url 'admin:index' %}"/>
+              <label CLASS="maintain_permission">USER</label>
+            </a>
+        </div>
+
+
+     </div>
+
+
+{% endblock %}
+

@@ -1,0 +1,200 @@
+﻿{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static " admin/css/settings.css" %}">{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <a href="{% url 'admin:index' %}">{% trans 'HOME' %}</a>
+    {% if title %} &rsaquo; {{ title }}{% endif %}
+    <a href="/admin/process_licnese/"> › PROCESS LICENSE</a>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+
+<form method="post">
+    {% csrf_token %}
+    <input type="hidden" id="hidden_id" class="hidden_id" name="hidden_id">
+
+    <div class="content_div exam">
+        <div class="lvl">Exam</div>
+        <div class="input">
+            <select name="exam" class="exam">
+                <option value="">Select An Exam</option>
+                {% for exam in exams %}
+                <option value="{{exam.id}}">{{exam}}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+
+
+    <div class="content_div licence_container">
+        <div class="content_div role_range">
+            <div class="lvl">Role Range</div>
+            <div class="input">
+                <input class="start_roll" type="number" name="role_ranger_first" />
+                <span>---- </span><input class="end_roll" type="number" name="role_ranger_snd" />
+            </div>
+        </div>
+
+        <div class="content_div centers">
+            <div class="lvl">Centers</div>
+            <div class="input">
+                <select name="center" class="center">
+                    <option value="">Select A Center</option>
+                    {% for center in institution_name %}
+
+                    {% if center.is_exam_center%}
+                    <option value="{{center.id}}">{{center}}</option>
+                    {% endif %}
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+
+
+    </div>
+    <button type="submit" value="Submit" >Submit</button>
+</form>
+
+
+
+<div class="table">
+
+
+
+
+
+
+
+
+
+
+
+    <table>
+
+  <tr>
+    <th>Exam</th>
+    <th>roll start</th>
+    <th>roll end</th>
+    <th>center</th>
+
+    <th>Edit</th>
+ <th>Print</th>
+  </tr>
+        {% for i in var %}
+  <tr>
+    <td>{{i.exam}}</td>
+    <td>{{i.roll_start}}</td>
+    <td>{{i.roll_end}}</td>
+    <td>{{i.center}}</td>
+
+      <td><button value="{{i.id}}" class="edit">Edit</button></td>
+	 <td><a target="_blank"href="/admin/center_report_for_final_exam/{{i.id}}">Print</a></td>
+  </tr>
+ {% endfor %}
+
+
+
+        <script>
+
+
+
+
+    $(".edit").click(function()
+    {
+            var id_set = $(this).val();
+
+
+
+                $.ajax({
+                    type: "POST",
+                    url: "/edit_final_center/",
+                    dataType: "json",
+                    data: { "id_set": id_set, 'csrfmiddlewaretoken': '{{ csrf_token }}' },
+                    success: function (data)
+                    {
+
+
+                      if(data[0]==true){
+
+
+                      $(".exam").val(data[2]);
+                      $(".start_roll").val(data[3]);
+                      $(".end_roll").val(data[4]);
+                      $(".center").val(data[5]);
+                      $(".hidden_id").val(data[1]);
+
+
+                       <!--var query_string = "?";-->
+                       <!--var edit = $("#hidden_id").val().trim();-->
+
+
+
+                        <!--query_string += "id=" + edit + ""-->
+                         <!--parent.location.hash = query_string;-->
+
+
+                      }
+
+                    }
+
+
+
+                });
+    })
+
+
+
+
+
+        </script>
+
+
+</table>
+
+
+
+
+        <div class="pagination">
+            <span class="step-links">
+                {% if var.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ var.previous_page_number }}{% for key,value in request.GET.items %}{% ifnotequal key 'page' %}&{{ key }}={{ value }}{% endifnotequal %}{% endfor %}">previous</a>
+                {% endif %}
+                <span class="current">
+                    Page {{ var.number }} of {{ var.paginator.num_pages }}.
+                </span>
+
+                {% if var.has_next %}
+                <a href="?page={{ var.next_page_number }}{% for key,value in request.GET.items %}{% ifnotequal key 'page' %}&{{ key }}={{ value }}{% endifnotequal %}{% endfor %}">next</a>
+                <!--<a href="?page={{ contacts.next_page_number }}&ins_name={{request.GET.ins_name}}">next</a>-->
+                <a href="?page={{ var.paginator.num_pages }}{% for key,value in request.GET.items %}{% ifnotequal key 'page' %}&{{ key }}={{ value }}{% endifnotequal %}{% endfor %}">Last</a>
+
+                {% endif %}
+
+
+
+            </span>
+        </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,292 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="/static/admin/css/search_list.css"> {% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <a href="{% url 'admin:index' %}">{% trans 'HOME' %}</a>
+    {% if title %} &rsaquo; {{ title }}{% endif %}
+    <a href="/admin/search_list/"> › SEARCH</a>
+</div>
+{% endblock %}
+{% block content %}
+<div class="search_page">
+    <div class="search_step1">
+        <div class="program_cat">
+            <label>Program catagory:</label>
+            <select name="program_category" class="prog_cat_select" id="program_catagory">
+                <option value="0">select a program category</option>
+                {% for p in progrm_cat %}
+                <option value="{{p.id}}">{{p.name}}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="reg_no">
+            <label>Registration No</label>
+            <input name="registationNo" class="ser_reg" id="regis_no">
+        </div>
+        <div class="type_ins">
+            <label>Type of institution:</label>
+            <select name="ins_type" id="institute_type">
+                <option value="0"> select type</option>
+                {% for p in InstituteType %}
+                <option value="{{p.id}}">{{p.institute_type}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="type_program">
+            <label>Type of program</label>
+            <select name="progmType" id="program_type">
+                <option value="0">Select type</option>
+                {% for p in program %}
+                <option value="{{p.id}}">{{p.title}}</option>
+                {% endfor %}
+            </select>
+
+        </div>
+        <div class="ins_cat">
+            <label>institution catagory:</label>
+            <select name="ins_cat" id="institution_catagory">
+                <option value="0">select type</option>
+                {% for p in InstituteCatagory %}
+                <option value="{{p.id}}">{{p.status}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="session_filter">
+            <label>session:</label>
+            <select name="session" id="session">
+                <option value="0">select type</option>
+                {% for p in Session %}
+                <option value="{{p.id}}">{{p.session}}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="ins_nam">
+            <label>institution name:</label>
+
+            <select name="ins_name" class="ser_ins_name" id="institute_name">
+                <option value="0">select type</option>
+                {% for p in ins_name %}
+                <option value="{{p.id}}">{{p.institution_name}}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <button name="search_filter_stu" value="1" type="submit" id="search_filter_stu">Filter</button>
+
+    </div>
+    <input type="hidden" value="{{request.GET.institution}}">
+    <div class="search_step2">
+        <div class="student_information_step">
+            <div class="all_action_btn">
+                <div class="select_action">
+                    <select class="type_select">
+                        <option>print</option>
+                    </select>
+                    <button class="go">Go</button>
+                </div>
+                <div class="btn_action">
+                    <div class="btn_final_action">
+                        <button class="print">print</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table class="stu_list" id="stu_table" style="width: 100%">
+            <tr>
+                <th><input type="checkbox" name="select"></th>
+
+                <th>Student list</th>
+                <!--<th>Image</th>-->
+                <th>registration no</th>
+                <th>program</th>
+                <th>session</th>
+
+                <!--<th>View information</th>-->
+                <th>status</th>
+                <!--<th>institution name</th>-->
+
+            </tr>
+
+            {%for p in contacts %}
+
+            <tr>
+                <td id="ter"><input type="checkbox"> </td>
+               
+                <td>
+                    <a href="/admin/search/student_info/{{p.id}}">
+                        {{p.last_name}}
+                    </a>
+                </td>
+                <!--{%if p.image%}-->
+                <!--<td style="width: 50px;height:50px;"><img style=" width: 100%;height: 100%;" src="{{p.image.url}}"/></td>-->
+                 <!--{%endif%}-->
+                <td>{{p.registration_no}}</td>
+                <td>{{p.program_title}}</td>
+                <td>{{p.session}}</td>
+
+
+                <!--<td><a href="/admin/search/student_sort_info?registration_no={{p.registration_no}}&image={{p.image}}&last_name={{p.last_name}}&fathers_name={{p.fathers_name}}&mothers_name={{p.mothers_name}}&institution={{p.institution.id}} &program_starting_date={{p.program_starting_date}}&program_title={{p.program_title.id}}&session={{p.session.id}}">view</a></td>-->
+
+                <td>{{p.status}}</td>
+                <!--<td>{{p.institution}}</td>-->
+                  <!--<td>{{p.created_user}}</td>-->
+            </tr>
+
+            {% endfor %}
+
+
+
+
+        </table>
+
+
+        <div class="pagination">
+            <span class="step-links">
+                {% if contacts.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ contacts.previous_page_number }}{% for key,value in request.GET.items %}{% ifnotequal key 'page' %}&{{ key }}={{ value }}{% endifnotequal %}{% endfor %}">previous</a>
+                {% endif %}
+                <span class="current">
+                    Page {{ contacts.number }} of {{ contacts.paginator.num_pages }}.
+                </span>
+
+                {% if contacts.has_next %}
+                <a href="?page={{ contacts.next_page_number }}{% for key,value in request.GET.items %}{% ifnotequal key 'page' %}&{{ key }}={{ value }}{% endifnotequal %}{% endfor %}">next</a>
+                <!--<a href="?page={{ contacts.next_page_number }}&ins_name={{request.GET.ins_name}}">next</a>-->
+                <a href="?page={{ contacts.paginator.num_pages }}{% for key,value in request.GET.items %}{% ifnotequal key 'page' %}&{{ key }}={{ value }}{% endifnotequal %}{% endfor %}">Last</a>
+
+                {% endif %}
+
+
+
+            </span>
+        </div>
+
+
+        <script>
+
+
+
+             
+            var program_category = '{{request.GET.program_category}}';
+                 
+            if (String(program_category).trim() != '')
+            {
+                $("#program_catagory").val(program_category)
+            }
+                  
+            var ins_cat = '{{request.GET.ins_cat}}';
+            if (String(ins_cat).trim() != '')
+            {
+                $("#institution_catagory").val(ins_cat)
+            }
+
+            var pro_type = '{{request.GET.progmType}}';
+            if (String(pro_type).trim() != '') {
+                $("#program_type").val(pro_type)
+            }
+
+
+            var ins_id = '{{request.GET.ins_name}}';
+            if (String(ins_id).trim() != '') {
+                $("#institute_name").val(ins_id)
+            }
+
+            var ins_type = '{{request.GET.ins_type}}';
+            if (String(ins_type).trim() != '') {
+                $("#institute_type").val(ins_type)
+            }
+
+            var seasson = '{{request.GET.session}}';
+            if (String(seasson).trim() != '') {
+                $("#session").val(seasson)
+            }
+
+
+            var registration = '{{request.GET.registationNo}}';
+            if (String(registration).trim() != '') {
+                $("#regis_no").val(registration)
+            }
+
+
+            $("#search_filter_stu").click(function(){
+                      var query_string = "?search_filter_stu=1&";
+                      var institute_id="";
+                      var institutte_cat = $("#institution_catagory").val().trim();
+                      var program_type = $("#program_type").val().trim();
+                      institute_id = $("#institute_name").val().trim();
+                      var institute_type = $("#institute_type").val().trim();
+                      var program_cat = $("#program_catagory").val().trim();
+                      var session = $("#session").val().trim();
+                      var reg_no = $("#regis_no").val().trim();
+
+                      if (String(institutte_cat) != "0")
+                      {
+                          query_string += "ins_cat="+institutte_cat+"&"
+                      }
+                      if (String(program_type) != '0')
+                      {
+                          query_string += "progmType=" + program_type + "&"
+                      }
+                      if (String(institute_id) != '0')
+                      {
+                          query_string += "ins_name=" + institute_id + "&"
+                      }
+
+                      if (String(institute_type) != '0')
+                      {
+                          query_string += "ins_type=" + institute_type + "&"
+                      }
+
+                      if (String(program_cat) != '0')
+                      {
+                          query_string += "program_category=" + program_cat + "&"
+                      }
+
+                      if (String(session) != '0')
+                      {
+                          query_string += "session=" + session + "&"
+                      }
+
+                      if (String(reg_no) != '')
+                      {
+                          query_string += "registationNo=" + reg_no + "&"
+                      }
+         window.location.href = location.protocol + '//' + location.host + location.pathname +query_string;
+
+        });
+
+        </script>
+
+    
+
+
+        <script>
+         $('a[href="#sign_up"]').click(function(){
+  alert('Sign new href executed.');
+});</script>
+
+
+    </div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+{% endblock %}

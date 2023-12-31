@@ -1,0 +1,203 @@
+#content {
+    padding: 10px 34px !important;
+    margin: auto;
+}
+
+
+.manage_registration, .aproval, .student_list{
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    -webkit-transform: translateY(0);
+    -webkit-transition: all .6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all .6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+
+.manage_registration {
+    width: 170px;
+    height: 185px;
+    display: inline-block;
+    float: left;
+    background-color: #fff;
+    position: relative;
+}
+
+
+.manage_registration:hover {
+    -webkit-transform: scale(1.10, 1.10);
+    transform: scale(1.10, 1.10);
+    z-index: 1000;
+}
+
+
+.manage_registration:hover {
+    box-shadow: 0 0 6px rgb(0, 153, 51);
+}
+
+
+.manage_registration:hover .flip-box-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-box-front {
+    color: black;
+}
+
+
+.flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.flip-box-back {
+    color: white;
+    transform: rotateY(180deg);
+}
+
+
+.manage_registration_bnmc {
+    width: 58%;
+    height: 50%;
+    display: block;
+    margin: auto;
+        margin-top: auto;
+    margin-top: 16%;
+}
+
+
+label.reg_label {
+    display: block;
+    margin: auto;
+        margin-top: auto;
+    margin-top: auto;
+    text-align: center;
+    margin-top: 25px;
+    color: #867f7f;
+    font-weight: bold;
+    bottom: 5%;
+    position: absolute;
+    width: 100%;
+}
+
+.aproval {
+    width: 170px;
+    height: 185px;
+    display: inline-block;
+    float: left;
+    background-color: #fff;
+    margin-left: 20px;
+    position: relative;
+}
+
+img.aproval_bnmc {
+    width: 58%;
+    height: 50%;
+    display: block;
+    margin: auto;
+        margin-top: auto;
+    margin-top: 16%;
+}
+
+
+.aproval:hover {
+    box-shadow: 0 0 6px rgb(0, 153, 51);
+    -webkit-transform: scale(1.10, 1.10);
+    transform: scale(1.10, 1.10);
+}
+
+label.approval_to_pending {
+    display: block;
+    margin: auto;
+        margin-top: auto;
+    margin-top: auto;
+    text-align: center;
+    margin-top: 25px;
+    font-weight: bold;
+    color: #867f7f;
+    position: absolute;
+    bottom: 10%;
+}
+
+
+.sudent_manage label {
+    width: 100%;
+}
+
+
+
+.aproval:hover .flip-box-inner {
+    transform: rotateY(180deg);
+}
+
+
+
+.student_list:hover .flip-box-inner {
+    transform: rotateY(180deg);
+}
+
+
+.student_list {
+    width: 170px;
+    height: 185px;
+    display: inline-block;
+    float: left;
+    background-color: #fff;
+    margin-left: 25px;
+    perspective: 1000px;
+    position: relative;
+}
+
+
+img.studentlist_bnmc {
+    width: 58%;
+    height: 50%;
+    display: block;
+    margin: auto;
+        margin-top: auto;
+    margin-top: 16%;
+    border-radius: 50%;
+}
+
+
+label.STUDENT_LIST_ {
+    display: block;
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+    color: #867f7f;
+    position: absolute;
+    bottom: 12%;
+    left: 0;
+    right: 0;
+}
+
+
+.student_list:hover {
+    box-shadow: 0 0 6px rgb(0, 153, 51);
+    -webkit-transform: scale(1.10, 1.10);
+    transform: scale(1.10, 1.10);
+}
+
+
+
+.sudent_manage {
+    width: 100%;
+    height: 230px;
+}
+
+.stu__ {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 4%;
+}

@@ -1,0 +1,109 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/exam_wise_report.css" %}">{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block breadcrumbs %}
+  <div class="breadcrumbs">
+    <a href="{% url 'admin:index' %}">{% trans 'HOME' %}</a>
+    {% if title %} &rsaquo; {{ title }}{% endif %}
+    <a href="/admin/accounts/"> › ACCOUNTS</a>
+  </div>
+
+{% endblock %}
+
+{% block content %}
+<!--<div id="content-main">-->
+<style>
+
+    button {
+    border: 0;
+    width: 81px;
+    height: 29px;
+    margin-top: 6%;
+    margin-left: 10px;
+    background-color: #119146;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+select.session {
+    display: inline-block;
+    float: left;
+    width: 200px;
+    margin-top: 6%;
+    margin-left: 10px;
+}
+
+select.program {
+    width: 280px;
+    display: inline-block;
+    float: left;
+    margin-top: 6%;
+    margin-left: 14px;
+}
+
+select.division {
+    width: 200px;
+    margin-top: 6%;
+    display: inline-block;
+    float: left;
+}
+form{
+
+height: 137px;
+    width: 857px;
+    }
+
+
+</style>
+
+<form method="post">
+{% csrf_token %}
+<select name="division" class="division">
+
+    <option value="0">Select Division</option>
+    {% for i in division %}
+    <option value="{{i.id}}">{{i.name}}</option>
+{% endfor %}
+
+</select>
+
+
+
+
+<select name="program" class="program">
+
+    <option value="0">Select Program</option>
+    {% for i in program %}
+    <option value="{{i.id}}">{{i.title}}</option>
+{% endfor %}
+
+</select>
+
+
+    <select name="session" class="session">
+
+    <option value="0">Select Session</option>
+    {% for i in session %}
+    <option value="{{i.id}}">{{i.session}}</option>
+{% endfor %}
+
+</select>
+
+    <button>Submit</button>
+
+</form>
+
+
+
+
+{% endblock %}
+
+
+</body>

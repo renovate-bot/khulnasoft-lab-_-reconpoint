@@ -1,0 +1,125 @@
+<style>
+
+    .main {
+    width: 600px;
+    height: 600px;
+    display: block;
+    margin: auto;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    background-color: lightblue;
+}
+
+table, th, td {
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+
+
+tr.rel {
+    position: absolute;
+    width: 70px;
+    height: 89px;
+    display: block;
+    top: 1%;
+    right: 2%;
+}
+
+tr.rel img {
+    width: 100%;
+    height: 63px;
+}
+</style>
+
+<div class="main">
+
+<table style="width:100%;position: relative;">
+
+
+  <tr>
+    <td>Full Name: (English):</td>
+    <td>{{info_student.license_receive_id.last_name}}</td>
+  </tr>
+  <tr>
+    <td>Father's Name:</td>
+    <td>{{info_student.license_receive_id.fathers_name}}</td>
+  </tr>
+
+      <tr>
+    <td>Mother's Name:</td>
+    <td>{{info_student.license_receive_id.mothers_name}}</td>
+  </tr>
+
+
+    <tr>
+    <td>Permanent Address:</td>
+    <td>{{info_student.license_receive_id.village}}, {{info_student.license_receive_id.thana}}, {{info_student.license_receive_id.district}},  {{info_student.license_receive_id.division}}</td>
+  </tr>
+
+        <tr>
+    <td>Working Place:</td>
+    <td></td>
+  </tr>
+
+    <tr>
+    <td>Position:</td>
+    <td></td>
+  </tr>
+
+    <tr class="rel">
+
+        <td>    {% if info_student.license_receive_id.image %}
+     <img src="{{info_student.license_receive_id.image.url}}" class="img">
+
+    {% endif %}</td>
+    </tr>
+
+
+
+</table>
+
+
+
+    <table style="width: 80%;margin: auto;border: dotted 1px;">
+  <tr>
+    <th>Registration
+NO
+</th>
+    <th style="border: dotted 1px;">Course Name</th>
+    <th style="border: dotted 1px;">Institution</th>
+    <th style="border: dotted 1px;">Date of Registration</th>
+    <th style="border: dotted 1px;">Date of Renew</th>
+    <th style="border: dotted 1px;">Renew Upto</th>
+    <th style="border: dotted 1px;">Status</th>
+  </tr>
+     {% for i,n in  qr%}
+  <tr>
+
+        <td style="border: dotted 1px;">{{i.license_number}}</td>
+        <td style="border: dotted 1px;">{{i.program}}</td>
+        <td style="border: dotted 1px;">{{i.institution}}</td>
+        <td style="border: dotted 1px;">{{i.license_registration_date}}</td>
+        <td style="border: dotted 1px;">{{i.license_start_date}}</td>
+        <td style="border: dotted 1px;">{{i.license_end_date}}</td>
+
+
+
+            {% if n == 'Renewed' %}
+
+        <td style="color: green;border: dotted 1px;"> {{n}}</td>
+
+
+
+            {% else %}
+       <td style="color: red;border: dotted 1px;"> {{n}}</td>
+
+      {% endif %}
+
+
+  </tr>
+     {% endfor %}
+
+</table>
+</div>

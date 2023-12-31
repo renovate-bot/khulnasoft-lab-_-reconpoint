@@ -1,0 +1,533 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_urls static admin_list %}
+
+{% block extrastyle %}
+  {{ block.super }}
+
+  <link rel="stylesheet" type="text/css" href="{% static "admin/css/custom_change_list.css" %}" />
+  <link rel="stylesheet" type="text/css" href="{% static "admin/css/changelists.css" %}" />
+  {% if cl.formset %}
+    <link rel="stylesheet" type="text/css" href="{% static "admin/css/forms.css" %}" />
+  {% endif %}
+  {% if cl.formset or action_form %}
+    <script type="text/javascript" src="{% url 'admin:jsi18n' %}"></script>
+  {% endif %}
+  {{ media.css }}
+  {% if not actions_on_top and not actions_on_bottom %}
+    <style>
+      #changelist table thead th:first-child {width: inherit}
+
+      img.bc_im {
+    max-height: 50px;
+    max-width: 50px;
+}
+
+
+
+    </style>
+  {% endif %}
+{% endblock %}
+
+{% block extrahead %}
+{{ block.super }}
+{{ media.js }}
+{% endblock %}
+
+{% block bodyclass %}{{ block.super }} app-{{ opts.app_label }} model-{{ opts.model_name }} change-list{% endblock %}
+
+{% if not is_popup %}
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+<a href="{% url 'admin:index' %}">{% trans 'HOME' %}</a>
+    <a href="/admin/registration/"> › REGISTRATION</a>
+    <a href="/admin/registation_panel/?type=programs"> › INSTITUTE REGISTRATION</a>
+
+<!--&rsaquo; <a href="{% url 'admin:app_list' app_label=cl.opts.app_label %}">{{ cl.opts.app_config.verbose_name }}</a>-->
+&rsaquo; {{ cl.opts.verbose_name_plural|capfirst }}
+</div>
+{% endblock %}
+{% endif %}
+
+{% block coltype %}flex{% endblock %}
+
+{% block content %}
+
+
+
+
+  <!-- search -->
+  <!--{% if cl.search_fields %}-->
+<!--<div id="toolbar">-->
+
+    <!--<div class="search_form_custom">-->
+
+
+
+    <!--<forms id="changelist-search" method="get" class="tool">-->
+<!--<div>&lt;!&ndash; DIV needed for valid HTML &ndash;&gt;-->
+
+  <!---->
+
+
+<!--<label for="searchbar"><img src="{% static "admin/img/search.svg" %}" alt="Search" /></label>-->
+<!--<input type="text" size="40" name="{{ search_var }}" value="{{ cl.query }}" id="searchbar" autofocus />-->
+<!--<input type="submit" value="{% trans 'Search' %}" />-->
+<!--{% if show_result_count %}-->
+    <!--<span class="small quiet">{% blocktrans count counter=cl.result_count %}{{ counter }} result{% plural %}{{ counter }} results{% endblocktrans %} (<a href="?{% if cl.is_popup %}_popup=1{% endif %}">{% if cl.show_full_result_count %}{% blocktrans with full_result_count=cl.full_result_count %}{{ full_result_count }} total{% endblocktrans %}{% else %}{% trans "Show all" %}{% endif %}</a>)</span>-->
+<!--{% endif %}-->
+<!--{% for pair in cl.params.items %}-->
+    <!--{% if pair.0 != search_var %}<input type="hidden" name="{{ pair.0 }}" value="{{ pair.1 }}"/>{% endif %}-->
+<!--{% endfor %}-->
+<!--</div>-->
+<!--</forms>-->
+
+    <!--</div>-->
+
+    <!--</div>-->
+<!--{% endif %}-->
+ <!-- search -->
+
+
+
+
+
+
+
+
+
+    {% if cl.formset.errors %}
+        <p class="errornote">
+        {% if cl.formset.total_error_count == 1 %}{% trans "Please correct the error below." %}{% else %}{% trans "Please correct the errors below." %}{% endif %}
+        </p>
+        {{ cl.formset.non_form_errors }}
+    {% endif %}
+    <div class="module{% if cl.has_filters %} filtered{% endif %}" id="changelist">
+
+
+      <div id="content-main">
+           {{user.staff_institute.program_ins.title}}
+    <!--{% if type == "exams" %}-->
+     <!--<div class="program_name">-->
+       <!--<div class="program_content">-->
+        <!--<label>Type of EXAM</label>-->
+<!--&lt;!&ndash;<li class="program_list"><a href="/admin/bnmc_project/student_registration/?program_text={{user.staff_institute.program_ins.title }}"> {{user.staff_institute.program_ins.title }}  </a></li>&ndash;&gt;-->
+        <!--<input type="text" class="prog" maxlength="20" disabled name="exam_title" value="{{request.GET.program_title}}">-->
+        <!--</div>-->
+    <!--</div>-->
+     <!--{% endif %}-->
+
+          <style>
+                  img.bc_im {
+                        max-height: 50px;
+                        max-width: 50px;
+                    }
+                  form#changelist-search
+                  {
+                    display: none;
+                  }
+
+                    div#changelist-filter {
+                        display: none;
+                    }
+
+                    div#toolbar {
+                        display: none;
+                    }
+
+                    .results {
+                        width: 100% !important;
+                    }
+
+                    .actions {
+                        width: 100%;
+                    }
+
+                    p.paginator {
+                        width: 100% !important;
+                    }
+                    .session_filter select {
+                        width: 294px;
+                        height: 36px;
+                        margin-left: 16.2%;
+                    }
+
+          </style>
+
+
+
+          <div class="main_obj">
+
+
+              <!--<forms method="POST" action="" id="change">-->
+                      <!--{%csrf_token%}-->
+                 <div class="type_ins">
+                <label>Type of Institution :</label>
+                <select id="instituited_type" name="ins_type">
+                    <option value="0"> Select institution type from the list:</option>
+                     {% for p in InstituteType %}
+                    <option value="{{p.id}}">{{p.institute_type}}</option>
+                      {% endfor %}
+                </select>
+            </div>
+            <div class="type_program">
+                <label>Name of Course :</label>
+                <select id="progeram_type" name="progmType">
+                    <option value="0">Select Course name form the list</option>
+                     {% for p in program %}
+                    <option value="{{p.id}}">{{p.title}}</option>
+                     {% endfor %}
+                </select>
+
+            </div>
+            <div class="ins_cat">
+                <label>Institution catagory:</label>
+                <select id="ins_cat" name="ins_cat">
+                    <option value="0">Select instition Category from the list</option>
+                       {% for p in InstituteCatagory %}
+                    <option value="{{p.id}}">{{p.status}}</option>
+                         {% endfor %}
+                </select>
+            </div>
+            <div class="session_filter">
+                <label>session:</label>
+                <select id="session" name="session">
+                    <option value="0">Select Session from the list</option>
+                    {% for p in Session %}
+                    <option value="{{p.id}}">{{p}}</option>
+                      {% endfor %}
+                </select>
+            </div>
+
+            <div class="program_cat">
+                <label>Program catagory:</label>
+                <select id="program_cat" name="program_category" class="prog_cat_select">
+                    <option value="0">Select a program category from the list</option>
+                      {% for p in progrm_cat %}
+                        <option value="{{p.id}}">{{p.name}}</option>
+                      {% endfor %}
+                </select>
+            </div>
+
+
+
+
+
+            <div class="reg_nooo session_filter">
+                <label>Registration no:</label>
+                <input name="reg_no" id="reg_no">
+            </div>
+
+
+            <div class="ins_name">
+                <label>Institution name:</label>
+                <select id="ins_name" name="ins_name" class="ins_name__">
+                    <option value="0">Select institution name from the list</option>
+                    {% if user.is_superuser %}
+                        {% for p in ins_name %}
+                        <option value="{{p.id}}">{{p.institution_name}}</option>
+                        {% endfor %}
+                    {% else %}
+                        {% for p in user.staff_institute.all %}
+                        <option value="{{p.id}}">{{p.institution_name}}</option>
+                        {% endfor %}
+                    {% endif %}
+                </select>
+            </div>
+
+              <div class="sex">
+                <label>Sex:</label>
+                <select id="sex" name="sex" class="sex">
+                    <option value="0">Select Sex</option>
+                    <option value="1">Male</option>
+                    <option value="2">Female</option>
+                    <option value="3">Others</option>
+                </select>
+            </div>
+
+              <div style="display:none" class="ins_name">
+                  <label>Status:</label>
+                  <select id="status" name="status_id" class="ins_name__">
+                      <option value="0">select</option>
+                      {% for p in status %}
+                      <option value="{{p.id}}">{{p.permission_name}}</option>
+                      {% endfor %}
+                  </select>
+              </div>
+
+
+
+            <input type="hidden" value="{{request.GET.program_title}}">
+            <button type="submit" name="custom_admin" class="cls">Search</button>
+
+              <style>
+
+
+                  .ins_name {
+    width: 48%;
+    display: inline-block;
+    margin-top: 0%;
+    margin-left: 20px;
+    float: left;
+}
+
+.sex label {
+    display: inline-block;
+    float: left;
+}
+
+.sex {
+    width: 48%;
+    display: inline-block;
+    margin-top: 0%;
+    margin-left: 20px;
+    float: left;
+}
+
+button.cls {
+    position: absolute;
+    bottom: 35%;
+    left: 0;
+    right: 0;
+}
+              </style>
+              <script>
+                  $(document).ready(function() { $("#ins_name").select2(); });
+                  $(document).ready(function() { $("#session").select2(); });
+                  $(document).ready(function() { $("#progeram_type").select2(); });
+                  $(document).ready(function() { $("#instituited_type").select2(); });
+                  $(document).ready(function() { $("#ins_cat").select2(); });
+                  $(document).ready(function() { $("#program_cat").select2(); });
+                  
+                  var program_category = '{{request.GET.program_title__category__id__exact}}';
+                  if (String(program_category).trim() != '')
+                  {
+                      $("#program_cat").val(program_category)
+                  }
+
+                  var ins_cat = '{{request.GET.institution__catagory__id__exact}}';
+                  if (String(ins_cat).trim() != '')
+                  {
+                      $("#ins_cat").val(ins_cat)
+                  }
+
+                  var pro_type = '{{request.GET.program_title__id__exact}}';
+                  if (String(pro_type).trim() != '') {
+                      $("#progeram_type").val(pro_type)
+                  }
+
+
+                  var ins_id = '{{request.GET.institution__id__exact}}';
+                  if (String(ins_id).trim() != '') {
+                      $("#ins_name").val(ins_id)
+                  }
+
+                  var seasson = '{{request.GET.session__id__exact}}';
+                  if (String(seasson).trim() != '') {
+                      $("#session").val(seasson)
+                  }
+
+                  var registration = '{{request.GET.q}}';
+                  if (String(registration).trim() != '') {
+                      $("#reg_no").val(registration)
+                  }
+                  var ins_type = '{{request.GET.institution__type__id__exact}}';
+                  if (String(ins_type).trim() != '')
+                  {
+                      $("#instituited_type").val(ins_type)
+                  }
+
+                  var status_id = '{{request.GET.status__id}}';
+                  if (String(status_id).trim() != '')
+                  {
+                      $("#status").val(status_id)
+                  }
+
+                   var sex_id = '{{request.GET.sex}}';
+                  if (String(sex_id).trim() != '')
+                  {
+                      $("#sex").val(sex_id)
+                  }
+
+                  $(".cls").click(function () {
+                      var query_string = "?";
+                      var institutte_cat = $("#ins_cat").val().trim();
+                      var program_type = $("#progeram_type").val().trim();
+                      var institute_id = $("#ins_name").val().trim();
+                      var institute_type = $("#instituited_type").val().trim();
+                      var program_cat = $("#program_cat").val().trim();
+                      var session = $("#session").val().trim();
+                      var reg_no = $("#reg_no").val().trim();
+                      var status = $("#status").val().trim();
+                      var sex = $("#sex").val().trim();
+                      alert(sex)
+
+                      var permater= new URL(location.href).searchParams.get("approved");
+                      if (String(institutte_cat) != "0") {
+                          query_string += "institution__catagory__id__exact=" + institutte_cat + "&"
+                      }
+                      if (String(program_type) != '0') {
+                          query_string += "program_title__id__exact=" + program_type + "&"
+                      }
+                      if (String(institute_id) != '0') {
+                          query_string += "institution__id__exact=" + institute_id + "&"
+                      }
+
+                      if (String(institute_type) != '0') {
+                          query_string += "institution__type__id__exact=" + institute_type + "&"
+                      }
+                      if (String(program_cat) != '0') {
+                          query_string += "program_title__category__id__exact=" + program_cat + "&"
+                      }
+                      if (String(session) != '0') {
+                          query_string += "session__id__exact=" + session + "&"
+                      }
+                      if (String(reg_no) != '')
+                      {
+                          query_string += "q=" + reg_no + "&"
+                      }
+                      if (String(status) != '0')
+                      {
+                          query_string += "status__id=" + status + "&"
+                      }
+
+                        if (String(sex) != '0')
+                      {
+                          query_string += "sex=" + sex + "&"
+                      }
+
+                      if (permater == 'True'){
+                      query_string += "approved=" + 'True' + "&"
+                      }
+
+                      window.location.href = location.protocol + '//' + location.host + location.pathname + query_string;
+
+                  });
+
+
+
+
+
+
+
+var permater= new URL(location.href).searchParams.get("approved");
+
+
+(function ($) {
+    $( window ).load(function() {
+        $('.field-get_last_name a').unbind('click');
+        $('.field-get_last_name a').click(function () {
+            //DO SOMETHING
+
+            if (permater == 'True'){
+
+                return false;
+                }
+
+        });
+    });
+})(jQuery);
+
+              </script>
+
+
+
+<!--</forms>-->
+
+          </div>
+
+
+      {% block search %}{% search_form cl %}{% endblock %}
+      {% block date_hierarchy %}{% date_hierarchy cl %}{% endblock %}
+
+{% block filters %}
+        {% if cl.has_filters %}
+
+          <div id="changelist-filter">
+            <h2>{% trans 'Filter' %}</h2>
+            {% for spec in cl.filter_specs %}{% admin_list_filter cl spec %}{% endfor %}
+          </div>
+        {% endif %}
+      {% endblock %}
+
+            {% block object-tools %}
+
+
+
+
+
+
+        <ul class="object-tools">
+          {% block object-tools-items %}
+            {% if has_add_permission %}
+            <li>
+              {% url cl.opts|admin_urlname:'add' as add_url %}
+
+               
+
+            </li>
+            {% endif %}
+          {% endblock %}
+        </ul>
+    {% endblock %}
+
+
+
+      <form id="changelist-form" target="_blank" method="post"{% if cl.formset.is_multipart %} enctype="multipart/form-data"{% endif %} novalidate>{% csrf_token %}
+      {% if cl.formset %}
+        <div>{{ cl.formset.management_form }}</div>
+      {% endif %}
+
+      {% block result_list %}
+          {% if action_form and actions_on_top and cl.show_admin_actions %}{% admin_actions %}{% endif %}
+          {% result_list cl %}
+          {% if action_form and actions_on_bottom and cl.show_admin_actions %}{% admin_actions %}{% endif %}
+      {% endblock %}
+      {% block pagination %}{% pagination cl %}{% endblock %}
+      </form>
+    </div>
+  </div>
+
+
+
+<script>
+
+
+    $(document).ready(function () {
+            if(window.location.href.indexOf("pending") > -1)
+            {
+                 $('.addlink').css("display", "none");
+            }
+
+
+
+        });
+
+
+   $('.actions select').change(function() {
+
+        var option= $('.actions select').val()
+
+        if (option == 'final_print'){
+         $('#changelist-form').attr( 'target', '_blank' );
+
+        }
+
+        else if (option == 'select_print'){
+
+        $('#changelist-form').attr( 'target', '_blank' );
+        }
+
+        else{
+            document.getElementById('changelist-form').removeAttribute('target')
+        }
+
+
+
+        });
+
+</script>
+
+{% endblock %}
+
+
+

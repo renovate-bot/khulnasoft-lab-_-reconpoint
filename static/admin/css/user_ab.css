@@ -1,0 +1,18 @@
+.form-row {
+    background-color: #eee;
+}
+
+input#id_is_staff {
+    margin-left: 3%;
+    margin-top: -0.4%;
+}
+
+input#id_is_active {
+    margin-left: 3%;
+    margin-top: -0.4%;
+}
+
+input#id_is_superuser {
+    margin-left: 3%;
+    margin-top: -0.4%;
+}

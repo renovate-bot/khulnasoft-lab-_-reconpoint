@@ -1,0 +1,362 @@
+ <style>
+
+ .img {
+    margin-top: 3%;
+    }
+
+    body {
+    margin: 0;
+    background-color: #69d2e7;
+    }
+
+    .main {
+    width: 1000px;
+    height: 1300px;
+    display: block;
+    margin: auto;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, sans-serif;
+    color: #3e4e1a;
+    }
+
+
+    .apply {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background-color: #d5eef3;
+    border-radius: 23px;
+    margin-top: 6%;
+    -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10%;
+    }
+
+    h2 {
+    display: inline-block;
+    float: left;
+    width: 40%;
+    text-align: center;
+    }
+
+    .head_text {
+    height: 100px;
+    border-bottom: 1px solid #ccc;
+    }
+
+    form.data_form input {
+    width: 120px;
+    height: 28px;
+    display: inline-block;
+    float: left;
+    margin-top: 21px;
+    margin-left: 4px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    }
+
+    form.data_form select {
+    width: 200px;
+    height: 28px;
+    display: inline-block;
+    margin-top: 21px;
+    float: left;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    }
+
+    input.submit1 {
+    display: inline-block !important;
+    float: left !important;
+    width: 64px !important;
+    }
+
+
+    form.renew {
+    padding-left: 20px;
+    padding-top: 22px;
+    background-color: #d5eef3;
+    }
+
+    .full_name, .date_birth, .father_name, .mother_name {
+    height: 59px;
+    }
+
+    .mother_name {
+    width: 30%;
+    display: inline-block;
+    float: left;
+    }
+
+    .father_name {
+    width: 30%;
+    display: inline-block;
+    float: left;
+    }
+
+
+    .full_name label {
+    display: block;
+    }
+
+    .full_name span {
+    display: block;
+    }
+
+
+    .date_birth label {
+    display: block;
+    margin-top: 10px;
+    }
+
+    .date_birth {
+    display: inline-block;
+    float: left;
+    width: 30%;
+    }
+
+    .father_name label {
+    display: block;
+    margin-top: 10px;
+    }
+    .mother_name label {
+    display: block;
+    margin-top: 10px;
+    }
+
+
+    .student_mob {
+    display: inline-block;
+    float: left;
+    width: 40%;
+    height: 35px;
+    margin-top: 15px;
+    }
+
+    .sex {
+    width: 30%;
+    display: inline-block;
+    float: left;
+    height: 35px;
+    margin-top: 15px;
+    }
+
+
+    .sex label {
+    display: inline-block;
+    float: left;
+    }
+
+
+    .license_number {
+    display: inline-block;
+    float: left;
+    height: 59px;
+    width: 30%;
+    margin-top: 15px;
+    }
+
+    .license_number {
+    display: inline-block;
+    float: left;
+    height: 35px;
+    width: 30%;
+    }
+
+
+    .emial {
+    margin-top: 10%;
+    display: block;
+    height: 57px;
+    }
+
+    .division, .village, .district, .postalcode, .thana, .postoffice{
+    display: inline-block;
+    float: left;
+    width: 50%;
+    margin-top: 10px;
+    }
+
+
+    table th {
+    font-weight: 100;
+    font-size: 10px;
+    }
+
+
+    input.submit_button {
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin: auto;
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    }
+
+    tr {
+    -webkit-box-shadow: 0 10px 6px -11px #777;
+    -moz-box-shadow: 0 10px 6px -11px #777;
+    box-shadow: 0 10px 6px -11px #777;
+    }
+
+    .error{
+
+    font-size: 20px;
+    color: red;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, sans-serif;}
+
+
+    select {
+    width: 200px;
+    height: 29px;
+    border-radius: 4px;
+    margin-left: 10px;
+    border: 1px solid #ccc;
+    }
+
+    .current_working_place {
+    display: block;
+    margin-top: 2%;
+    }
+
+    input[type="text"] {
+    width: 200px;
+    height: 27px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    }
+
+    .current_position {
+    display: block;
+    }
+
+    .working_years {
+    display: block;
+    }
+
+    .a_s {
+    font-size: 14px;
+    display: block;
+    margin-top: 8px;
+    }
+
+
+    .work_in div {
+    margin-top: 2%;
+    }
+
+    .work_in input, select {
+    float: right;
+    }
+
+    .work_in {
+    width: 80%;
+    }
+
+
+    input[type="number"] {
+    width: 200px;
+    height: 27px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    }
+    .date_id label {
+    margin-left: 29%;
+    }
+
+    .m_id, .date_id {
+    width: 50%;
+    display: inline-block;
+    float: left;
+    margin-top: 2%;
+    }
+
+    .money_id {
+    height: 45px;
+    width: 80%;
+    }
+
+    .date_id input {
+    float: right;
+    }
+
+    .m_id input {
+    margin-left: 30px;
+    }
+
+    .same span {
+    display: block;
+    margin-left: 7%;
+    }
+
+
+    .full_name span {
+    color: darkcyan;
+    }
+
+    .date_birth span {
+    color: darkcyan;
+    }
+
+    .father_name span {
+    color: darkcyan;
+    }
+
+    .mother_name span {
+    color: darkcyan;
+    }
+
+    .sex span {
+    color: darkcyan;
+    }
+
+    .student_mob span {
+    color: darkcyan;
+    }
+    .license_number span {
+    color: darkcyan;
+    }
+
+    .emial span {
+    color: darkcyan;
+    }
+
+    .division span {
+    color: darkcyan;
+    }
+
+    .village span {
+    color: darkcyan;
+    }
+
+    .district span {
+    color: darkcyan;
+    }
+
+    .postalcode span {
+    color: darkcyan;
+    }
+
+    .thana span {
+    color: darkcyan;
+    }
+
+    .postoffice span {
+    color: darkcyan;
+    }
+
+
+    .same input {
+    display: inline-block;
+    float: left;
+    }
+
+    .same span {
+    display: inline-block;
+    float: left;
+    }
+
+
+</style>

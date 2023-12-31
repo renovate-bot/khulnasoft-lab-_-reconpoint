@@ -1,0 +1,1437 @@
+<style>
+div#ui-datepicker-div {
+    position: absolute;
+    top: 1043.41px;
+    left: 863.6px;
+    z-index: 1;
+    display: block;
+    background-color: #69d2e7 !important;
+    padding: 5px;
+}
+div#ui-datepicker-div select {
+    width: 90px;
+}
+
+table.ui-datepicker-calendar a {
+    color: #000;
+    text-decoration: none;
+}
+ .img {
+    margin-top: 3%;
+    }
+
+    body {
+    margin: 0;
+    background-color: #69d2e7;
+    }
+
+    .main {
+    width: 1000px;
+    height: 1350px;
+    display: block;
+    margin: auto;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, sans-serif;
+    color: #3e4e1a;
+    }
+
+
+    .apply {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background-color: #d5eef3;
+    border-radius: 23px;
+    margin-top: 6%;
+    -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10%;
+    }
+
+    h2 {
+    display: inline-block;
+    float: left;
+    width: 40%;
+    text-align: center;
+    }
+
+    .head_text {
+    height: 100px;
+    border-bottom: 1px solid #ccc;
+    }
+
+    form.data_form input {
+    width: 120px;
+    height: 28px;
+    display: inline-block;
+    float: left;
+    margin-top: 21px;
+    margin-left: 4px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    }
+
+    form.data_form select {
+    width: 200px;
+    height: 28px;
+    display: inline-block;
+    margin-top: 21px;
+    float: left;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    }
+
+    input.submit1 {
+    display: inline-block !important;
+    float: left !important;
+    width: 64px !important;
+    }
+
+
+    form.renew {
+    padding-left: 20px;
+    padding-top: 22px;
+    background-color: #d5eef3;
+    }
+
+    .full_name, .date_birth, .father_name, .mother_name {
+    height: 59px;
+    }
+
+    .mother_name {
+    width: 30%;
+    display: inline-block;
+    float: left;
+    }
+
+    .father_name {
+    width: 30%;
+    display: inline-block;
+    float: left;
+    }
+
+
+    .full_name label {
+    display: block;
+    }
+
+    .full_name span {
+    display: block;
+    }
+
+
+    .date_birth label {
+    display: block;
+    margin-top: 10px;
+    }
+
+    .date_birth {
+    display: inline-block;
+    float: left;
+    width: 30%;
+    }
+
+    .father_name label {
+    display: block;
+    margin-top: 10px;
+    }
+    .mother_name label {
+    display: block;
+    margin-top: 10px;
+    }
+
+
+    .student_mob {
+    display: inline-block;
+    float: left;
+    width: 40%;
+    height: 35px;
+    margin-top: 15px;
+    }
+
+    .sex {
+    width: 30%;
+    display: inline-block;
+    float: left;
+    height: 35px;
+    margin-top: 15px;
+    }
+
+
+    .sex label {
+    display: inline-block;
+    float: left;
+    }
+
+
+    .license_number {
+    display: inline-block;
+    float: left;
+    height: 59px;
+    width: 30%;
+    margin-top: 15px;
+    }
+
+    .license_number {
+    display: inline-block;
+    float: left;
+    height: 35px;
+    width: 30%;
+    }
+
+
+    .emial {
+    margin-top: 10%;
+    display: block;
+    height: 57px;
+    }
+
+    .division, .village, .district, .postalcode, .thana, .postoffice{
+    display: inline-block;
+    float: left;
+    width: 50%;
+    margin-top: 10px;
+    }
+
+
+    table th {
+    font-weight: 100;
+    font-size: 10px;
+    }
+
+
+    input.submit_button {
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin: auto;
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    }
+
+    tr {
+    -webkit-box-shadow: 0 10px 6px -11px #777;
+    -moz-box-shadow: 0 10px 6px -11px #777;
+    box-shadow: 0 10px 6px -11px #777;
+    }
+
+    .error{
+
+    font-size: 20px;
+    color: red;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, sans-serif;}
+
+
+    select {
+    width: 200px;
+    height: 29px;
+    border-radius: 4px;
+    margin-left: 10px;
+    border: 1px solid #ccc;
+    }
+
+    .current_working_place {
+    display: block;
+    margin-top: 2%;
+    }
+
+    input[type="text"] {
+    width: 200px;
+    height: 27px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    }
+
+    .current_position {
+    display: block;
+    }
+
+    .working_years {
+    display: block;
+    }
+
+    .a_s {
+    font-size: 14px;
+    display: block;
+    margin-top: 8px;
+    }
+
+
+    .work_in div {
+    margin-top: 2%;
+    }
+
+    .work_in input, select {
+    float: right;
+    }
+
+    .work_in {
+    width: 80%;
+    }
+
+
+    input[type="number"] {
+    width: 200px;
+    height: 27px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    }
+    .date_id label {
+    margin-left: 29%;
+    }
+
+    .m_id, .date_id {
+    width: 50%;
+    display: inline-block;
+    float: left;
+    margin-top: 2%;
+    }
+
+    .money_id {
+    height: 45px;
+    width: 80%;
+    }
+
+    .date_id input {
+    float: right;
+    }
+
+    .m_id input {
+    margin-left: 30px;
+    }
+
+    .same span {
+    display: block;
+    margin-left: 7%;
+    }
+
+
+    .full_name span {
+    color: darkcyan;
+    }
+
+    .date_birth span {
+    color: darkcyan;
+    }
+
+    .father_name span {
+    color: darkcyan;
+    }
+
+    .mother_name span {
+    color: darkcyan;
+    }
+
+    .sex span {
+    color: darkcyan;
+    }
+
+    .student_mob span {
+    color: darkcyan;
+    }
+    .license_number span {
+    color: darkcyan;
+    }
+
+    .emial span {
+    color: darkcyan;
+    }
+
+    .division span {
+    color: darkcyan;
+    }
+
+    .village span {
+    color: darkcyan;
+    }
+
+    .district span {
+    color: darkcyan;
+    }
+
+    .postalcode span {
+    color: darkcyan;
+    }
+
+    .thana span {
+    color: darkcyan;
+    }
+
+    .postoffice span {
+    color: darkcyan;
+    }
+
+
+    .same input {
+    display: inline-block;
+    float: left;
+    }
+
+    .same span {
+    display: inline-block;
+    float: left;
+    }
+
+
+</style>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<div class="error" style="    display: block;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    margin-top: 1%;height: 20px;">{% if f == 'f' %} Please input right information {% endif %}
+
+{% if suc %}
+    {{suc}}
+    {%endif%}
+</div>
+<div class="main">
+
+    <div class="apply">
+
+        <div class="head_text">
+
+            <h2>Apply for Renew</h2>
+
+            <form method="POST" class="data_form">
+                 {% csrf_token %}
+                <select name="program_id_">
+
+                    <option value="0">Select Program</option>
+                    {% for i in program %}
+                    <option value="{{i.id}}">{{i.title}}</option>
+                    {% endfor %}
+                </select>
+                <input value="47899" type="number" name="license_number">
+                <input class="submit1" type="submit" name="data">
+            </form>
+        </div>
+
+    <form method="POST" class="renew">
+ {% csrf_token %}
+
+         <div class="full_name">
+
+
+
+            <label>Full Name</label>
+             <span type="text" name="name">{{license_his.license_receive_id.students.last_name}}</span>
+        </div>
+
+         <div class="date_birth">
+
+            <label>Date Of Birth</label>
+             <span type="text" name="date_birth">{{license_his.license_receive_id.students.date_of_birth}}</span>
+        </div>
+
+         <div class="father_name">
+
+            <label>Father Name</label>
+             <span type="text" name="f_name">{{license_his.license_receive_id.students.fathers_name}}</span>
+        </div>
+
+        <div class="mother_name">
+
+            <label>Mother Name</label>
+            <span type="text" name="m_name">{{license_his.license_receive_id.students.mothers_name}}</span>
+        </div>
+
+         <div class="sex">
+
+            <label>Sex:</label>
+
+
+
+
+             <label style="margin-left: 10px; color: darkcyan;">{{license_his.license_receive_id.students.get_sex_display}}</label>
+
+
+
+
+
+
+        </div>
+
+
+
+         <div class="student_mob">
+
+            <label>Student Phone No:</label>
+             <label style="margin-left: 10px; color: darkcyan;" type="text" name="no">{{license_his.license_receive_id.students.students_mobile_no}}</label>
+        </div>
+
+
+
+        <div class="license_number">
+
+            <label>License Number:</label>
+            <label style="margin-left: 10px; color: darkcyan;" type="text" name="number">{{license_his.license_number}}</label>
+        </div>
+
+
+          <div class="emial">
+
+            <label id="error">Email:</label>
+              <label style="margin-left: 10px; color: darkcyan;" type="email" name="email">{{license_his.license_receive_id.students.email_address}}</label>
+        </div>
+
+
+
+
+        <h4 class="permanent_address">Permanent Address</h4>
+
+
+        <div class="division">
+            <label>Division:</label>
+
+
+
+
+
+
+            <label style="margin-left: 10px; color: darkcyan;">{{license_his.license_receive_id.students.division}}</label>
+
+
+        </div>
+
+
+
+          <div class="village">
+
+            <label>Village:</label>
+              <label style="margin-left: 10px; color: darkcyan;" value="" type="text" name="village">{{license_his.license_receive_id.students.village}}</label>
+        </div>
+
+
+         <div class="district">
+            <label>District:</label>
+
+
+             <label style="margin-left: 10px; color: darkcyan;">{{license_his.license_receive_id.students.district}}</label>
+
+
+
+        </div>
+
+
+
+         <div class="postalcode">
+
+            <label>Postal code:</label>
+             <label style="margin-left: 10px; color: darkcyan;" value="" type="text" name="post_code">{{license_his.license_receive_id.students.postal_code}}</label>
+        </div>
+
+         <div class="thana">
+            <label>Thana:</label>
+
+
+
+
+             <label style="margin-left: 10px; color: darkcyan;"> {{license_his.license_receive_id.students.thana}}</label>
+
+        </div>
+
+
+
+
+
+
+         <div class="postoffice">
+
+            <label>Post Office:</label>
+             <label style="margin-left: 10px; color: darkcyan;" name="post_off">{{license_his.license_receive_id.students.post_office}}</label>
+        </div>
+
+
+
+
+
+
+
+
+
+
+<div class="same">
+
+    <span style="margin: 0;">Yes</span>
+    <input type="checkbox" name="I_am_satisfied" value="I_am_satisfied" id="I_am_satisfied">
+    <span style="margin: 0;">No</span>
+    <input type="checkbox" name="I_am_satisfied_n" value="no" id="I_am_satisfied_no">
+    <label class="error_I_am_satisfied">1. I am satisfied with my Job</label>
+</div>
+
+
+
+
+
+
+
+<div class="same">
+ <span style="margin: 0;">Yes</span>
+    <input type="checkbox" name="before_starting" value="before_starting" id="before_starting">
+   <span style="margin: 0;">No</span>
+    <input type="checkbox" name="before_startingn" value="before_starting_no" id="before_starting_no">
+    <label id="error_before_starting">2. Before starting my work I exchange my greetings with the patients</label>
+</div>
+
+
+<div class="same">
+ <span style="margin: 0;">Yes</span>
+    <input type="checkbox" name="I_own_my" value="I_own_my" id="I_own_my">
+   <span style="margin: 0;">No</span>
+    <input type="checkbox" name="I_own_myn" value="I_own_my_no" id="I_own_my_no">
+    <label id="error_I_own_my">3. I own my responsibility as one of the  Medical Team Members</label>
+</div>
+
+
+<div class="same">
+
+
+
+     <span style="margin: 0;">Yes</span>
+    <input type="checkbox" name="I_am_interested" value="I_am_interested" id="I_am_interested">
+  <span style="margin: 0;">No</span>
+    <input type="checkbox" name="I_am_interestedn" value="I_am_interested_no" id="I_am_interested_no">
+    <label id="error_I_am_interested">4. I am interested  to act as a nurse teacher in my working situation</label>
+</div>
+
+
+
+
+<div class="same">
+ <span style="margin: 0;">Yes</span>
+    <input type="checkbox" name="I_am_aware" value="I_am_aware" id="I_am_aware">
+  <span style="margin: 0;">No</span>
+    <input type="checkbox" name="I_am_awaren" value="I_am_aware_no" id="I_am_aware_no">
+    <label id="error_I_am_aware">5. I am aware of  my  working area, delegated authority &#38 responsibilities</label>
+</div>
+
+
+
+
+
+<div class="same">
+ <span style="margin: 0;">Yes</span>
+    <input type="checkbox" name="I_am_aware_of_prescribed" value="I_am_aware_of_prescribed" id="I_am_aware_of_prescribed">
+  <span style="margin: 0;">No</span>
+    <input type="checkbox" name="I_am_aware_of_prescribedn" value="I_am_aware_of_prescribed_no" id="I_am_aware_of_prescribed_no">
+    <label id="error_I_am_aware_of_prescribed">6. I am aware of  prescribed code of conduct &#38 ethics of Bangladesh Nursing Council</label>
+</div>
+
+
+
+
+
+<div class="same">
+ <span style="margin: 0;">Yes</span>
+    <input type="checkbox" name="In_Bangladesh_most" value="In_Bangladesh_most" id="In_Bangladesh_most">
+  <span style="margin: 0;">No</span>
+    <input type="checkbox" name="In_Bangladesh_mosnt" value="In_Bangladesh_most_no" id="In_Bangladesh_most_no">
+    <label id="error_In_Bangladesh_most">7. In Bangladesh most of the basic nursing activities are performed by patients' attendance</label>
+</div>
+
+<div class="same">
+ <span style="margin: 0;">Yes</span>
+    <input type="checkbox" name="Every_day" value="Every_day" id="Every_day">
+   <span style="margin: 0;">No</span>
+    <input type="checkbox" name="Every_dayn" value="Every_day_no" id="Every_day_no">
+    <label id="error_Every_day">8. Every day I do my work through nursing care plan</label>
+</div>
+
+
+
+
+
+
+<div class="same">
+ <span style="margin: 0;">Yes</span>
+    <input type="checkbox" name="I_always_try" value="I_always_try" id="I_always_try">
+   <span style="margin: 0;">No</span>
+    <input type="checkbox" name="I_always_tryn" value="I_always_try_no" id="I_always_try_no">
+    <label id="error_I_always_try">9. I always try my best level to treat the patients equally in terms of race, religion,</label>
+    <span style="display: block;width: 100%;">gender, age, nationality &#38 economical class</span>
+</div>
+
+
+
+
+
+
+
+<div class="same">
+ <span style="margin: 0;">Yes</span>
+    <input type="checkbox" name="I_am_aware_of_functions" value="I_am_aware_of_functions" id="I_am_aware_of_functions">
+   <span style="margin: 0;">No</span>
+    <input type="checkbox" name="I_am_aware_of_functionsn" value="I_am_aware_of_functions_no" id="I_am_aware_of_functions_no">
+    <label id="error_I_am_aware_of_functions">10. I am aware of  functions of Bangladesh Nursing Council</label>
+</div>
+
+
+
+
+
+<div class="same">
+ <span style="margin: 0;">Yes</span>
+    <input type="checkbox" name="I_always_wear_my_professional" value="I_always_wear_my_professional" id="I_always_wear_my_professional">
+   <span style="margin: 0;">No</span>
+    <input type="checkbox" name="I_always_wear_my_professional_" value="I_always_wear_my_professional_no" id="I_always_wear_my_professional_no">
+    <label id="error_I_always_wear_my_professional">11. I always wear my professional Uniform as approved by the Govt. of Bangladesh</label>
+</div>
+
+<div class="same">
+ <span style="margin: 0;">Yes</span>
+    <input type="checkbox" name="I_feel_the_present" value="I_feel_the_present" id="I_feel_the_present">
+   <span style="margin: 0;">No</span>
+    <input type="checkbox" name="I_feel_the_present_" value="I_feel_the_present_no" id="I_feel_the_present_no">
+    <label id="error_I_feel_the_present">12. I feel the present existing system of Registration &#38 Renewal should be digitalized</label>
+</div>
+
+<div class="same">
+ <span style="margin: 0;">Yes</span>
+    <input type="checkbox" name="I_feel_there_should_be" value="I_feel_there_should_be" id="I_feel_there_should_be">
+   <span style="margin: 0;">No</span>
+    <input type="checkbox" name="I_feel_there_should_be_" value="I_feel_there_should_be_no" id="I_feel_there_should_be_no">
+    <label id="error_I_feel_there_should_be">13. I feel there should be provision of examination system for Registration Renewal in Bangladesh like other countries</label>
+</div>
+
+<div class="same">
+ <span style="margin: 0;">Yes</span>
+    <input type="checkbox" name="I_know_the_number" value="I_know_the_number" id="I_know_the_number">
+  <span style="margin: 0;">No</span>
+    <input type="checkbox" name="I_know_the_number_" value="I_know_the_number_no" id="I_know_the_number_no">
+    <label id="error_I_know_the_number">14. I know the  number of registered nurses, nursing institutions &#38 colleges</label>
+</div>
+
+
+<div style="    width: 100%;
+    height: 25px;" class="same">
+ <span class="ur" style="margin: 0;">urgent</span>
+    <input type="checkbox" name="urgent" value="urgent" id="urgent">
+  <span class="ur" style="margin: 0;">not-urgent</span>
+    <input type="checkbox" name="bhbhh" value="urgent_no" id="not-urgent">
+    <label id="error_urgent"></label>
+</div>
+
+
+
+
+
+        <div class="money_id">
+            <div class="m_id">
+               <label>Money receipt no:</label>
+                <input type="number" name="m_id">
+            </div>
+
+
+          <div class="date_id">
+               <label>date:</label>
+              <input type="text">
+            </div>
+        </div>
+
+
+        <div class="work_in">
+
+                <div class="current_working_place">
+            <label>Currently working place (Government/Nongovernment):</label>
+            <select name="current_working_place">
+
+                <option value="0">Currently working place</option>
+                <option value="1">Government</option>
+                <option value="2">Nongovernment</option>
+            </select>
+        </div>
+
+
+        <div class="current_position">
+            <label>Current position</label>
+            <input type="text" name="current_position">
+        </div>
+
+
+        <div class="working_years">
+            <label>Working years as a registered Nurse/Midwife/ Others. :</label>
+            <input type="text" name="working_years">
+        </div>
+
+        <div class="traning">
+            <label>Training</label>
+            <input type="text" name="traning">
+        </div>
+
+          <div class="s_o">
+               <label>Research Publications/ Other skills:</label>
+            <input type="text" name="s_o">
+        </div>
+
+        <div class="a_s">
+             <label>Attendance in Seminar/ Symposium/Workshop/Case Presentation/ Meeting</label>
+
+            <input type="text" name="a_s">
+        </div>
+
+
+
+        </div>
+
+        <div class="img">
+            Image upload
+            <input type="file" name="image">
+        </div>
+
+        {% if f == 'true' %}
+
+        <style>
+
+            .main {
+
+    height: 1400px;
+
+}
+
+input.submit_button {
+    margin-top: 30px;
+}
+
+.apply{
+
+border-radius: 23px 23px 0px 0px;
+}
+        </style>
+
+<table style="margin: auto;width: 100%;    margin-top: 3%;    font-size: 10px;text-align: center;    margin-left: -1%;   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);">
+  <tr>
+    <th>Registration
+NO
+</th>
+    <th>Course Name</th>
+    <th>Institution</th>
+    <th>Date of Registration</th>
+    <th>Date of Renew</th>
+    <th>Renew Upto</th>
+    <th>Status</th>
+    <th>Apply renew</th>
+  </tr>
+     {% for i,n in  qr%}
+  <tr>
+
+
+        <td>{% if i.program %}{{i.license_number}} {% else %}No Registration No{% endif %}</td>
+        <td>{% if i.program %}{{i.program}} {% else %}No Course{% endif %}</td>
+        <td>{% if i.institution %}{{i.institution}} {% else %}No Institution {% endif %}</td>
+        <td>{% if i.program %}{{i.license_registration_date}} {% else %}No Date of Registration {% endif %}</td>
+        <td>{% if i.program %}{{i.license_start_date}} {% else %}No Date of Renew {% endif %}</td>
+        <td>{% if i.program %}{{i.license_end_date}} {% else %}No Renew Upto {% endif %}</td>
+
+
+
+            {% if n == 'Renewed' %}
+
+        <td style="color: green;"> {{n}}</td>
+
+
+{% elif n == 'Expired' %}
+
+
+      <td style="color: red;"> {{n}} </td>
+      <td> <input value="{{i.id}}" type="checkbox" name="n">{{l}}</td>
+            {% else %}
+
+      <td style="color: red;"> {{n}} </td>
+
+      {% endif %}
+
+
+  </tr>
+     {% endfor %}
+
+</table>
+
+
+{% endif %}
+<input type="submit" value="Submit" class="submit_button" name="data2">
+    </form>
+
+
+    </div>
+
+
+
+<input id="hid" type="hidden" value="{{f}}">
+
+</div>
+
+
+<script>
+var hid = $('#hid').val()
+
+if (hid){
+
+
+
+
+  $(".renew").submit(function(e)
+{
+
+    var m_value= $(".money_id input").val();
+    var date_value= $(".date_id input").val();
+
+
+
+
+    if ((document.getElementById('not-urgent').checked == false) && (document.getElementById('urgent').checked == false))
+    {
+
+     alert("select checkbox")
+            e.preventDefault();
+            $('.ur').css('color','red')
+           $('html, body').animate({ scrollTop: $("#urgent").offset().top }, 400);
+    }
+
+    if ((document.getElementById('I_am_satisfied_no').checked == false) && (document.getElementById('I_am_satisfied').checked == false))
+    {
+
+     alert("select checkbox")
+            e.preventDefault();
+            $('.error_I_am_satisfied').css('color','red')
+           $('html, body').animate({ scrollTop: $("#I_am_satisfied").offset().top }, 400);
+    }
+    if ((document.getElementById('before_starting_no').checked == false) && (document.getElementById('before_starting').checked == false))
+    {
+
+     alert("select checkbox")
+            e.preventDefault();
+             $('#error_before_starting').css('color','red')
+            $('html, body').animate({ scrollTop: $("#before_starting").offset().top }, 400);
+    }
+    if ((document.getElementById('I_own_my_no').checked == false) && (document.getElementById('I_own_my').checked == false))
+    {
+
+     alert("select checkbox")
+            e.preventDefault();
+
+            $('#error_I_own_my').css('color','red')
+             $('html, body').animate({ scrollTop: $("#I_own_my").offset().top }, 400);
+    }
+    if ((document.getElementById('I_am_interested_no').checked == false) && (document.getElementById('I_am_interested').checked == false))
+    {
+
+     alert("select checkbox")
+            e.preventDefault();
+
+
+            $('#error_I_am_interested').css('color','red')
+             $('html, body').animate({ scrollTop: $("#I_am_interested").offset().top }, 400);
+    }
+    if ((document.getElementById('I_am_aware_no').checked == false) && (document.getElementById('I_am_aware').checked == false))
+    {
+
+     alert("select checkbox")
+            e.preventDefault();
+
+             $('#error_I_am_aware').css('color','red')
+           $('html, body').animate({ scrollTop: $("#I_am_aware").offset().top }, 400);
+    }
+    if ((document.getElementById('I_am_aware_of_prescribed_no').checked == false) && (document.getElementById('I_am_aware_of_prescribed').checked == false))
+    {
+
+     alert("select checkbox")
+            e.preventDefault();
+
+             $('#error_I_am_aware_of_prescribed').css('color','red')
+           $('html, body').animate({ scrollTop: $("#I_am_aware_of_prescribed").offset().top }, 400);
+    }
+    if ((document.getElementById('In_Bangladesh_most_no').checked == false) && (document.getElementById('In_Bangladesh_most').checked == false))
+    {
+
+     alert("select checkbox")
+            e.preventDefault();
+
+               $('#error_In_Bangladesh_most').css('color','red')
+            $('html, body').animate({ scrollTop: $("#In_Bangladesh_most").offset().top }, 400);
+    }
+    if ((document.getElementById('Every_day_no').checked == false) && (document.getElementById('Every_day').checked == false))
+    {
+
+     alert("select checkbox")
+            e.preventDefault();
+
+               $('#error_Every_day').css('color','red')
+            $('html, body').animate({ scrollTop: $("#Every_day").offset().top }, 400);
+    }
+    if ((document.getElementById('I_always_try_no').checked == false) && (document.getElementById('I_always_try').checked == false))
+    {
+
+     alert("select checkbox")
+            e.preventDefault();
+
+               $('#error_I_always_try').css('color','red')
+               $('.same span').css('color','red')
+            $('html, body').animate({ scrollTop: $("#I_always_try").offset().top }, 400);
+    }
+    if ((document.getElementById('I_am_aware_of_functions_no').checked == false) && (document.getElementById('I_am_aware_of_functions').checked == false))
+    {
+
+     alert("select checkbox")
+            e.preventDefault();
+
+               $('#error_I_am_aware_of_functions').css('color','red')
+           $('html, body').animate({ scrollTop: $("#I_am_aware_of_functions").offset().top }, 400);
+    }
+    if ((document.getElementById('I_always_wear_my_professional_no').checked == false) && (document.getElementById('I_always_wear_my_professional').checked == false))
+    {
+
+     alert("select checkbox")
+            e.preventDefault();
+
+               $('#error_I_always_wear_my_professional').css('color','red')
+            $('html, body').animate({ scrollTop: $("#I_always_wear_my_professional").offset().top }, 400);
+    }
+    if ((document.getElementById('I_feel_the_present_no').checked == false) && (document.getElementById('I_feel_the_present').checked == false))
+    {
+
+     alert("select checkbox")
+            e.preventDefault();
+
+               $('#error_I_feel_the_present').css('color','red')
+            $('html, body').animate({ scrollTop: $("#I_feel_the_present").offset().top }, 400);
+    }
+    if ((document.getElementById('I_feel_there_should_be_no').checked == false) && (document.getElementById('I_feel_there_should_be').checked == false))
+    {
+
+     alert("select checkbox")
+            e.preventDefault();
+
+               $('#error_I_feel_there_should_be').css('color','red')
+            $('html, body').animate({ scrollTop: $("#I_feel_there_should_be").offset().top }, 400);
+    }
+    if ((document.getElementById('I_know_the_number_no').checked == false) && (document.getElementById('I_know_the_number').checked == false))
+    {
+
+     alert("select checkbox")
+            e.preventDefault();
+
+               $('#error_I_know_the_number').css('color','red')
+            $('html, body').animate({ scrollTop: $("#I_know_the_number").offset().top }, 400);
+    }
+
+
+    if  (m_value == null || m_value=="")
+    {
+        alert("give money receipt no");
+        e.preventDefault();
+         $('.m_id input').css('border','1px solid #FC0000')
+
+
+    }
+
+    if(date_value == ''){
+     alert("give date")
+        e.preventDefault();
+
+
+
+    }
+
+
+
+
+
+});
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+<script>
+
+
+ $(function() {
+    $( ".date_id input" ).datepicker({
+        yearRange: "1900:2050",
+        changeYear: true,
+        changeMonth: true,
+
+
+      // You can put more options here.
+
+    });
+  });
+    $("#In_Bangladesh_most").on('click', function() {
+    if (jQuery("#In_Bangladesh_most").is(":checked")) {
+        $("#In_Bangladesh_most_no").prop("checked", false);
+
+    }
+    else {
+        $("#In_Bangladesh_most_no").prop("checked", true);
+    }
+
+});
+
+   $("#In_Bangladesh_most_no").on('click', function() {
+    if (jQuery("#In_Bangladesh_most_no").is(":checked")) {
+        $("#In_Bangladesh_most").prop("checked", false);
+
+    }
+    else {
+        $("#In_Bangladesh_most").prop("checked", true);
+    }
+
+});
+
+
+     $("#Every_day").on('click', function() {
+    if (jQuery("#Every_day").is(":checked")) {
+        $("#Every_day_no").prop("checked", false);
+
+    }
+    else {
+        $("#Every_day_no").prop("checked", true);
+    }
+
+});
+
+   $("#Every_day_no").on('click', function() {
+    if (jQuery("#Every_day_no").is(":checked")) {
+        $("#Every_day").prop("checked", false);
+
+    }
+    else {
+        $("#Every_day").prop("checked", true);
+    }
+
+});
+
+
+
+     $("#I_always_try").on('click', function() {
+    if (jQuery("#I_always_try").is(":checked")) {
+        $("#I_always_try_no").prop("checked", false);
+
+    }
+    else {
+        $("#I_always_try_no").prop("checked", true);
+    }
+
+});
+
+   $("#I_always_try_no").on('click', function() {
+    if (jQuery("#I_always_try_no").is(":checked")) {
+        $("#I_always_try").prop("checked", false);
+
+    }
+    else {
+        $("#I_always_try").prop("checked", true);
+    }
+
+});
+
+
+     $("#I_am_aware_of_functions").on('click', function() {
+    if (jQuery("#I_am_aware_of_functions").is(":checked")) {
+        $("#I_am_aware_of_functions_no").prop("checked", false);
+
+    }
+    else {
+        $("#I_am_aware_of_functions_no").prop("checked", true);
+    }
+
+});
+
+   $("#I_am_aware_of_functions_no").on('click', function() {
+    if (jQuery("#I_am_aware_of_functions_no").is(":checked")) {
+        $("#I_am_aware_of_functions").prop("checked", false);
+
+    }
+    else {
+        $("#I_am_aware_of_functions").prop("checked", true);
+    }
+
+});
+
+
+
+     $("#I_always_wear_my_professional").on('click', function() {
+    if (jQuery("#I_always_wear_my_professional").is(":checked")) {
+        $("#I_always_wear_my_professional_no").prop("checked", false);
+
+    }
+    else {
+        $("#I_always_wear_my_professional_no").prop("checked", true);
+    }
+
+});
+
+   $("#I_always_wear_my_professional_no").on('click', function() {
+    if (jQuery("#I_always_wear_my_professional_no").is(":checked")) {
+        $("#I_always_wear_my_professional").prop("checked", false);
+
+    }
+    else {
+        $("#I_always_wear_my_professional").prop("checked", true);
+    }
+
+});
+
+
+     $("#I_feel_the_present").on('click', function() {
+    if (jQuery("#I_feel_the_present").is(":checked")) {
+        $("#I_feel_the_present_no").prop("checked", false);
+
+    }
+    else {
+        $("#I_feel_the_present_no").prop("checked", true);
+    }
+
+});
+
+   $("#I_feel_the_present_no").on('click', function() {
+    if (jQuery("#I_feel_the_present_no").is(":checked")) {
+        $("#I_feel_the_present").prop("checked", false);
+
+    }
+    else {
+        $("#I_feel_the_present").prop("checked", true);
+    }
+
+});
+
+
+     $("#I_feel_there_should_be").on('click', function() {
+    if (jQuery("#I_feel_there_should_be").is(":checked")) {
+        $("#I_feel_there_should_be_no").prop("checked", false);
+
+    }
+    else {
+        $("#I_feel_there_should_be_no").prop("checked", true);
+    }
+
+});
+
+   $("#I_feel_there_should_be_no").on('click', function() {
+    if (jQuery("#I_feel_there_should_be_no").is(":checked")) {
+        $("#I_feel_there_should_be").prop("checked", false);
+
+    }
+    else {
+        $("#I_feel_there_should_be").prop("checked", true);
+    }
+
+});
+
+
+     $("#I_know_the_number").on('click', function() {
+    if (jQuery("#I_know_the_number").is(":checked")) {
+        $("#I_know_the_number_no").prop("checked", false);
+
+    }
+    else {
+        $("#I_know_the_number_no").prop("checked", true);
+    }
+
+});
+
+   $("#I_know_the_number_no").on('click', function() {
+    if (jQuery("#I_know_the_number_no").is(":checked")) {
+        $("#I_know_the_number").prop("checked", false);
+
+    }
+    else {
+        $("#I_know_the_number").prop("checked", true);
+    }
+
+});
+
+
+
+
+     $("#I_am_satisfied").on('click', function() {
+    if (jQuery("#I_am_satisfied").is(":checked")) {
+        $("#I_am_satisfied_no").prop("checked", false);
+
+    }
+    else {
+        $("#I_am_satisfied_no").prop("checked", true);
+    }
+
+});
+
+   $("#I_am_satisfied_no").on('click', function() {
+    if (jQuery("#I_am_satisfied_no").is(":checked")) {
+        $("#I_am_satisfied").prop("checked", false);
+
+    }
+    else {
+        $("#I_am_satisfied").prop("checked", true);
+    }
+
+});
+
+
+     $("#before_starting").on('click', function() {
+    if (jQuery("#before_starting").is(":checked")) {
+        $("#before_starting_no").prop("checked", false);
+
+    }
+    else {
+        $("#before_starting_no").prop("checked", true);
+    }
+
+});
+
+   $("#before_starting_no").on('click', function() {
+    if (jQuery("#before_starting_no").is(":checked")) {
+        $("#before_starting").prop("checked", false);
+
+    }
+    else {
+        $("#before_starting").prop("checked", true);
+    }
+
+});
+
+
+
+
+     $("#I_own_my").on('click', function() {
+    if (jQuery("#I_own_my").is(":checked")) {
+        $("#I_own_my_no").prop("checked", false);
+
+    }
+    else {
+        $("#I_own_my_no").prop("checked", true);
+    }
+
+});
+
+   $("#I_own_my_no").on('click', function() {
+    if (jQuery("#I_own_my_no").is(":checked")) {
+        $("#I_own_my").prop("checked", false);
+
+    }
+    else {
+        $("#I_own_my").prop("checked", true);
+    }
+
+});
+
+
+
+     $("#I_am_interested").on('click', function() {
+    if (jQuery("#I_am_interested").is(":checked")) {
+        $("#I_am_interested_no").prop("checked", false);
+
+    }
+    else {
+        $("#I_am_interested_no").prop("checked", true);
+    }
+
+});
+
+   $("#I_am_interested_no").on('click', function() {
+    if (jQuery("#I_am_interested_no").is(":checked")) {
+        $("#I_am_interested").prop("checked", false);
+
+    }
+    else {
+        $("#I_am_interested").prop("checked", true);
+    }
+
+});
+
+
+
+     $("#I_am_aware").on('click', function() {
+    if (jQuery("#I_am_aware").is(":checked")) {
+        $("#I_am_aware_no").prop("checked", false);
+
+    }
+    else {
+        $("#I_am_aware_no").prop("checked", true);
+    }
+
+});
+
+   $("#I_am_aware_no").on('click', function() {
+    if (jQuery("#I_am_aware_no").is(":checked")) {
+        $("#I_am_aware").prop("checked", false);
+
+    }
+    else {
+        $("#I_am_aware").prop("checked", true);
+    }
+
+});
+
+
+     $("#I_am_aware_of_prescribed").on('click', function() {
+    if (jQuery("#I_am_aware_of_prescribed").is(":checked")) {
+        $("#I_am_aware_of_prescribed_no").prop("checked", false);
+
+    }
+    else {
+        $("#I_am_aware_of_prescribed_no").prop("checked", true);
+    }
+
+});
+
+   $("#I_am_aware_of_prescribed_no").on('click', function() {
+    if (jQuery("#I_am_aware_of_prescribed_no").is(":checked")) {
+        $("#I_am_aware_of_prescribed").prop("checked", false);
+
+    }
+    else {
+        $("#I_am_aware_of_prescribed").prop("checked", true);
+    }
+
+});
+
+
+     $("#urgent").on('click', function() {
+    if (jQuery("#urgent").is(":checked")) {
+        $("#not-urgent").prop("checked", false);
+
+    }
+    else {
+        $("#not-urgent").prop("checked", true);
+    }
+
+});
+
+   $("#not-urgent").on('click', function() {
+    if (jQuery("#not-urgent").is(":checked")) {
+        $("#urgent").prop("checked", false);
+
+    }
+    else {
+        $("#urgent").prop("checked", true);
+    }
+
+});
+
+</script>

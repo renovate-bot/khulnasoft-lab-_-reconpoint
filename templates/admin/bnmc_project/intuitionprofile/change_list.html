@@ -1,0 +1,325 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_urls static admin_list %}
+
+{% block extrastyle %}
+  {{ block.super }}
+
+  <link rel="stylesheet" type="text/css" href="{% static "admin/css/custom_change_list.css" %}" />
+  <link rel="stylesheet" type="text/css" href="{% static "admin/css/changelists.css" %}" />
+  {% if cl.formset %}
+    <link rel="stylesheet" type="text/css" href="{% static "admin/css/forms.css" %}" />
+  {% endif %}
+  {% if cl.formset or action_form %}
+    <script type="text/javascript" src="{% url 'admin:jsi18n' %}"></script>
+  {% endif %}
+  {{ media.css }}
+  {% if not actions_on_top and not actions_on_bottom %}
+    <style>
+      #changelist table thead th:first-child {width: inherit}
+    </style>
+  {% endif %}
+{% endblock %}
+
+{% block extrahead %}
+{{ block.super }}
+{{ media.js }}
+{% endblock %}
+
+{% block bodyclass %}{{ block.super }} app-{{ opts.app_label }} model-{{ opts.model_name }} change-list{% endblock %}
+
+{% if not is_popup %}
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+<a href="{% url 'admin:index' %}">{% trans 'HOME' %}</a>
+    <a href="/admin/registration/"> › REGISTRATION</a>
+    <a href="/admin/registation_panel/?type=programs"> › INSTITUTE REGISTRATION</a>
+
+<!--&rsaquo; <a href="{% url 'admin:app_list' app_label=cl.opts.app_label %}">{{ cl.opts.app_config.verbose_name }}</a>-->
+&rsaquo; {{ cl.opts.verbose_name_plural|capfirst }}
+</div>
+{% endblock %}
+{% endif %}
+
+{% block coltype %}flex{% endblock %}
+
+{% block content %}
+
+
+
+
+  <!-- search -->
+  <!--{% if cl.search_fields %}-->
+<!--<div id="toolbar">-->
+
+    <!--<div class="search_form_custom">-->
+
+
+
+    <!--<forms id="changelist-search" method="get" class="tool">-->
+<!--<div>&lt;!&ndash; DIV needed for valid HTML &ndash;&gt;-->
+
+  <!---->
+
+
+<!--<label for="searchbar"><img src="{% static "admin/img/search.svg" %}" alt="Search" /></label>-->
+<!--<input type="text" size="40" name="{{ search_var }}" value="{{ cl.query }}" id="searchbar" autofocus />-->
+<!--<input type="submit" value="{% trans 'Search' %}" />-->
+<!--{% if show_result_count %}-->
+    <!--<span class="small quiet">{% blocktrans count counter=cl.result_count %}{{ counter }} result{% plural %}{{ counter }} results{% endblocktrans %} (<a href="?{% if cl.is_popup %}_popup=1{% endif %}">{% if cl.show_full_result_count %}{% blocktrans with full_result_count=cl.full_result_count %}{{ full_result_count }} total{% endblocktrans %}{% else %}{% trans "Show all" %}{% endif %}</a>)</span>-->
+<!--{% endif %}-->
+<!--{% for pair in cl.params.items %}-->
+    <!--{% if pair.0 != search_var %}<input type="hidden" name="{{ pair.0 }}" value="{{ pair.1 }}"/>{% endif %}-->
+<!--{% endfor %}-->
+<!--</div>-->
+<!--</forms>-->
+
+    <!--</div>-->
+
+    <!--</div>-->
+<!--{% endif %}-->
+ <!-- search -->
+
+
+
+
+
+
+
+
+
+    {% if cl.formset.errors %}
+        <p class="errornote">
+        {% if cl.formset.total_error_count == 1 %}{% trans "Please correct the error below." %}{% else %}{% trans "Please correct the errors below." %}{% endif %}
+        </p>
+        {{ cl.formset.non_form_errors }}
+    {% endif %}
+    <div class="module{% if cl.has_filters %} filtered{% endif %}" id="changelist">
+
+
+      <div id="content-main">
+           {{user.staff_institute.program_ins.title}}
+    <!--{% if type == "exams" %}-->
+     <!--<div class="program_name">-->
+       <!--<div class="program_content">-->
+        <!--<label>Type of EXAM</label>-->
+<!--&lt;!&ndash;<li class="program_list"><a href="/admin/bnmc_project/student_registration/?program_text={{user.staff_institute.program_ins.title }}"> {{user.staff_institute.program_ins.title }}  </a></li>&ndash;&gt;-->
+        <!--<input type="text" class="prog" maxlength="20" disabled name="exam_title" value="{{request.GET.program_title}}">-->
+        <!--</div>-->
+    <!--</div>-->
+     <!--{% endif %}-->
+
+
+
+
+          <div class="main_obj">
+
+
+              <!--<forms method="POST" action="" id="change">-->
+                      <!--{%csrf_token%}-->
+                 <div class="type_ins">
+                <label>Institution :</label>
+                <select id="instituited_type" name="ins_type">
+                    <option value="0"> select type</option>
+                     {% for p in ins %}
+                    <option value="{{p.id}}">{{p.institution_name}}</option>
+                      {% endfor %}
+                </select>
+            </div>
+            <div class="type_program">
+                <label>Division</label>
+                <select id="progeram_type" name="progmType">
+                    <option value="0">Select type</option>
+                     {% for p in division %}
+                    <option value="{{p.id}}">{{p.name}}</option>
+                     {% endfor %}
+                </select>
+
+            </div>
+
+
+            <div class="ins_cat">
+                <label>Nurse Type</label>
+                <select id="ins_cat" name="ins_cat">
+                    <option selected value="0">Select Nurse Type</option>
+                    <option value="nurse">Nurse</option>
+                    <option value="non_nurse">Non-Nurse</option>
+                </select>
+            </div>
+<style>
+
+    .ins_cat {
+    float: left;
+}
+
+.ins_cat select {
+    margin-left: 8%;
+}
+</style>
+
+
+            <!--<div class="session_filter">-->
+                <!--<label>session:</label>-->
+                <!--<select id="session" name="session">-->
+                    <!--<option value="0">select type</option>-->
+                    <!--{% for p in Session %}-->
+                    <!--<option value="{{p.id}}">{{p}}</option>-->
+                      <!--{% endfor %}-->
+                <!--</select>-->
+            <!--</div>-->
+
+            <!--<div class="program_cat">-->
+                <!--<label>Program catagory:</label>-->
+                <!--<select id="program_cat" name="program_category" class="prog_cat_select">-->
+                    <!--<option value="0">select a program category</option>-->
+                      <!--{% for p in progrm_cat %}-->
+                        <!--<option value="{{p.id}}">{{p.name}}</option>-->
+                      <!--{% endfor %}-->
+                <!--</select>-->
+            <!--</div>-->
+
+
+
+
+
+            <!--<div class="reg_nooo session_filter">-->
+                <!--<label>Registration no:</label>-->
+                <!--<input name="reg_no" id="reg_no">-->
+            <!--</div>-->
+
+
+            <!--<div class="ins_name">-->
+                <!--<label>Institution name:</label>-->
+                <!--<select id="ins_name" name="ins_name" class="ins_name__">-->
+                    <!--<option value="0">select a Institution name</option>-->
+                    <!--{% if user.is_superuser %}-->
+                        <!--{% for p in ins_name %}-->
+                        <!--<option value="{{p.id}}">{{p.institution_name}}</option>-->
+                        <!--{% endfor %}-->
+                    <!--{% else %}-->
+                        <!--{% for p in user.staff_institute.all %}-->
+                        <!--<option value="{{p.id}}">{{p.institution_name}}</option>-->
+                        <!--{% endfor %}-->
+                    <!--{% endif %}-->
+                <!--</select>-->
+            <!--</div>-->
+
+              <div style="display:none" class="ins_name">
+                  <label>Status:</label>
+                  <select id="status" name="status_id" class="ins_name__">
+                      <option value="0">select</option>
+                      {% for p in status %}
+                      <option value="{{p.id}}">{{p.permission_name}}</option>
+                      {% endfor %}
+                  </select>
+              </div>
+
+
+            <input type="hidden" value="{{request.GET.program_title}}">
+            <button type="submit" name="custom_admin" class="cls">submit</button>
+
+              <script>
+  
+
+
+                  var division = '{{request.GET.division__id__exact}}';
+                  if (String(division).trim() != '') {
+                      $("#progeram_type").val(division)
+                  }
+
+
+                  var ins_type = '{{request.GET.institute_name__id__exact}}';
+                  if (String(ins_type).trim() != '')
+                  {
+                      $("#instituited_type").val(ins_type)
+                  }
+
+                var nurse_type = '{{request.GET.nurse_type}}';
+                  if (String(nurse_type).trim() != '')
+                  {
+                      $("#ins_cat").val(nurse_type)
+                  }
+
+                  $(".cls").click(function () {
+                      var query_string = "?";
+                      var ins_type = $("#instituited_type").val().trim();
+                      var division_type = $("#progeram_type").val().trim();
+                      var ins_cat = $("#ins_cat").val().trim();
+
+
+
+
+                      if (String(ins_type) != "0") {
+                          query_string += "institute_name__id__exact=" + ins_type + "&"
+                      }
+                      if (String(division_type) != '0') {
+                          query_string += "division__id__exact=" + division_type + "&"
+                      }
+                      if (String(ins_cat) != '0') {
+                          query_string += "nurse_type=" + ins_cat + "&"
+                      }
+
+                      window.location.href = location.protocol + '//' + location.host + location.pathname + query_string;
+
+                  });
+              </script>
+
+
+
+<!--</forms>-->
+
+          </div>
+
+
+      {% block search %}{% search_form cl %}{% endblock %}
+      {% block date_hierarchy %}{% date_hierarchy cl %}{% endblock %}
+
+    {% block filters %}
+   {% if cl.has_filters %}
+          <div id="changelist-filter">
+            <h2>{% trans 'Filter' %}</h2>
+            {% for spec in cl.filter_specs %}{% admin_list_filter cl spec %}{% endfor %}
+          </div>
+        {% endif %}
+      {% endblock %}
+
+            {% block object-tools %}
+
+
+
+
+
+<ul class="object-tools">
+          {% block object-tools-items %}
+            {% if has_add_permission %}
+            <li>
+              {% url cl.opts|admin_urlname:'add' as add_url %}
+              <a href="/admin/teacher_form/" class="addlink">
+                {% blocktrans with cl.opts.verbose_name as name %}Add {{ name }}{% endblocktrans %}
+              </a>
+            </li>
+            {% endif %}
+          {% endblock %}
+        </ul>
+    {% endblock %}
+
+
+
+      <form id="changelist-form" target="_blank" method="post"{% if cl.formset.is_multipart %} enctype="multipart/form-data"{% endif %} novalidate>{% csrf_token %}
+      {% if cl.formset %}
+        <div>{{ cl.formset.management_form }}</div>
+      {% endif %}
+
+      {% block result_list %}
+          {% if action_form and actions_on_top and cl.show_admin_actions %}{% admin_actions %}{% endif %}
+          {% result_list cl %}
+          {% if action_form and actions_on_bottom and cl.show_admin_actions %}{% admin_actions %}{% endif %}
+      {% endblock %}
+      {% block pagination %}{% pagination cl %}{% endblock %}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
+
+
+

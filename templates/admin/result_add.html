@@ -1,0 +1,132 @@
+
+
+
+
+
+
+
+
+
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+{% load indextag %}
+{% load findtag %}
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="/static/admin/css/search_list.css">
+<link rel="stylesheet" type="text/css" href="/static/admin/css/log.css">
+
+{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <a href="{% url 'admin:index' %}">{% trans 'HOME' %}</a>
+    {% if title %} &rsaquo; {{ title }}{% endif %}
+    <a href="/admin/search_list/"> › SEARCH</a>
+</div>
+{% endblock %}
+{% block content %}
+<div class="main_result_content">
+
+
+
+
+
+    <table>
+        <caption>{{sub_main}} Roll= {{get_request_user.start_roll}} - {{get_request_user.end_roll}}</caption>
+
+           <tr>
+            <th>Roll Number</th>
+            <th>Registration Number</th>
+            <th>Name</th>
+               {% for i in get_request_user.sub_subjects.all %}
+
+            <th colspan="2">{{i}}</th>
+               {% endfor %}
+               <th>Status</th>
+               <th>Add Results</th>
+          </tr>
+
+        <tr>
+
+            <td></td>
+            <td></td>
+            <td></td>
+            {% for i in get_request_user.sub_subjects.all %}
+            <td>Assign Marks</td>
+            <td>Obtain</td>
+             {% endfor %}
+            <td>Pass/Failed</td>
+            <td></td>
+        </tr>
+
+
+    {% for i,j,s in own_students %}
+
+        {% if sub_main in i.subjects.all %}
+        <form method="post">
+            {% csrf_token %}
+          <tr>
+            <td>{{i.roll_number}}</td>
+            <td>{{i.student_id}}</td>
+
+              {% if s.0 == 'Pass' %}
+               <td style="color: green">{{i.last_name}}</td>
+              {% elif  s.0 == 'Failed' %}
+              <td style="color: red">{{i.last_name}}</td>
+
+              {% else %}
+               <td>{{i.last_name}}</td>
+              {% endif %}
+
+              {% for n in j %}
+
+                  {% if n|length == 1 %}
+
+                  {% for p in n %}
+
+                  <input type="hidden" name="exam_registration[]" value="{{i.id}}">
+                 <input type="hidden" name="sub_subject[]" value="{{p.subject.id}}">
+                  <td>{{p.subject.marks}}</td>
+                  <td><input type="number" name="obtain[]" value="{{p.mark}}"> </td>
+                    {% endfor %}
+
+
+
+                  {% else %}
+
+
+
+                  <input type="hidden" name="exam_registration[]" value="{{i.id}}">
+                 <input type="hidden" name="sub_subject[]" value="{{n|get_subject_id}}">
+                  <td>{{n|get_subject_mark}}</td>
+                  <td><input type="number" name="obtain[]"> </td>
+                  {% endif %}
+
+                  {% endfor %}
+
+                  {% if s.0 == 'Pass' %}
+                  <td style="color: green">{{s.0}}</td>
+                    {% elif s.0 == 'Failed' %}
+                  <td style="color: red">{{s.0}}</td>
+                {% else %}
+               <td></td>
+                  {% endif %}
+                  <td><button id="submit" >Submit</button></td>
+              </tr>
+
+            </form>
+            {% endif %}
+    {% endfor %}
+
+    </table>
+
+
+</div>
+
+
+
+{% endblock %}
+

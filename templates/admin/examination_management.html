@@ -1,0 +1,57 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/settings.css" %}">{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block breadcrumbs %}
+  <div class="breadcrumbs">
+    <a href="{% url 'admin:index' %}">{% trans 'HOME' %}</a>
+    {% if title %} &rsaquo; {{ title }}{% endif %}
+    <a href="/admin/settings/"> › SETTINGS</a>
+  </div>
+
+{% endblock %}
+
+{% block content %}
+<!--<div id="content-main">-->
+
+
+
+
+
+<body class="settings">
+
+   <div class="settings_in">
+       <label class="setting_login">EXAMINATION MANAGEMENT</label>
+   </div>
+
+    <div class="settings_content exam_manage">
+        <div class="manage_user">
+            <a href="/admin/apply_final_exam/">
+            <img src="{% static '/admin/img/user_manage.png' %}" class="manage_settings_bnmc" href="{% url 'admin:index' %}"/>
+            <label CLASS="user_manage">APPLY FINAL EXAM</label>
+            </a>
+        </div>
+
+        <div class="manage_address">
+            <a href="/admin/registration/">
+                <img src="{% static '/admin/img/address.png' %}" class="manage_address_bnmc" href="{% url 'admin:index' %}"/>
+                <label CLASS="address_manage">comprehensive exam</label>
+            </a>
+        </div>
+
+    </div>
+
+
+
+
+
+
+{% endblock %}
+
+
+</body>

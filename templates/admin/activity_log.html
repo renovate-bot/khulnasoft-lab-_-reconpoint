@@ -1,0 +1,198 @@
+
+
+
+
+
+
+
+
+
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="/static/admin/css/search_list.css">
+<link rel="stylesheet" type="text/css" href="/static/admin/css/log.css">
+
+{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <a href="{% url 'admin:index' %}">{% trans 'HOME' %}</a>
+    {% if title %} &rsaquo; {{ title }}{% endif %}
+    <a href="/admin/search_list/"> › SEARCH</a>
+</div>
+{% endblock %}
+{% block content %}
+
+
+
+
+<div class="search_ber">
+
+    <div class="activity">
+
+    <select class="name_user" name="user_name" id="u_name">
+        {% for p in acivity_users %}
+        <option  value="{{p.id}}">{{p.username}}</option>
+         {% endfor %}
+    </select>
+
+
+            <input type="date" id="start" name="start_date">
+            <input type="date" name="end_date" id="end">
+
+
+
+<input type="submit" name="submit" class="submit">
+
+</div>
+
+
+
+</div>
+
+
+
+<table>
+    <tr>
+         <th>User</th>
+    <th>Time</th>
+    <th>work</th>
+    <th>content_type</th>
+    <th>object_repr</th>
+    </tr>
+
+    {% for p in contacts %}
+
+<tr>
+    <td>{{p.user}}</td>
+   <td>{{p.action_time}}</td>
+    <td>{{p.change_message}}</td>
+
+
+
+
+    <td>
+
+        {% if p.content_type.model == 'group' %}
+        <a href="/admin/auth/group/{{p.object_id}}/change">{{p.content_type}}</a>
+     {% endif %}
+
+
+        {% if not p.content_type.model == 'group' %}
+
+        <a class="none" href="/admin/bnmc_project/{{p.content_type.model}}/{{p.object_id}}/change">{{p.content_type}}</a>
+{% endif %}
+
+
+
+
+
+
+    </td>
+
+
+
+
+    <td>{{p.object_repr}}</td>
+
+</tr>
+    {% endfor %}
+
+
+</table>
+
+
+<div class="pagination">
+    <span class="step-links">
+        {% if contacts.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ contacts.previous_page_number }}{% for key,value in request.GET.items %}{% ifnotequal key 'page' %}&{{ key }}={{ value }}{% endifnotequal %}{% endfor %}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ contacts.number }} of {{ contacts.paginator.num_pages }}.
+        </span>
+
+        {% if contacts.has_next %}
+            <a href="?page={{ contacts.next_page_number }}{% for key,value in request.GET.items %}{% ifnotequal key 'page' %}&{{ key }}={{ value }}{% endifnotequal %}{% endfor %}">next</a>
+            <a href="?page={{ contacts.paginator.num_pages }}{% for key,value in request.GET.items %}{% ifnotequal key 'page' %}&{{ key }}={{ value }}{% endifnotequal %}{% endfor %}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+
+
+
+
+        <script>
+
+
+             var user_name = '{{request.GET.user_name}}';
+            if (String(user_name).trim() != '')
+            {
+                $("#u_name").val(user_name)
+            }
+
+
+             var start_date = '{{request.GET.start_date}}';
+            if (String(start_date).trim() != '')
+            {
+                $("#start").val(start_date)
+            }
+
+
+            var end_date = '{{request.GET.end_date}}';
+            if (String(end_date).trim() != '')
+            {
+                $("#end").val(end_date)
+            }
+
+
+
+
+            $(".submit").click(function(){
+                      var query_string = "?submit=1&";
+                      var user_name = $("#u_name").val().trim();
+                      var start_date= $("#start").val().trim();
+                      var end_date= $("#end").val().trim();
+
+
+                      if (String(user_name) != '')
+                      {
+                          query_string += "user_name=" + user_name + "&"
+                      }
+
+
+                      if (String(start_date) != '')
+                      {
+                          query_string += "start_date=" + start_date + "&"
+                      }
+
+
+
+                      if (String(end_date) != '')
+                      {
+                          query_string += "end_date=" + end_date + "&"
+                      }
+
+
+
+
+         window.location.href = location.protocol + '//' + location.host + location.pathname +query_string;
+
+
+
+
+        });
+
+        </script>
+
+
+
+
+{% endblock %}
+

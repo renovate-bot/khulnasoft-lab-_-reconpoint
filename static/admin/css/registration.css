@@ -1,0 +1,448 @@
+#content {
+    padding: 10px 34px !important;
+    margin: auto;
+}
+.registration_in {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    height: 30px;
+}
+
+label.registration {
+    font-size: 18px;
+}
+
+.dashboard .dash_login {
+
+    display: none !important;
+}
+
+.manage_registration {
+    width: 170px;
+    height: 185px;
+    display: inline-block;
+    float: left;
+    background-color: #fff;
+    position: relative;
+}
+
+img.manage_registration_bnmc {
+    width: 58%;
+    height: 50%;
+    display: block;
+    margin: auto;
+    margin-top: 16%;
+}
+
+.manage_registration:hover{
+    box-shadow:0 0 6px rgb(0, 153, 51);
+
+}
+
+.manage_license_exam {
+    width: 170px;
+    height: 185px;
+    display: inline-block;
+    float: left;
+    background-color: #fff;
+    margin-left: 20px;
+    position: relative;
+}
+
+img.manage_license_exam_bnmc {
+    width: 58%;
+    height: 50%;
+    display: block;
+    margin: auto;
+    margin-top: 16%;
+}
+
+.manage_license_exam:hover {
+    box-shadow: 0 0 6px rgb(255, 51, 51);
+}
+
+
+.manage_license_recve {
+    width: 170px;
+    height: 185px;
+    display: inline-block;
+    float: left;
+    background-color: #fff;
+    margin-left: 20px;
+    position: relative;
+
+
+}
+
+img.manage_license_recve_bnmc {
+    width: 58%;
+    height: 50%;
+    display: block;
+    margin: auto;
+    margin-top: 16%;
+}
+
+.manage_license_recve:hover{
+    box-shadow:0 0 6px rgb(0, 153, 51);
+
+}
+
+
+
+label.reg_label {
+    display: block;
+    margin: auto;
+        margin-top: auto;
+    text-align: center;
+    margin-top: 25px;
+    color: #867f7f;
+    font-weight: bold;
+    bottom: 5%;
+    position: absolute;
+}
+
+label.license_exam_model {
+    display: block;
+    margin: auto;
+        margin-top: auto;
+    text-align: center;
+    margin-top: 25px;
+    color: #867f7f;
+    font-weight: bold;
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    right: 0;
+}
+label.license_recve_model {
+    display: block;
+    margin: auto;
+        margin-top: auto;
+    text-align: center;
+    margin-top: 25px;
+    color: #867f7f;
+    font-weight: bold;
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    right: 0;
+}
+
+
+.content_body {
+    width: 700px !important;
+}
+
+
+.manage_license_rec {
+    width: 170px;
+    height: 185px;
+    display: inline-block;
+    float: left;
+    background-color: #fff;
+    margin-top: 10px;
+    position: relative;
+}
+
+
+
+.manage_license_proc {
+    width: 170px;
+    height: 185px;
+    display: inline-block;
+    float: left;
+    background-color: #fff;
+    margin-top: 10px;
+    margin-left: 20px;
+    position: relative;
+}
+
+.upload_exel {
+    width: 170px;
+    height: 185px;
+    display: inline-block;
+    float: left;
+    background-color: #fff;
+    margin-top: 10px;
+    margin-left: 20px;
+    position: relative;
+}
+
+label.license_recve_mo {
+    display: block;
+    margin: auto;
+        margin-top: auto;
+    text-align: center;
+    margin-top: 25px;
+    color: #867f7f;
+    font-weight: bold;
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    right: 0;
+}
+
+.license_receive_form_print {
+    width: 170px;
+    height: 185px;
+    display: inline-block;
+    float: left;
+    background-color: #fff;
+    margin-top: 10px;
+    position: relative;
+    margin-left: 20px;
+}
+
+.ddd {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.manage_new_exam {
+    width: 170px;
+    height: 185px;
+    display: inline-block;
+    float: left;
+    background-color: #fff;
+    margin-top: 10px;
+    margin-left: 20px;
+    position: relative;
+}
+
+
+.registration_content {
+    text-transform: uppercase;
+}
+
+
+
+
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.manage_registration:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-box-front {
+  color: black;
+}
+
+.flip-box-back {
+
+  color: white;
+  transform: rotateY(180deg);
+}
+
+
+
+
+.ggg {
+    bottom: 10% !important;
+    left: 0;
+    right: 0;
+}
+
+.manage_license_exam:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+
+.manage_license_recve:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+
+.manage_license_rec:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+
+.manage_license_proc:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+.upload_exel:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+
+.license_receive_form_print:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+
+.upload_exel:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+
+
+.manage_new_exam:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+
+
+
+.manage_registration:hover{
+
+   -webkit-transform: scale(1.10, 1.10);
+    transform: scale(1.10, 1.10);
+        z-index: 1000;
+}
+
+.manage_registration{
+box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    -webkit-transform: translateY(0);
+    -webkit-transition: all .6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all .6s cubic-bezier(0.165, 0.84, 0.44, 1)
+
+}
+
+
+
+.manage_license_exam:hover{
+
+   -webkit-transform: scale(1.10, 1.10);
+    transform: scale(1.10, 1.10);
+        z-index: 1000;
+}
+
+.manage_license_exam{
+box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    -webkit-transform: translateY(0);
+    -webkit-transition: all .6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all .6s cubic-bezier(0.165, 0.84, 0.44, 1)
+
+}
+
+
+.manage_license_recve:hover{
+
+   -webkit-transform: scale(1.10, 1.10);
+    transform: scale(1.10, 1.10);
+        z-index: 1000;
+}
+
+.manage_license_recve{
+box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    -webkit-transform: translateY(0);
+    -webkit-transition: all .6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all .6s cubic-bezier(0.165, 0.84, 0.44, 1)
+
+}
+
+
+.manage_license_rec:hover{
+
+   -webkit-transform: scale(1.10, 1.10);
+    transform: scale(1.10, 1.10);
+        z-index: 1000;
+}
+
+.manage_license_rec{
+box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    -webkit-transform: translateY(0);
+    -webkit-transition: all .6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all .6s cubic-bezier(0.165, 0.84, 0.44, 1)
+
+}
+
+
+.manage_license_proc:hover{
+
+   -webkit-transform: scale(1.10, 1.10);
+    transform: scale(1.10, 1.10);
+        z-index: 1000;
+}
+
+.manage_license_proc{
+box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    -webkit-transform: translateY(0);
+    -webkit-transition: all .6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all .6s cubic-bezier(0.165, 0.84, 0.44, 1)
+
+}
+
+
+.upload_exel:hover{
+
+   -webkit-transform: scale(1.10, 1.10);
+    transform: scale(1.10, 1.10);
+        z-index: 1000;
+}
+
+.upload_exel{
+box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    -webkit-transform: translateY(0);
+    -webkit-transition: all .6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all .6s cubic-bezier(0.165, 0.84, 0.44, 1)
+
+}
+
+
+.license_receive_form_print:hover{
+
+   -webkit-transform: scale(1.10, 1.10);
+    transform: scale(1.10, 1.10);
+        z-index: 1000;
+}
+
+.license_receive_form_print{
+box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    -webkit-transform: translateY(0);
+    -webkit-transition: all .6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all .6s cubic-bezier(0.165, 0.84, 0.44, 1)
+
+}
+
+
+.ddd:hover{
+
+   -webkit-transform: scale(1.10, 1.10);
+    transform: scale(1.10, 1.10);
+        z-index: 1000;
+}
+
+.ddd{
+box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    -webkit-transform: translateY(0);
+    -webkit-transition: all .6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all .6s cubic-bezier(0.165, 0.84, 0.44, 1)
+
+}
+
+
+.manage_new_exam:hover{
+
+   -webkit-transform: scale(1.10, 1.10);
+    transform: scale(1.10, 1.10);
+        z-index: 1000;
+}
+
+.manage_new_exam{
+box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    -webkit-transform: translateY(0);
+    -webkit-transition: all .6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all .6s cubic-bezier(0.165, 0.84, 0.44, 1)
+
+}
+
+
+
+

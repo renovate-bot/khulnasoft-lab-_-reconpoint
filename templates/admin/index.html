@@ -1,0 +1,323 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/dashboard.css" %}">{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+ <a href="{% url 'admin:index' %}">{% trans 'HOME' %}</a>
+    <!--{% if title %} &rsaquo; {{ title }}{% endif %}-->
+    </div>
+{% endblock %}
+
+{% block content %}
+<!--<div id="content-main">-->
+
+ <div class="dashbord_in">
+        <label class="dash_login">Dashboard</label>
+    </div>
+
+
+    <div class="dashboard_content">
+
+       
+        <div class="student_list">
+            <div class="flip-box-inner">
+                <div class="flip-box-front">
+            <a href="/admin/student_management">
+       <img src="{% static '/admin/img/student_list.png' %}" class="studentlist_bnmc" href="{% url 'admin:index' %}"/>
+
+            </a>
+                </div>
+
+
+                  <div class="flip-box-back">
+            <a href="/admin/student_management">
+       <img src="{% static '/admin/img/student_list.png' %}" class="studentlist_bnmc" href="{% url 'admin:index' %}"/>
+
+            </a>
+                </div>
+            </div>
+            <label CLASS="STUDENT_LIST_"> Student Management</label>
+
+        </div>
+
+        <div class="aproval">
+            <div class="flip-box-inner">
+                 <div class="flip-box-front">
+            <a href="/admin/registration_manage_license">
+            <img src="{% static '/admin/img/APPROVAL.png' %}" class="aproval_bnmc" />
+
+            </a>
+                 </div>
+
+
+
+                <div class="flip-box-back">
+
+                    <a href="/admin/registration_manage_license">
+
+            <img src="{% static '/admin/img/APPROVAL.png' %}" class="aproval_bnmc" />
+
+            </a>
+                 </div>
+            </div>
+
+            <label CLASS="approval_to_pending">Registration  Management (License)</label>
+        </div>
+
+        <div class="registration_list">
+             <div class="flip-box-inner">
+                 <div class="flip-box-front">
+                <a href="/admin/examination_management/">
+
+            <img src="{% static '/admin/img/REGISTRETION.png' %}" class="registation_bnmc"/>
+            </a>
+                 </div>
+
+
+                 <div class="flip-box-back">
+             <a href="/admin/examination_management/">
+            <img src="{% static '/admin/img/REGISTRETION.png' %}" class="registation_bnmc"/>
+
+            </a>
+                 </div>
+             </div>
+             <label CLASS="student_registration">Examination Management</label>
+        </div>
+
+        <div class="activity">
+             <div class="flip-box-inner">
+                 <div class="flip-box-front">
+
+            <img src="{% static '/admin/img/APPROVAL.png' %}" class="activity_bnmc" />
+            </a>
+                 </div>
+
+
+
+                  <div class="flip-box-back">
+            <img src="{% static '/admin/img/APPROVAL.png' %}" class="activity_bnmc" />
+
+            </a>
+                 </div>
+             </div>
+            <label CLASS="activity_log">ACTIVITY LOG </label>
+        </div>
+
+
+
+
+
+        <div class="sett_option">
+
+             {% if user.is_superuser %}
+
+        <div class="settings">
+            <div class="flip-box-inner">
+                 <div class="flip-box-front">
+            <a href="/admin/settings/">
+            <img src="{% static '/admin/img/Settings_Icone.png' %}" class="settings_bnmc" href="{% url 'admin:index' %}"/>
+            </a>
+                 </div>
+
+
+
+                 <div class="flip-box-back">
+            <a href="/admin/settings/">
+            <img src="{% static '/admin/img/Settings_Icone.png' %}" class="settings_bnmc" href="{% url 'admin:index' %}"/>
+
+            </a>
+                 </div>
+            </div>
+               <label CLASS="settings_link">SETTINGS</label>
+        </div>
+
+             {% endif %}
+
+
+
+        <div class="accounts">
+             <div class="flip-box-inner">
+                 <div class="flip-box-front">
+
+            <img src="{% static '/admin/img/account.png' %}" class="account_img" />
+            </a>
+                 </div>
+
+
+
+                  <div class="flip-box-back">
+            <img src="{% static '/admin/img/account.png' %}" class="account_img" />
+
+            </a>
+                 </div>
+             </div>
+            <label CLASS="accont_le">ACCOUNTS</label>
+        </div>
+
+
+
+
+             <div class="ins_profile">
+             <div class="flip-box-inner">
+                 <div class="flip-box-front">
+                     <a href="/admin/institute_profile">
+            <img src="{% static '/admin/img/ins.jpg' %}" class="account_img" />
+            </a>
+                 </div>
+
+
+
+                  <div class="flip-box-back">
+                      <a href="/admin/institute_profile">
+
+            <img src="{% static '/admin/img/ins.jpg' %}" class="account_img" />
+
+            </a>
+                 </div>
+             </div>
+            <label CLASS="accont_le">institute profile</label>
+        </div>
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+{% if app_list %}
+    {% for app in app_list %}
+        <div class="app-{{ app.app_label }} module">
+        <table>
+
+
+
+        <caption>
+            <a href="{{ app.app_url }}" class="section" title="{% blocktrans with name=app.name %}Models in the {{ name }} application{% endblocktrans %}">{{ app.name }}</a>
+        </caption>
+        {% for model in app.models %}
+            <tr class="model-{{ model.object_name|lower }}">
+            {% if model.admin_url %}
+
+                <th scope="row"><a href="{{ model.admin_url }}">{{ model.name }}</a></th>
+            {% else %}
+                <th scope="row">{{ model.name }}</th>
+            {% endif %}
+
+            {% if model.add_url %}
+                <td><a href="{{ model.add_url }}" class="addlink">{% trans 'Add' %}</a></td>
+            {% else %}
+                <td>&nbsp;</td>
+            {% endif %}
+
+            {% if model.admin_url %}
+                <td><a href="{{ model.admin_url }}" class="changelink">{% trans 'Change' %}</a></td>
+            {% else %}
+                <td>&nbsp;</td>
+            {% endif %}
+            </tr>
+        {% endfor %}
+
+
+
+
+        </table>
+        </div>
+
+
+    {% endfor %}
+{% else %}
+    <p>{% trans "You don't have permission to edit anything." %}</p>
+{% endif %}
+
+
+
+<!--</div>-->
+
+
+
+
+
+
+
+<!--<h1>Student Registration</h1>-->
+<!--{% for p in user.staff_institute.program_ins.all %}-->
+<!--<li>Institution Registration</li><a href="/admin/bnmc_project/student_registration/add/?program_title={{p.id}}&institution={{user.staff_institute.id}}"> {{p.title }}  </a></li>-->
+<!--{% endfor %}-->
+
+<!--{% for p in user.staff_institute.program_ins.all %}-->
+<!--<li>Licence Exam </li><a href="/admin/bnmc_project/student_registration/add/?program_title={{p.id }}&institution={{user.staff_institute.id}}&registration_fees={{p.program_fee}}"> {{p.title }}  </a></li>-->
+<!--{% endfor %}-->
+
+<!--{% for p in user.staff_institute.program_ins.all %}-->
+<!--<li>Licence Receive</li><a href="/admin/bnmc_project/student_registration/add/?program_title={{p.id }}&institution={{user.staff_institute.id}}"> {{p.title }}  </a></li>-->
+<!--{% endfor %}-->
+
+<!--{% endblock %}-->
+
+
+
+
+<!--{% block sidebar %}-->
+
+
+
+
+<!--<div id="content-related">-->
+    <!--<div class="module" id="recent-actions-module">-->
+        <!--<h2>{% trans 'Recent actions' %}</h2>-->
+        <!--<h3>{% trans 'My actions' %}</h3>-->
+            <!--{% load log %}-->
+            <!--{% get_admin_log 10 as admin_log for_user user %}-->
+            <!--{% if not admin_log %}-->
+            <!--<p>{% trans 'None available' %}</p>-->
+            <!--{% else %}-->
+            <!--<ul class="actionlist">-->
+            <!--{% for entry in admin_log %}-->
+            <!--<li class="{% if entry.is_addition %}addlink{% endif %}{% if entry.is_change %}changelink{% endif %}{% if entry.is_deletion %}deletelink{% endif %}">-->
+                <!--{% if entry.is_deletion or not entry.get_admin_url %}-->
+                    <!--{{ entry.object_repr }}-->
+                <!--{% else %}-->
+                    <!--<a href="{{ entry.get_admin_url }}">{{ entry.object_repr }}</a>-->
+                <!--{% endif %}-->
+                <!--<br>-->
+                <!--{% if entry.content_type %}-->
+                    <!--<span class="mini quiet">{% filter capfirst %}{{ entry.content_type }}{% endfilter %}</span>-->
+                <!--{% else %}-->
+                    <!--<span class="mini quiet">{% trans 'Unknown content' %}</span>-->
+                <!--{% endif %}-->
+            <!--</li>-->
+            <!--{% endfor %}-->
+            <!--</ul>-->
+            <!--{% endif %}-->
+    <!--</div>-->
+
+
+<!--</div>-->
+<!--{% endblock %}-->

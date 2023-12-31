@@ -1,0 +1,52 @@
+#content {
+    width: 700px;
+    margin: auto;
+    background-color: #eee;
+    margin-top: 20px !important;
+}
+}
+
+#toolbar {
+    background-color: #eee !important;
+    width: 60%;
+    display: inline-block;
+}
+
+#toolbar {
+    background-color: #eee !important;
+    width: 573px;
+    display: inline-block;
+}
+
+ul.object-tools {
+    margin-top: 10%;
+    z-index: 1000;
+}
+.actions {
+    background-color: #eee !important;
+}
+
+#changelist {
+    background-color: #eee;
+}
+
+a.addlink {
+    border-radius: 0;
+}
+
+#result_list tr {
+    background-color: #eee;
+}
+
+p.paginator {
+    background-color: #eee !important;
+}
+
+#changelist table tbody tr.selected {
+    background-color: #fff !important;
+}
+
+label.dash_login {
+    display: none !important;
+}
+

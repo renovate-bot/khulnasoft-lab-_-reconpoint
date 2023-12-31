@@ -1,0 +1,199 @@
+.full {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.header {
+    width: 100px;
+    height: 100px;
+    top: 0;
+    display: block;
+    position: absolute;
+}
+
+.header {
+    width: 100%;
+    top: 0;
+    display: block;
+    position: absolute;
+    height: 134px;
+}
+
+.im {
+    position: absolute;
+    width: 58%;
+    height: 80px;
+    top: 16.9%;
+    margin: auto;
+    display: block;
+    left: 0;
+    right: 0;
+}
+
+
+
+.image {
+    display: block;
+    float: right;
+    width: 20%;
+    height: 94%;
+    margin-top: 2px;
+}
+
+.pro_ti {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 40px;
+    top: 26.5%;
+}
+
+.pro_ti label {
+    text-align: center;
+    display: block;
+    margin-top: 3px;
+    font-size: 20px;
+}
+
+.f_nto_m_n {
+    position: absolute;
+    top: 32%;
+    width: 71%;
+    height: 90px;
+    right: 0;
+}
+
+.m_name {
+    height: 21px;
+    margin-top: 5px;
+    display: block;
+}
+
+.f_name {
+    height: 21px;
+    margin-top: 4px;
+    display: block;
+}
+
+.name {
+    height: 21px;
+    margin-top: 13px;
+    display: block;
+}
+
+
+.per {
+    position: absolute;
+    top: 43%;
+    display: block;
+    width: 71%;
+    height: 38px;
+    right: 0;
+}
+
+.step2 {
+    width: 38%;
+    display: inline-block;
+    float: left;
+    height: 50%;
+    margin-left: 22px;
+}
+
+.step1 {
+    width: 38%;
+    display: inline-block;
+    float: left;
+    height: 50%;
+    margin-left: 11px;
+}
+
+.step_3 {
+    width: 38%;
+    display: inline-block;
+    float: left;
+    height: 50%;
+    margin-left: 21px;
+}
+
+.step_4 {
+    width: 38%;
+    display: inline-block;
+    float: left;
+    height: 50%;
+    margin-left: 22px;
+}
+
+.ins {
+    width: 71%;
+    right: 0;
+    position: absolute;
+    top: 48%;
+    height: 30px;
+}
+
+.stu_id {
+    width: 71%;
+    right: 0;
+    position: absolute;
+    top: 54%;
+    height: 32px;
+}
+
+.session{
+    position: absolute;
+    top: 58%;
+    height: 29px;
+    width: 71%;
+    right: 0;
+}
+
+.adt_date {
+    width: 71%;
+    height: 25px;
+    top: 61%;
+    position: absolute;
+    right: 0;
+}
+
+.image_reg {
+    position: absolute;
+    top: 64%;
+    width: 73%;
+    height: 100px;
+    margin: auto;
+    display: block;
+    left: 0;
+    right: 0;
+}
+
+.reg {
+    display: inline-block;
+    width: 59%;
+    height: 100%;
+    float: left;
+}
+
+.qr {
+    display: inline-block;
+    float: left;
+    width: 40%;
+    height: 100%;
+}
+
+.prin {
+    position: absolute;
+    top: 78%;
+    width: 79%;
+    right: 0;
+    height: 20px;
+}
+
+.pc {
+    display: block !important;
+}
+
+#page-container {
+    position: relative !important;
+    background: none !important;
+}

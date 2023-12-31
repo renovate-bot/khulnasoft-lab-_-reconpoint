@@ -1,0 +1,296 @@
+﻿{% load i18n static %}<!DOCTYPE html>
+{% get_current_language as LANGUAGE_CODE %}{% get_current_language_bidi as LANGUAGE_BIDI %}
+<html  lang="{{ LANGUAGE_CODE|default:"en-us" }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta charset="UTF-8">
+
+
+<title>Bangladesh Nursing & Midwifery Council</title>
+
+<link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static "admin/css/base.css" %}{% endblock %}">
+{% block extrastyle %}{% endblock %}
+{% if LANGUAGE_BIDI %}<link rel="stylesheet" type="text/css" href="{% block stylesheet_rtl %}{% static "admin/css/rtl.css" %}{% endblock %}">{% endif %}
+{% block extrahead %}{% endblock %}
+{% block responsive %}
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static "admin/css/responsive.css" %}">
+    {% if LANGUAGE_BIDI %}<link rel="stylesheet" type="text/css" href="{% static "admin/css/responsive_rtl.css" %}">{% endif %}
+{% endblock %}
+{% block blockbots %}<meta name="robots" content="NONE,NOARCHIVE">{% endblock %}
+
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="{% static "admin/js/select2.js" %}"></script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.full.js"></script>
+    <style>
+
+
+
+
+
+
+
+    </style>
+
+ <link rel="stylesheet" type="text/css" href="{% static "admin/css/student_info.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "admin/css/select2.css" %}">
+
+
+
+     <script src="https://docraptor.com/docraptor-1.0.0.js"></script>
+  <script>
+    var downloadPDF = function() {
+      DocRaptor.createAndDownloadDoc("YOUR_API_KEY_HERE", {
+        test: true, // test documents are free, but watermarked
+        type: "pdf",
+        document_content: document.querySelector('html').innerHTML, // use this page's HTML
+        // document_content: "<h1>Hello world!</h1>",               // or supply HTML directly-->
+       // document_url: "http://example.com/your-page",            // or use a URL-->
+        // javascript: true,                                        // enable JavaScript processing
+        // prince_options: {
+        //   media: "screen",                                       // use screen styles instead of print styles
+        // }
+      })
+    }
+  </script>
+
+<script type="text/javascript">//<![CDATA[
+    $(function(){
+            $('img').on('error', function () {
+            $(this).remove();
+        })
+     });//]]>
+</script>
+
+
+
+</head>
+{% load i18n %}
+
+
+<div class="main_body">
+
+
+    <div class="sub_body">
+
+        <div class="header_logo">
+
+           <img src="{% static '/admin/img/logo_bnmc.png' %}" class="logo_bnmc" />
+        </div>
+
+
+
+
+
+<body class="{% if is_popup %}popup {% endif %}{% block bodyclass %}{% endblock %}"
+  data-admin-utc-offset="{% now "Z" %}">
+
+<!-- Container -->
+<div id="container">
+
+    {% if not is_popup %}
+    <!-- Header -->
+    <div id="header">
+
+	
+{% block usertools %}
+        {% if has_permission %}
+        <div id="user-tools">
+            {% block welcome-msg %}
+
+              <!--<strong>{%firstof user.staff_instittiute user.staff_institute %}</strong>-->
+
+
+
+                {% trans 'Welcome,' %}
+                <strong>{% firstof user.get_username user.get_username %}</strong>.
+            {% endblock %}
+            {% block userlinks %}
+                <!--{% if site_url %}-->
+                    <!--<a href="{{ site_url }}">{% trans 'View site' %}</a> /-->
+                <!--{% endif %}-->
+                {% if user.is_active and user.is_staff %}
+                    {% url 'django-admindocs-docroot' as docsroot %}
+                    {% if docsroot %}
+                        <a href="{{ docsroot }}">{% trans 'Documentation' %}</a> /
+                    {% endif %}
+                {% endif %}
+                {% if user.has_usable_password %}
+                <!--<a href="{% url 'admin:password_change' %}">{% trans 'Change password' %}</a> /-->
+                {% endif %}
+
+                <a class="ch" href="{% url 'admin:password_change' %}">{% trans 'Change password' %}</a> /
+                <a href="{% url 'admin:logout' %}">{% trans 'Log out' %}</a>
+            {% endblock %}
+        </div>
+        {% endif %}
+        {% endblock %}
+
+
+       
+
+        <div class="logo_das">
+                <div class="logo_dash">
+                    <a href="/admin/">
+                  <img src="{% static '/admin/img/logo_bnmc.png' %}" class="logo_bnmc" href="{% url 'admin:index' %}"/>
+                    </a>
+                </div>
+        </div>
+
+
+
+
+
+
+
+        <div id="branding">
+
+            <div class="login_admin">
+
+                <label>LOG IN PANEL</label>
+
+
+            </div>
+
+        {% block branding %}{% endblock %}
+        </div>
+
+        {% block nav-global %}{% endblock %}
+    </div>
+    <!-- END Header -->
+
+
+
+{% if user.is_staff %}
+    <style>
+
+        .list_ ul {
+        width: 60%;
+}
+
+
+    </style>
+    {% endif %}
+
+    {% if user.is_superuser %}
+    <style>
+
+        .list_ ul {
+        width: 70%;
+}
+
+
+    </style>
+    {% endif %}
+
+
+
+    {% endif %}
+
+    {% block list %}
+    <div class='list_'>
+
+        <ul>
+        <li><a style="pointer-events: visible;" href="/admin">Home</a></li>
+            <li><a style="pointer-events: visible;" href="/admin/student_management">Student Management</a></li>
+            <li><a href="/admin/registration_manage_license">Registration Management</a></li>
+        <li><a style="pointer-events: visible;" href="/admin/examination_management/">Examination Management</a></li>
+             {% if user.is_superuser %}
+        <li><a href="/admin/accounts/">ACCOUNTS</a></li>
+
+            {% endif %}
+
+
+        </ul>
+
+
+
+
+
+    </div>
+
+    {% endblock %}
+
+
+    {% block messages %}
+        {% if messages %}
+        <ul class="messagelist">{% for message in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message|capfirst }}</li>
+        {% endfor %}</ul>
+        {% endif %}
+    {% endblock messages %}
+
+
+
+
+    <!--<input type=button class="back_btn" value="BACK" onClick="javascript:history.go(-1);">-->
+
+
+         {% if user.is_superuser %}
+
+        <div class="staff_super">
+
+
+
+
+            <label class="login_das">Logged in as super user</label>
+
+        </div>
+
+
+
+    {% elif user.is_staff %}
+        <div class="staff_super">
+
+
+            <label class="login_das">Logged in as staff</label>
+
+        </div>
+
+
+    {% endif %}
+
+
+
+
+    <!-- Content -->
+    <div class="content_body">
+
+
+    <div id="content" class="{% block coltype %}colM{% endblock %}">
+        {% block pretitle %}{% endblock %}
+        {% block content_title %}{% if title %}<h1></h1>{% endif %}{% endblock %}
+        {% block content %}
+        {% block object-tools %}{% endblock %}
+        {{ content }}
+        {% endblock %}
+        {% block sidebar %}{% endblock %}
+        <br class="clear">
+    </div>
+
+        </div>
+    <!-- END Content -->
+
+    {% block footer %}<div id="footer">
+
+
+
+</div>{% endblock %}
+</div>
+
+       
+<!-- END Container -->
+
+</body>
+
+        </div>
+
+    </div>
+
+
+</html>

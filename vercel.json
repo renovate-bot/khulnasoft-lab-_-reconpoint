@@ -1,14 +1,14 @@
 {
-  "builds": [
-    {
-      "src": "vercel_app/wsgi.py",
-      "use": "@vercel/python"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "vercel_app/wsgi.py"
-    }
-  ]
-}
+    "builds": [
+      {
+        "src": "bnmc/wsgi.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "bnmc/wsgi.py"
+      }
+    ]
+  }

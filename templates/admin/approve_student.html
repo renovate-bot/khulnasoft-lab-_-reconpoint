@@ -1,0 +1,843 @@
+<html>
+
+
+
+<head>
+
+
+
+
+    {% load i18n static %}
+    <link rel="stylesheet" type="text/css" href="{% static "admin/css/approve.css" %}" />
+
+
+
+
+
+
+    <style>
+        @media print {
+
+
+
+
+            label {
+                font-weight: 700;
+                font-size: 15px;
+            }
+
+            b {
+                font-weight: 300;
+            }
+
+            @page {
+                size: 8in 9in;
+                margin-left: 0px;
+                margin-right: 0px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                margin: 0;
+                -webkit-print-color-adjust: exact;
+                height: 500px !important;
+                    overflow: hidden;
+            }
+
+            .full_body {
+                width: 1200px;
+                height: 928px;
+                margin: auto;
+                display: block;
+            }
+
+            .header {
+                width: 1200px;
+                height: 178px;
+                display: block;
+                margin-top: 50px;
+            }
+
+            .image_he {
+                width: 80%;
+                margin: auto;
+                height: 176px;
+            }
+
+
+            img.logo {
+                width: 80%;
+                margin: auto;
+                display: block;
+            }
+
+            .image_he label {
+                text-align: center;
+                display: block;
+                font-size: 18px;
+                margin-left: 100px margin-top: -3px;
+            }
+
+            .student_reg_n_img {
+                width: 80%;
+                height: 145px;
+                margin: auto;
+            }
+
+            .stu_label {
+                width: 72%;
+                height: 100%;
+                display: inline-block;
+                float: left;
+            }
+
+            .student_img {
+                width: 14%;
+                height: 100%;
+                display: inline-block;
+                margin-left: 18px;
+            }
+
+
+            .reg_label {
+                float: right;
+            }
+
+                .reg_label label {
+                    font-size: 25px;
+                    display: inline-block;
+                    margin-left: -50%;
+                    padding: 5px;
+                    border: 3px solid #969696;
+                }
+
+            .main_information {
+                width: 1200px;
+                height: 600px;
+                margin-top: 40px;
+            }
+
+            .full_body {
+                background-image: url(/static/admin/img/bacddg.png);
+                background-repeat: no-repeat;
+                background-size: 78% 125%;
+                background-position: top;
+            }
+
+
+            .program_name {
+                width: 80%;
+                height: 33px;
+                margin: auto;
+            }
+
+                .program_name span {
+                    text-align: center;
+                    display: block;
+                    font-size: 23px;
+                }
+
+            .stu_info {
+                width: 77%;
+                margin: auto;
+                height: 400px;
+            }
+
+            .name {
+                width: 100%;
+                height: 40px;
+                margin-top: 10px;
+            }
+
+            .fathersname {
+                width: 100%;
+                height: 40px;
+                margin-top: 10px;
+            }
+
+            .mothersname {
+                width: 100%;
+                height: 40px;
+                margin-top: 10px;
+            }
+
+            .institute {
+                width: 100%;
+                height: 40px;
+                margin-top: 20PX;
+            }
+
+            .extra_text {
+                width: 100%;
+                height: 40px;
+                margin-top: 15px;
+                margin-bottom: 15px;
+                 text-indent: 24px;
+            }
+
+                .extra_text span {
+                    font-size: 19px;
+                    font-weight: bold;
+
+                }
+
+            .stu_re_no {
+                width: 100%;
+                height: 40px;
+                margin-top: 10px;
+            }
+
+            .session {
+                width: 100%;
+                height: 40px;
+                margin-top: 10px;
+            }
+
+            .admission_date {
+                width: 100%;
+                height: 40px;
+                margin-top: 10px;
+            }
+
+            .name span {
+                display: inline-block;
+                width: 23%;
+                height: 40px;
+                font-size: 19px;
+                font-family: sans-serif;
+                float: left;
+                text-indent: 24px;
+
+            }
+
+            .fathersname span {
+                width: 23%;
+                display: inline-block;
+                height: 40px;
+                font-size: 19px;
+                font-family: sans-serif;
+                float: left;
+                text-indent: 24px;
+            }
+
+  span.mo {
+    width: 23%;
+    display: inline-block;
+    height: 40px;
+    font-size: 19px;
+    font-family: sans-serif;
+    float: left;
+    text-indent: 24px;
+}
+
+span.par {
+    width: 23%;
+    display: inline-block;
+    height: 40px;
+    font-size: 19px;
+    font-family: sans-serif;
+    float: left;
+    text-indent: 24px;
+}
+
+            .institute span {
+                width: 23%;
+                display: inline-block;
+                height: 40px;
+                font-size: 19px;
+                font-family: sans-serif;
+                float: left;
+                text-indent: 24px;
+            }
+
+            .stu_re_no span {
+                width: 23%;
+                display: inline-block;
+                height: 40px;
+                font-size: 19px;
+                font-family: sans-serif;
+                float: left;
+                text-indent: 24px;
+            }
+
+            .session span {
+                width: 23%;
+                display: inline-block;
+                height: 40px;
+                font-size: 19px;
+                font-family: sans-serif;
+                float: left;
+                text-indent: 24px;
+            }
+
+            .admission_date span {
+                width: 23%;
+                display: inline-block;
+                height: 40px;
+                font-size: 19px;
+                font-family: sans-serif;
+                float: left;
+                text-indent: 24px;
+            }
+
+            .admission_date label {
+                display: inline-block;
+                width: 77%;
+                height: 40px;
+                float: left;
+            }
+
+            .session label {
+                display: inline-block;
+                width: 55%;
+                height: 40px;
+                float: left;
+            }
+
+            .stu_re_no label {
+                display: inline-block;
+                width: 55%;
+                height: 40px;
+                float: left;
+            }
+
+            .institute label {
+                display: inline-block;
+                width: 77%;
+                height: 40px;
+                float: left;
+            }
+
+            .mothersname label {
+                display: inline-block;
+                width: 77%;
+                height: 40px;
+                float: left;
+            }
+
+            .fathersname label {
+                display: inline-block;
+                width: 77%;
+                height: 40px;
+                float: left;
+            }
+
+            .name label {
+                display: inline-block;
+                width: 77%;
+                height: 40px;
+                float: left;
+            }
+
+            .student_img {
+                border: 1px solid;
+            }
+
+
+       .signature {
+    width: 50%;
+height: 130px;
+    display: inline-block;
+    float: right;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.registaer_img {
+    width: 100%;
+    height: 50%;
+    margin-top: 70px;
+
+}
+                .signature span {
+                    width: 100%;
+                    display: block;
+                    text-align: center;
+                }
+
+                .signature label {
+                    width: 100%;
+                    text-align: center;
+                    display: block;
+                    margin-top: 12px;
+                }
+
+            .full_body {
+                page-break-before: always;
+            }
+
+
+            .stu_label {
+                position: relative;
+            }
+
+            span.program_name {
+                position: absolute;
+                bottom: 15%;
+                right: -4.5%;
+                font-size: 22px;
+                text-align: center;
+                max-width: 499px;
+            }
+
+            label.info {
+                font-size: 18px;
+                font-weight: bold;
+                margin-top: 5px;
+            }
+
+
+            * {
+                -webkit-print-color-adjust: exact !important; /* Chrome, Safari */
+                color-adjust: exact !important; /*Firefox*/
+            }
+
+
+
+
+            .stu_reg label {
+    float: right;
+    border: 3px solid #827d7d;
+    padding: 9px;
+    font-size: 22px;
+    font-weight: bold;
+    margin-right: 12%;
+}
+
+
+
+
+span.ps {
+    width: 11% !important;
+}
+
+span.ps_ {
+    width: 11% !important;
+}
+
+
+span.thana_di {
+    display: inline-block;
+    float: left;
+    width: 84%;
+    height: 20px;
+}
+
+.pst_ {
+    width: 55px !important;
+    height: 20px!important;
+}
+
+span.thana_vill {
+    display: inline-block !important;
+    float: left !important;
+    width: 89% !important;
+    height: 20px !important;
+}
+
+
+span.thanatt {
+    width: 86% !important;
+}
+
+
+
+span.pst {
+    width: 14% !important;
+}
+.ps_ {
+    width: 40px!important;
+    height: 20px!important;
+}
+
+.stu_reg {
+    width: 70%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+}
+
+
+
+
+
+.course_name {
+    width: 80%;
+    display: block;
+    margin: auto;
+    height: 86px;
+    text-align: center;
+}
+
+.course_name label {
+    font-size: 35px;
+    margin-top: 2%;
+    display: block;
+    font-weight: normal;
+}
+
+
+label.vll_thana {
+    margin-top: 1%;
+width: 100%;
+}
+
+
+.extra {
+    height: 58px;
+}
+
+
+span.ps {
+    width: 40px;
+    height: 20px;
+}
+
+
+
+span.thana {
+    display: inline-block;
+    float: left;
+    width: 89%;
+    height: 20px;
+}
+
+span.pst {
+    height: 20px !important;
+
+}
+
+
+span.thana_di {
+    display: inline-block;
+    float: left;
+    width: 85%;
+    height: 20px;
+}
+
+span.thanatt {
+    display: inline-block;
+    float: left;
+        height: 20px;
+}
+
+
+label.vll_thana {
+    width: 100%;
+}
+
+
+.parmanent {
+    display: inline-block;
+    width: 77%;
+        height: 100%;
+    float: left;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+
+.thana_dis {
+    width: 100%;
+    height: 40px;
+    display: block;
+}
+
+
+
+
+
+.vill_post {
+    width: 100%;
+    height: 34px;
+    display: block;
+}
+
+.post {
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+}
+
+.vill {
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+}
+
+
+
+.dis {
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+}
+
+.tha {
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+}
+
+
+span.pst_ {
+    width: 16%;
+}
+
+.user_name {
+    display: block;
+    width: 100%;
+    height: 100px;
+}
+
+.user_name label {
+    margin-top: 8%;
+    display: inline-block;
+    margin-left: 24px;
+    font-size: 17px;
+}
+
+.last_part {
+    width: 100%;
+    height: 146px;
+}
+
+
+
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    {% for p in students %}
+
+
+
+
+    <div class="full_body">
+        <div class="header">
+            <div class="image_he">
+                <img src="{% static '/admin/img/logo_bnmc.png' %}" class="logo" />
+                <label>203, Shaheed Syed Nazrul Islam Sarani, Bijoynagar, Dhaka-1000</label>
+                <label class="info">Based on BNMC Act (Act No. 48 of 2016) Clause-5 (TA)</label>
+            </div>
+        </div>
+        <div class="main_information">
+            <div class="student_reg_n_img">
+
+                <div class="stu_reg">
+                    <label>Student Registration</label>
+
+                </div>
+
+
+
+                <div class="student_img">
+                    {%if p.image%}
+                    <img style=" width: 100%;height: 100%;" src="{{p.image.url}}" class="stu_img" />
+                    {%endif%}
+                </div>
+            </div>
+
+
+            <div class="course_name">
+
+
+                <label> {{ p.program_title|title }}</label>
+
+
+            </div>
+
+
+            <div class="stu_info">
+                <div class="name">
+                    <span>Name of Student:</span>
+                    <label class="name_">{{ p.last_name|title }}</label>
+                </div>
+                <div class="fathersname">
+                    <span>Father's Name:</span>
+                    <label class="father_">{{ p.fathers_name|title }}</label>
+                </div>
+                <div class="mothersname">
+                    <span class="mo">Mother's Name:</span>
+                    <label class="mother_">{{ p.mothers_name|title }}</label>
+                </div>
+                <div class="mothersname extra">
+                    <span class="par">Parmanent Address:</span>
+
+
+
+                    <div class="parmanent">
+
+                        <div class="vill_post">
+                            <div class="vill">
+
+                                <span class="ps"><b>Vill:</b></span> <span class="thana">{{ p.village|title }}</span>
+
+                            </div>
+                            <div class="post">
+
+                                <span class="pst"><b>Post:</b></span> <span class="thanatt"> {{ p.post_office|title }}</span>
+                            </div>
+
+
+                        </div>
+
+                          <div class="thana_dis">
+
+                              <div class="tha"><span class="ps_"><b>P.S:</b></span> <span class="thana_vill">{{ p.thana|title }}</span></div>
+                              <div class="dis">
+
+                                  <span class="pst_"><b>Dist:</b></span>  <span class="thana_di">{{ p.district|title }}</span>
+
+                              </div>
+
+
+
+                        </div>
+
+                    </div>
+
+
+
+
+                    <!--<label class="mother_"></span>-->
+
+                        <!--<label class="vll_thana"></label>-->
+
+                    <!--</label>-->
+
+                </div>
+
+
+                <div class="institute">
+                    <span>College/Institute:</span>
+                    <label class="INSTITUTE_">{{ p.institution.institution_name|title }}</label>
+
+                </div>
+
+
+                <div class="extra_text">
+
+                    <span>The Bangladesh Nursing & Midwifery Council has issued the Student Registration with</span>
+                </div>
+
+                <div class="stu_re_no">
+                    <span>Student ID No. </span>
+                    <label class="reg_">{{p.registration_no}}</label>
+
+                </div>
+
+                <div class="session">
+                    <span>Session:</span>
+                    <label class="session_">{{p.session}}</label>
+
+                </div>
+
+
+                <div class="admission_date">
+                    <span>Admission Date: </span>
+                    <label class="admission_">{{p.date_of_registration|date:'d'}} {{p.date_of_registration|date:'F'}} {{p.date_of_registration|date:'Y'}}</label>
+
+                </div>
+
+
+<div class="last_part">
+                    <img style="margin-left: 25px;" src="http://api.qrserver.com/v1/create-qr-code/?size=100x100&data=http://137.59.48.21/admin/search/student_info/{{p.id}}" />
+
+       <div class="signature">
+
+                  <div class="registaer_img">
+
+
+
+
+
+                      <img style=" width: 40%;
+    display: block;
+    border: 0;
+    height: 60%;
+    margin-left: 37%; " src="{% static '/admin/img/sing.jpg' %}" class="student_img" />
+
+
+
+
+
+
+
+                    <!--</div>-->
+
+
+                    <span>Registrar</span>
+                    <label>Bangladesh Nursing & Midwifery Council</label>
+
+
+
+
+                </div>
+
+
+
+
+
+
+
+            </div>
+
+</div>
+
+
+
+
+
+
+
+                <!--<label id="demo"></label>-->
+
+                                      <!--<script>-->
+<!--var d = new Date();-->
+<!--document.getElementById("demo").innerHTML = d;-->
+<!--</script>-->
+
+
+
+                <div class="user_name"> <label>Printed by:  {{ user.get_full_name|title }}</label></div>
+
+
+<script>
+
+
+
+
+
+
+
+</script>
+
+
+
+
+        </div>
+
+
+
+
+
+
+    </div>
+
+    {% endfor %}
+
+
+
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,268 @@
+/* LOGIN FORM */
+
+body.login {
+    background: #f8f8f8;
+}
+
+.login #header {
+    height: auto;
+    padding: 5px 0px;
+}
+
+.login #header h1 {
+    font-size: 18px;
+}
+
+.login #header h1 a {
+    color: #fff;
+}
+
+.login #content {
+    padding: 0 !important;
+}
+.login #container {
+    background: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    overflow: hidden;
+    width: 28em;
+    min-width: 300px;
+    margin: 100px auto;
+}
+
+.login #content-main {
+    width: 100%;
+}
+
+.login .form-row {
+    padding: 4px 0;
+    float: left;
+    width: 100%;
+    border-bottom: none;
+}
+
+.login .form-row label {
+    padding-right: 0.5em;
+    line-height: 2em;
+    font-size: 1em;
+    clear: both;
+    color: #333;
+}
+
+.login .form-row #id_username, .login .form-row #id_password {
+    clear: both;
+    padding: 8px;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+.login span.help {
+    font-size: 10px;
+    display: block;
+}
+
+.login .submit-row {
+    clear: both;
+    margin: 0;
+    border: none;
+    background: none;
+    text-align: left;
+}
+
+.login .password-reset-link {
+    text-align: center;
+}
+
+/* login page */
+
+
+.main_body {
+    width: 100%;
+    display: inline-block;
+    float: left;
+    background-image: url(/static/admin/img/backgground.jpg);
+    background-repeat: no-repeat;
+    background-size: 58% 100%;
+    background-attachment: fixed;
+    height: 700PX;
+    background-position-x: 100%;
+    background-color: #ededed;
+}
+
+.login #header {
+    height: 50px;
+    background-color: #eeeeed;
+    height: 61px;
+}
+
+
+.sub_body {
+    width: 1200px;
+    display: table;
+    margin: auto;
+    height: 660px;
+}
+
+.login #container {
+    width: 510px !important;
+    float: left;
+    margin-left: 12%;
+    border-radius: 5px;
+    margin-top: 0;
+    border: 0;
+    -webkit-transition: box-shadow 0.5s;
+        transition: box-shadow 0.5s;
+        background: rgba(0, 149, 132, 0.72);
+}
+
+.login #branding {
+    width: 100%;
+}
+
+.login_admin {
+    width: 50%;
+    margin: auto;
+    border-bottom: 1px solid #a7a5a5;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+}
+
+.login #content-main {
+    width: 90%;
+    padding: 11px;
+    margin-left: 10px;
+}
+
+
+.login #login_button {
+    width: 30%;
+    background-color: darkcyan;
+    margin: auto;
+    display: block;
+    border-radius: 0;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.49);
+    transition: 1s;
+}
+
+.login .header_logo {
+    width: 800px;
+    display: inline-block;
+    height: 212px;
+}
+
+.login .logo_bnmc {
+    width: 81%;
+    height: 128px;
+    margin: auto;
+    display: block;
+    margin-top: 4%;
+}
+
+.login .login_admin {
+    display: block;
+}
+
+
+.login .logo_das {
+    display: none;
+}
+
+.login .dashbord_in {
+    display: none;
+}
+
+input:-webkit-autofill {
+    background-color: #fff !important;
+}
+
+input.back_btn {
+    display: none;
+}
+
+div#user-tools {
+    display: none;
+}
+
+
+.content_body {
+    padding: 30px;
+    margin: 0 !important;
+
+}
+
+
+#container:hover {
+
+box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.4);
+}
+
+
+
+
+#login_button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+#login-form label {
+
+    color: #fff !important;
+    font-size: 16px;
+    margin-top: 10px;
+    font-weight: bold;
+
+}
+
+#login_button {
+
+    font-size: 16px;
+    font-weight: bold;
+
+}
+
+
+input#id_username {
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.49);
+}
+
+input#id_password {
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.49);
+}
+
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid #42aea1;
+  -webkit-text-fill-color: #42aea1;
+  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+
+img.icon {
+    position: absolute;
+    top: 14%;
+    left: 44%;
+    border-radius: 50%;
+    width: 11%;
+    background-color: #ededed;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.login .list_ {
+    display: none;
+}
+
+

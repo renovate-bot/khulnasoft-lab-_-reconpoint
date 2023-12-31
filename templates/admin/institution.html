@@ -1,0 +1,51 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/institution.css" %}">{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <a href="{% url 'admin:index' %}">{% trans 'HOME' %}</a>
+    {% if title %} &rsaquo; {{ title }}{% endif %}
+     <a href="/admin/settings/"> › SETTINGS</a>
+    <a href="/admin/setting/institution/">› MANAGE INSTITUTIONS </a>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="institution_content">
+
+    <div class="manage_institution">
+            <a href="/admin/bnmc_project/institution/">
+            <img src="{% static '/admin/img/institution.png' %}" class="manage_institution_bnmc" href="{% url 'admin:index' %}"/>
+            <label CLASS="ins_label">INSTITUTION</label>
+            </a>
+        </div>
+
+
+
+
+    <div class="manage_ins_cat">
+            <a href="/admin/bnmc_project/institutecatagory/">
+            <img src="{% static '/admin/img/institution.png' %}" class="manage_ins_cat_bnmc" href="{% url 'admin:index' %}"/>
+            <label CLASS="ins_cat_model">INSTITUTION CATAGORY </label>
+            </a>
+        </div>
+
+    <div class="manage_ins_type">
+            <a href="/admin/bnmc_project/institutetype/">
+            <img src="{% static '/admin/img/institution.png' %}" class="manage_ins_type_bnmc" href="{% url 'admin:index' %}"/>
+            <label CLASS="ins_type_model">INSTITUTION TYPE </label>
+            </a>
+    </div>
+
+
+</div>
+
+{% endblock %}

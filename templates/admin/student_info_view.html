@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      {% load i18n static %}
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+      <link rel="stylesheet" href="/static/admin/print/base.min.css"/>
+      <link rel="stylesheet" href="/static/admin/print/fancy.min.css"/>
+      <link rel="stylesheet" href="/static/admin/print/main.css"/>
+      <script src="/static/admin/print/compatibility.min.js"></script>
+      <script src="/static/admin/print/theViewer.min.js"></script>
+      <script>
+      <script>
+         try{
+         theViewer.defaultViewer = new theViewer.Viewer({});
+         }catch(e){}
+      </script>
+
+
+
+
+      <link rel="stylesheet" type="text/css" href="{% static "admin/css/print.css" %}">
+
+      <style>
+
+
+         @media print {
+.name_eng span {
+    display: inline-block;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+
+.sex input {
+    border: 0;
+    font-size: 20px;
+
+}
+
+
+.father_N span {
+    display: inline-block;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 40px;
+}
+.mother_n span{
+    display: inline-block;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 40px;
+}
+
+.sex input {
+    border: 0;
+    margin-top: 5px;
+    font-size: 20px;
+    border-bottom: 1px solid;
+
+}
+
+.c.x2c.y53.w14.h23 {
+    background-color: #fff;
+    display: inline-block;
+    width: 122px;
+    height: 19px;
+    z-index: 1;
+}
+
+.date span {
+    display: block;
+    background-color: #fff;
+    margin-left: 17px;
+    width: 250;
+    width: 145px;
+    font-size: 20px;
+    height: 40px;
+    z-index: 998;
+    position: absolute;
+
+
+}
+
+.c.x34.y57.w17.h25 {
+    display: none;
+}
+.c.x35.y59.w18.h25 {
+    display: none;
+}
+.c.x36.y5a.w19.h26 {
+    display: none;
+}
+
+.national_id span {
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 40px;
+}
+
+.religions span {
+    font-size: 20px;
+    margin-left: 10px;
+
+}
+
+.marital_status span {
+    font-size: 20px;
+    margin-left: 10px;
+
+}
+
+
+.passsport_no span {
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 40px;
+}
+
+.guardians_name span {
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 40px;
+}
+.relation_to_guardians span {
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 40px;
+}
+
+.quota span {
+    display: inline-block;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 40px;
+
+}
+
+.nationality span {
+    display: inline-block;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 40px;
+}
+
+.email_address span {
+   display: inline-block;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.students_mobile_no span {
+    display: inline-block;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 16px;
+}
+
+.village span {
+   display: inline-block;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 16px;
+}
+
+
+.division span {
+   display: inline-block;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 16px;
+}
+
+.district span {
+   display: inline-block;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 16px;
+}
+
+.thana span {
+   display: inline-block;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 16px;
+}
+
+.post_office span {
+    display: inline-block;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 16px;
+}
+
+.postal_code span {
+    display: inline-block;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 16px;
+}
+
+.alo2 span {
+    font-size: 20px
+    width: 100%;
+    text-align: center;
+}
+
+.title_program {
+    width: 100px;
+    display: inline-block;
+}
+
+.admission_date span {
+    font-size: 20px;
+    margin-left: 4%;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.duration span{
+    font-size: 20px;
+    margin-left: 4%;
+    margin-top: 16px;
+    display: inline-block;
+}
+
+.program_titel span {
+    font-size: 15px;
+    display: inline-block;
+}
+.program_titel {
+    width: 180px;
+    display: inline-block;
+    height: 35px;
+}
+
+.ins_name span {
+    font-size: 20px;
+    display: inline-block;
+}
+
+.alo2 label {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.program_start {
+    font-size: 20px;
+    margin-left: 4%;
+    border-bottom: 1px solid;
+    width: 120px;
+}
+
+.alo2 span {
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+}
+
+.registration_fee span{
+    font-size: 20px;
+    margin-left: 30%;
+    margin-top: 8px;
+    display: inline-block;
+}
+
+.program_complate {
+    border-bottom: 1px solid;
+    font-size: 20px;
+    margin-left: 4%;
+}
+
+
+.session span {
+    letter-spacing: 3px;
+    display: inline-block;
+    margin-top: 7px;
+    height: 22px;
+    color: #000;
+    z-index: 999;
+}
+
+.program_complate {
+    border-bottom: 1px solid;
+}
+
+
+.c.x6f.yc1.w4b.h26 {
+    display: none;
+}
+
+.c.x6e.yc0.w49.h26 {
+    display: none;
+}
+
+.c.x6d.ybf.w48.h26 {
+    display: none;
+}
+
+.ins_name {
+    width: 400px;
+}
+
+.t.m0.x27.h4b.y93.ff5.fs1.fc0.sc0.ls0.ws0 {
+    display: none;
+}
+
+.session {
+    float: left;
+    height: 40px;
+    display: inline-block;
+    top: 170px;
+
+
+}
+
+.session span {
+    letter-spacing: 3px;
+    display: inline-block;
+    margin-top: 9px;
+    height: 15px;
+   font-size: 20px;
+   border-bottom: 1px solid;
+   padding-bottom: 10px;
+}
+
+.t.m0.x1a.h22.y58.ff2.fs6.fc0.sc0.ls0.ws0 {
+    display: none;
+}
+
+.t.m0.x27.h22.y58.ff2.fs6.fc0.sc0.ls0.ws0 {
+    display: none;
+}
+.t.m0.x27.h4b.y93.ff5.fs1.fc0.sc0.ls0.ws0 {
+    display: none;
+}
+
+.alo2 student_img{
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: auto;
+
+}
+
+.draft_date span {
+    font-size: 20px;
+}
+
+.draft_date {
+    height: 55px;
+}
+
+span.draft_date {
+    display: block;
+    width: 100%;
+    margin-left: 80px;
+    font-size: 20px;
+}
+
+span.draft_no {
+    display: block;
+    width: 100%;
+    margin-left: 80px;
+    margin-top: 6px;
+}
+
+.name_bn span {
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 16px;
+}
+
+#pf1 {
+        page-break-before: always;
+
+}
+
+#pf2{
+        page-break-before: always;
+
+
+}
+@page {
+   size: A4;
+   }
+
+
+   .pf {
+    margin: 0px !importent;
+}
+
+
+.tbl {
+    width: 90.5%;
+    display: block;
+    margin: auto;
+    top: 31.6%;
+    height: 700px;
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+    border-left: 1px solid;
+        position: relative;
+}
+
+.tbl table {
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+tbody {
+    width: 100%;
+}
+
+tr td{
+
+font-size: 15px;
+}
+
+
+
+
+
+}
+
+
+
+
+
+      </style>
+
+
+
+
+   </head>
+   <body onload="window.print()">
+      <div id="sidebar">
+         <div id="outline"></div>
+      </div>
+
+
+
+      <div id="page-container">
+         <div id="pf1" class="pf w0 h0" data-page-no="1">
+            <div class="pc pc1 w0 h0">
+               <img class="bi x0 y0 w1 h1" alt="" src="/static/admin/print/bg1.png"/>
+               <div class="c x0 y1 w2 h2">
+                  <div class="t m0 x1 h3 y2 ff1 fs0 fc0 sc0 ls0 ws0"><span class="_ _0"></span><label id="demo"></label></div>
+                  <script>
+var d = new Date();
+document.getElementById("demo").innerHTML = d;
+</script>
+
+
+               </div>
+               <div class="t m0 x2 h3 y3 ff1 fs0 fc0 sc0 ls0 ws0"> </div>
+               <div class="t m0 x2 h4 y4 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               <div class="t m0 x3 h4 y5 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               <div class="t m0 x3 h4 y6 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               <div class="t m0 x3 h4 y7 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               <div class="t m0 x3 h4 y8 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               <div class="t m0 x3 h4 y9 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+
+
+               <div class="t m0 x4 h4 ya ff3 fs1 fc0 sc0 ls0 ws0 alo">         <span class="ff4 fc1">{{p.program_title}} <span class="ff3"> </span></span><span class="ls1"><span class="_ _0"></span><span class="ff2 ls0"> </span></span></div>
+               <div class="t m0 x2 h4 yb ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               <div class="c x5 yc w3 h5">
+                  <div class="t m0 x6 h6 yd ff5 fs2 fc2 sc0 ls0 ws0">Personal Information<span class="_ _1"></span> </div>
+               </div>
+               <div class="c x5 ye w4 h7">
+                  <div class="t m0 x1 h8 yf ff6 fs0 fc0 sc0 ls0 ws0">Name (Bang<span class="_ _0"></span>la) </div>
+               </div>
+               <div class="c x7 ye w4 h8 name_bn">
+                    <span> {{p.first_name}}</span>
+                  <div class="t m0 x1 h9 yf ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x8 ye w6 h7">
+                  <div class="t m0 x9 h8 yf ff6 fs0 fc0 sc0 ls0 ws0">Full Name (Engli<span class="_ _0"></span>sh) </div>
+               </div>
+               <div class="c xa ye w7 h7 name_eng">
+                  <span> {{p.last_name}}</span>
+
+                  <div class="t m0 x1 h9 yf ff7 fs0 fc0 sc0 ls0 ws0">
+
+                  </div>
+               </div>
+               <div class="c x5 y10 w4 ha">
+                  <div class="t m0 x1 h8 y11 ff6 fs0 fc0 sc0 ls0 ws0"> </div>
+                  <div class="t m0 x1 h8 y12 ff6 fs0 fc0 sc0 ls0 ws0"> </div>
+                  <div class="t m0 x1 h8 y13 ff6 fs0 fc0 sc0 ls0 ws0"> </div>
+                  <div class="t m0 x1 h8 yf ff8 fs0 fc0 sc0 ls0 ws0">Father’s Nam<span class="_ _0"></span>e<span class="ff6"> (English) </span></div>
+               </div>
+               <div class="c x7 y10 w5 ha father_N">
+                  <span>{{p.fathers_name}}</span>
+                  <div class="t m0 x1 h9 yf ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x8 y10 w6 ha">
+                  <div class="t m0 xb h8 y11 ff6 fs0 fc0 sc0 ls0 ws0"> </div>
+                  <div class="t m0 xb h8 y12 ff6 fs0 fc0 sc0 ls0 ws0"> </div>
+                  <div class="t m0 xb h8 y13 ff6 fs0 fc0 sc0 ls0 ws0"> </div>
+                  <div class="t m0 xc h8 yf ff8 fs0 fc0 sc0 ls0 ws0">Mother’<span class="_ _0"></span>s Name<span class="ff6"> (English) </span></div>
+               </div>
+               <div class="c xa y10 w7 ha mother_n">
+                    <span>{{p.mothers_name}}</span>
+                  <div class="t m0 x1 h9 yf ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x5 y14 w4 hb">
+                  <div class="t m0 x1 h8 yf ff6 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x7 y14 w5 hb">
+                  <div class="t m0 x1 h8 y13 ff6 fs0 fc0 sc0 ls0 ws0"> </div>
+                  <div class="t m0 x1 h9 yf ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x8 y14 w6 hb">
+                  <div class="t m0 xb h8 yf ff6 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c xa y14 w7 hb">
+                  <div class="t m0 x1 h9 yf ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x5 y15 w4 hc">
+                  <div class="t m0 x1 h9 y16 ff7 fs0 fc0 sc0 ls0 ws0">Sex <span class="ff6"> </span></div>
+               </div>
+               <div class="c x7 y15 w5 hc sex">
+
+
+                  <input value="{{p.get_sex_display }}" type="text">
+
+
+               </div>
+               <div class="c x8 y15 w6 hc">
+                  <div class="t m0 xd h8 y16 ff6 fs0 fc0 sc0 ls0 ws0">Date of Birth </div>
+               </div>
+               <div class="c xa y15 w7 hc date">
+                   <span>{{p.date_of_birth}}</span>
+
+                  <div class="t m0 x1 h9 y19 ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x5 y1a w4 hb">
+                  <div class="t m0 x1 h8 y1b ff6 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x7 y1a w5 hb">
+                  <div class="t m0 x1 h9 y1b ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x8 y1a w6 hb">
+                  <div class="t m0 xb h8 y1b ff6 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c xa y1a w7 hb">
+                  <div class="t m0 x1 h9 y1b ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x5 y1c w4 hd">
+                  <div class="t m0 x1 h8 y16 ff6 fs0 fc0 sc0 ls0 ws0">National ID No.<span class="_ _0"></span> </div>
+               </div>
+               <div class="c x7 y1c w5 hd national_id">
+                  <span>{{p.national_ID_No}}</span>
+                  <div class="t m0 xe h9 y16 ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x8 y1c w6 hd">
+                  <div class="t m0 xf h8 y16 ff6 fs0 fc0 sc0 ls0 ws0">Passport No.<span class="_ _0"></span> </div>
+               </div>
+               <div class="c xa y1c w7 hd passsport_no">
+                  <span>{{p.passport_no}}</span>
+                  <div class="t m0 x10 h9 y16 ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x5 y1d w4 hd">
+                  <div class="t m0 x11 h8 y16 ff6 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x7 y1d w5 hd">
+                  <div class="t m0 xe h9 y16 ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x8 y1d w6 hd">
+                  <div class="t m0 x12 h8 y16 ff6 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c xa y1d w7 hd">
+                  <div class="t m0 x10 h9 y16 ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x5 y1e w4 hd">
+                  <div class="t m0 x1 h8 y16 ff6 fs0 fc0 sc0 ls0 ws0">Guardian<span class="ff8 ls3">’s</span> <span class="_ _1"></span>Na<span class="_ _0"></span>me </div>
+               </div>
+               <div class="c x7 y1e w5 hd guardians_name ">
+                  <span>{{p.guardians_name}}</span>
+                  <div class="t m0 x1 h9 y16 ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x8 y1e w6 hd">
+                  <div class="t m0 x0 h8 y16 ff6 fs0 fc0 sc0 ls0 ws0">Relation of Guar<span class="_ _0"></span>dian </div>
+               </div>
+               <div class="c xa y1e w7 hd relation_to_guardians">
+                  <span>{{p.relation_to_guardians}}</span>
+                  <div class="t m0 x1 h9 y16 ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x5 y1f w4 hd">
+                  <div class="t m0 x1 h8 y16 ff6 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x7 y1f w5 hd">
+                  <div class="t m0 x1 h9 y16 ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x8 y1f w6 hd">
+                  <div class="t m0 xb h8 y16 ff6 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c xa y1f w7 hd">
+                  <div class="t m0 x1 h9 y16 ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x5 y20 w8 he">
+                  <div class="t m0 x1 h8 y11 ff6 fs0 fc0 sc0 ls0 ws0">Quota </div>
+                  <div class="t m0 x1 h8 y12 ff6 fs0 fc0 sc0 ls0 ws0">or Great Grand </div>
+                  <div class="t m0 x1 h8 y13 ff6 fs0 fc0 sc0 ls0 ws0">Daughter/Son of<span class="_ _0"></span> Freedom </div>
+                  <div class="t m0 x1 h8 yf ff6 fs0 fc0 sc0 ls0 ws0">Fighter) </div>
+               </div>
+               <div class="c x13 y20 w9 he quota">
+                  <span>{{p.quota}}</span>
+                  <div class="t m0 x1 h9 yf ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x8 y20 w6 he">
+                  <div class="t m0 x14 h8 yf ff6 fs0 fc0 sc0 ls0 ws0">Nationality </div>
+               </div>
+               <div class="c xa y20 w7 he nationality">
+                  <span>{{p.nationality}}</span>
+                  <div class="t m0 x1 h9 yf ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x5 y21 w4 hd">
+                  <div class="t m0 x1 h8 y22 ff6 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x7 y21 w5 hd">
+                  <div class="t m0 x1 h9 y22 ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x8 y21 w6 hd">
+                  <div class="t m0 xb h8 y22 ff6 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c xa y21 w7 hd">
+                  <div class="t m0 x1 h9 y22 ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x5 y23 w4 hf">
+                  <div class="t m0 x1 h10 y24 ff6 fs2 fc0 sc0 ls0 ws0">Religion <span class="_ _1"></span><span class="fs0"> </span></div>
+               </div>
+               <div class="c x7 y23 w5 hf religions">
+                  <span >{{p.get_religions_display }}</span>
+                  <div class="t m0 x15 h3 y25 ff1 fs0 fc0 sc0 ls0 ws0"><span class="_ _0"></span> <span class="_ _0"></span> </div>
+                  <div class="t m0 xf h3 y26 ff1 fs0 fc0 sc0 ls0 ws0"> </div>
+                  <div class="t m0 x1 h9 yf ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x8 y23 w6 hf">
+                  <div class="t m0 x0 h10 y27 ff6 fs2 fc0 sc0 ls0 ws0"> Marital Status </div>
+                  <div class="t m0 x16 h10 y28 ff6 fs2 fc0 sc0 ls0 ws0"><span class="fs0"> </span></div>
+               </div>
+               <div class="c xa y23 w7 hf marital_status">
+                  <span>{{p.get_marital_status_display }}</span>
+                  <div class="t m0 x15 h3 y26 ff1 fs0 fc0 sc0 ls0 ws0"><span class="_ _0"></span><span class="_ _0"></span> </div>
+               </div>
+               <div class="c x5 y29 wa hb">
+                  <div class="t m0 x1 h9 y22 ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x17 y29 wb hb">
+                  <div class="t m0 x18 h8 y22 ff6 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x19 y29 wc hb">
+                  <div class="t m0 x1 h9 y22 ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x5 y2a w4 h11">
+                  <div class="t m0 x1 h10 y26 ff6 fs2 fc0 sc0 ls0 ws0">E-mail Address<span class="_ _1"></span> </div>
+               </div>
+               <div class="c x7 y2a w5 h11 email_address">
+                  <span>{{p.email_address}}</span>
+                  <div class="t m0 x1 h8 y2b ff6 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x8 y2a w6 h11">
+                  <div class="t m0 x1a h10 y26 ff6 fs2 fc0 sc0 ls0 ws0">Student<span class="ff8 ls4">’s<span class="_ _1"></span></span> <span class="_ _1"></span>M<span class="_ _0"></span>obile No. <span class="_ _1"></span><span class="fs0"> </span></div>
+               </div>
+               <div class="c xa y2c w7 h12 students_mobile_no">
+                  <span>{{p.students_mobile_no}}</span>
+                  <div class="t m0 x1 h8 y2d ff6 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c xa y2a w7 h13">
+                  <div class="t m0 x1 h8 y2 ff6 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="t m0 x1b h14 y2e ff3 fs1 fc0 sc0 ls0 ws0"> </div>
+               <div class="c x11 y2f wd h15">
+                  <div class="t m0 x1c h6 y30 ff5 fs2 fc2 sc0 ls0 ws0">Present <span class="_ _1"></span>A<span class="_ _0"></span>ddress </div>
+               </div>
+               <div class="c x11 y31 we h16">
+                  <div class="t m0 x1 h8 yf ff6 fs0 fc0 sc0 ls0 ws0">Village/House/Roa<span class="_ _0"></span>d </div>
+               </div>
+               <div class="c x1d y31 w7 h16 village">
+                  <span>{{p.village_snd}}</span>
+                  <div class="t m0 x1 h9 yf ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x1e y31 wf h16">
+                  <div class="t m0 x1f h8 yf ff6 fs0 fc0 sc0 ls0 ws0">Division  </div>
+               </div>
+               <div class="c x20 y31 w10 h16 division">
+                  <span>{{p.division_snd}}</span>
+                  <div class="t m0 x1 h9 yf ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x11 y32 we h16">
+                  <div class="t m0 x1 h8 y16 ff6 fs0 fc0 sc0 ls0 ws0">District  </div>
+               </div>
+               <div class="c x1d y32 w7 h16 district">
+                  <span>{{p.district_snd}}</span>
+                  <div class="t m0 x1 h9 y16 ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x1e y32 wf h16">
+                  <div class="t m0 x21 h8 y16 ff6 fs0 fc0 sc0 ls0 ws0">Thana/Upaz<span class="_ _0"></span>illa </div>
+               </div>
+               <div class="c x20 y32 w10 h16 thana">
+                  <span>{{p.thana_snd}}</span>
+                  <div class="t m0 x1 h9 y16 ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x11 y33 we h16">
+                  <div class="t m0 x1 h8 y16 ff6 fs0 fc0 sc0 ls0 ws0">Post Office </div>
+               </div>
+               <div class="c x1d y33 w7 h16 post_office">
+                  <span>{{p.post_office_snd}}</span>
+                  <div class="t m0 x1 h9 y16 ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x1e y33 wf h16">
+                  <div class="t m0 x9 h8 y16 ff6 fs0 fc0 sc0 ls0 ws0">Postal Code </div>
+               </div>
+               <div class="c x20 y33 w10 h16 postal_code">
+                  <span>{{p.postal_code_snd}}</span>
+                  <div class="t m0 x1 h9 y16 ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x11 y34 we h17">
+                  <div class="t m0 x1 h8 y1b ff6 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x1d y34 w7 h17">
+                  <div class="t m0 x1 h9 y1b ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x1e y34 wf h17">
+                  <div class="t m0 x16 h8 y1b ff6 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x20 y34 w10 h17">
+                  <div class="t m0 x1 h9 y1b ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x11 y35 we h16">
+                  <div class="t m0 x1 h8 y1b ff6 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x1d y35 w7 h16">
+                  <div class="t m0 x1 h9 y1b ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x1e y35 wf h16">
+                  <div class="t m0 x16 h8 y1b ff6 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x20 y35 w10 h16">
+                  <div class="t m0 x1 h9 y1b ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x11 y36 wd h18">
+                  <div class="t m0 x22 h6 y37 ff5 fs2 fc2 sc0 ls0 ws0"> </div>
+                  <div class="t m0 x1 h4 y38 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x11 y39 wd h15">
+                  <div class="t m0 x23 h6 y3a ff5 fs2 fc2 sc0 ls0 ws0">Permanent <span class="_ _1"></span>A<span class="_ _0"></span>ddress </div>
+               </div>
+               <div class="c x11 y3b we h16">
+                  <div class="t m0 x1 h8 y1b ff6 fs0 fc0 sc0 ls0 ws0">Village/House/Roa<span class="_ _0"></span>d </div>
+               </div>
+               <div class="c x1d y3b w7 h16 village">
+                  <span>{{p.village}}</span>
+                  <div class="t m0 x1 h9 y1b ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x1e y3b wf h16">
+                  <div class="t m0 x1f h8 y1b ff6 fs0 fc0 sc0 ls0 ws0">Division  </div>
+               </div>
+               <div class="c x20 y3b w10 h16 division">
+                  <span>{{p.division}}</span>
+                  <div class="t m0 x1 h9 y1b ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x11 y3c we h16">
+                  <div class="t m0 x1 h8 y3d ff6 fs0 fc0 sc0 ls0 ws0">District  </div>
+               </div>
+               <div class="c x1d y3c w7 h16 district">
+                  <span>{{p.district}}</span>
+                  <div class="t m0 x1 h9 y3d ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x1e y3c wf h16">
+                  <div class="t m0 x21 h8 y3d ff6 fs0 fc0 sc0 ls0 ws0">Thana/Upaz<span class="_ _0"></span>illa </div>
+               </div>
+               <div class="c x20 y3c w10 h16 thana">
+                  <span>{{p.thana}}</span>
+                  <div class="t m0 x1 h9 y3d ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x11 y3e we h19">
+                  <div class="t m0 x1 h8 y3f ff6 fs0 fc0 sc0 ls0 ws0">Post Office </div>
+               </div>
+               <div class="c x1d y3e w7 h19 post_office">
+                  <span>{{p.post_office}}</span>
+                  <div class="t m0 x1 h9 y3f ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x1e y3e wf h19">
+                  <div class="t m0 x9 h8 y3f ff6 fs0 fc0 sc0 ls0 ws0">Postal Code </div>
+               </div>
+               <div class="c x20 y3e w10 h19 postal_code">
+                  <span>{{p.postal_code}}</span>
+                  <div class="t m0 x1 h9 y3f ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x11 y40 we h19">
+                  <div class="t m0 x1 h8 y41 ff6 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x1d y40 w7 h19">
+                  <div class="t m0 x1 h9 y41 ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x1e y40 wf h19">
+                  <div class="t m0 x16 h8 y41 ff6 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x20 y40 w10 h19">
+                  <div class="t m0 x1 h9 y41 ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x25 y43 w11 h1b">
+                  <div class="t m0 x1a h1c y44 ff9 fs4 fc0 sc0 ls0 ws0">Bangladesh Nursing &amp; <span class="_ _1"></span>Midwifery Council<span class="_ _1"></span><span class="fs1"> </span></div>
+                  <div class="t m0 x26 h4 y45 ff2 fs1 fc0 sc0 ls0 ws0">Student Registration Form </div>
+                  <div class="t m0 x27 h3 y46 ff2 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x28 y47 w12 h1d alo2">
+
+                  <span>
+                      {%if p.image%}
+               <img style=" width: 100%;height: 100%;" src="{{p.image.url}}" class="student_img" />
+                 {%endif%}
+                     এক কপি পাসপোর্ট সাইজের   ইউনিফর্ম পরিহিত ছবি আইকা দিয়ে লাগানোর পর ছবি ও ফরম মিলে সত্যায়িত করতে হবে যেন চেহারা ঢেকে না যায় ।</span>
+               </div>
+               <div class="c x2a y51 w13 h21">
+                  <div class="t m0 x2b h22 y52 ff2 fs6 fc0 sc0 ls0 ws0">(Capital Letter)<span class="_ _1"></span> </div>
+               </div>
+
+
+
+
+
+               <div class="c x2c y53 w14 h23">
+                  <div class="t m0 x27 h4 y54 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x2d y53 w15 h23">
+                  <div class="t m0 x27 h4 y54 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x2e y55 w16 h24">
+                  <div class="t m0 x27 h4 y56 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x2f y55 w15 h24">
+                  <div class="t m0 x27 h4 y56 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x30 y55 w15 h24">
+                  <div class="t m0 x27 h4 y56 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x31 y55 w15 h24">
+                  <div class="t m0 x27 h4 y56 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x32 y55 w15 h24">
+                  <div class="t m0 x27 h4 y56 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x33 y55 w15 h24">
+                  <div class="t m0 x27 h4 y56 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x34 y57 w17 h25">
+                  <div class="t m0 x27 h22 y58 ff2 fs6 fc0 sc0 ls0 ws0">(Day) </div>
+               </div>
+               <div class="c x35 y59 w18 h25">
+                  <div class="t m0 x1a h22 y58 ff2 fs6 fc0 sc0 ls0 ws0">(Month) </div>
+               </div>
+               <div class="c x36 y5a w19 h26">
+                  <div class="t m0 x1a h22 y5b ff2 fs6 fc0 sc0 ls0 ws0">(Year) </div>
+               </div>
+
+
+
+
+
+
+
+
+            </div>
+            <div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div>
+         </div>
+         <div id="pf2" class="pf w0 h0" data-page-no="2">
+            <div class="pc pc2 w0 h0">
+               <img class="bi x0 y5c w1a h27" alt="" src="/static/admin/img/print_stu.png"/>
+               <div class="c x0 y1 w2 h2">
+                  <div class="t m0 x1 h3 y2 ff1 fs0 fc0 sc0 ls0 ws0"><span class="_ _0"></span></div>
+               </div>
+               <div class="t m0 x2 h3 y3 ff1 fs0 fc0 sc0 ls0 ws0"> </div>
+               <div class="t m0 x2 h4 y4 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               <div class="t m0 x24 h14 y5d ff3 fs1 fc0 sc0 ls0 ws0">প্রথম পাতার পর (ও পিঠ)</div>
+               <div class="t m0 x2 h28 y5e ff2 fs7 fc0 sc0 ls0 ws0"> </div>
+               <div class="c x5 y5f w3 h29">
+                  <div class="t m0 x37 h6 y60 ff5 fs2 fc2 sc0 ls0 ws0">Student Registratio<span class="_ _1"></span>n Information </div>
+               </div>
+               <div class="c x5 y61 w1b hb title_program">
+                  <div class="t m0 x1 h9 y16 ff7 fs0 fc0 sc0 ls0 ws0">Program/Course<span class="_ _0"></span> Title<span class="ff6"> </span></div>
+               </div>
+               <div class="c x38 y61 w1c hb program_titel">
+                <span id="1">{{p.program_title}}</span>
+
+               </div>
+               <div class="c x39 y61 w1d hb">
+                  <div class="t m0 x15 h8 y16 ff6 fs0 fc0 sc0 ls0 ws0">Length of Progr<span class="_ _0"></span>am/Course </div>
+               </div>
+               <div class="c x20 y61 w1e hb duration">
+                  <span>{{p.program_title.duration}}</span>
+
+               </div>
+               <div class="c x5 y9 w1f h2a">
+                  <div class="t m0 x1 h8 y16 ff6 fs0 fc0 sc0 ls0 ws0">Session </div>
+               </div>
+               <div class="c x3a y9 w20 h2a session">
+                  <span>{{p.session}}</span>
+
+               </div>
+               <div class="c x39 y9 w1d h2a">
+                  <div class="t m0 x3b h9 y16 ff7 fs0 fc0 sc0 ls0 ws0">Date of Admissio<span class="_ _0"></span>n<span class="ff6"> </span></div>
+               </div>
+               <div class="c x20 y9 w1e h2a admission_date">
+                  <span>{{p.date_of_registration}}</span>
+
+               </div>
+
+               <div class="c x39 y63 w1d h2b">
+                  <div class="t m0 x18 h8 yf ff6 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x20 y63 w1e h2b">
+                  <div class="t m0 x1 h9 yf ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x5 y64 w1f hb">
+                  <div class="t m0 x1 h8 y13 ff6 fs0 fc0 sc0 ls0 ws0">Name of Institution<span class="_ _0"></span> </div>
+                  <div class="t m0 x1 h8 yf ff6 fs0 fc0 sc0 ls0 ws0">/College/ Univers<span class="_ _0"></span>ity </div>
+               </div>
+               <div class="c x3a y64 w20 hb ins_name">
+                  <span>{{p.institution.institution_name}}</span>
+               </div>
+               <div class="c x39 y64 w1d hb">
+                  <div class="t m0 x18 h8 yf ff6 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x20 y64 w1e hb">
+                  <div class="t m0 x1 h9 yf ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x5 y65 w1f h15">
+                  <div class="t m0 x1 h8 y16 ff6 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x3a y65 w20 h15">
+                  <div class="t m0 x1 h9 y16 ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x39 y65 w1d h15">
+                  <div class="t m0 x18 h8 y16 ff6 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x20 y65 w1e h15">
+                  <div class="t m0 x1 h9 y16 ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x5 y66 w1f h2c">
+                  <div class="t m0 x3c h8 y13 ff6 fs0 fc0 sc0 ls0 ws0">Program/Co<span class="_ _0"></span>urse </div>
+                  <div class="t m0 x9 h8 yf ff6 fs0 fc0 sc0 ls0 ws0">Starting Date </div>
+               </div>
+               <div class="c x3a y66 w20 h2c program_start">
+                 <span>{{p.program_starting_date}}</span>
+               </div>
+               <div class="c x39 y66 w1d h2c">
+                  <div class="t m0 x1 h8 y13 ff6 fs0 fc0 sc0 ls0 ws0">Program/Co<span class="_ _0"></span>urse </div>
+                  <div class="t m0 x1 h8 yf ff6 fs0 fc0 sc0 ls0 ws0">Completion Da<span class="_ _0"></span>te </div>
+               </div>
+               <div class="c x20 y66 w1e h2c program_complate">
+                 <span>{{p.program_completion_date}}</span>
+               </div>
+               <div class="c x5 y67 w1f h2d">
+                  <div class="t m0 x1 h8 y16 ff6 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x3a y67 w20 h2d">
+                  <div class="t m0 x1 h9 y16 ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x39 y67 w1d h2d">
+                  <div class="t m0 x18 h8 y16 ff6 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x20 y67 w1e h2d">
+                  <div class="t m0 x1 h2e y68 ff7 fs8 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x5 y69 w1f hb">
+                  <div class="t m0 x3d h8 y22 ff6 fs0 fc0 sc0 ls0 ws0">Registration fee<span class="_ _0"></span> </div>
+               </div>
+               <div class="c x3a y69 w20 hb registration_fee">
+                  <span>{{p.registration_fees}}</span>
+               </div>
+               <div class="c x39 y69 w1d hb">
+                  <div class="t m0 xf h2f y6a ffb fs0 fc0 sc0 ls0 ws0">Bank Draft No.<span class="_ _0"></span> </div>
+                  <div class="t m0 x3e h30 y6b ffb fs2 fc0 sc0 ls0 ws0">Date.<span class="fs1"> </span></div>
+
+               </div>
+               <div class="c x20 y69 w1e hb draft_date">
+                  <span class="draft_no">{{p.bank_draft_no}}</span>
+                  <span class="draft_date" >{{p.bank_draft_date}}</span>
+
+                  <div class="t m0 x1 h9 y6c ff7 fs0 fc0 sc0 ls0 ws0 "> </div>
+               </div>
+               <div class="t m0 x2 h31 y6d ff2 fs9 fc0 sc0 ls0 ws0"> </div>
+               <div class="t m0 x2 h31 y6e ff2 fs9 fc0 sc0 ls0 ws0"> </div>
+               <div class="c x0 y6f w21 h32">
+                  <div class="t m0 x1 h6 y70 ff5 fs2 fc2 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x29 y6f w22 h32">
+                  <div class="t m0 x3f h6 y70 ff5 fs2 fc2 sc0 ls0 ws0">Educational Qualification<span class="_ _1"></span> </div>
+               </div>
+
+                <div class="tbl">
+
+                     <table style="width:100%">
+
+                         <tr>
+
+                             <td class="le">Level of Education</td>
+                             <td class="sc">School/Institution /College</td>
+                             <td class="rol">Roll</td>
+                             <td class="reg">Registration No</td>
+                             <td class="cl">Class/CGPA</td>
+                             <td class="year">Year</td>
+                             <td class="bo">Board/University</td>
+                             <td class="co">Country</td>
+                         </tr>
+
+    {% for i in edu %}
+
+  <tr>
+
+
+    <td class="le">{{i.level_of_educations}}</td>
+    <td class="sc">{{i.institution_name}}</td>
+    <td class="rol">{{i.roll}}</td>
+    <td class="reg">{{i.registration_number}}</td>
+    <td class="cl">{{i.cgpa}}</td>
+    <td class="year">{{i.year}}</td>
+    <td class="bo">{{i.board}}</td>
+    <td class="co">{{i.get_country_display}}</td>
+  </tr>
+     {% endfor %}
+
+</table>
+
+                </div>
+
+
+
+               <div class="c x40 y6f w23 h32">
+                  <div class="t m0 x21 h6 y70 ff5 fs2 fc2 sc0 ls0 ws0"> </div>
+               </div>
+
+
+
+
+
+
+
+
+
+
+
+
+               <div class="c x0 ya3 w2c h3d">
+                  <div class="t m0 x1 h3f ya4 ff6 fs9 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x41 ya3 w2d h3d">
+                  <div class="t m0 x1 h9 y16 ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x42 ya3 w2e h3d">
+                  <div class="t m0 x1 h9 y16 ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x43 ya3 w2f h3d">
+                  <div class="t m0 x12 h9 y16 ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x45 ya3 w30 h3d">
+                  <div class="t m0 x3b h9 ya0 ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x2e ya3 w31 h3d">
+                  <div class="t m0 x0 h9 ya0 ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x47 ya3 w32 h3d">
+                  <div class="t m0 x1 h9 y16 ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x40 ya3 w23 h3d">
+                  <div class="t m0 x1 h9 ya0 ff7 fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x0 ya5 w33 h3d">
+                  <div class="t m0 x4a h9 ya6 ff7 fs0 fc2 sc0 ls0 ws0">BNMC Us<span class="_ _0"></span>e Only </div>
+               </div>
+               <div class="c x0 ya7 w34 h40">
+                  <div class="t m0 x1 h41 ya8 ffd fs0 fc0 sc0 ls0 ws0">Student’s  ID No<span class="_ _0"></span><span class="ff2">.  . . . . . . . . . <span class="_ _0"></span>. . . . . . . . . . .<span class="_ _0"></span> . . . . . . . .<span class="ff7 ls2">  <span class="fsa ls0"> </span></span></span></div>
+               </div>
+               <div class="c x4b ya7 w35 h40">
+                  <div class="t m0 x48 h42 ya8 ff7 fs0 fc0 sc0 ls0 ws0">Session:<span class="ff5 fc3"> </span></div>
+               </div>
+               <div class="c x4c ya7 w36 h40">
+                  <div class="t m0 x48 h3 ya8 ff2 fs0 fc3 sc0 ls0 ws0">2 </div>
+               </div>
+               <div class="c x4d ya7 w37 h40">
+                  <div class="t m0 x15 h3 ya8 ff2 fs0 fc3 sc0 ls0 ws0">0 </div>
+               </div>
+               <div class="c x45 ya7 w38 h40">
+                  <div class="t m0 x1a h3 ya8 ff2 fs0 fc3 sc0 ls0 ws0">Y </div>
+               </div>
+               <div class="c x4e ya7 w39 h40">
+                  <div class="t m0 x1a h3 ya8 ff2 fs0 fc3 sc0 ls0 ws0">Y </div>
+               </div>
+               <div class="c x4f ya7 w3a h40">
+                  <div class="t m0 x1a h43 ya9 ff2 fsb fc0 sc0 ls0 ws0">-<span class="fs0"> </span></div>
+               </div>
+               <div class="c x47 ya7 w38 h40">
+                  <div class="t m0 x15 h3 ya8 ff2 fs0 fc3 sc0 ls0 ws0">2 </div>
+               </div>
+               <div class="c x32 ya7 w3b h40">
+                  <div class="t m0 x15 h3 ya8 ff2 fs0 fc3 sc0 ls0 ws0">0 </div>
+               </div>
+               <div class="c x50 ya7 w3c h40">
+                  <div class="t m0 x15 h3 ya8 ff2 fs0 fc3 sc0 ls0 ws0">Y </div>
+               </div>
+               <div class="c x51 ya7 w3d h40">
+                  <div class="t m0 x15 h3 ya8 ff2 fs0 fc3 sc0 ls0 ws0">Y </div>
+               </div>
+               <div class="c x0 yaa w33 h44">
+                  <div class="t m0 x1 h3 yab ff6 fs0 fc0 sc0 ls0 ws0">Program/Co<span class="_ _0"></span>urse Title:   <span class="ff2">. . . . . . <span class="_ _0"></span>. . . . . . . . . . . . <span class="_ _0"></span>. . . . . . . . . . . . . . . <span class="_ _0"></span>. . . . . . . . . .. . <span class="_ _0"></span>. . . . . . . . . . .<span class="_ _0"></span> . . . . . . . . . . . .<span class="_ _0"></span> . . . . . . . . . . <span class="_ _0"></span>. . . . . . . . . . .<span class="_ _0"></span> . . . . . . . . . . <span class="_ _0"></span>. <span class="fc3"> </span></span></div>
+               </div>
+               <div class="c x0 yac w33 h45">
+                  <div class="t m0 x1 h3 y8c ff6 fs0 fc0 sc0 ls0 ws0">Date of ID Issue<span class="_ _0"></span>s<span class="ls2">: </span><span class="ff2">. . . . . . . . . . . . . . . . . . <span class="_ _0"></span>. . . . . . . . . . . . .<span class="_ _0"></span> . . . . . . . . . . . .<span class="_ _0"></span> . <span class="fc4"> </span></span></div>
+               </div>
+               <div class="c x0 yad w2c h39">
+                  <div class="t m0 x1 h35 yd ff6 fsa fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x41 yad w3e h39">
+                  <div class="t m0 x1 h4 y50 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x0 yae w3f h46">
+                  <div class="t m0 x1 h47 yaf ff1 fs2 fc0 sc0 ls0 ws0">Registrar<span class="ffb fsa"> </span></div>
+               </div>
+               <div class="c x52 yae w40 h46">
+                  <div class="t m0 x2b h42 yb0 ff9 fs0 fc0 sc0 ls0 ws0">Principal/In-cha<span class="_ _0"></span>rge<span class="ff1"> Signature w<span class="_ _0"></span>ith Seal (N<span class="_ _0"></span>ame &amp; Date)<span class="ffb"> </span></span></div>
+               </div>
+               <div class="c x45 yae w30 h46">
+                  <div class="t m0 x3b h48 yb1 ffe fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x2e yae w41 h46">
+                  <div class="t m0 x1a h48 yb1 ffe fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x53 yae w42 h46">
+                  <div class="t m0 x54 h48 yb1 ffe fs0 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x55 yae w43 h46">
+                  <div class="t m0 x1 h2f yb2 ffb fs0 fc0 sc0 ls0 ws0"> </div>
+                  <div class="t m0 x1 h2f yb0 ffb fs0 fc0 sc0 ls0 ws0">Applicant Signatur<span class="_ _0"></span>e </div>
+               </div>
+               <div class="c x56 yb3 w15 h49">
+                  <div class="t m0 x27 h4 y54 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x57 yb3 w14 h49">
+                  <div class="t m0 x27 h4 y54 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x58 yb3 w15 h49">
+                  <div class="t m0 x27 h4 y54 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x59 yb3 w15 h49">
+                  <div class="t m0 x27 h4 y54 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x5a yb4 w19 h26">
+                  <div class="t m0 x1a h22 y58 ff2 fs6 fc0 sc0 ls0 ws0">(Year) </div>
+               </div>
+               <div class="c x5b yb5 w44 h49">
+                  <div class="t m0 x27 h4 y54 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x1c yb5 w45 h49">
+                  <div class="t m0 x27 h4 y54 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x5c yb5 w45 h49">
+                  <div class="t m0 x27 h4 y54 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x5d yb5 w45 h49">
+                  <div class="t m0 x27 h4 y54 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x6 yb6 w46 h26">
+                  <div class="t m0 x1a h22 y58 ff2 fs6 fc0 sc0 ls0 ws0">(Year) </div>
+               </div>
+               <div class="c x5e yb7 w47 h4a">
+                  <div class="t m0 x27 h4b y93 ff5 fs1 fc0 sc0 ls0 ws0">- </div>
+               </div>
+               <div class="c x5f yb8 w15 h49">
+                  <div class="t m0 x27 h4 y54 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x60 yb8 w15 h49">
+                  <div class="t m0 x27 h4 y54 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x58 yb9 w15 h49">
+                  <div class="t m0 x27 h4 y54 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x59 yb9 w15 h49">
+                  <div class="t m0 x27 h4 y54 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x17 yb9 w45 h49">
+                  <div class="t m0 x27 h4 y54 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x6 yb9 w45 h49">
+                  <div class="t m0 x27 h4 y54 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x61 yb9 w45 h49">
+                  <div class="t m0 x27 h4 y54 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x62 yb9 w45 h49">
+                  <div class="t m0 x27 h4 y54 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x63 yba w48 h26">
+                  <div class="t m0 x27 h22 y58 ff2 fs6 fc0 sc0 ls0 ws0">(Day) </div>
+               </div>
+               <div class="c x64 ybb w49 h26">
+                  <div class="t m0 x1a h22 y58 ff2 fs6 fc0 sc0 ls0 ws0">(Month) </div>
+               </div>
+               <div class="c x65 ybc w4a h26">
+                  <div class="t m0 x1a h22 y58 ff2 fs6 fc0 sc0 ls0 ws0">(Year) </div>
+               </div>
+               <div class="c x66 ybd w15 h49">
+                  <div class="t m0 x27 h4 y54 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x67 ybd w15 h49">
+                  <div class="t m0 x27 h4 y54 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x68 ybe w15 h49">
+                  <div class="t m0 x27 h4 y54 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x69 ybe w15 h49">
+                  <div class="t m0 x27 h4 y54 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x2f ybe w15 h49">
+                  <div class="t m0 x27 h4 y54 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x6a ybe w15 h49">
+                  <div class="t m0 x27 h4 y54 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x6b ybe w15 h49">
+                  <div class="t m0 x27 h4 y54 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x6c ybe w15 h49">
+                  <div class="t m0 x27 h4 y54 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x6d ybf w48 h26">
+                  <div class="t m0 x27 h22 y58 ff2 fs6 fc0 sc0 ls0 ws0">(Day) </div>
+               </div>
+               <div class="c x6e yc0 w49 h26">
+                  <div class="t m0 x1a h22 y58 ff2 fs6 fc0 sc0 ls0 ws0">(Month) </div>
+               </div>
+               <div class="c x6f yc1 w4b h26">
+                  <div class="t m0 x1a h22 y58 ff2 fs6 fc0 sc0 ls0 ws0">(Year) </div>
+               </div>
+               <div class="c x13 yc2 w4c h4c">
+                  <div class="t m0 x27 h4d yc3 ff6 fs8 fc0 sc0 ls0 ws0"> </div>
+               </div>
+               <div class="c x4e yc4 w4c h4e">
+                  <div class="t m0 x27 h4d yc5 ff6 fs8 fc0 sc0 ls0 ws0"> </div>
+               </div>
+            </div>
+            <div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div>
+
+         </div>
+
+
+      </div>
+      <div class="loading-indicator">
+      </div>
+
+       <script type="text/javascript">
+           ///admin/bnmc_project/student_registration/174655/change/
+           window.history.pushState("", "", "/admin/bnmc_project/student_registration/{{p.id}}/change/")
+
+        $(document).ready(function () {
+            // get current URL path and assign 'active' class
+            var pathname = window.location.pathname;
+            $('.sidebar li a[href="' + pathname + '"]').parent().addClass('active');
+        })
+    </script>
+   </body>
+</html>

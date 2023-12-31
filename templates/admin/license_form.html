@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<!-- Created by pdf2htmlEX (https://github.com/coolwanglu/pdf2htmlex) -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+     {% load i18n static %}
+      <link rel="stylesheet" type="text/css" href="{% static "admin/css/license_form.css" %}" />
+<meta charset="utf-8"/>
+<meta name="generator" content="pdf2htmlEX"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<style type="text/css">
+
+
+/*!
+ * Base CSS for pdf2htmlEX
+ * Copyright 2012,2013 Lu Wang <coolwanglu@gmail.com>
+ * https://github.com/coolwanglu/pdf2htmlEX/blob/master/share/LICENSE
+ */#sidebar{position:absolute;top:0;left:0;bottom:0;width:250px;padding:0;margin:0;overflow:auto}#page-container{position:absolute;top:0;left:0;margin:0;padding:0;border:0}@media screen{#sidebar.opened+#page-container{left:250px}#page-container{bottom:0;right:0;overflow:auto}.loading-indicator{display:none}.loading-indicator.active{display:block;position:absolute;width:64px;height:64px;top:50%;left:50%;margin-top:-32px;margin-left:-32px}.loading-indicator img{position:absolute;top:0;left:0;bottom:0;right:0}}@media print{@page{margin:0}html{margin:0}body{margin:0;-webkit-print-color-adjust:exact}#sidebar{display:none}#page-container{width:auto;height:auto;overflow:visible;background-color:transparent}.d{display:none}}.pf{position:relative;background-color:white;overflow:hidden;margin:0;border:0}.pc{position:absolute;border:0;padding:0;margin:0;top:0;left:0;width:100%;height:100%;overflow:hidden;display:block;transform-origin:0 0;-ms-transform-origin:0 0;-webkit-transform-origin:0 0}.pc.opened{display:block}.bf{position:absolute;border:0;margin:0;top:0;bottom:0;width:100%;height:100%;-ms-user-select:none;-moz-user-select:none;-webkit-user-select:none;user-select:none}.bi{position:absolute;border:0;margin:0;-ms-user-select:none;-moz-user-select:none;-webkit-user-select:none;user-select:none}@media print{.pf{margin:0;box-shadow:none;page-break-after:always;page-break-inside:avoid}@-moz-document url-prefix(){.pf{overflow:visible;border:1px solid #fff}.pc{overflow:visible}}}.c{position:absolute;border:0;padding:0;margin:0;overflow:hidden;display:block}.t{position:absolute;white-space:pre;font-size:1px;transform-origin:0 100%;-ms-transform-origin:0 100%;-webkit-transform-origin:0 100%;unicode-bidi:bidi-override;-moz-font-feature-settings:"liga" 0}.t:after{content:''}.t:before{content:'';display:inline-block}.t span{position:relative;unicode-bidi:bidi-override}._{display:inline-block;color:transparent;z-index:-1}::selection{background:rgba(127,255,255,0.4)}::-moz-selection{background:rgba(127,255,255,0.4)}.pi{display:none}.d{position:absolute;transform-origin:0 100%;-ms-transform-origin:0 100%;-webkit-transform-origin:0 100%}.it{border:0;background-color:rgba(255,255,255,0.0)}.ir:hover{cursor:pointer}</style>
+<style type="text/css">
+/*!
+ * Fancy styles for pdf2htmlEX
+ * Copyright 2012,2013 Lu Wang <coolwanglu@gmail.com>
+ * https://github.com/coolwanglu/pdf2htmlEX/blob/master/share/LICENSE
+ */@keyframes fadein{from{opacity:0}to{opacity:1}}@-webkit-keyframes fadein{from{opacity:0}to{opacity:1}}@keyframes swing{0{transform:rotate(0)}10%{transform:rotate(0)}90%{transform:rotate(720deg)}100%{transform:rotate(720deg)}}@-webkit-keyframes swing{0{-webkit-transform:rotate(0)}10%{-webkit-transform:rotate(0)}90%{-webkit-transform:rotate(720deg)}100%{-webkit-transform:rotate(720deg)}}@media screen{#sidebar{background-color:#2f3236;background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjNDAzYzNmIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDBMNCA0Wk00IDBMMCA0WiIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2U9IiMxZTI5MmQiPjwvcGF0aD4KPC9zdmc+")}#outline{font-family:Georgia,Times,"Times New Roman",serif;font-size:13px;margin:2em 1em}#outline ul{padding:0}#outline li{list-style-type:none;margin:1em 0}#outline li>ul{margin-left:1em}#outline a,#outline a:visited,#outline a:hover,#outline a:active{line-height:1.2;color:#e8e8e8;text-overflow:ellipsis;white-space:nowrap;text-decoration:none;display:block;overflow:hidden;outline:0}#outline a:hover{color:#0cf}#page-container{background-color:#9e9e9e;background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjOWU5ZTllIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDVMNSAwWk02IDRMNCA2Wk0tMSAxTDEgLTFaIiBzdHJva2U9IiM4ODgiIHN0cm9rZS13aWR0aD0iMSI+PC9wYXRoPgo8L3N2Zz4=");-webkit-transition:left 500ms;transition:left 500ms}.pf{margin:13px auto;box-shadow:1px 1px 3px 1px #333;border-collapse:separate}.pc.opened{-webkit-animation:fadein 100ms;animation:fadein 100ms}.loading-indicator.active{-webkit-animation:swing 1.5s ease-in-out .01s infinite alternate none;animation:swing 1.5s ease-in-out .01s infinite alternate none}.checked{background:no-repeat url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goQDSYgDiGofgAAAslJREFUOMvtlM9LFGEYx7/vvOPM6ywuuyPFihWFBUsdNnA6KLIh+QPx4KWExULdHQ/9A9EfUodYmATDYg/iRewQzklFWxcEBcGgEplDkDtI6sw4PzrIbrOuedBb9MALD7zv+3m+z4/3Bf7bZS2bzQIAcrmcMDExcTeXy10DAFVVAQDksgFUVZ1ljD3yfd+0LOuFpmnvVVW9GHhkZAQcxwkNDQ2FSCQyRMgJxnVdy7KstKZpn7nwha6urqqfTqfPBAJAuVymlNLXoigOhfd5nmeiKL5TVTV+lmIKwAOA7u5u6Lped2BsbOwjY6yf4zgQQkAIAcedaPR9H67r3uYBQFEUFItFtLe332lpaVkUBOHK3t5eRtf1DwAwODiIubk5DA8PM8bYW1EU+wEgCIJqsCAIQAiB7/u253k2BQDDMJBKpa4mEon5eDx+UxAESJL0uK2t7XosFlvSdf0QAEmlUnlRFJ9Waho2Qghc1/U9z3uWz+eX+Wr+lL6SZfleEAQIggA8z6OpqSknimIvYyybSCReMsZ6TislhCAIAti2Dc/zejVNWwCAavN8339j27YbTg0AGGM3WltbP4WhlRWq6Q/btrs1TVsYHx+vNgqKoqBUKn2NRqPFxsbGJzzP05puUlpt0ukyOI6z7zjOwNTU1OLo6CgmJyf/gA3DgKIoWF1d/cIY24/FYgOU0pp0z/Ityzo8Pj5OTk9PbwHA+vp6zWghDC+VSiuRSOQgGo32UErJ38CO42wdHR09LBQK3zKZDDY2NupmFmF4R0cHVlZWlmRZ/iVJUn9FeWWcCCE4ODjYtG27Z2Zm5juAOmgdGAB2d3cBADs7O8uSJN2SZfl+WKlpmpumaT6Yn58vn/fs6XmbhmHMNjc3tzDGFI7jYJrm5vb29sDa2trPC/9aiqJUy5pOp4f6+vqeJ5PJBAB0dnZe/t8NBajx/z37Df5OGX8d13xzAAAAAElFTkSuQmCC)}}</style>
+<style type="text/css">
+.ff0{font-family:sans-serif;visibility:hidden;}
+.sc_{text-shadow:none;}
+@media screen and (-webkit-min-device-pixel-ratio:0){
+.sc_{-webkit-text-stroke:0px transparent;}
+}
+.y0{bottom:64.000000px;}
+.h1{height:2830.500000px;}
+.h0{height:2990.000000px;}
+.w1{width:556.500000px;}
+.w0{width:601.000000px;}
+.x0{left:24.500000px;}
+@media print{
+.y0{bottom:85.333333pt;}
+.h1{height:3774.000000pt;}
+.h0{height:3986.666667pt;}
+.w1{width:742.000000pt;}
+.w0{width:801.333333pt;}
+.x0{left:32.666667pt;}
+}
+
+
+
+
+@media print {
+ #sidebar{position:absolute;top:0;left:0;bottom:0;width:250px;padding:0;margin:0;overflow:auto}#page-container{position:absolute;top:0;left:0;margin:0;padding:0;border:0}@media screen{#sidebar.opened+#page-container{left:250px}#page-container{bottom:0;right:0;overflow:auto}.loading-indicator{display:none}.loading-indicator.active{display:block;position:absolute;width:64px;height:64px;top:50%;left:50%;margin-top:-32px;margin-left:-32px}.loading-indicator img{position:absolute;top:0;left:0;bottom:0;right:0}}@media print{@page{margin:0}html{margin:0}body{margin:0;-webkit-print-color-adjust:exact}#sidebar{display:none}#page-container{width:auto;height:auto;overflow:visible;background-color:transparent}.d{display:none}}.pf{position:relative;background-color:white;overflow:hidden;margin:0;border:0}.pc{position:absolute;border:0;padding:0;margin:0;top:0;left:0;width:100%;height:100%;overflow:hidden;display:block;transform-origin:0 0;-ms-transform-origin:0 0;-webkit-transform-origin:0 0}.pc.opened{display:block}.bf{position:absolute;border:0;margin:0;top:0;bottom:0;width:100%;height:100%;-ms-user-select:none;-moz-user-select:none;-webkit-user-select:none;user-select:none}.bi{position:absolute;border:0;margin:0;-ms-user-select:none;-moz-user-select:none;-webkit-user-select:none;user-select:none}@media print{.pf{margin:0;box-shadow:none;page-break-after:always;page-break-inside:avoid}@-moz-document url-prefix(){.pf{overflow:visible;border:1px solid #fff}.pc{overflow:visible}}}.c{position:absolute;border:0;padding:0;margin:0;overflow:hidden;display:block}.t{position:absolute;white-space:pre;font-size:1px;transform-origin:0 100%;-ms-transform-origin:0 100%;-webkit-transform-origin:0 100%;unicode-bidi:bidi-override;-moz-font-feature-settings:"liga" 0}.t:after{content:''}.t:before{content:'';display:inline-block}.t span{position:relative;unicode-bidi:bidi-override}._{display:inline-block;color:transparent;z-index:-1}::selection{background:rgba(127,255,255,0.4)}::-moz-selection{background:rgba(127,255,255,0.4)}.pi{display:none}.d{position:absolute;transform-origin:0 100%;-ms-transform-origin:0 100%;-webkit-transform-origin:0 100%}.it{border:0;background-color:rgba(255,255,255,0.0)}.ir:hover{cursor:pointer}
+
+.ff0{font-family:sans-serif;visibility:hidden;}
+.sc_{text-shadow:none;}
+@media screen and (-webkit-min-device-pixel-ratio:0){
+.sc_{-webkit-text-stroke:0px transparent;}
+}
+.y0{bottom:64.000000px;}
+.h1{height:2830.500000px;}
+.h0{height:2990.000000px;}
+.w1{width:556.500000px;}
+.w0{width:601.000000px;}
+.x0{left:24.500000px;}
+@media print{
+.y0{bottom:85.333333pt;}
+.h1{height:3774.000000pt;}
+.h0{height:3986.666667pt;}
+.w1{width:742.000000pt;}
+.w0{width:801.333333pt;}
+.x0{left:32.666667pt;}
+}
+
+
+
+#img {
+    position: relative !important;
+    top: 10px;
+}
+
+div#sidebar {
+    background-image: none;
+    background-color: #fff;
+}
+
+div#page-container {
+    background-image: none;
+        background-color: #fff;
+}
+
+.main {
+    position: relative;
+}
+
+.img_he {
+    width: 100%;
+    height: 230px;
+    position: absolute;
+    top: 2%;
+}
+
+.img_st {
+    width: 20%;
+    height: 100%;
+    float: right;
+}
+
+.img_st img {
+    width: 78%;
+    height: 85%;
+    margin-top: 13%;
+    margin-left: 1%;
+}
+
+.sub {
+    position: absolute;
+    top: 7%;
+    width: 100%;
+    height: 26px;
+}
+
+.sub label {
+    margin-left: 13%;
+    margin-top: 1px;
+    display: block;
+    font-size: 25px;
+}
+
+.requ {
+    position: absolute;
+    width: 93%;
+    height: 90px;
+    top: 8.5%;
+    font-size: 20px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+
+label.same {
+    display: block;
+    text-indent: 30px;
+}
+
+.bnmc_use {
+    position: absolute;
+    top: 12%;
+    width: 100%;
+    height: 120px;
+}
+
+.per_infor {
+    position: absolute;
+    top: 15%;
+    width: 96%;
+    height: 340px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.name_b {
+    display: inline-block;
+    width: 52%;
+    height: 35px;
+}
+
+.name_b label {
+    display: block;
+    text-indent: 200px;
+    margin-top: 8px;
+    font-size: 20px;
+}
+
+
+
+.name_e label {
+   display: block;
+    text-indent: 180px;
+    margin-top: 8px;
+    font-size: 20px;
+}
+
+.name_e {
+display: inline-block;
+    width: 45%;
+    height: 35px;
+}
+
+.name_f label {
+    display: block;
+    text-indent: 230px;
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.name_f {
+    display: inline-block;
+    width: 52%;
+    height: 40px;
+}
+
+
+
+.name_m label {
+   display: block;
+    text-indent: 180px;
+    margin-top: 8px;
+    font-size: 20px;
+}
+
+.name_m {
+  display: inline-block;
+    width: 45%;
+    height: 35px;
+    }
+
+
+
+.sex label {
+    text-indent: 150px;
+    display: block;
+    font-size: 20px;
+    margin-top: 25px;
+
+
+}
+
+.sex {
+    display: block;
+    width: 100%;
+    height: 25px;
+
+
+}
+
+
+.nat_id {
+    display: inline-block;
+    width: 50%;
+    height: 14px;
+}
+
+.nat_id label {
+    text-indent: 140px;
+    display: block;
+        font-size: 20px;
+            margin-top: 2px;
+}
+
+.pas_id {
+    display: inline-block;
+    width: 48%;
+
+}
+
+.pas_id label {
+    text-indent: 200px;
+    display: block;
+        font-size: 20px;
+            margin-top: 2px;
+}
+
+
+
+.date_b {
+    display: inline-block;
+    float: left;
+    width: 50%;
+    height: 70px;
+
+}
+
+.date_b label {
+    display: block;
+    text-indent: 200px;
+    margin-top: 20px;
+            font-size: 20px;
+}
+
+.nation_ty {
+    display: inline-block;
+    float: left;
+    width: 50%;
+    height: 70px;
+
+}
+
+.nation_ty label {
+    display: block;
+    text-indent: 200px;
+    margin-top: 15px;
+            font-size: 20px;
+}
+
+
+.relagion {
+    display: inline-block;
+    width: 50%;
+    height: 30px;
+    float: left;
+}
+
+.relagion label {
+    display: block;
+    text-indent: 180px;
+    margin-top: 8px;
+        font-size: 20px;
+}
+
+.matarial {
+    display: inline-block;
+    width: 47%;
+    height: 30px;
+        float: left;
+}
+
+.matarial label {
+    display: block;
+    text-indent: 200px;
+            margin-top: 7px;
+                font-size: 20px;
+}
+
+.email {
+    display: inline-block;
+    width: 50%;
+    float: left;
+    height: 45px;
+
+}
+
+.email label {
+    display: block;
+    text-indent: 200px;
+    margin-top: 2px;
+    font-size: 20px;
+        margin-top: 20px;
+}
+
+.mob {
+    display: inline-block;
+    width: 50%;
+    float: left;
+    height: 45px;
+}
+
+.mob label {
+    display: block;
+    text-indent: 200px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+
+.ins {
+    display: inline-block;
+    width: 100%;
+    height: 21px;
+}
+
+.ins label {
+    text-indent: 200px;
+    display: block;
+        font-size: 20px;
+            margin-top: 10px;
+}
+
+.permanent_ad {
+    position: absolute;
+    top: 21.8%;
+    height: 100px;
+    width: 100%;
+}
+
+.back_co {
+    width: 92%;
+    height: 19px;
+    display: block;
+    margin: auto;
+}
+
+.vii {
+    width: 55%;
+    display: inline-block;
+    float: left;
+        height: 23px;
+}
+
+
+
+.vii label {
+    display: block;
+    text-indent: 240px;
+                margin-top: 10px;
+}
+
+
+
+.post_of {
+    width: 55%;
+    display: inline-block;
+    float: left;
+        height: 23px;
+}
+
+
+
+.post_of label {
+    display: block;
+    text-indent: 240px;
+                margin-top: 10px;
+}
+
+
+
+
+.dis {
+    width: 55%;
+    display: inline-block;
+    float: left;
+        height: 23px;
+}
+
+
+
+.dis label {
+    display: block;
+    text-indent: 240px;
+                margin-top: 10px;
+}
+
+
+
+.div {
+    width: 42%;
+    display: inline-block;
+    float: left;
+        height: 23px;
+}
+
+.div label {
+    display: block;
+    text-indent: 140px;
+                margin-top: 10px;
+}
+
+
+.post_co {
+    width: 42%;
+    display: inline-block;
+    float: left;
+        height: 23px;
+}
+
+.post_co label {
+    display: block;
+    text-indent: 140px;
+                margin-top: 10px;
+}
+
+
+
+
+.tha {
+    width: 42%;
+    display: inline-block;
+    float: left;
+        height: 23px;
+}
+
+.tha label {
+    display: block;
+    text-indent: 140px;
+                margin-top: 10px;
+}
+
+
+.pres_ad {
+    position: absolute;
+    top: 24.2%;
+    height: 100px;
+    width: 100%;
+
+}
+
+label.vilg {
+    margin-top: 3px !important;
+}
+
+label.divis {
+    margin-top: 3px !important;
+}
+
+
+
+
+
+}
+
+</style>
+
+
+<script>
+try{
+pdf2htmlEX.defaultViewer = new pdf2htmlEX.Viewer({});
+}catch(e){}
+</script>
+<title></title>
+</head>
+<body onload="window.print();>
+
+
+<div id="sidebar">
+<div id="outline">
+</div>
+</div>
+<div id="page-container">
+
+
+
+
+<div id="pf1" class="pf w0 h0 abs" data-page-no="1"><div class="pc pc1 w0 h0">
+<div class="main">
+    <img id="img" class="bi x0 y0 w1 h1" alt="" src="{% static '/admin/img/kkkk.png' %}"/>
+    <div class="img_he">
+        <div class="img_st">
+
+            {% if reg.image_sec %}
+
+         <img src="{{reg.image_sec.url}}">
+            {% endif %}
+        </div>
+
+    </div>
+
+    <div class="sub">
+        <label>Application for {{license_id.program_title}} Registration.</label>
+
+    </div>
+
+
+
+    <div class="requ">
+        <p>I request that my name address educational qualifications and current employment details as stated below and apply to
+        be admitted in the Register of {{license_id.program_title}}.Bangladesh Nursing & Midwifery Council Act (Act No. 48 of
+            2016). If I am admitted in the Register, I under take that I will in the practice of my profession as a Nurse-Midwife,
+            ,observe & be bound the rules & regulations issued by the Bangladesh Nursing & Midwifery Council.So far as they
+        affect me and that of the Council shall be any time after due enquiry order my name to be removed from the Register.
+       I will return my certificate to the Registrar/BNMC
+        </p>
+
+
+
+    </div>
+
+    <div class="bnmc_use">
+
+
+    </div>
+    <div class="per_infor">
+
+    <div class="name_b">
+        <label>{% if license_id.first_name %}{{license_id.first_name}} {% endif %}</label>
+
+    </div>
+
+        <div class="name_e">
+            <label>{{license_id.last_name}}</label>
+
+        </div>
+        <div class="name_f">
+            <label>{{license_id.fathers_name}}</label>
+
+        </div>
+        <div class="name_m">
+            <label>{{license_id.mothers_name}}</label>
+        </div>
+
+        <div class="sex">
+
+            <label>{{license_id.get_sex_display}}</label>
+        </div>
+
+        <div class="nat_id">
+            <label>{{license_id.national_ID_No}}</label>
+
+        </div>
+        <div class="pas_id">
+            <label>{{license_id.passport_no}}</label>
+
+
+        </div>
+
+        <div class="date_b">
+            <label>{{license_id.date_of_birth}}</label>
+
+        </div>
+           <div class="nation_ty">
+            <label>{{license_id.nationality}}</label>
+
+        </div>
+
+        <div class="relagion">
+            <label>{{license_id.get_religions_display}}</label>
+
+        </div>
+
+
+        <div class="matarial">
+            <label>{{license_id.get_marital_status_display}}</label>
+
+        </div>
+
+
+        <div class="email">
+            <label>{{license_id.email_address}}</label>
+
+        </div>
+
+
+        <div class="mob">
+            <label>{{license_id.students_mobile_no}}</label>
+
+        </div>
+
+
+          <div class="ins">
+            <label>{{license_id.institution}}</label>
+
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+    <div class="permanent_ad">
+        <div class="back_co"></div>
+
+
+        <div class="vii">
+              <label>{{license_id.village}}</label>
+
+        </div>
+       <div class="div">
+              <label>{{license_id.division}}</label>
+
+        </div>
+       <div class="dis">
+              <label>{{license_id.district}}</label>
+
+        </div>
+       <div class="tha">
+              <label>{{license_id.thana}}</label>
+
+        </div>
+       <div class="post_of">
+              <label>{{license_id.post_office}}</label>
+
+        </div>
+
+         <div class="post_co">
+              <label>{{license_id.postal_code}}</label>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="pres_ad">
+         <div class="back_co"></div>
+
+          <div class="vii">
+              <label class="vilg">{{license_id.village_snd}}</label>
+
+        </div>
+       <div class="div">
+              <label class="divis">{{license_id.division_snd}}</label>
+
+        </div>
+       <div class="dis">
+              <label>{{license_id.district_snd}}</label>
+
+        </div>
+       <div class="tha">
+              <label>{{license_id.thana_snd}}</label>
+
+        </div>
+       <div class="post_of">
+              <label>{{license_id.post_office_snd}}</label>
+
+        </div>
+
+         <div class="post_co">
+              <label>{{license_id.postal_code_snd}}</label>
+
+        </div>
+
+
+    </div>
+
+
+
+
+    <div class="first_table">
+
+        <table style="    width: 90%;margin: auto;">
+
+
+              <label class="ti">Comprehensive/Final/License Exam Result(For Intial Registration)</label>
+
+            <tr>
+
+                <th>Examination Result For :</th>
+                <th>Date Of Passing<br>dd/mm/yyyy</th>
+                <th>Score Obtained/Results</th>
+            </tr>
+
+
+            <tr>
+
+                <td>{{reg.exam_title}}</td>
+                <td>{{reg.exam_title.exam_date}}</td>
+                <td>Passed</td>
+            </tr>
+        </table>
+
+
+
+    </div>
+
+
+
+    <div class="second_table">
+
+        <table style="width: 90%;margin: auto;">
+
+    <tr>
+    <th>Level of Education</th>
+    <th>School/Institution /College</th>
+    <th>Class/CGPA</th>
+    <th>Year</th>
+    <th>Duration</th>
+    <th>Country</th>
+  </tr>
+{% for i in education_qulification %}
+            <tr>
+
+                <td>{{i.level_of_educations}}</td>
+                <td>{{i.institution_name}}</td>
+                <td>{{i.cgpa}}</td>
+                <td>{{i.year}}</td>
+                <td>{{i.get_duration_display}}</td>
+                <td>{{i.get_country_display}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+
+    <div class="head">
+<label style="display: inline-block;
+    float: left;
+    margin-left: 24%;
+    margin-top: 5%;">{{license_id.registration_no}}</label>
+<label style="display: inline-block;
+    margin-left: 50%;
+    margin-top: 5%;">{{license_id.session}}</label>
+</div>
+
+
+</div>
+
+
+    <div class="employ_de">
+
+
+        <div class="empl">
+<label>{% if works %}
+Yes
+    {% else %}
+    No
+    {% endif %}
+
+</label>
+        </div>
+
+
+        <div class="c_em">
+<label></label>
+
+        </div>
+
+        <div class="t_em">
+
+<label>{{works.type}}</label>
+        </div>
+
+
+        <div class="p_w">
+<label>{{works.place}}</label>
+
+        </div>
+
+        <div class="e_s">
+<label></label>
+
+        </div>
+
+
+    </div>
+
+ <div style="margin-top:15%" class="sig_date">
+        <label style="display: block;
+    margin-left: 8%;">___________________________________________</label>
+        <label style="display: block;
+    margin-left: 8%;    font-size: 20px;">Signature of the Registered Nurse-Midwife</label>
+        <label style="display: block;
+    margin-left: 8%;
+    margin-top: 15px;    font-size: 20px;">Date:</label>
+    </div>
+
+<label style="    position: absolute;
+    top: 81.8%;
+    margin-left: 10%;
+    font-size: 20px;">{{license_id.last_name}}</label>
+<label style="    position: absolute;
+    top: 81.8%;
+    margin-left: 69%;
+    font-size: 20px;">{{license_id.rool_number}}</label>
+<label style="    position: absolute;
+    top: 82.9%;
+    margin-left: 35%;
+    font-size: 20px;">{{license_id.institution}}</label>
+<style>
+
+
+.requ p {
+    margin: 0;
+    margin-left: 30px;
+}
+.head {
+    position: absolute;
+    top: 12%;
+    width: 100%;
+    height: 150px;
+}
+
+.t_em label {
+    display: block;
+    margin-top: 10%;
+}
+
+.p_w label {
+    display: block;
+    margin-top: 15%;
+}
+
+.e_s label {
+    display: block;
+    margin-top: 4.5%;
+}
+.empl label {
+    margin-top: 25px;
+    display: block;
+}
+.c_em label {
+    margin-top: 20px;
+    display: block;
+    margin-left: 1%;
+}
+
+.e_s {
+    width: 40%;
+    height: 50px;
+    display: inline-block;
+    float: left;
+    margin-left: 16%;
+}
+.p_w {
+    display: inline-block;
+    float: left;
+    width: 25%;
+    height: 100px;
+    margin-left: 10%;
+}
+.t_em {
+    display: inline-block;
+    float: left;
+    width: 48%;
+    height: 100px;
+    margin-left: 15%;
+}
+.c_em {
+    display: inline-block;
+    float: left;
+    width: 29%;
+    height: 50px;
+    margin-left: 14%;
+}
+
+.empl {
+    display: inline-block;
+    float: left;
+    width: 48%;
+    height: 50px;
+    margin-left: 9%;
+}
+.employ_de {
+    position: absolute;
+    top: 44.5%;
+    height: 250px;
+    width: 90%;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+    .first_table {
+    position: absolute;
+    top: 29%;
+    height: 150px;
+    width: 100%;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid;
+  text-align: left;
+  padding: 8px;
+}
+
+
+.ti{
+font-weight: bold;
+    text-align: center;
+    display: block;
+        width: 89.7%;
+    margin: auto;
+        height: 26px;
+    border: 1px solid;
+        font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    }
+
+
+.second_table {
+    position: absolute;
+    top: 33%;
+    width: 100%;
+    height: 300px;
+}
+
+.second_table th {
+    text-align: center;
+}
+</style>
+
+</div>
+
+
+    <div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+</div>
+<div class="loading-indicator">
+<img alt="" src="data:image/png;base64,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"/>
+</div>
+</body>
+</html>

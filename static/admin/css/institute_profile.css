@@ -1,0 +1,57 @@
+.manage_user {
+    width: 170px;
+    height: 185px;
+    display: inline-block;
+    float: left;
+    background-color: #fff;
+}
+
+img.manage_settings_bnmc {
+    width: 58%;
+    height: 50%;
+    display: block;
+    margin: auto;
+        margin-top: auto;
+    margin-top: 16%;
+}
+
+
+label.user_manage {
+    display: block;
+    margin: auto;
+        margin-top: auto;
+    text-align: center;
+    margin-top: 25px;
+    color: #867f7f;
+    font-weight: bold;
+}
+
+
+.manage_institute {
+    width: 170px;
+    height: 185px;
+    display: inline-block;
+    float: left;
+    background-color: #fff;
+    margin-left: 20px;
+}
+
+img.manage_institute_bnmc {
+    width: 58%;
+    height: 50%;
+    display: block;
+    margin: auto;
+        margin-top: auto;
+    margin-top: 16%;
+}
+
+
+label.institute_manage {
+    display: block;
+    margin: auto;
+        margin-top: auto;
+    text-align: center;
+    margin-top: 25px;
+    color: #867f7f;
+    font-weight: bold;
+}

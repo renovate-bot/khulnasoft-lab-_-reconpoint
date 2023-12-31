@@ -1,0 +1,103 @@
+
+
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.student_list:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-box-front {
+
+  color: black;
+}
+
+.flip-box-back {
+  color: white;
+  transform: rotateY(180deg);
+}
+
+
+.accounts:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+
+
+.accounts {
+    width: 170px;
+    height: 185px;
+    display: inline-block;
+    float: left;
+    background-color: #fff;
+    margin-left: 20px;
+    position: relative;
+    margin-top: 20px;
+}
+
+.accont_le {
+    display: block;
+    margin: auto;
+        margin-top: auto;
+    margin-top: auto;
+    margin-top: auto;
+    text-align: center;
+    margin-top: 25px;
+    font-weight: bold;
+    color: #867f7f;
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    right: 0;
+}
+
+
+.account_img {
+    width: 58%;
+    height: 50%;
+    display: block;
+    margin: auto;
+        margin-top: auto;
+    margin-top: auto;
+    margin-top: 16%;
+}
+
+.accounts:hover {
+    box-shadow: 0 0 6px rgb(0, 93, 132);
+}
+
+
+.hhh {
+    width: 85%;
+}
+
+
+
+.accounts:hover{
+
+   -webkit-transform: scale(1.10, 1.10);
+    transform: scale(1.10, 1.10);
+}
+
+.accounts
+{
+
+box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    -webkit-transform: translateY(0);
+    -webkit-transition: all .6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all .6s cubic-bezier(0.165, 0.84, 0.44, 1)
+
+}

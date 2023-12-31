@@ -1,0 +1,9 @@
+.model-examinationstudentregistration input {
+    width: 300px;
+    height: 24px;
+}
+
+.model-examinationstudentregistration select {
+    width: 316px;
+    height: 36px;
+}

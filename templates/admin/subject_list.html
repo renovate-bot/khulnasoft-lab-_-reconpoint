@@ -1,0 +1,72 @@
+
+
+
+
+
+
+
+
+
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="/static/admin/css/search_list.css">
+<link rel="stylesheet" type="text/css" href="/static/admin/css/log.css">
+
+{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <a href="{% url 'admin:index' %}">{% trans 'HOME' %}</a>
+    {% if title %} &rsaquo; {{ title }}{% endif %}
+    <a href="/admin/search_list/"> › SEARCH</a>
+</div>
+{% endblock %}
+{% block content %}
+<div class="main_result_content">
+
+{% for i in subject %}
+
+        <div class="box arrow-top">
+
+            <a href="/admin/add_result/{{i.id}}">{{i}}</a>
+</div>
+{% endfor %}
+
+
+
+</div>
+
+
+<style>
+
+    .box {
+    width: 150px;
+    height: 75px;
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+    position: relative;
+    margin: 40px;
+    float: left;
+}
+
+.box.arrow-top:after {
+    content: " ";
+    position: absolute;
+    right: 30px;
+    top: -15px;
+    border-top: none;
+    border-right: 15px solid transparent;
+    border-left: 15px solid transparent;
+    border-bottom: 15px solid #fff;
+}
+</style>
+
+
+{% endblock %}
+

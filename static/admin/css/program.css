@@ -1,0 +1,75 @@
+#content {
+    padding: 10px 34px !important;
+    margin: auto;
+    width: 400px !important;
+
+}
+
+.manage_program {
+    width: 170px;
+    height: 185px;
+    display: inline-block;
+    float: left;
+    background-color: #fff;
+}
+
+img.manage_program_bnmc {
+    width: 58%;
+    height: 50%;
+    display: block;
+    margin: auto;
+    margin-top: 16%;
+}
+
+.manage_program_cat {
+    width: 170px;
+    height: 185px;
+    display: inline-block;
+    float: left;
+    background-color: #fff;
+    margin-left: 20px;
+}
+
+img.manage_program_cat_bnmc {
+    width: 58%;
+    height: 50%;
+    display: block;
+    margin: auto;
+    margin-top: 16%;
+}
+
+
+label.ins_program_model {
+    display: block;
+    margin: auto;
+    text-align: center;
+    margin-top: 25px;
+    color: #867f7f;
+    font-weight: bold;
+}
+
+
+label.program_label {
+    display: block;
+    margin: auto;
+    text-align: center;
+    margin-top: 25px;
+    color: #867f7f;
+    font-weight: bold;
+}
+
+.dashboard .dash_login {
+    display: none !important;
+}
+
+.program_in {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    height: 30px;
+    margin-bottom: 12px;
+}
+
+label.program {
+    font-size: 18px;
+}

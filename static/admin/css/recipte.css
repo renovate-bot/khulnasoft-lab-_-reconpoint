@@ -1,0 +1,303 @@
+.bar_no {
+    width: 100%;
+    height: 29px;
+    display: block;
+}
+
+.no {
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+}
+
+.bar {
+    display: inline-block;
+    float: left;
+    height: 100%;
+    width: 48%;
+}
+
+.no label {
+    font-size: 14px;
+    display: inline-block;
+    margin-left: 66%;
+    margin-top: 8px;
+}
+
+.date {
+    width: 100%;
+    height: 22px;
+    display: block;
+    margin-top: 32%;
+
+
+}
+
+.date label {
+    display: inline-block;
+    float: right;
+    font-size: 10px;
+    margin-right: 12%;
+    margin-top: 2%;
+}
+
+.name {
+    font-size: 10px;
+    height: 16px;
+
+}
+
+
+.name label {
+    display: inline-block;
+    margin-left: 31%;
+    margin-top: 2%;
+}
+
+
+
+.reg_no {
+    font-size: 10px;
+    height: 16px;
+}
+
+
+.reg_no label {
+    display: inline-block;
+    margin-left: 31%;
+    margin-top: 2%;
+}
+
+.mob_no {
+    font-size: 10px;
+height: 23px;
+
+}
+
+
+.mob_no label {
+    display: inline-block;
+    margin-left: 31%;
+    margin-top: 2%;
+}
+
+
+
+.call_in {
+    font-size: 10px;
+    height: 16px;
+
+}
+
+
+.call_in label {
+    display: inline-block;
+    margin-left: 31%;
+    margin-top: 2%;
+}
+
+
+.add {
+    height: 20px;
+    font-size: 10px;
+    display: block;
+    margin-top: 13px;
+
+    width: 76%;
+    float: right;
+}
+
+.sec_ad {
+    height: 20px;
+    font-size: 10px;
+    display: block;
+    margin-top: 2px;
+    float: right;
+    width: 99%;
+}
+
+.sec_ad label {
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+
+.head_no {
+    height: 20px;
+    font-size: 10px;
+    display: block;
+
+    margin-top: 2px;
+    float: right;
+    width: 100%;
+}
+
+div#pf1 {
+    overflow: hidden;
+}
+.t.m0.xa.h14.y33.ff4.fs1.fc0.sc0.ls0.ws0 {
+    font-size: 40px;
+}
+
+.total_b_to_e {
+    width: 30%;
+    display: inline-block;
+    float: left;
+    margin-left: 7%;
+    font-size: 10px;
+}
+
+.total_b_to_e label {
+    display: inline-block;
+    margin-top: 9px;
+    margin-left: 9px;
+}
+
+.total_b_to_e2 {
+    width: 30%;
+    display: inline-block;
+    float: left;
+    font-size: 10px;
+}
+
+.total_b_to_e2 label {
+    display: inline-block;
+    margin-top: 9px;
+    margin-left: 9px;
+}
+
+.total_b_to_e3 {
+    width: 27%;
+    display: inline-block;
+    float: left;
+    font-size: 10px;
+}
+
+
+.total_b_to_e3 label {
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 7px;
+}
+
+
+
+
+.head_no label {
+    display: inline-block;
+    margin-left: 52px;
+}
+
+.amount_table {
+    width: 760.3px;
+    height: 111px;
+    display: block;
+    margin-left: 23.5px;
+    margin-top: 40.4%;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+}
+
+
+.block_2 {
+    width: 33%;
+    height: 100%;
+    border-right: 1px solid;
+    display: inline-block;
+    float: left;
+    font-size: 10px;
+    position: relative;
+}
+
+
+.block_3 {
+    width: 33%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+    font-size: 10px;
+    position: relative;
+}
+
+
+.block_1 {
+    width: 33%;
+    height: 100%;
+    border-right: 1px solid;
+    display: inline-block;
+    float: left;
+}
+
+.block_1 {
+    font-size: 10px;
+}
+
+
+label.id_no {
+    width: 8.6%;
+    height: 12px;
+    display: inline-block;
+    float: left;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+}
+
+
+label.name_ {
+    display: inline-block;
+    float: left;
+    width: 66%;
+    height: 12px;
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+}
+
+
+label.account {
+    display: inline-block;
+    float: left;
+    border-bottom: 1px solid;
+    width: 24%;
+}
+
+.block_1 {
+    position: relative;
+}
+
+.total {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 13px;
+    border-top: 1px solid;
+}
+
+label.taka_bangla {
+    width: 75%;
+    display: inline-block;
+    float: left;
+    text-align: right;
+    border-right: 1px solid;
+}
+
+label.taka_no {
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    width: 23%;
+}
+
+.t.m0.xa.ha.y13.ff4.fs7.fc0.sc0.ls0.ws0 {
+    display: none;
+}
+
+.t.m0.xa.h2.y23.ff4.fs7.fc0.sc0.ls0.ws0 {
+    display: none;
+}
+
+.t.m0.xa.hc.y23.ff4.fs7.fc0.sc0.ls0.ws0 {
+    display: none;
+}

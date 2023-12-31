@@ -1,0 +1,7 @@
+span.small.quiet a {
+    display: none;
+}
+
+input#searchbar {
+    background-color: hotpink;
+}

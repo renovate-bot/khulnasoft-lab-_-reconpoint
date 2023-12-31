@@ -1,0 +1,361 @@
+
+#img {
+    position: relative !important;
+    top: 10px;
+}
+
+div#sidebar {
+    background-image: none;
+    background-color: #fff;
+}
+
+div#page-container {
+    background-image: none;
+        background-color: #fff;
+}
+
+.main {
+    position: relative;
+}
+
+.img_he {
+    width: 100%;
+    height: 129px;
+    position: absolute;
+    top: 2%;
+}
+
+.img_st {
+    width: 20%;
+    height: 100%;
+    float: right;
+}
+
+.img_st img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.sub {
+    position: absolute;
+    top: 7%;
+    width: 100%;
+    height: 26px;
+}
+
+.sub label {
+    margin-left: 13%;
+    margin-top: 3px;
+    display: block;
+}
+
+.requ {
+    position: absolute;
+    width: 93%;
+    height: 90px;
+    top: 8.5%;
+    font-size: 11px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+label.same {
+    display: block;
+    text-indent: 20px;
+}
+
+.bnmc_use {
+    position: absolute;
+    top: 12%;
+    width: 100%;
+    height: 76px;
+}
+
+.per_infor {
+    position: absolute;
+    top: 15%;
+    width: 96%;
+    height: 196px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.name_b {
+    display: inline-block;
+    width: 50%;
+    height: 28px;
+}
+
+
+.name_b label {
+    text-indent: 110px;
+    display: block;
+    margin-top: 7px;
+}
+
+.name_e label {
+    text-indent: 110px;
+    display: block;
+    margin-top: 7px;
+}
+
+.name_e {
+    display: inline-block;
+    width: 47%;
+    height: 21px;
+}
+
+.name_f label {
+    text-indent: 125px;
+    display: block;
+    font-size: 13px;
+}
+
+.name_f {
+    display: inline-block;
+    width: 50%;
+    height: 28px;
+}
+
+.name_m label {
+    text-indent: 110px;
+    display: block;
+    margin-top: 4px;
+}
+
+.name_m {
+    display: inline-block;
+    width: 47%;
+    height: 21px;
+}
+
+.sex label {
+    text-indent: 82px;
+    display: block;
+    margin-top: -2px;
+    font-size: 13px;
+}
+
+.nat_id {
+    display: inline-block;
+    width: 50%;
+    height: 14px;
+}
+
+.nat_id label {
+    text-indent: 79px;
+    display: block;
+    font-size: 14px;
+}
+
+.pas_id {
+    display: inline-block;
+    width: 48%;
+}
+
+.pas_id label {
+    display: block;
+    text-indent: 103px;
+}
+
+.sex {
+    display: block;
+    height: 12px;
+}
+
+.date_b {
+    display: inline-block;
+    float: left;
+    width: 50%;
+    height: 30px;
+}
+
+.date_b label {
+    display: block;
+    text-indent: 91px;
+    margin-top: 4px;
+}
+
+.nation_ty {
+    display: inline-block;
+    float: left;
+    width: 50%;
+    height: 30px;
+}
+
+.nation_ty label {
+    display: block;
+    text-indent: 106px;
+    margin-top: 2px;
+}
+
+.relagion {
+    display: inline-block;
+    width: 50%;
+    height: 30px;
+    float: left;
+}
+
+.relagion label {
+    display: block;
+    text-indent: 100px;
+    margin-top: 8px;
+}
+
+.matarial {
+    display: inline-block;
+    width: 47%;
+    height: 30px;
+}
+
+.matarial label {
+    display: block;
+    text-indent: 100px;
+}
+
+.email {
+    display: inline-block;
+    width: 50%;
+    float: left;
+    height: 24px;
+}
+
+.email label {
+    display: block;
+    text-indent: 108px;
+    margin-top: 2px;
+    font-size: 15px;
+}
+
+.mob {
+    display: inline-block;
+    width: 50%;
+    float: left;
+    height: 24px;
+}
+
+.mob label {
+    display: block;
+    text-indent: 108px;
+    margin-top: 2px;
+    font-size: 15px;
+}
+
+.ins {
+    display: inline-block;
+    width: 100%;
+    height: 21px;
+}
+
+.ins label {
+    text-indent: 100px;
+    display: block;
+}
+
+.permanent_ad {
+    position: absolute;
+top: 21.9%;
+    height: 70px;
+    width: 100%;
+}
+
+.back_co {
+    width: 92%;
+    height: 14px;
+    display: block;
+    margin: auto;
+}
+
+.vii {
+    width: 55%;
+    display: inline-block;
+    float: left;
+        height: 14px;
+
+}
+
+.vii label {
+    display: block;
+    text-indent: 127px;
+}
+
+
+
+.dis {
+    width: 55%;
+    display: inline-block;
+    float: left;
+        height: 14px;
+
+}
+
+.dis label {
+    display: block;
+    text-indent: 127px;
+}
+
+
+
+.post_of {
+    width: 55%;
+    display: inline-block;
+    float: left;
+        height: 14px;
+
+}
+
+.post_of label {
+    display: block;
+    text-indent: 127px;
+}
+
+
+
+
+.div {
+    width: 42%;
+    display: inline-block;
+    float: left;
+    height: 14px;
+}
+
+.div label {
+    display: block;
+    text-indent: 80px;
+}
+
+
+
+.tha {
+    width: 42%;
+    display: inline-block;
+    float: left;
+    height: 14px;
+}
+
+.tha label {
+    display: block;
+    text-indent: 80px;
+}
+
+.post_co {
+    width: 42%;
+    display: inline-block;
+    float: left;
+    height: 14px;
+}
+
+.post_co label {
+    display: block;
+    text-indent: 80px;
+}
+
+.pres_ad {
+    position: absolute;
+    top: 24.3%;
+    height: 70px;
+    width: 100%;
+}

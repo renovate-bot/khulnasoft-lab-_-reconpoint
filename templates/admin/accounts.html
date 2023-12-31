@@ -1,0 +1,136 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/account.css" %}">{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block breadcrumbs %}
+  <div class="breadcrumbs">
+    <a href="{% url 'admin:index' %}">{% trans 'HOME' %}</a>
+    {% if title %} &rsaquo; {{ title }}{% endif %}
+    <a href="/admin/accounts/"> › ACCOUNTS</a>
+  </div>
+
+{% endblock %}
+
+{% block content %}
+<!--<div id="content-main">-->
+
+  <div class="accounts">
+             <div class="flip-box-inner">
+                 <div class="flip-box-front">
+            <a href="/admin/bnmc_project/balanceincome/">
+            <img src="{% static '/admin/img/incom.png' %}" class="account_img" />
+            </a>
+                 </div>
+
+
+
+                  <div class="flip-box-back">
+            <a href="/admin/bnmc_project/balanceincome/">
+            <img src="{% static '/admin/img/incom.png' %}" class="account_img" />
+
+            </a>
+                 </div>
+             </div>
+            <label CLASS="accont_le">payment items</label>
+        </div>
+
+
+
+ <div class="accounts">
+             <div class="flip-box-inner">
+             <div class="flip-box-front">
+                <a href="/admin/bnmc_project/balancehistory/">
+                <img src="{% static '/admin/img/history.png' %}" class="account_img" />
+                </a>
+             </div>
+
+
+
+            <div class="flip-box-back">
+                <a href="/admin/bnmc_project/balancehistory/">
+                    <img src="{% static '/admin/img/history.png' %}" class="account_img" />
+                </a>
+            </div>
+             </div>
+            <label CLASS="accont_le">balancehistory</label>
+        </div>
+
+
+
+<div class="accounts">
+             <div class="flip-box-inner">
+             <div class="flip-box-front">
+                <a href="/admin/bnmc_project/accounts/">
+                <img src="{% static '/admin/img/acco.jpg' %}" class="account_img hhh" />
+                </a>
+             </div>
+
+
+
+            <div class="flip-box-back">
+                <a href="/admin/bnmc_project/accounts/">
+                    <img src="{% static '/admin/img/acco.jpg' %}" class="account_img hhh" />
+                </a>
+            </div>
+             </div>
+            <label CLASS="accont_le">Create Account</label>
+        </div>
+
+
+
+<div class="accounts">
+             <div class="flip-box-inner">
+             <div class="flip-box-front">
+                <a href="/admin/bnmc_project/bank/">
+                <img src="{% static '/admin/img/bank.png' %}" class="account_img" />
+                </a>
+             </div>
+
+
+
+            <div class="flip-box-back">
+                <a href="/admin/bnmc_project/bank/">
+                    <img src="{% static '/admin/img/bank.png' %}" class="account_img" />
+                </a>
+            </div>
+             </div>
+            <label CLASS="accont_le">Bank</label>
+        </div>
+
+<div class="accounts">
+             <div class="flip-box-inner">
+             <div class="flip-box-front">
+                <a href="/admin/bnmc_project/transfarbalance/">
+                <img src="{% static '/admin/img/money_t.png' %}" class="account_img" />
+                </a>
+             </div>
+
+
+
+            <div class="flip-box-back">
+                <a href="/admin/bnmc_project/transfarbalance/">
+                    <img src="{% static '/admin/img/money_t.png' %}" class="account_img" />
+                </a>
+            </div>
+             </div>
+            <label CLASS="accont_le">Balance Transfer</label>
+        </div>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+</body>

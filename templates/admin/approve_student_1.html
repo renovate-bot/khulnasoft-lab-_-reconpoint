@@ -1,0 +1,498 @@
+<html>
+
+
+
+<head>
+<meta charset="utf-8">
+    {% load i18n static %}
+    <link rel="stylesheet" type="text/css" href="{% static "admin/css/approve.css" %}" />
+
+
+
+
+    <style type="text/css">
+
+        @media print {
+
+
+    @frame header {
+                -pdf-frame-content: page-header;
+                margin-top: 1.3cm;
+                margin-right: 2mm;
+                margin-bottom: 1cm;
+                margin-left: 1.2cm;
+            }
+
+
+.full_body{
+    page-break-after:always;
+     height: 928px;
+
+
+}
+
+@page {
+   size:8.5in 10in;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin: 0;
+    -webkit-print-color-adjust: exact;
+    background-image: url("http://127.0.0.1:8000/static/admin/img/bacddg.png");
+    height": 400px;
+
+}
+
+.full_body {
+    width: 1200px;
+    height: 928px;
+    margin: auto;
+    display: block;
+}
+
+.header {
+    width: 1200px;
+    height: 178px;
+    display: block;
+}
+
+.image_he {
+    width: 80%;
+    margin: auto;
+    height: 176px;
+}
+
+
+img.logo {
+    width: 60%;
+    margin: auto;
+    display: block;
+}
+
+.image_he label {
+    text-align: center;
+    display: block;
+    font-size: 18px;
+}
+
+.student_reg_n_img {
+    width: 80%;
+    height: 137px;
+    margin: auto;
+}
+
+.stu_label {
+    width: 72%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+}
+.student_img {
+    width: 16%;
+    height: 100%;
+    display: inline-block;
+    margin-left: 18px;
+}
+
+
+.reg_label {
+    float: right;
+}
+
+.reg_label label {
+    font-size: 25px;
+    display: inline-block;
+    margin-left: -38%;
+    padding: 5px;
+    border: 3px solid #969696;
+}
+
+.main_information {
+    width: 1200px;
+    height: 600px;
+}
+
+.full_body {
+
+    background-repeat: no-repeat;
+    background-size: 78% 113%;
+    background-position: center;
+}
+
+
+.program_name {
+    width: 80%;
+    height: 33px;
+    margin: auto;
+}
+
+.program_name span {
+    text-align: center;
+    display: block;
+    font-size: 23px;
+}
+
+.stu_info {
+width: 70%;
+    margin: auto;
+    height: 400px;
+}
+
+.name {
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+
+}
+
+.fathersname {
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+
+}
+
+.mothersname {
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+
+}
+
+.institute {
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+
+}
+
+.extra_text {
+    width: 100%;
+    height: 40px;
+    margin-top: 15px;
+
+    margin-bottom: 15px;
+}
+
+.extra_text span {
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.stu_re_no {
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+
+}
+.session {
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+
+}
+
+.admission_date {
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+}
+
+.name span {
+    display: inline-block;
+    width: 40%;
+    height: 40px;
+        font-size: 19px;
+    font-family: sans-serif;
+        float: left;
+        color:red;
+}
+
+.fathersname span {
+    width: 40%;
+    display: inline-block;
+    height: 40px;
+        font-size: 19px;
+    font-family: sans-serif;
+        float: left;
+                color:green;
+}
+
+.mothersname span {
+    width: 40%;
+    display: inline-block;
+    height: 40px;
+        font-size: 19px;
+    font-family: sans-serif;
+        float: left;
+}
+.institute span {
+    width: 40%;
+    display: inline-block;
+    height: 40px;
+        font-size: 19px;
+    font-family: sans-serif;
+        float: left;
+}
+
+.stu_re_no span {
+    width: 40%;
+    display: inline-block;
+    height: 40px;
+        font-size: 19px;
+    font-family: sans-serif;
+        float: left;
+}
+.session span {
+    width: 40%;
+    display: inline-block;
+    height: 40px;
+        font-size: 19px;
+    font-family: sans-serif;
+        float: left;
+}
+
+.admission_date span {
+    width: 40%;
+    display: inline-block;
+    height: 40px;
+        font-size: 19px;
+    font-family: sans-serif;
+        float: left;
+}
+
+.admission_date label {
+    display: inline-block;
+    width: 55%;
+    height: 40px;
+    float: left;
+}
+
+.session label {
+    display: inline-block;
+    width: 55%;
+    height: 40px;
+    float: left;
+}
+
+.stu_re_no label {
+    display: inline-block;
+    width: 55%;
+    height: 40px;
+    float: left;
+}
+
+.institute label {
+    display: inline-block;
+    width: 55%;
+    height: 40px;
+    float: left;
+}
+
+.mothersname label {
+    display: inline-block;
+    width: 55%;
+    height: 40px;
+    float: left;
+}
+
+.fathersname label {
+    display: inline-block;
+    width: 55%;
+    height: 40px;
+    float: left;
+}
+
+.name label {
+    display: inline-block;
+    width: 55%;
+    height: 40px;
+    float: left;
+}
+.student_img {
+    border: 1px solid;
+}
+
+
+.signature {
+    width: 50%;
+    height: 60px;
+    display: inline-block;
+    float: right;
+    font-size: 19px;
+    font-weight: bold;
+    margin-top: 8%;
+}
+
+.signature span {
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+.signature label {
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin-top: 12px;
+}
+
+
+
+
+* {
+    -webkit-print-color-adjust: exact !important;   /* Chrome, Safari */
+    color-adjust: exact !important;                 /*Firefox*/
+}
+.full_body{
+
+
+background_color: red;
+}
+
+
+
+
+
+}
+
+    </style>
+
+
+</head>
+
+<body >
+
+
+
+
+<div class="full_body">
+<div class="header">
+
+    <div class="image_he">
+
+
+
+          <img src="{% static '/admin/img/logo_bnmc.png' %}" class="logo" />
+          <label>203,Shaheed Syed Nazrul Islam Sarani,Bijoynagor, Dhaka-1000</label>
+
+    </div>
+
+    </div>
+    <div class="main_information">
+
+        <div class="student_reg_n_img">
+
+            <div class="stu_label">
+                <div class="reg_label"><label>Student Registration</label>
+                <span class=""></span>
+
+                </div>
+        </div>
+        <div class="student_img">
+             {%if p.image%}
+             <img style=" width: 100%;height: 100%;" src="{{p.image.url}}" class="stu_img" />
+            {%endif%}
+
+
+        </div>
+
+        </div>
+
+        <div class="program_name">
+            <span>Diploma in Midwifery</span>
+
+        </div>
+
+        <div class="stu_info">
+
+            <div class="name">
+                <span>Name:</span>
+                     <label class="name_">{{p.last_name}}</label>
+
+            </div>
+             <div class="fathersname">
+                <span>Father's Name:</span>
+                 <label class="father_">{{p.fathers_name}}</label>
+
+            </div>
+
+
+             <div class="mothersname">
+
+                <span>Mother's Name:</span>
+                      <label class="mother_">{{p.mothers_name}}</label>
+            </div>
+
+
+
+             <div class="institute">
+                <span>Institute Name:</span>
+                      <label class="INSTITUTE_">{{p.institution.institution_name}}</label>
+
+            </div>
+
+
+             <div class="extra_text">
+
+                <span>The Bangladesh Nursing midwifery Council has issued the student registration with</span>
+            </div>
+
+             <div class="stu_re_no">
+                <span>Student Reg. No:</span>
+                      <label class="reg_">{{p.registration_no}}</label>
+
+            </div>
+
+             <div class="session">
+                <span>Session:</span>
+                      <label class="session_">{{p.session}}</label>
+
+            </div>
+
+
+             <div class="admission_date">
+            <span>Admission Date: </span>
+                      <label class="admission_">{{p.date_of_registration}}</label>
+
+            </div>
+
+
+<<img src="http://api.qrserver.com/v1/create-qr-code/?size=100x100&data=http://137.59.48.21/admin/search/student_info/{{p.id}}"/>
+
+            <div class="signature">
+
+                <span>Registrar</span>
+                <label>Bangladesh Nursing & Midwifery Council</label>
+
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+</div>
+
+
+
+</body>
+
+
+
+</html>

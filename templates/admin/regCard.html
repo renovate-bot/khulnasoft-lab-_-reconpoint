@@ -1,0 +1,328 @@
+
+
+
+<style type="text/css">
+body {
+    margin: 0;
+}
+
+.name td {
+    font-weight: bold;
+}
+
+img.qr {
+    display: block;
+    float: right;
+    margin-right: 4px;
+}
+@media screen {
+	.page-break	{ height:10px;  border-top:1px dotted #999; margin-bottom:13px; }
+}
+
+@media print {
+	 .page-break { height:0; page-break-before:always; margin:0; border-top:none; }
+}
+
+	td
+	{
+		font-family: "Arial Narrow", "Times New Roman", Arial;
+		font-size: 8px;
+		padding: 0;
+		border-bottom: 0px solid #F3F3F3;
+		line-height: 1;
+	}
+
+	.row {
+    margin: auto;
+}
+
+
+
+table.style_border {
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+        border: 1px solid #eee;
+}
+
+</style>
+
+<style type="text/css" media="print">
+	td
+	{
+		font-family: "Arial Narrow" ,"Times New Roman", Arial;
+		font-size: 8px;
+		padding: 0;
+		border-bottom: 0px solid #F3F3F3;
+		line-height: 1;
+	}
+
+	.row {
+		margin: auto;
+	}
+
+</style>
+
+
+<div class="row" style="width: 350px; height: 250px; overflow:hidden;">
+  <table id="tab"  width="360" border="0" cellspacing="3" cellpadding="3" style="width: 345px; height: 180px;" class="style_border">
+    <tr>
+     <td width="324" height="42" class="text-center" style="vertical-align:top;margin: auto; display: block; width: 90%;">
+     <img src="/static/admin/img/logox.png" alt="Nursing Council" width="43" height="43" />&nbsp;<span class="text-center" style="vertical-align:top;">
+
+       {% if licenses.program.code == "DIM" %}
+
+            <img src="/static/admin/img/logo-for-Card-DIM.png" alt="Nursing Council" width="245" height="40" />
+
+          {% elif licenses.program.code == "DIM1" %}
+
+            <img src="/static/admin/img/logo-for-Card-DIM.png" alt="Nursing Council" width="245" height="40" />
+
+         {% elif licenses.program.code == "BSCB" %}
+
+            <img src="/static/admin/img/logo-for-Card-Bsc.png" alt="Nursing Council" width="245" height="40" />
+
+          {% elif licenses.program.code == "BMPB" %}
+
+            <img src="/static/admin/img/logo-for-Card-Bsc.png" alt="Nursing Council" width="245" height="40" />
+
+          {% elif licenses.program.code == "BSCPHN" %}
+
+            <img src="/static/admin/img/logo-for-Card-Bsc.png" alt="Nursing Council" width="245" height="40" />
+
+       {% elif licenses.program.code == "DNSM"%}
+          <img src="/static/admin/img/logo-for-Card-DNSM.png" alt="Nursing Council" width="245" height="40" />
+
+         {% elif licenses.program.code == "DIPM3"%}
+         <img src="/static/admin/img/logo-for-Card-DNSM.png" alt="Nursing Council" width="245" height="40" />
+
+
+      {% else %}
+
+         <img src="/static/admin/img/logo-for-Card-DNSM.png" alt="Nursing Council" width="245" height="40" />
+          {% endif %}
+  </tr>
+  <tr>
+    <td class="text-center" style="background: url(/static/admin/img/logoy.png) no-repeat; background-position: center;">
+
+    <table width="100%" height="50%" border="0" cellpadding="3" cellspacing="3">
+      <!--<tr><td>&nbsp;</td></tr>                        -->
+      <tr class="td_pad">
+        <td width="34%" height="1"><strong> &nbsp;&nbsp;&nbsp; Registration #</strong></td>
+        <td width="45%" height="1">
+
+        {{licenses.license_number}}
+        </td>
+        <td width="21%" rowspan="9" valign="middle"><table width="100%" border="0" cellspacing="3" cellpadding="3">
+          <tr>
+            <td align="center" class="text-center" style="vertical-align:top;">
+                {% if license_receive.image %}
+          {% if licenses.program.code == "DIM"   %}
+			<img class="profile" src='{{license_receive.image.url}}' style='width: 60px; height: 80px;border:1px solid #d453a5;'>
+             {% elif licenses.program.code == "DIM1"   %}
+			<img class="profile" src='{{license_receive.image.url}}' style='width: 60px; height: 80px;border:1px solid #d453a5;'>
+           {% elif licenses.program.code == "BSCB"%}
+
+			<img class="profile" src='{{license_receive.image.url}}' style='width: 60px; height: 80px;border:1px solid #1674aa;'>
+           {% elif licenses.program.code == "BNDB"%}
+
+            <img class="profile" src='{{license_receive.image.url}}' style='width: 60px; height: 80px;border:1px solid #1674aa;'>
+           {% elif licenses.program.code == "BMPB"%}
+
+           <img class="profile" src='{{license_receive.image.url}}' style='width: 60px; height: 80px;border:1px solid #1674aa;'>
+           {% elif licenses.program.code == "BSCPHN"%}
+
+			<img class="profile" src='{{license_receive.image.url}}' style='width: 60px; height: 80px;border:1px solid #1674aa;'>
+
+
+             {% elif licenses.program.code == "DNSM"%}
+
+			<img class="profile" src='{{license_receive.image.url}}' style='width: 60px; height: 80px;border:1px solid #008000;'>
+
+              {% elif licenses.program.code == "DIPM3"%}
+
+			<img class="profile" src='{{license_receive.image.url}}' style='width: 60px; height: 80px;border:1px solid #008000;'>
+          {% else %}
+			<img class="profile" src='{{license_receive.image.url}}' style='width: 60px; height: 80px;border:1px solid #000;'>
+		{% endif %}
+
+                {% endif %}
+
+            </td>
+
+
+          </tr>
+          <tr>
+            <td align="center" class="text-center">
+              {% if license_receive.signature %}
+				<img src='{{license_receive.signature.url}}' style='width: 60px; height: 15px;'> <br>  <em>Specimen Signature</em>
+
+              {% endif %}
+            </td>
+          </tr>
+        </table></td>
+      </tr>
+		<tr class="td_pad">
+        <td height="1"><strong>&nbsp;&nbsp;&nbsp; Qualification:</strong></td>
+        <td>
+
+
+          {% if licenses.program.code == "DIM"   %}
+			<strong><font id="pr" style="color:#d453a5;"> {{licenses.program}}  </font></strong>
+             {% elif licenses.program.code == "DIM1"   %}
+			<strong><font id="pr"style="color:#d453a5;"> {{licenses.program}}  </font></strong>
+
+           {% elif licenses.program.code == "BSCB"%}
+
+			<strong><font id="pr" style="color:#1674aa;"> {{licenses.program}}  </font></strong>
+           {% elif licenses.program.code == "BNDB"%}
+
+            <strong><font id="pr" style="color:#1674aa;"> {{licenses.program}}  </font></strong>
+           {% elif licenses.program.code == "BMPB"%}
+
+            <strong><font id="pr" style="color:#1674aa;"> {{licenses.program}}  </font></strong>
+           {% elif licenses.program.code == "BSCPHN"%}
+
+			<strong><font id="pr" style="color:#1674aa;"> {{licenses.program}}  </font></strong>
+
+
+             {% elif licenses.program.code == "DNSM"%}
+
+			<strong><font id="pr" style="color:#008000;"> {{licenses.program}}  </font></strong>
+
+              {% elif licenses.program.code == "DIPM3"%}
+
+			<strong><font id="pr" style="color:#008000;"> {{licenses.program}}  </font></strong>
+          {% else %}
+			<strong ><font id="pr" style="color:#000;"> {{licenses.program}}  </font></strong>
+		{% endif %}
+        </td>
+
+
+       <tr class="td_pad name">
+        <td height="1"><strong>&nbsp;&nbsp;&nbsp; Name:</strong></td>
+        <td>
+			{{license_receive.last_name}}
+		</td>
+        </tr>
+
+
+        <tr class="td_pad">
+          <td style=""><strong>&nbsp;&nbsp;&nbsp; Institute:</strong></td>
+          <td>
+              <strong> {{licenses.institution}} </strong>
+          </td>
+        </tr>
+
+
+       <tr class="td_pad">
+        <td style=""><strong>&nbsp;&nbsp;&nbsp; Date of Registration:</strong></td>
+          <td>
+               {% if  full_license_registration_date%}
+          {{full_license_registration_date}}
+               {% endif %}
+
+          </td>
+        </tr>
+
+
+{% if full_license_registration_date != full_license_start_date %}
+       <tr class="td_pad">
+        <td style=""><strong>&nbsp;&nbsp;&nbsp; Date of Renewed:</strong></td>
+          <td>
+              {% if  full_license_start_date%}
+          {{full_license_start_date}}
+              {% endif %}
+          </td>
+        </tr>
+
+        {% endif %}
+
+
+
+
+      <tr class="td_pad">
+        <td style=""><strong>&nbsp;&nbsp;&nbsp; Valid upto:</strong></td>
+        <td>
+             {% if  full_license_end_date%}
+            {{full_license_end_date}}</td>
+       {% endif %}
+        </tr>
+      <tr>
+      <tr id="row_last">
+        <td height="43"><div align="left">&nbsp;&nbsp;&nbsp;
+            <img src="/static/admin/img/rserial.jpg" height="30" /><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Registrar</div>          </strong></td>
+
+        <td width="45%" valign="middle">&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</div>
+
+
+<script>
+
+    var clientHeight = document.getElementById('tab').clientHeight;
+
+
+    if (clientHeight > 185){
+    document.getElementById("row_last").setAttribute(
+       "style", "display: block; margin-top: -10%;");
+
+    }
+
+</script>
+<div class="page-break"></div>
+<div class="row" style="width: 350px; height: 250px; overflow:hidden;">
+
+<table width="360" border="0" cellspacing="3" cellpadding="3" style="width: 345px; height: 180px;" class="style_border">
+  <tr>
+    <td width="344" height="5" class="text-center" style="vertical-align:top;text-align:center"><strong>Certification</strong><br>
+      Based on BNMC Act (Act No. 48 of 2016), Code of Ethics &amp; Professional Conduct<br>
+      This is to certify that the person all information appears herein is a duly registered professional, legally authorized to practice his/her profession.</td>
+  </tr>
+  <tr>
+    <td style="vertical-align:top;" class="text-center"><table width="99%" border="0" cellspacing="3" cellpadding="3">
+      <tr>
+        <td width="28%" height="83"><table width="100%" border="0" cellspacing="3" cellpadding="3">
+          <tr>
+            <td colspan="2"><strong>Contact Us</strong></td>
+          </tr>
+          <tr>
+            <td width="19%" height="1"><img src="/static/admin/img/mobile.png" width="20" height="15"  alt=""/></td>
+            <td width="81%" height="1">+88-02-9564159</td>
+          </tr>
+          <tr>
+            <td><img src="/static/admin/img/sms.png" width="15" height="20"  alt=""/></td>
+            <td height="1">info@bnmc.gov.bd</td>
+          </tr>
+          <tr>
+            <td height="20"><img src="/static/admin/img/web.png" width="20" height="15"  alt=""/></td>
+            <td height="1">www.bnmc.gov.bd</td>
+          </tr>
+        </table></td>
+        <td width="36%" class="text-center">
+          <img class="qr" src='https://chart.googleapis.com/chart?chs=80x80&cht=qr&chl=http://bncdb.bnmc.gov.bd/bnc/{{license_receive.entry_id}}.html'><br>
+          <span id="crd_ser" style="text-indent: 47%;display: block;">{{licenses.card_serial}}</span>
+        </td>
+        <td width="36%" height="83" align="center" class="text-center"><strong> <font color="#FF0000"> Notice<br>
+           This card should be renewed <br />every 5 (five) years. </font></strong></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td style="vertical-align:top;" class="text-center"><table width="100%" border="0" cellspacing="3" cellpadding="3">
+      <tr>
+        <td width="49%" height="35" class="text-center"><span class="text-center" style="vertical-align:top;">
+            <img src="/static/admin/img/logox.png" alt="" width="39" height="40" /></span>
+          </td>
+        <td width="51%" >This Card is property of <br>
+          <strong>Bangladesh Nursing and Midwifery Council<br>
+          If found please return to </strong><br>
+          203, Shaheed Syed Nazrul Islam Sarani<br>
+          Bijoynagar, Dhaka-1000</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</div>

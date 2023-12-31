@@ -1,0 +1,166 @@
+label.ad {
+    display: block;
+    margin-top: 10px;
+    font-size: 11px;
+}
+
+.exam_center {
+    display: block;
+    width: 100%;
+    height: 46px;
+    font-family: ff1;
+    line-height: 0.938477;
+    font-style: normal;
+    visibility: visible;
+    font-size: 10px;
+}
+
+.exam_data {
+    width: 59%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+}
+
+.stu_data {
+    display: inline-block;
+    float: left;
+    width: 25%;
+    height: 100%;
+}
+
+.roll {
+    display: inline-block;
+    float: left;
+    width: 16%;
+    height: 100%;
+}
+
+
+.exam_data label {
+    width: 100%;
+    height: 22%;
+    display: block;
+    font-size: 10px;
+    text-align: center;
+        margin-top: 3px;
+    font-weight: bold;
+}
+
+label.st_id {
+    width: 100%;
+    display: block;
+    height: 34%;
+    text-align: center;
+    padding-top: 11px;
+}
+
+label.session {
+    display: block;
+    text-align: center;
+    padding-top: 3px;
+}
+
+label.roll_n {
+    display: block;
+    text-align: center;
+    padding-top: 1px;
+}
+
+label.roll_text {
+    display: block;
+    height: 19%;
+    padding-top: 3px;
+    text-align: center;}
+
+
+    .info_ {
+    display: block;
+    width: 100%;
+    height: 70px;
+    font-family: ff1;
+    line-height: 0.938477;
+    font-style: normal;
+    visibility: visible;
+    font-size: 10px;
+}
+
+
+.name {
+    display: block;
+    margin-top: 6px;
+    height: 9px;
+}
+
+.F_name {
+    display: block;
+    margin-top: 3px;
+    height: 9px;
+}
+
+
+
+.m_name {
+    display: block;
+    margin-top: 5px;
+    height: 10px;
+}
+
+
+.in_name {
+    display: block;
+    margin-top: 3px;
+    height: 9px;
+}.exam_date {
+    display: block;
+    margin-top: 3px;
+    height: 9px;
+}.exam_time {
+    display: block;
+    margin-top: 3px;
+    height: 9px;
+}
+
+
+.info_ label {
+    width: 25%;
+    display: inline-block;
+    float: left;
+}
+
+.info_ span {
+    display: inline-block;
+    float: left;
+    width: 70%;
+    height: 100%;
+}
+
+.signature_i {
+    width: 103px;
+    height: 17px;
+    position: absolute;
+    z-index: 1;
+    top: 34%;
+    left: 18%;
+}
+
+.signature_i img {
+    width: 100%;
+    height: 100%;
+}
+
+.signature_reg img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.signature_reg {
+    width: 101px;
+    height: 17px;
+    position: absolute;
+    z-index: 1;
+    top: 34%;
+    right: 19%;
+}
+

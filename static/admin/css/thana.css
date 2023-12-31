@@ -1,0 +1,75 @@
+#content {
+    width: 900px;
+    margin: auto;
+    background-color: #eee;
+}
+
+ul.object-tools {
+    margin-top: 1%;
+    z-index: 1000;
+}
+
+a.addlink {
+    border-radius: 0;
+}
+
+.actions {
+    background-color: #eee !important;
+}
+
+tr.row1 {
+    background-color: #eee;
+}
+
+#result_list tr {
+    background-color: #eee;
+}
+
+p.paginator {
+    background-color: #eee !important;
+}
+
+#changelist table tbody tr.selected {
+    background-color: #fff !important;
+}
+}
+
+.form-row.field-name {
+    background-color: #eee;
+}
+
+.form-row.field-name input {
+    width: 300px;
+    height: 26px;
+}
+
+.submit-row {
+    background-color: #eee;
+}
+
+.form-row.field-division {
+    width: 100%;
+    display: block;
+}
+
+fieldset.module.aligned select {
+    width: 314px;
+    height: 36px;
+}
+.submit-row {
+    background-color: #eee;
+}
+
+fieldset.module.aligned input {
+    height: 23px;
+    width: 300px;
+}
+
+.form-row.field-district {
+    width: 100%;
+    display: block;
+}
+
+.form-row {
+    background-color: #eee;
+}

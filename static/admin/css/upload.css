@@ -1,0 +1,27 @@
+div#content {
+    margin: auto;
+}
+
+form.upload_csv {
+    width: 100%;
+    height: 75px;
+    display: block;
+    margin: auto;
+}
+
+
+div#content {
+    width: 700px !important;
+}
+
+
+.select_exam {
+    width: 310px;
+    height: 40px;
+}
+
+
+.upload {
+    width: 176px;
+
+}

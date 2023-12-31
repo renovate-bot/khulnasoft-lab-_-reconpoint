@@ -1,0 +1,104 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/program_reg_link.css" %}">{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <a href="{% url 'admin:index' %}">{% trans 'HOME' %}</a>
+    {% if title %} &rsaquo; {{ title }}{% endif %}
+     <a href="/admin/registration/"> › REGISTRATION</a>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="program_list_body">
+
+        <div>
+
+
+
+
+            <script>
+$(document).ready(function(){
+  $("#program").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#list_pro li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+
+
+
+
+
+
+    {% if type == "programs" %}
+
+             {% if user.is_superuser %}
+
+
+            <div class="search_list">
+
+                 <input type="text" id="program">
+            </div>
+
+
+
+
+  {% endif %}
+
+       {% for institute in user.staff_institute.all %}
+            {%for program in  institute.program_ins.all  %}
+
+                <ul id="list_pro">
+                <li id="list_program" class="program_list"><a href="/admin/bnmc_project/student_registration/add/?program_title={{program.id}}&institution={{institute.id}}">({{institute.institution_name}}) {{program.title }} ({{program.code}} ) </a></li>
+                </ul>
+{% endfor %}
+        {% endfor %}
+        </div>
+    {% endif %}
+
+    <!--{% if type == "exams" %}-->
+        <!--<div >-->
+        <!--{% for p in user.staff_institute.all %}-->
+             <!--{% for exam in p.exam_ins.all %}-->
+        <!--<li class="program_list"><a href="/admin/bnmc_project/license_registrations?program_title={{exam.id}}&institution={{p.id}}">  {{p}}({{exam.exam_name }}) </a></li>-->
+        <!--{% endfor %}-->
+            <!--{% endfor %}-->
+        <!--</div>-->
+    <!--{% endif %}-->
+
+
+
+
+
+
+           
+   <!--  <li class="program_list"><a href="/admin/bnmc_project/license_receive/>  </a></li>-->
+       
+
+        </div>
+    
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+{% endblock %}

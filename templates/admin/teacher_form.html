@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teacher form</title>
+
+    <style>
+
+.main {
+    width: 1200px;
+    height: 1200px;
+    margin: auto;
+}
+
+
+ul#myList {
+    width: 60%;
+    display: block;
+    padding: 0;
+    height: 80px;
+    margin: auto;
+}
+
+input#bc {
+    width: 46%;
+    height: 30px;
+    border-radius: 6px 0px 0px 6px;
+    border: 1px solid;
+    color: green;
+    font-size: 20px;
+        margin-left: 10%;
+            display: inline-block;
+    float: left;
+}
+
+button#cl {
+    height: 34px;
+    border: 0;
+    background-color: green;
+    border-radius: 0px 6px 6px 0px;
+    color: #fff;
+        display: inline-block;
+    float: left;
+}
+
+form#teacher_form {
+    width: 69%;
+    margin: auto;
+    height: 100%;
+    background-color: #fff;
+}
+
+
+
+form#teacher_form select {
+    width: 280px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+        margin-top: 10px;
+        color: #7b7272
+}
+
+form#teacher_form input {
+    width: 280px;
+    height: 26px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+}
+
+.license_number {
+    display: inline-block;
+    float: left;
+    width: 50%;
+    height: 68px;
+    margin-left: 25px;
+}
+
+body {
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, sans-serif;
+        background-color: #eee;
+}
+
+
+.is {
+    padding-top: 10px;
+}
+
+.emial {
+    padding-top: 10px;
+}
+
+
+.institition {
+    padding-top: 10px;
+}
+
+
+img.img {
+    display: block;
+    width: 21%;
+    height: 60px;
+    background-image: url(/static/admin/img/Facebook-no-profile-picture-icon-620x389.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin: auto;
+    margin-top: 12px;
+        border: 1px solid greenyellow;
+        text-indent: -1000px;
+}
+.file {
+    display: inline-block;
+    float: left;
+    width: 44%;
+}
+
+
+.file input {
+    margin: auto;
+    width: 200px!important;
+    display: block;
+    margin-top: 18px !important;
+    border: 0 !important;
+    margin-bottom: 20px;
+}
+
+.button {
+    bottom: 20%;
+    width: 100px;
+    height: 31px;
+    font-size: 17px;
+    background-color: #218421;
+    border: 0;
+    border-radius: 15px 15px;
+    color: #fff;
+    margin-left: 25px;
+    margin-top: 4%;
+}
+
+
+
+div#ui-datepicker-div {
+    background-color: darkgray;
+    color: #fff;
+        font-size: 10px;
+}
+
+table.ui-datepicker-calendar a {
+    color: #fff;
+}
+
+
+table, th, td {
+    border: 1px solid #ddd;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: center;
+}
+
+
+select.pro {
+    width: 50%;
+    display: inline-block;
+    float: left;
+    height: 32px;
+    border: 1px solid #ccc;
+}
+
+input#num {
+    width: 22%;
+    height: 28px;
+    border-left: 0;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding-left: 9px;
+}
+
+
+input#click {
+    width: 11%;
+    height: 32px;
+    margin-left: -4px;
+    border: 1px solid #ccc;
+    border-left: 0;
+}
+
+form.form_search {
+    width: 100%;
+    display: block;
+    height: 100%;
+    display: none;
+}
+
+.license_number label {
+    display: block;
+}
+
+.full_name label {
+    display: block;
+}
+
+
+.full_name {
+    display: inline-block;
+    float: left;
+    width: 46%;
+}
+
+.li_full {
+    width: 100%;
+    height: 111px;
+}
+
+.emial  {
+    width: 90%;
+    height: 68px;
+    margin-left: 25px;
+    padding-top: 10px;
+}
+
+.emial label {
+    display: block;
+}
+
+.emial input {
+    width: 93% !important;
+}
+
+.date_birth input {
+    width: 93% !important;
+}
+
+.date_birth label {
+    display: block;
+}
+
+.student_mob input {
+    width: 93% !important;
+}
+
+.student_mob label {
+    display: block;
+}
+
+
+.date_birth, .student_mob {
+    width: 90%;
+    height: 68px;
+    margin-left: 25px;
+    padding-top: 10px;
+}
+
+
+.father_name input {
+    width: 80% !important;
+}
+
+.father_name label {
+    display: block;
+}
+
+
+.father_name {
+    display: inline-block;
+    float: left;
+    height: 68px;
+    margin-left: 25px;
+    padding-top: 10px;
+    width: 30%;
+}
+
+
+.mother_name input {
+    width: 80% !important;
+}
+
+.mother_name label {
+    display: block;
+}
+
+
+.mother_name {
+    display: inline-block;
+    float: left;
+    height: 68px;
+    padding-top: 10px;
+    width: 30%;
+}
+
+
+.sex select {
+    width: 80% !important;
+}
+
+.sex label {
+    display: block;
+}
+
+
+.sex {
+    display: inline-block;
+    float: left;
+    height: 68px;
+    padding-top: 10px;
+    width: 30%;
+}
+
+
+.matarial_status label {
+    display: block;
+}
+
+.matarial_status {
+    display: inline-block;
+    float: left;
+    margin-left: 25px;
+    height: 68px;
+    width: 50%;
+    padding-top: 10px;
+}
+
+
+.nationality label {
+    display: block;
+}
+
+.nationality {
+    display: inline-block;
+    float: left;
+    width: 46%;
+    height: 68px;
+    padding-top: 10px;
+}
+
+
+.f_name_m_name {
+    width: 100%;
+    height: 170px;
+}
+
+.di_dis_vil {
+    display: block;
+    width: 100%;
+    height: 171px;
+}
+
+
+.division select {
+    width: 80% !important;
+}
+
+.division label {
+    display: block;
+}
+
+
+.division {
+    display: inline-block;
+    float: left;
+    height: 68px;
+    padding-top: 10px;
+    width: 30%;
+        margin-left: 25px;
+}
+
+
+.district select {
+    width: 80% !important;
+}
+
+.district label {
+    display: block;
+}
+
+
+.district {
+    display: inline-block;
+    float: left;
+    height: 68px;
+    padding-top: 10px;
+    width: 30%;
+}
+
+
+.thana select {
+    width: 80% !important;
+}
+
+.thana label {
+    display: block;
+}
+
+
+.thana {
+    display: inline-block;
+    float: left;
+    height: 68px;
+    padding-top: 10px;
+    width: 30%;
+}
+
+
+.village input {
+    display: block;
+    width: 79% !important;
+}
+
+.village label {
+    display: block;
+}
+
+
+.village {
+    width: 30%;
+    display: inline-block;
+    float: left;
+    height: 68px;
+    margin-left: 25px;
+    padding-top: 10px;
+}
+
+
+.postalcode input {
+    display: block;
+    width: 79% !important;
+}
+
+.postalcode label {
+    display: block;
+}
+
+
+.postalcode {
+    width: 30%;
+    display: inline-block;
+    float: left;
+    height: 68px;
+    padding-top: 10px;
+}
+
+
+.postoffice input {
+    display: block;
+    width: 79% !important;
+}
+
+.postoffice label {
+    display: block;
+}
+
+
+.postoffice {
+    width: 30%;
+    display: inline-block;
+    float: left;
+    height: 68px;
+    padding-top: 10px;
+}
+
+
+.institition select {
+    width: 93% !important;
+}
+
+.institition label {
+    display: block;
+}
+
+.institition {
+    width: 90%;
+    margin-left: 25px;
+}
+
+
+.employment_type select {
+    width: 93% !important;
+}
+
+.employment_type label {
+    display: block;
+}
+
+.employment_type {
+    width: 90%;
+    margin-left: 25px;
+    padding-top: 10px;
+}
+
+
+.designation select {
+    width: 93% !important;
+}
+
+.designation label {
+    display: block;
+}
+
+.designation {
+    width: 90%;
+    margin-left: 25px;
+    padding-top: 10px;
+}
+
+
+
+.f_w {
+    height: 100px;
+}
+
+
+.working_start_date label {
+    display: block;
+}
+
+.working_start_date {
+    padding-top: 10px;
+    display: inline-block;
+    float: left;
+    height: 68px;
+    margin-left: 25px;
+    width: 50%;
+}
+
+
+.f_idss label {
+    display: block;
+}
+
+.f_idss {
+    padding-top: 10px;
+    display: inline-block;
+    float: left;
+    height: 68px;
+    width: 45%;
+}
+
+.is {
+    display: inline-block;
+    float: left;
+    margin-left: 25px;
+        width: 44%;
+}
+
+
+.is_nu_photo {
+    height: 100px;
+}
+
+input#id_is_nurse {
+    width: 55px !important;
+}
+    </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+</head>
+<body>
+
+<div class="main">
+
+
+ <ul id="myList">
+
+     <label class="sucsess">{{not}}</label>
+
+         <form class="form_search" method="POST" action="" style="margin-top: 18px;">
+           {% csrf_token %}
+             <select name="program_id_" class="pro">
+
+        {% for i in program %}
+        <option value="{{i.id}}">{{i.title}}</option>
+        {% endfor %}
+    </select>
+
+     <input name="license_number" value="47999" id="num" type="text">
+     <input name="get_data" id="click" type="submit" value="Click">
+
+     </form>
+
+
+</ul>
+
+    <form method="post" id="teacher_form">
+{% csrf_token %}
+
+<input id="st_hidden" value="{{license_his.student_id.id}}" type="hidden" name="student_id">
+
+
+<div class="is_nu_photo">
+
+
+
+        <div class="is">
+            <label>Is Nurse:</label>
+            <input type="checkbox" id="id_is_nurse" name="nurse">
+            <input type="hidden" value="{{f}}" id="dis">
+            {% if f == 'true' %}
+            <script>
+
+                $('#id_is_nurse').attr( 'checked', 'checked' );
+            </script>
+
+            {% endif %}
+        </div>
+
+        <div class="file">
+            {% if f == 'true' and license_his.license_receive_id.image %}
+            <img src="{{license_his.license_receive_id.image.url}}" class="img">
+
+        {% else %}
+
+        <img src="" class="img">
+        {% endif %}
+
+        <input type="file" name="file">
+
+        </div>
+</div>
+
+
+        <div class="li_full">
+
+              <div class="license_number">
+
+            <label>License Number</label>
+
+
+                   {% if license_his %}
+            <input value="{{license_his.license_number}}" type="number" name="number" class="dis">
+
+           {% else %}
+
+                   <input value="0" type="number" name="number" id="lic" class="dis" placeholder="License Number">
+             {% endif %}
+
+        </div>
+
+         <div class="full_name">
+
+            <label>Full Name</label>
+            <input value="{{license_his.license_receive_id.students.last_name}}" type="text" name="name" class="dis" placeholder="Full Name">
+        </div>
+        </div>
+
+
+
+
+        <div class="emial">
+
+            <label>Email</label>
+          <input placeholder="Example@gmail.com" class="dis" value="{% if license_his.license_receive_id.students.email_address%} {{license_his.license_receive_id.students.email_address}} {% endif %}" type="email" name="email">
+        </div>
+
+         <div class="date_birth">
+
+            <label>Date Of Birth</label>
+           <input placeholder="Date Of Birth" class="dis" value="{{license_his.license_receive_id.students.date_of_birth}}" type="text" name="date_birth">
+        </div>
+
+        <div class="f_name_m_name">
+
+              <div class="father_name">
+
+            <label>Father Name</label>
+            <input placeholder="Father Name" class="dis" value="{{license_his.license_receive_id.students.fathers_name}}" type="text" name="f_name">
+        </div>
+
+        <div class="mother_name">
+
+            <label>Mother Name</label>
+            <input placeholder="Mother Name" class="dis" value="{{license_his.license_receive_id.students.mothers_name}}" type="text" name="m_name">
+        </div>
+
+         <div class="sex">
+
+            <label>Sex</label>
+           <select class="di"  name="sex">
+               {% if f == 'true'%}
+
+
+               <option value="{{license_his.license_receive_id.students.sex}}"
+                   selected="selected">{{license_his.license_receive_id.students.get_sex_display}}
+               </option>
+
+
+               {% else %}
+
+                     <option value="0">Select Sex</option>
+                  <option value="1">Male</option>
+                <option value="2">Female</option>
+                  <option value="3">Others</option>
+               {% endif %}
+
+           </select>
+        </div>
+
+
+         <div class="matarial_status">
+
+            <label>Marital Status</label>
+           <select class="di" name="matrtial">
+                {% if f == 'true'%}
+
+
+               <option value="{{license_his.license_receive_id.students.marital_status}}"
+                   selected="selected">{{license_his.license_receive_id.students.get_marital_status_display}}
+               </option>
+
+
+               {% else %}
+
+               <option value="0">Select Marital Status</option>
+                <option value="1">Single</option>
+              <option value="2">Married</option>
+              <option value="3">Widow</option>
+              <option value="4">Divorce</option>
+              <option value="5">Separated</option>
+ {% endif %}
+           </select>
+        </div>
+
+
+        <div class="nationality">
+
+            <label>Nationality</label>
+           <select required class="di" name="national">
+
+                {% if f == 'true'%}
+
+
+               <option value="{{license_his.license_receive_id.students.nationality.id}}"
+                   selected="selected">{{license_his.license_receive_id.students.nationality}}
+               </option>
+            {% else %}
+
+               <option value="">Select Nationality</option>
+               {% for i in nationality %}
+               <option value="{{i.id}}">{{i.nationality_name}}</option>
+               {% endfor %}
+                {% endif %}
+           </select>
+        </div>
+        </div>
+
+
+
+
+         <div class="student_mob">
+
+            <label>Student Phone No</label>
+           <input placeholder="Student Phone No" class="dis" value="{{license_his.license_receive_id.students.students_mobile_no}}" type="text" name="no">
+        </div>
+
+<div class="di_dis_vil">
+
+        <div class="division">
+            <label>Division</label>
+           <select id="id_division_snd" required class="di" name="division">
+
+                {% if f == 'true'%}
+
+
+               <option value="{{license_his.license_receive_id.students.division.id}}"
+                   selected="selected">{{license_his.license_receive_id.students.division}}
+               </option>
+            {% else %}
+                <option value="">Select Division</option>
+               {% for i in div %}
+               <option value="{{i.id}}">{{i.name}}</option>
+               {% endfor %}
+                {% endif %}
+           </select>
+        </div>
+
+
+
+         <div class="district">
+            <label>District</label>
+           <select id="id_district_snd" required class="di" name="district">
+
+                {% if f == 'true'%}
+
+
+               <option value="{{license_his.license_receive_id.students.district.id}}"
+                   selected="selected">{{license_his.license_receive_id.students.district}}
+               </option>
+            {% else %}
+
+                 <option value="">Select District</option>
+               {% for i in dis %}
+               <option value="{{i.id}}">{{i.name}}</option>
+               {% endfor %}
+                {% endif %}
+           </select>
+        </div>
+
+
+         <div class="thana">
+            <label>Thana</label>
+           <select id="id_thana_snd" required class="di" name="thana">
+
+                  {% if f == 'true'%}
+
+
+               <option value="{{license_his.license_receive_id.students.thana.id}}"
+                   selected="selected">{{license_his.license_receive_id.students.thana}}
+               </option>
+            {% else %}
+
+                 <option value="">Select Thana</option>
+               {% for i in thn %}
+               <option value="{{i.id}}">{{i.name}}</option>
+               {% endfor %}
+                 {% endif %}
+           </select>
+        </div>
+
+    <script>
+
+
+
+            $('#id_district_snd option').prop("hidden", true);
+    $("#id_division_snd").change(function()
+    {
+        var division_id = $('#id_division_snd').val();
+        var new_division = $('#id_division_snd').val();
+        $.ajax({
+                type: "POST",
+                url: "/get_division/",
+                dataType: "json",
+                data: { "division_id": division_id, 'csrfmiddlewaretoken': '{{ csrf_token }}' },
+                success: function (data)
+                {
+                    if (division_id == new_division){
+                    $('#id_district_snd option').prop("hidden", true);
+                    $('#id_district_snd').val('');
+                    $('#id_thana_snd').val('');
+
+
+                    for (var i = 0; i < data.length; i++)
+                    {
+                            $('#id_district_snd option[value='+data[i]+']').prop("hidden", false);
+                    }
+
+                    }
+
+
+                }
+            });
+    })
+
+
+
+
+
+
+$('#id_thana_snd option').prop("hidden", true);
+        $("#id_district_snd").change(function()
+    {
+        var district_id = $('#id_district_snd').val();
+        var new_district = $('#id_district_snd').val();
+        $.ajax({
+                type: "POST",
+                url: "/get_district/",
+                dataType: "json",
+                data: { "district_id": district_id, 'csrfmiddlewaretoken': '{{ csrf_token }}' },
+                success: function (data)
+                {
+                    if (district_id == new_district){
+                    $('#id_thana_snd option').prop("hidden", true);
+                    $('#id_thana_snd').val('');
+
+                    for (var i = 0; i < data.length; i++)
+                    {
+                            $('#id_thana_snd option[value='+data[i]+']').prop("hidden", false);
+                    }
+                    }
+
+                }
+            });
+    })
+
+
+
+
+    </script>
+
+
+
+          <div class="village">
+
+            <label>Village</label>
+           <input placeholder="Village" class="dis" value="{{license_his.license_receive_id.students.village}}" type="text" name="village">
+        </div>
+
+
+
+         <div class="postalcode">
+
+            <label>Postal code</label>
+           <input placeholder="Postal code" class="dis" value="{{license_his.license_receive_id.students.postal_code}}" type="text" name="post_code">
+        </div>
+
+         <div class="postoffice">
+
+            <label>Post Office</label>
+           <input placeholder="Post Office" class="dis" value="{{license_his.license_receive_id.students.post_office}}" type="text" name="post_off">
+        </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="institition">
+
+            <label>Institution Name</label>
+            <select required class="inss" name="ins">
+
+
+
+
+
+
+
+            {% if user.is_staff %}
+                 <option value="">Select Institution</option>
+               {% for i in user.staff_institute.all %}
+               <option value="{{i.id}}">{{i.institution_name}}</option>
+               {% endfor %}
+
+                {% else %}
+
+                 <option value="">Select Institution</option>
+               {% for i in institution %}
+               <option value="{{i.id}}">{{i.institution_name}}</option>
+               {% endfor %}
+                  {% endif %}
+            </select>
+        </div>
+
+
+        <div class="employment_type">
+
+            <label>Employment Type</label>
+            <select name="e_t">
+                 {% if f == 'true'%}
+
+                <option selected value="1">Nurse</option>
+
+
+                 {% else %}
+                <option value="0">Select Employment type</option>
+                 <option value="1">Nurse</option>
+                <option value="2" selected="">Non-Nurse</option>
+                {% endif %}
+            </select>
+        </div>
+
+        <div class="designation">
+
+            <label>Designation</label>
+            <select name="designation">
+
+                <option value="">Select Designation</option>
+               {% for i in designation %}
+               <option value="{{i.id}}">{{i.designation_name}}</option>
+               {% endfor %}
+            </select>
+        </div>
+
+
+        <div class="f_w">
+
+               <div class="working_start_date">
+
+            <label>Working Start Date</label>
+           <input placeholder="Working Start Date" type="text" name="w_start_date">
+        </div>
+
+
+
+          <div class="f_idss">
+
+            <label>Faculty Id</label>
+           <input placeholder="Faculty Id" type="text" name="f_id">
+        </div>
+        </div>
+
+
+
+
+
+    <button name="submit" class="button" type="submit">Submit</button>
+
+
+
+
+
+
+
+
+
+    </form>
+
+
+
+</div>
+
+{% if f == 'true' %}
+
+<table style="margin: auto;width: 55%;    font-size: 10px;margin-top: 5%;background-color: #fff;font-size: 10px;margin-bottom: 5%;">
+  <tr>
+    <th>Registration
+NO
+</th>
+    <th>Course Name</th>
+    <th>Institution</th>
+    <th>Date of Registration</th>
+    <th>Date of Renew</th>
+    <th>Renew Upto</th>
+    <th>Status</th>
+  </tr>
+     {% for i,n in  qr%}
+  <tr>
+
+        <td>{{i.license_number}}</td>
+        <td>{{i.program}}</td>
+        <td>{{i.institution}}</td>
+        <td>{{i.license_registration_date}}</td>
+        <td>{{i.license_start_date}}</td>
+        <td>{{i.license_end_date}}</td>
+
+
+
+            {% if n == 'Renewed' %}
+
+        <td style="color: green;"> {{n}}</td>
+
+
+
+            {% else %}
+       <td style="color: red;"> {{n}}</td>
+
+      {% endif %}
+
+
+  </tr>
+     {% endfor %}
+
+</table>
+
+
+{% endif %}
+
+
+
+
+
+
+  {% if f != 'true' %}
+            <script>
+
+
+   $(function() {
+    $( ".date_birth input" ).datepicker({
+        yearRange: "1900:2050",
+        changeYear: true,
+        changeMonth: true,
+        dateFormat: 'yy-mm-dd'
+
+
+      // You can put more options here.
+
+    });
+  });
+            </script>
+
+            {% endif %}
+
+<script>
+   $(function() {
+    $( ".working_start_date input" ).datepicker({
+        yearRange: "1900:2050",
+        changeYear: true,
+        changeMonth: true,
+        dateFormat: 'yy-mm-dd'
+
+
+      // You can put more options here.
+
+    });
+  });
+
+ $(".dis").attr("autocomplete", "off");
+$('#lic').prop('readonly', true);
+var dis = $('#st_hidden').val()
+
+if (dis){
+ $('.dis').prop('readonly', true);
+                 $('.di').css({'pointer-events': "none"})
+}
+
+ $(document).on('change', 'input[Id="id_is_nurse"]', function (e)
+        {
+            if  ($(this).prop("checked") == true){
+
+
+                $('.form_search').css('display','block')
+
+
+                $("#teacher_form").submit(function(e)
+                {
+                    if (dis == '')
+                    {
+                        alert("Not found student");
+                        e.preventDefault();
+
+
+                    }
+                });
+
+
+
+
+
+
+            }
+
+
+            else if($(this).prop("checked") == false)
+            {
+                $('.form_search').css('display','none')
+
+
+
+            }
+        });
+
+
+
+</script>
+
+</body>
+</html>
+
+
+
+
+function reply_click_program(clicked_id)
+  {
+
+        var remove_program= document.getElementById(clicked_id);
+
+
+        removes_program.push(clicked_id)
+
+        $(remove_program).attr("aria-selected","false");
+        $(remove_program).remove();
+        <!--$('#remove_id').val(removes_program)-->
+  }
+
+
+  $('#year').select2({
+
+
+
+    templateSelection: function(selection) {
+
+function to() {
+
+var program_id=recent_id_program
+  $.ajax({
+                    type: "POST",
+                    url: "/program_text/?sub_id=" + program_id+"&year_id="+selection.id,
+                    dataType: "json",
+                    data: {'csrfmiddlewaretoken': '{{ csrf_token }}' },
+                    success: function (data)
+
+
+                    {
+                    var p = 0;
+
+                    if (removes_program != ''){
+
+                    function check_id(re_id) {
+
+                      return re_id == selection.id
+                    }
+
+                    var re_find = removes_program.find(check_id)
+
+                        if (re_find){
+
+                        }
+
+                        else{
+                        var chil = document.querySelector(".year-select2")
+                      $(chil).append("<li"+" id="+"'"+selection.id+"'"+ " class="+"'"+'subject_name'+"'"+">"+selection.text+"("+data[1]+")"+"<span"+ " id="+"'"+selection.id+"'"+ " onClick="+"'"+'reply_click_program(this.id)'+"'"+">"+"  x"+"</span>"+"</li>");
+
+                        }
+
+
+                    }
+                    else{
+
+
+                    var chil = document.querySelector(".year-select2")
+                    $(chil).append("<li"+" id="+"'"+selection.id+"'"+ " class="+"'"+'subject_name'+"'"+">"+selection.text+"("+data[1]+")"+"<span"+ " id="+"'"+selection.id+"'"+ " onClick="+"'"+'reply_click_program(this.id)'+"'"+">"+"  x"+"</span>"+"</li>");
+
+                    }
+
+                    },
+
+
+                });
+}
+
+
+
+to()
+
+return false
+
+    },
+    containerCssClass: "year-select2",
+    width:400,
+
+
+
+  });

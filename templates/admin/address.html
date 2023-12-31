@@ -1,0 +1,70 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/address.css" %}">{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <a href="{% url 'admin:index' %}">{% trans 'HOME' %}</a>
+    {% if title %} &rsaquo; {{ title }}{% endif %}
+     <a href="/admin/settings/"> › SETTINGS</a>
+    <a href="/admin/setting/address/">› ADDRESS</a>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="address_content">
+    <div class="address_in">
+       <label class="address">ADDRESS</label>
+   </div>
+
+    <div class="manage_division">
+            <a href="/admin/bnmc_project/division/">
+            <img src="{% static '/admin/img/address.png' %}" class="manage_division_bnmc" href="{% url 'admin:index' %}"/>
+            <label CLASS="user_division"> MANAGE DIVISION</label>
+            </a>
+        </div>
+
+
+
+
+    <div class="manage_district">
+            <a href="/admin/bnmc_project/district/">
+            <img src="{% static '/admin/img/address.png' %}" class="manage_district_bnmc" href="{% url 'admin:index' %}"/>
+            <label CLASS="user_dis">MANAGE DISTRICT</label>
+            </a>
+        </div>
+
+
+
+
+    <div class="manage_thana">
+            <a href="/admin/bnmc_project/thana/">
+            <img src="{% static '/admin/img/address.png' %}" class="manage_thana_bnmc" href="{% url 'admin:index' %}"/>
+            <label CLASS="user_thana">MANAGE POLICE STATION</label>
+            </a>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+{% endblock %}

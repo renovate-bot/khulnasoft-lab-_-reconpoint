@@ -1,0 +1,514 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/settings.css" %}">{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block breadcrumbs %}
+
+
+{% endblock %}
+
+{% block content %}
+<!--<div id="content-main">-->
+
+<form method="post" enctype="multipart/form-data">
+
+<input type="file" name="file">
+    {% csrf_token %}
+
+    <button>Submit</button>
+<img src="{{institute_update.principal_signature.url}}" class="img">
+</form>
+
+
+
+
+
+
+
+{% endblock %}
+
+
+</body>
+
+
+<script>
+
+recent_text=''
+recent_list=[]
+dic_subs=[]
+dic_sub=[]
+recent_id=''
+removes=[]
+$(document).ready(function() {
+    $('.js-example-basic-multiple').select2({
+
+    });
+});
+
+
+var lists=[]
+function reply_click(clicked_id)
+  {
+
+        var remove= document.getElementById(clicked_id);
+
+
+        removes.push(clicked_id)
+
+        $(remove).attr("aria-selected","false");
+        $(remove).remove();
+        $('#remove_id').val(removes)
+  }
+
+var selection_list=[]
+  $('#subs').select2({
+
+
+
+    templateSelection: function(selection) {
+
+
+
+
+function to() {
+
+var subject_id=recent_id
+  $.ajax({
+                    type: "POST",
+                    url: "/subject_text/?sub_id=" + subject_id+"&subs_id="+selection.id,
+                    dataType: "json",
+                    data: {'csrfmiddlewaretoken': '{{ csrf_token }}' },
+                    success: function (data)
+
+
+                    {
+                    var p = 0;
+
+                    if (removes != ''){
+
+                    function check_id(re_id) {
+
+                      return re_id == selection.id
+                    }
+
+                    var re_find = removes.find(check_id)
+
+                        if (re_find){
+
+                        }
+
+                        else{
+                        var chil = document.querySelector(".subs-select2")
+                      $(chil).append("<li"+" id="+"'"+selection.id+"'"+ " class="+"'"+'subject_name'+"'"+">"+selection.text+"("+data[1]+")"+"<span"+ " id="+"'"+selection.id+"'"+ " onClick="+"'"+'reply_click(this.id)'+"'"+">"+"  x"+"</span>"+"</li>");
+
+                        }
+
+
+                    }
+                    else{
+
+                    lists=[]
+                    lists.push(data[1])
+                    var chil = document.querySelector(".subs-select2")
+                    $(chil).append("<li"+" id="+"'"+selection.id+"'"+ " class="+"'"+'subject_name'+"'"+">"+selection.text+"("+data[1]+")"+"<span"+ " id="+"'"+selection.id+"'"+ " onClick="+"'"+'reply_click(this.id)'+"'"+">"+"  x"+"</span>"+"</li>");
+
+                    }
+
+                    },
+
+
+                });
+}
+
+
+
+to()
+
+return false
+
+    },
+    containerCssClass: "subs-select2",
+    width:400,
+
+
+
+  });
+
+
+  $("#sub").on("select2:select", function (evt) {
+    var element = evt.params.data.element;
+    recent_id=''
+    recent_text=''
+    recent_text=element.text
+    dic_sub.push(evt.params.data.id+' and '+element.text)
+    recent_id=evt.params.data.id
+
+
+
+});
+
+
+
+
+
+$('.dddd').select2();
+
+        $(document).ready(
+        function() {
+        $("select#exam").change(function() {
+        var s = $("select#exam").val()
+
+
+            if (s == null){
+
+            $('#sub option').prop("hidden", true);
+            $('#sub').select2();
+            }
+
+            else{
+
+                var url = "/all_subjects/" + $(this).val();
+                var brand = $(this).val();
+                $.getJSON(url, function(models) {
+
+                for (var i = 0; i < models.length; i++) {
+
+                        $('#sub option[value='+models[i].pk+']').prop("hidden", false);
+
+                        $(document).ready(function() {
+                            $('.dddd').select2();
+                        });
+                }
+
+
+
+
+
+
+            });
+
+        }
+
+
+
+        });
+        });
+
+
+
+
+
+subjects_list=[]
+$('#subs option').prop("hidden", true);
+
+
+var number=0
+
+      $(document).ready(
+        function() {
+        $("select#sub").change(function() {
+        var s = $("select#sub").val()
+
+
+
+        if (s == null){
+
+        $('#subs option').prop("hidden", true);
+        }
+
+        else{
+
+
+                if (subjects_list.length == 0){
+
+                    subjects_list.push($(this).val())
+                    <!--alert(subjects_list+'\\n'+'fisrt')-->
+                }
+
+                else{
+
+                for (var i = 0; i < s.length; i++) {
+                var id=s[i]
+                var id_str=id.toString();
+
+
+                    var find_sub=subjects_list.includes(id_str)
+
+
+                    if (find_sub){
+
+
+                    }
+
+                    else{
+
+                    subjects_list.push(s[i])
+
+                    }
+
+                }
+
+                }
+
+
+
+        var first = subjects_list[0]
+        var sec = subjects_list[1]
+        var last = subjects_list[subjects_list.length-1];
+
+
+
+        final_id=0
+
+         if (subjects_list.length == 1)
+
+         {
+         final_id=first
+         recent_text=first
+         }
+
+         else if ((subjects_list.length == 3) && (Number(first)>Number(sec)))
+
+          {
+          final_id=sec
+          recent_text=sec
+
+          }
+
+          else
+          {
+          final_id=last
+          recent_text=last
+          }
+
+
+    $("#subs").on("select2:select", function (evt) {
+    var chil = document.querySelector(".subs-select2")
+    $(chil).find("li").remove();
+    $('#yyyy').html('')
+        });
+
+
+var url = "/get_sub_subject/" +final_id
+var brand = $(this).val();
+
+
+subs_sub=[]
+$.getJSON(url, function(id) {
+for (var i = 0; i < id.length; i++) {
+
+
+      $('#subs option[value='+id[i].pk+']').prop("hidden", false);
+      subs_sub.push(id[i].pk)
+
+
+ <!--$('#subs').select2();-->
+}
+
+
+});
+
+}
+
+
+
+});
+});
+
+
+
+
+
+$( ".sub_subject span.select2-selection.select2-selection--multiple" ).click(function() {
+
+zero=0
+sorted_list=[]
+for (i = 0; i < subs_sub.length; ++i) {
+
+        <!--alert(sorted_list)-->
+        var divs =document.querySelectorAll("[id*='select2-subs-result']")
+
+        for (n = 0; n < divs.length; ++n) {
+        var id= divs[n].getAttribute("id");
+        zero++
+
+        var last = id.lastIndexOf("-");
+        var get_number = id.substring(last+1, );
+
+
+        if (zero > 1){
+
+         if ((sorted_list == '') && (subs_sub[i]) == (Number(get_number))){
+
+           divs[n].style.display = "block";
+           sorted_list.push(get_number)
+           <!--alert('first')-->
+
+
+          }
+          else if (sorted_list != ''){
+
+
+        <!--alert( subs_sub[i] +'   '+  Number(get_number)+ ' '+ alert(sorted_list[k]))-->
+
+         var bedrooms = sorted_list.filter(name => name.includes(get_number))
+
+
+        if (bedrooms == get_number){
+
+        }
+
+        else if (subs_sub[i] == Number(get_number) ){
+        divs[n].style.display = "block";
+         sorted_list.push(get_number)
+
+        }
+
+        else{
+        divs[n].style.display = "none";
+        <!--alert('nai')-->
+
+        }
+
+}
+
+      else{
+      divs[n].style.display = "none";
+      <!--alert('kico nai')-->
+
+      }
+
+
+        }
+
+        }
+
+zero=0
+
+
+}
+
+
+});
+
+
+<!--key up function-->
+
+$( ".sub_subject span.select2-selection.select2-selection--multiple" ).keyup(function() {
+  var divs =document.querySelectorAll("[id*='select2-subs-result']")
+
+
+zero=0
+sorted_list=[]
+for (i = 0; i < subs_sub.length; ++i) {
+
+        <!--alert(sorted_list)-->
+        var divs =document.querySelectorAll("[id*='select2-subs-result']")
+
+        for (n = 0; n < divs.length; ++n) {
+        var id= divs[n].getAttribute("id");
+        zero++
+
+        var last = id.lastIndexOf("-");
+        var get_number = id.substring(last+1, );
+
+        if (zero > 1){
+
+
+
+         if ((sorted_list == '') && (subs_sub[i]) == (Number(get_number))){
+
+           divs[n].style.display = "block";
+           sorted_list.push(get_number)
+           <!--alert('first')-->
+
+
+          }
+          else if (sorted_list != ''){
+
+
+        <!--alert( subs_sub[i] +'   '+  Number(get_number)+ ' '+ alert(sorted_list[k]))-->
+
+         var bedrooms = sorted_list.filter(name => name.includes(get_number))
+
+
+
+        if (bedrooms == get_number){
+
+        }
+
+
+
+        else if (subs_sub[i] == Number(get_number) ){
+        divs[n].style.display = "block";
+         sorted_list.push(get_number)
+
+        }
+
+        else{
+        divs[n].style.display = "none";
+        <!--alert('nai')-->
+
+        }
+
+
+}
+
+      else{
+      divs[n].style.display = "none";
+      <!--alert('kico nai')-->
+
+      }
+
+
+
+        }
+
+
+        }
+
+zero=0
+
+
+}
+
+
+});
+
+
+<!--auto unselect subject sub-->
+
+
+$("#sub").on("select2:unselect", function (e) {
+
+
+
+
+             var value=   e.params.data.id;
+                var url = "/get_sub_subject/" + value;
+                var brand = $(this).val();
+                $.getJSON(url, function(models) {
+
+
+                for (var i = 0; i < models.length; i++) {
+
+                     $('#subs option[value='+models[i].pk+']').prop('selected', false)
+
+                }
+                });
+
+
+
+    });
+
+
+
+
+
+
+</script>

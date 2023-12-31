@@ -1,0 +1,178 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/registration.css" %}">{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block breadcrumbs %}
+
+<div class="breadcrumbs">
+    <a href="{% url 'admin:index' %}">{% trans 'HOME' %}</a>
+    {% if title %} &rsaquo; {{ title }}{% endif %}
+     <a href="/admin/registration/"> › EXAMINATION MANAGEMENT</a>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="registration_content">
+
+    <div class="registration_in">
+       <label class="registration">comprehensive exam</label>
+    </div>
+
+
+      <div class="manage_new_exam">
+
+          <div class="flip-box-inner">
+               <div class="flip-box-front">
+        <a href="/admin/bnmc_project/student_registration/?approved=True">
+            <img src="{% static '/admin/img/Registration_number_icone.png' %}" class="manage_registration_bnmc" href="{% url 'admin:index' %}" />
+        </a>
+
+               </div>
+               <div class="flip-box-back">
+        <a href="/admin/bnmc_project/student_registration/?approved=True&license_use=False">
+            <img src="{% static '/admin/img/Registration_number_icone.png' %}" class="manage_registration_bnmc" href="{% url 'admin:index' %}" />
+
+        </a>
+
+               </div>
+
+
+          </div>
+         <label CLASS="reg_label ggg">APPLY comprehensive EXAM</label>
+    </div>
+
+
+      <div class="manage_new_exam">
+
+          <div class="flip-box-inner">
+               <div class="flip-box-front">
+        <a href="/admin/bnmc_project/license_registrations/">
+            <img src="{% static '/admin/img/Registration_number_icone.png' %}" class="manage_registration_bnmc" href="{% url 'admin:index' %}" />
+        </a>
+
+               </div>
+               <div class="flip-box-back">
+        <a href="/admin/bnmc_project/license_registrations/">
+            <img src="{% static '/admin/img/Registration_number_icone.png' %}" class="manage_registration_bnmc" href="{% url 'admin:index' %}" />
+
+        </a>
+
+               </div>
+
+
+          </div>
+         <label CLASS="reg_label ggg">VIEW comprehensive</label>
+    </div>
+
+
+
+
+        {% if user.is_superuser %}
+
+    <div class="manage_license_proc">
+         <div class="flip-box-inner">
+              <div class="flip-box-front">
+        <a href="/process_licnese/">
+            <img src="{% static '/admin/img/license_icone.png' %}" class="manage_license_recve_bnmc" href="{% url 'admin:index' %}" />
+
+        </a>
+              </div>
+
+
+              <div class="flip-box-back">
+        <a href="/admin/process_licnese/">
+            <img src="{% static '/admin/img/license_icone.png' %}" class="manage_license_recve_bnmc" href="{% url 'admin:index' %}" />
+
+        </a>
+              </div>
+         </div>
+
+
+           <label CLASS="license_recve_mo">LICENSE Process</label>
+    </div>
+
+
+
+        <div class="upload_exel">
+             <div class="flip-box-inner">
+                 <div class="flip-box-front">
+        <a href="/upload_file/">
+            <img src="{% static '/admin/img/upload.png' %}" class="manage_license_recve_bnmc" href="{% url 'admin:index' %}" />
+        </a>
+                 </div>
+
+
+
+                  <div class="flip-box-back">
+        <a href="/upload_file/">
+            <img src="{% static '/admin/img/upload.png' %}" class="manage_license_recve_bnmc" href="{% url 'admin:index' %}" />
+
+        </a>
+                 </div>
+                 </div>
+
+
+              <label CLASS="license_recve_mo">Upload license examination Result </label>
+    </div>
+     {% endif %}
+
+
+
+     <div class="license_receive_form_print">
+
+         <div class="flip-box-inner">
+              <div class="flip-box-front">
+        <a href="/admin/bnmc_project/license_receive/">
+            <img src="{% static '/admin/img/print.png' %}" class="manage_license_recve_bnmc" href="{% url 'admin:index' %}" />
+        </a>
+              </div>
+
+
+
+              <div class="flip-box-back">
+        <a href="/admin/bnmc_project/license_receive/">
+            <img src="{% static '/admin/img/print.png' %}" class="manage_license_recve_bnmc" href="{% url 'admin:index' %}" />
+
+        </a>
+              </div>
+
+         </div>
+
+           <label CLASS="license_recve_mo">Print license form</label>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+

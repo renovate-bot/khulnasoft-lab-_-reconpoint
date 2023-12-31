@@ -1,0 +1,262 @@
+.content_body {
+    width: 1200px !important;
+    border-radius: 3px;
+}
+
+#content {
+    width: 100% !important;
+    padding: 0;
+}
+
+.search_step1 {
+    width: 95%;
+    display: block;
+    margin: auto;
+    height: 300px;
+}
+
+.search_step2 {
+    width: 95%;
+    display: block;
+    margin: auto;
+    border-top: 2px solid #0e9040;
+    max-height: 1000px;
+    min-height: 900px;
+}
+.reg_no {
+    width: 45%;
+    display: inline-block;
+    height: 40px;
+    margin-top: 1%;
+}
+.type_ins {
+    width: 45%;
+    display: inline-block;
+    height: 40px;
+    margin-top: 1%;
+    margin-left: 2%;
+}
+
+.type_program {
+    width: 45%;
+    display: inline-block;
+    height: 40px;
+    margin-top: 1%;
+    margin-left: 2%;
+}
+
+.ins_nam {
+    width: 45%;
+    display: inline-block;
+    height: 40px;
+    margin-top: 1%;
+    margin-left: 2%;
+}
+.ins_cat {
+    width: 45%;
+    display: inline-block;
+    height: 40px;
+    margin-top: 1%;
+    margin-left: 2%;
+}
+
+.session_filter {
+    width: 45%;
+    display: inline-block;
+    height: 40px;
+    margin-top: 1%;
+    margin-left: 2%;
+}
+
+.program_cat {
+    width: 45%;
+    display: inline-block;
+    height: 40px;
+    margin-top: 1%;
+}
+
+#search_filter_stu {
+    display: block;
+    width: 100px;
+    height: 31px;
+    margin: auto;
+    margin-top: 18px;
+    background-color: #0e9040;
+    border: 0;
+    color: #fff;
+    font-size: 16px;
+}
+
+.prog_cat_select {
+    width: 294px;
+    margin-left: 8%;
+    height: 36px;
+}
+
+.ser_reg {
+    height: 23px;
+    border-radius: 0 !important;
+    margin-left: 9%;
+    width: 281px;
+}
+.program_cat {
+    width: 45%;
+    display: inline-block;
+    height: 40px;
+    margin-top: 1%;
+    margin-left: 2%;
+}
+
+.reg_no {
+    width: 45%;
+    display: inline-block;
+    height: 40px;
+    margin-top: 1%;
+    margin-left: 2%;
+}
+
+.type_ins select {
+    width: 294px;
+    height: 36px;
+    margin-left: 8%;
+}
+
+.type_program select {
+    width: 294px;
+    height: 36px;
+    margin-left: 8%;
+}
+
+.ins_cat select {
+    width: 294px;
+    height: 36px;
+    margin-left: 6.3%;
+}
+
+.session_filter select {
+    width: 294px;
+    height: 36px;
+    margin-left: 18%;
+}
+
+input.ser_ins_name {
+    width: 281px;
+    height: 23px;
+    border-radius: 0 !important;
+    margin-left: 10%;
+}
+
+.all_action_btn {
+    width: 100%;
+    height: 40px;
+    margin-top: 1%;
+}
+
+.select_action {
+    width: 46%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+}
+
+.btn_action {
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+}
+
+select.type_select {
+    width: 100px;
+    margin-left: 6%;
+    display: inline-block;
+    height: 29px;
+}
+
+button.go {
+    width: 51px;
+    height: 28px;
+    border: 0;
+    background-color: #b3b3b3;
+    display: inline-block;
+    margin-top: 1%;
+}
+
+.btn_final_action {
+    display: inline-block;
+    float: right;
+    width: 80%;
+    height: 100%;
+}
+
+button.approve {
+   border: 0;
+    background: #fff;
+    width: 80px;
+    height: 26px;
+    font-size: 15px;
+    display: inline-block;
+    margin-top: 2%;
+    float: right;
+    margin-left: 1%;
+    background-color: #0e9040;
+    color: #fff;
+}
+
+button.reject {
+   border: 0;
+    background: #fff;
+    width: 80px;
+    height: 26px;
+    font-size: 15px;
+    display: inline-block;
+    margin-top: 2%;
+    float: right;
+    margin-left: 1%;
+    background-color: #0e9040;
+    color: #fff;
+}
+
+button.feadback {
+   border: 0;
+    background: #fff;
+    width: 80px;
+    height: 26px;
+    font-size: 15px;
+    display: inline-block;
+    margin-top: 2%;
+    float: right;
+    margin-left: 1%;
+    background-color: #0e9040;
+    color: #fff;
+}
+
+button.print {
+   border: 0;
+    background: #fff;
+    width: 80px;
+    height: 26px;
+    font-size: 15px;
+    display: inline-block;
+    margin-top: 2%;
+    float: right;
+    margin-left: 1%;
+    background-color: #0e9040;
+    color: #fff;
+}
+
+table.stu_list th {
+    background-color: #0e9040;
+    color: #fff;
+    border-right: 1px solid;
+}
+
+table.stu_list td {
+    border: 1px solid #cec5c5;
+}
+
+select.ser_ins_name {
+    width: 294px;
+    height: 36px;
+    margin-left: 9.8%;
+}

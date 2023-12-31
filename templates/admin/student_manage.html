@@ -1,0 +1,110 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/stu_manage.css" %}">{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block breadcrumbs %}
+
+
+{% endblock %}
+
+{% block content %}
+<!--<div id="content-main">-->
+
+
+
+
+<div class="sudent_manage">
+
+    <label class="stu__">STUDENT MANAGEMENT</label>
+
+
+ <div class="manage_registration" >
+        <div class="flip-box-inner">
+             <div class="flip-box-front">
+            <a  href="/admin/registation_panel?type=programs" value="" >
+            <img src="{% static '/admin/img/Registration_number_icone.png' %}" class="manage_registration_bnmc" href="{% url 'admin:index' %}"/>
+
+            </a>
+             </div>
+
+
+             <div class="flip-box-back">
+            <a  href="/admin/registation_panel?type=programs" value="" >
+            <img src="{% static '/admin/img/Registration_number_icone.png' %}" class="manage_registration_bnmc" href="{% url 'admin:index' %}"/>
+
+            </a>
+             </div>
+
+
+        </div>
+         <label CLASS="reg_label">New Student Registration</label>
+    </div>
+
+
+
+
+
+
+      <div class="aproval">
+            <div class="flip-box-inner">
+                 <div class="flip-box-front">
+            <a href="/admin/bnmc_project/student_registration">
+            <img src="{% static '/admin/img/APPROVAL.png' %}" class="aproval_bnmc" />
+
+            </a>
+                 </div>
+
+
+
+                <div class="flip-box-back">
+            <a href="/admin/bnmc_project/student_registration">
+            <img src="{% static '/admin/img/APPROVAL.png' %}" class="aproval_bnmc" />
+
+            </a>
+                 </div>
+            </div>
+
+            <label CLASS="approval_to_pending"> View Student Status </label>
+        </div>
+
+
+
+
+      <div class="student_list">
+            <div class="flip-box-inner">
+                <div class="flip-box-front">
+            <a href="/admin/search_list?status__permission_name=Approved BNMC">
+       <img src="{% static '/admin/img/student_list.png' %}" class="studentlist_bnmc" href="{% url 'admin:index' %}"/>
+
+            </a>
+                </div>
+
+
+                  <div class="flip-box-back">
+            <a href="/admin/search_list?status__permission_name=Approved BNMC">
+       <img src="{% static '/admin/img/student_list.png' %}" class="studentlist_bnmc" href="{% url 'admin:index' %}"/>
+
+            </a>
+                </div>
+            </div>
+            <label CLASS="STUDENT_LIST_">  Search Student</label>
+
+        </div>
+
+
+
+</div>
+
+
+
+
+
+
+{% endblock %}
+
+

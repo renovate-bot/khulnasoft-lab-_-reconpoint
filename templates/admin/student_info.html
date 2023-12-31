@@ -1,0 +1,303 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Information</title>
+
+{% load i18n static %}
+    <link rel="stylesheet" type="text/css" href="{% static "admin/css/student_info.css" %}">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+</head>
+<body>
+
+
+    
+
+    <div class="logo_das">
+        <div class="logo_dash">
+            <a href="/admin/">
+                <img src="{% static '/admin/img/logo_bnmc.png' %}" class="logo_bnmc" href="{% url 'admin:index' %}" />
+            </a>
+        </div>
+    </div>
+  
+    
+    
+      <div class="breadcrumbs">
+        <a href="/admin/">HOME</a>
+
+        <a href="/admin/settings/"> › SETTINGS</a>
+    </div>
+
+<div class="main">
+
+    <div class="header">
+        <h3>Student information</h3>
+
+   
+
+    </div>
+
+{% for p in student_registration %}
+
+
+         <div class="image">
+
+                {%if p.image%}
+               <img style=" width: 100px;height: 100px;" src="{{p.image.url}}" class="student_img" />
+                 {%endif%}
+
+
+        </div>
+
+
+    <div class="stu_table">
+
+
+
+
+
+        <div class="full_n" >
+            <label>Full name (Bangla)</label>
+
+
+            <input disabled type="text" class="full_name" name="first_name" value="{{p.first_name}}">
+
+        </div>
+
+        <div class="reg_n">
+            <label>Registration no</label>
+            <input disabled type="text" name="registration_no" value="{{p.registration_no}}" class="reg_no">
+        </div>
+
+
+        <div class="full_n_e">
+            <label>Full name (English):</label>
+            <input  disabled type="text" name="last_name" value="{{p.last_name}}" class="full_name_en">
+        </div>
+
+
+        <div class="date_of_birth">
+            <label>Date of birth:</label>
+            <input disabled type="text" name="date_of_birth" value="{{p.date_of_birth}}" class="date_f">
+        </div>
+
+
+        <div class="fathers_n">
+            <label>Fathers name:</label>
+            <input disabled type="text" name="fathers_name" value="{{p.fathers_name}}" class="fathersNames">
+        </div>
+
+
+        <div class="sex">
+            <label>Sex:</label>
+            <input disabled type="text" name="sex" value="" class="sexs">
+        </div>
+
+
+        <div class="mothers_n">
+            <label>Mothers name:</label>
+            <input disabled type="text" name="mothers_name" value="{{p.mothers_name}}" class="mothers_names">
+        </div>
+
+
+        <div class="religion">
+            <label>Religions:</label>
+            <input disabled type="text" name="religions" value="{{p.get_religions_display }}" class="relig">
+        </div>
+
+
+        <div class="guardian">
+            <label>Guardians name:</label>
+            <input disabled type="text" name="guardians_name" value="{{p.guardians_name}}" class="guardians_n">
+        </div>
+
+
+        <div class="passport_n">
+            <label>Passport no:</label>
+            <input disabled type="text" name="passport_no" value="{{p.passport_no}}" class="pasports_no">
+        </div>
+
+
+
+        <div class="relation_guardians">
+            <label>Relation to guardians:</label>
+            <input disabled type="text" name="relation_to_guardians" value="{{p.relation_to_guardians}}" class="guardians_relations">
+        </div>
+
+        <div class="quta">
+            <label>Quota:</label>
+            <input disabled type="text" name="quota" value="{{p.quota}}" class="qota">
+        </div>
+
+        <div class="nationality">
+            <label>Nationality:</label>
+            <input disabled type="text" name="nationality" value="{{p.nationality}}" class="nationalitys">
+        </div>
+
+
+        <div class="marital_s">
+            <label>Marital status:</label>
+            <input disabled type="text" name="marital_status" value="{{p.get_marital_status_display }}" class="marital_statas">
+        </div>
+
+
+        <div class="national_id">
+            <label>National ID No:</label>
+            <input disabled type="text" name="national_ID_No" value="{{p.national_ID_No}}" class="national_id_no">
+        </div>
+
+        <div class="students_mobile">
+            <label>Students mobile no:</label>
+            <input disabled type="text" name="students_mobile_no" value="{{p.students_mobile_no}}" class="students_mble_no">
+        </div>
+
+
+        <div class="dvsn">
+            <label>Division:</label>
+
+           <input disabled type="text" value="{{p.division}}" class="district">
+
+        </div>
+
+        <div class="email">
+            <label>Email address:</label>
+            <input disabled type="text" name="email_address" value="{{p.email_address}}" class="mail_address">
+        </div>
+
+        <div class="dstrc">
+            <label>District:</label>
+            <input disabled type="text" name="district" value="{{p.district}}" class="districts">
+        </div>
+
+
+        <div class="vlg">
+            <label>Village:</label>
+            <input disabled type="text" name="village" value="{{p.village}}" class="villages">
+        </div>
+
+        <div class="than">
+            <label>Thana:</label>
+            <input disabled type="text" name="thana" value="{{p.thana}}" class="thanas">
+        </div>
+
+        <div class="post_offices">
+            <label>Post office:</label>
+            <input disabled type="text" name="post_office" value="{{p.post_office}}" class="po">
+        </div>
+
+        <div class="postal_codes">
+            <label>Postal code:</label>
+            <input disabled type="text" name="postal_code" value="{{p.postal_code}}" class="p_code">
+        </div>
+
+
+
+
+
+
+        <div class="dvsn_scnd">
+            <label>Division:</label>
+            <input disabled type="text" name="division_snd" value="{{p.division_snd}}" class="division_sd">
+        </div>
+
+
+        <div class="vlg_scnd">
+            <label>Village:</label>
+            <input disabled type="text" name="village_snd" value="{{p.village_snd}}" class="village_scnd">
+        </div>
+
+
+        <div class="dstrc_scnd">
+            <label>District:</label>
+            <input disabled type="text" name="district_snd" value="{{p.district_snd}}" class="district_scnd">
+        </div>
+
+        <div class="post_ofc_snd">
+            <label>Post office:</label>
+            <input disabled type="text" name="post_office_snd" value="{{p.post_office_snd}}" class="post_office_scnd">
+        </div>
+
+
+         <div class="thana_scnd">
+            <label>Thana:</label>
+            <input disabled type="text" name="thana_snd" value="{{p.thana_snd}}" class="thanas_scnd">
+        </div>
+
+        <div class="postal_cd_scnd">
+            <label>Postal code:</label>
+            <input disabled type="text" name="postal_code_snd" value="{{p.postal_code_snd}}" class="postal_code_scnd">
+        </div>
+
+        <div class="inst">
+            <label>Institution:</label>
+            <input disabled type="text" name="institution" value="{{p.institution}}" class="institutions">
+        </div>
+
+        <div class="program_titles">
+            <label>Program title:</label>
+            <input disabled type="text" name="program_title" value="{{p.program_title}}" class="prog_title">
+        </div>
+
+        <div class="program_start_date">
+            <label>Program starting date:</label>
+            <input disabled type="text" name="program_starting_date" value="{{p.program_starting_date}}" class="course_starting_date">
+        </div>
+
+
+         <div class="date_of_registrations">
+            <label>Date of registration:</label>
+            <input disabled type="text" name="date_of_registration" value="{{p.date_of_registration}}" class="registration_date">
+        </div>
+
+
+         <div class="prog_complete_date">
+            <label>Program completion date:</label>
+            <input disabled type="text" name="program_completion_date" value="{{p.program_completion_date}}" class="course_completion_date">
+        </div>
+
+
+         <div class="payment_system">
+            <label>Payment method:</label>
+            <input disabled type="text" name="payment_method" value="{{p.get_payment_method_display }}" class="payment">
+        </div>
+
+         <div class="sessions">
+            <label>Session:</label>
+            <input disabled type="text" name="session" value="{{p.session}}" class="sesn">
+        </div>
+
+{% endfor %}
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+</div>
+
+
+ <!--{%for p in student_registration.all%}-->
+ <!--<li>{{p.first_name}}</li>-->
+
+
+             <!--{% endfor %}-->
+
+
+
+
+</body>
+</html>

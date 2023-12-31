@@ -1,0 +1,74 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/reg_license_.css" %}">{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block breadcrumbs %}
+  <div class="breadcrumbs">
+    <a href="{% url 'admin:index' %}">{% trans 'HOME' %}</a>
+    {% if title %} &rsaquo; {{ title }}{% endif %}
+    <a href="/admin/registration_manage_license"> › REGISTRATION MANAGEMENT LICENSE</a>
+  </div>
+
+{% endblock %}
+
+{% block content %}
+<!--<div id="content-main">-->
+
+
+
+
+<div class="license_reg">
+
+
+    <div class="manage_license_recve" id="recieve">
+         <div class="flip-box-inner">
+              <div class="flip-box-front">
+            <a href="/admin/bnmc_project/license_registrations?received_filter=0">
+            <img src="{% static '/admin/img/license_icone.png' %}" class="manage_license_recve_bnmc" href="{% url 'admin:index' %}"/>
+            </a>
+              </div>
+
+
+             <div class="flip-box-back">
+            <a href="/admin/bnmc_project/license_registrations?received_filter=0">
+            <img src="{% static '/admin/img/license_icone.png' %}" class="manage_license_recve_bnmc" href="{% url 'admin:index' %}"/>
+
+            </a>
+              </div>
+         </div>
+
+            <label CLASS="license_recve_model">Apply for New Registration</label>
+    </div>
+
+
+    <div class="manage_license_rec" id="recieve">
+          <div class="flip-box-inner">
+              <div class="flip-box-front">
+        <a href="/admin/bnmc_project/license_receive/">
+            <img src="{% static '/admin/img/license_icone.png' %}" class="manage_license_recve_bnmc" href="{% url 'admin:index' %}" />
+        </a>
+              </div>
+
+
+                <div class="flip-box-back">
+        <a href="/admin/bnmc_project/license_receive/">
+            <img src="{% static '/admin/img/license_icone.png' %}" class="manage_license_recve_bnmc" href="{% url 'admin:index' %}" />
+
+        </a>
+              </div>
+          </div>
+
+
+         <label CLASS="license_recve_mo">Renew Registration</label>
+    </div>
+
+</div>
+
+
+
+{% endblock %}

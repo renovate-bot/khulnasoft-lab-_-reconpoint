@@ -1,0 +1,907 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_urls static admin_modify %}
+
+{% block extrahead %}{{ block.super }}
+<script type="text/javascript" src="{% url 'admin:jsi18n' %}"></script>
+{{ media }}
+{% endblock %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/forms.css" %}" />
+<link rel="stylesheet" type="text/css" href="{% static "admin/css/licese_rec.css" %}" />
+
+{% endblock %}
+
+{% block coltype %}colM{% endblock %}
+
+{% block bodyclass %}{{ block.super }} app-{{ opts.app_label }} model-{{ opts.model_name }} change-form{% endblock %}
+
+{% if not is_popup %}
+<!--{% block breadcrumbs %}-->
+<!--<div class="breadcrumbs">-->
+<!--<a href="{% url 'admin:index' %}">{% trans 'HOME' %}</a>-->
+    <!--<a href="/admin/settings/"> › SETTINGS</a>-->
+
+<!--&lt;!&ndash;&rsaquo; <a href="{% url 'admin:app_list' app_label=opts.app_label %}">{{ opts.app_config.verbose_name }}</a>&ndash;&gt;-->
+<!--&rsaquo; {% if has_change_permission %}<a href="{% url opts|admin_urlname:'changelist' %}">{{ opts.verbose_name_plural|capfirst }}</a>{% else %}{{ opts.verbose_name_plural|capfirst }}{% endif %}-->
+<!--&rsaquo; {% if add %}{% blocktrans with name=opts.verbose_name %}ADD {{ name }}{% endblocktrans %}{% else %}{{ original|truncatewords:"18" }}{% endif %}-->
+<!--</div>-->
+<!--{% endblock %}-->
+<!--{% endif %}-->
+
+{% block content %}<div id="content-main">
+     {% if original.id %}
+
+        <span>{% for p in user.staff_status.all %}
+            <button type="submit" id="approvalBtn" class="bubbly-button" value="{{p.id}}">{{p.permission_name}}</button>
+            {% endfor %}
+
+        </span>
+     {% endif %}
+{% block object-tools %}
+{% if change %}{% if not is_popup %}
+  <ul class="object-tools">
+    {% block object-tools-items %}
+    <li>
+
+
+        {% url opts|admin_urlname:'history' original.pk|admin_urlquote as history_url %}
+        <a href="{% add_preserved_filters history_url %}" class="historylink">{% trans "History" %}</a>
+    </li>
+    {% if has_absolute_url %}<li><a href="{{ absolute_url }}" class="viewsitelink">{% trans "View on site" %}</a></li>{% endif %}
+    {% endblock %}
+  </ul>
+{% endif %}{% endif %}
+{% endblock %}
+<form {% if has_file_field %}enctype="multipart/form-data" {% endif %}action="{{ form_url }}" method="post" id="{{ opts.model_name }}_form" novalidate>{% csrf_token %}{% block form_top %}{% endblock %}
+<div>
+{% if is_popup %}<input type="hidden" name="{{ is_popup_var }}" value="1" />{% endif %}
+{% if to_field %}<input type="hidden" name="{{ to_field_var }}" value="{{ to_field }}" />{% endif %}
+{% if save_on_top %}{% block submit_buttons_top %}{% submit_row %}{% endblock %}{% endif %}
+{% if errors %}
+    <p class="errornote">
+    {% if errors|length == 1 %}{% trans "Please correct the error below." %}{% else %}{% trans "Please correct the errors below." %}{% endif %}
+    </p>
+    {{ adminform.form.non_field_errors }}
+{% endif %}
+
+{% block field_sets %}
+{% for fieldset in adminform %}
+  {% include "admin/includes/fieldset.html" %}
+{% endfor %}
+{% endblock %}
+
+{% block after_field_sets %}{% endblock %}
+
+{% block inline_field_sets %}
+{% for inline_admin_formset in inline_admin_formsets %}
+    {% include inline_admin_formset.opts.template %}
+{% endfor %}
+{% endblock %}
+
+{% block after_related_objects %}{% endblock %}
+
+{% block submit_buttons_bottom %}{% submit_row %}{% endblock %}
+
+{% block admin_change_form_document_ready %}
+    <script type="text/javascript"
+            id="django-admin-form-add-constants"
+            src="{% static 'admin/js/change_form.js' %}"
+            {% if adminform and add %}
+                data-model-name="{{ opts.model_name }}"
+            {% endif %}>
+    </script>
+
+    <input id="hid" type="hidden" value="{{request.user.allow_for_old_license_add}}">
+
+    <script>
+
+
+
+
+
+var user_id = $('#hid').val();
+
+if (user_id == "False"){
+ $('.form-row.field-is_old_data').css({'display':"none"})
+
+
+}
+
+var myParam = location.search.split('id=')[1]
+
+if (myParam){
+
+}
+
+else if(user_id === "False" && window.location.pathname === "/admin/bnmc_project/license_receive/add/"){
+window.location.replace("/admin/registration_manage_license");
+}
+
+
+
+
+
+            $("#license_receive_form").submit(function(e)
+                {
+
+                 var user_id = $('#hid').val();
+                 var x = document.getElementById("id_is_old_data").checked;
+                    if (x == false && user_id == "True")
+                    {
+                        alert("select checkbox Is old data");
+                         $('html, body').animate({ scrollTop: $("#id_is_old_data").offset().top }, 400);
+                          $('.field-is_old_data label').css('color','red')
+                        e.preventDefault();
+
+
+
+                    }
+                });
+
+
+
+
+                   function reply_click(clicked_id)
+                    {
+                        document.location = '/renew_licence/'+clicked_id+'';
+                    }
+
+
+                    function print_license(license_print_id)
+                    {
+                        document.location = '/admin/print_license_card/'+license_print_id+'','_blank';
+                    }
+
+                    function unlock(unlock_id)
+                    {
+                        document.location = '/admin/unlock/'+unlock_id+'','_blank';
+                    }
+
+
+        $("#renew").click(function (e)
+        {
+            if (confirm('Are you sure you want to RENEW'))
+            {
+               
+            }
+            else
+            {
+                e.preventDefault();
+            } 
+        })
+
+
+
+{% if original.id %}
+        $(".bubbly-button").click(function()
+    {
+            var permission_id = $(this).val();
+
+
+                $.ajax({
+                    type: "POST",
+                    url: "/changeExamStatus/",
+                    dataType: "json",
+                    data: { "permissionId": permission_id, "stdId":{{ original.id }}, 'csrfmiddlewaretoken': '{{ csrf_token }}' },
+                    success: function (data)
+
+
+                    {
+
+                       location.reload();
+
+                    }
+                });
+    })
+{% endif %}
+
+
+$('td.field-place input').attr( 'onkeyup', 'this_id(this)' );
+
+
+
+
+function this_id(e) {
+     $(e).autocomplete({
+                    source: function(request, response) {
+
+
+                        $.ajax({
+                               type: "POST",
+                                url: "/search_place/",
+                                dataType: "json",
+                                data: { "search_key": $( "td.field-place input" ).val(),  'csrfmiddlewaretoken': '{{ csrf_token }}', },
+                                success: function (data)
+                                {
+                                    response(data);
+                                }
+                        });
+            },
+            minLength: 4,
+            select: function( event, ui )
+            {
+
+              <!--log( "Selected: " + ui.item.value + " aka " + ui.item.id );-->
+            }
+        });
+
+
+}
+
+
+
+$('td.field-training_place input').attr( 'onkeyup', 'this_idd(this)' );
+
+
+
+function this_idd(e) {
+     $(e).autocomplete({
+                    source: function(request, response) {
+
+
+                        $.ajax({
+                               type: "POST",
+                                url: "/search_traning/",
+                                dataType: "json",
+                                data: { "search_key": $( "td.field-training_place input" ).val(),  'csrfmiddlewaretoken': '{{ csrf_token }}', },
+                                success: function (data)
+                                {
+                                    response(data);
+                                }
+                        });
+            },
+            minLength: 4,
+            select: function( event, ui )
+            {
+
+              <!--log( "Selected: " + ui.item.value + " aka " + ui.item.id );-->
+            }
+        });
+
+
+}
+
+
+
+   $( "#id_village" ).autocomplete({
+                    source: function(request, response) {
+                        $.ajax({
+                               type: "POST",
+                                url: "/search_village/",
+                                dataType: "json",
+                                data: { "search_key": $( "#id_village" ).val(),  'csrfmiddlewaretoken': '{{ csrf_token }}', },
+                                success: function (data)
+                                {
+                                    response(data);
+                                }
+                        });
+            },
+            minLength: 4,
+            select: function( event, ui )
+            {
+
+              <!--log( "Selected: " + ui.item.value + " aka " + ui.item.id );-->
+            }
+        });
+
+
+
+
+
+
+
+                $( "#id_post_office" ).autocomplete({
+                    source: function(request, response) {
+                        $.ajax({
+                               type: "POST",
+                                url: "/search_post/",
+                                dataType: "json",
+                                data: { "search_key": $( "#id_post_office" ).val(),  'csrfmiddlewaretoken': '{{ csrf_token }}', },
+                                success: function (data)
+                                {
+                                    response(data);
+                                }
+                        });
+            },
+            minLength: 4,
+            select: function( event, ui )
+            {
+
+
+              <!--log( "Selected: " + ui.item.value + ui.item.id );-->
+            }
+        });
+
+
+
+
+
+
+                $( "#id_village_snd" ).autocomplete({
+                    source: function(request, response) {
+                        $.ajax({
+                               type: "POST",
+                                url: "/search_snd_village/",
+                                dataType: "json",
+                                data: { "search_key": $( "#id_village_snd" ).val(),  'csrfmiddlewaretoken': '{{ csrf_token }}', },
+                                success: function (data)
+                                {
+                                    response(data);
+                                }
+                        });
+            },
+            minLength: 4,
+            select: function( event, ui )
+            {
+              <!--log( "Selected: " + ui.item.value + ui.item.id );-->
+            }
+        });
+
+
+
+
+            $( "#id_post_office_snd" ).autocomplete({
+                    source: function(request, response) {
+                        $.ajax({
+                               type: "POST",
+                                url: "/search_snd_post_office/",
+                                dataType: "json",
+                                data: { "search_key": $( "#id_post_office_snd" ).val(),  'csrfmiddlewaretoken': '{{ csrf_token }}', },
+                                success: function (data)
+                                {
+                                    response(data);
+                                }
+                        });
+            },
+            minLength: 4,
+            select: function( event, ui )
+            {
+            }
+        });
+    </script>
+
+{% endblock %}
+
+{# JavaScript for prepopulated fields #}
+{% prepopulated_fields_js %}
+
+    <script>
+
+
+          $(function() {
+    $( "td.field-license_registration_date input" ).datepicker({
+        yearRange: "1900:2050",
+        changeYear: true,
+        changeMonth: true,
+        dateFormat: 'yy-mm-dd'
+
+
+      // You can put more options here.
+
+
+
+    });
+
+  });
+
+
+$(function() {
+    $( "td.field-join_date input" ).datepicker({
+        yearRange: "1900:2050",
+        changeYear: true,
+        changeMonth: true,
+        dateFormat: 'yy-mm-dd'
+
+
+      // You can put more options here.
+
+    });
+  });
+
+
+
+
+    $(function() {
+    $( ".field-license_start_date input" ).datepicker({
+        yearRange: "1900:2050",
+        changeYear: true,
+        changeMonth: true,
+        dateFormat: 'yy-mm-dd'
+
+
+      // You can put more options here.
+
+    });
+
+
+
+
+
+     $( "td.field-license_start_date input" ).change(function(event){
+     var event_=event.target.id
+     var value=event.target.value
+     var value1=event.target.value
+     var main_id = event_.replace( 'id_licensehistory_set-', '');
+     var main_id1 = main_id.replace( '-license_start_date', '');
+
+    var i = new Date(value)
+    var x=i.getMonth()+1
+    var y=i.getMonth()
+    var x=String(x)
+    if (x.length == 1){
+        zero='0'
+    }
+
+    else{
+     zero=''
+     y=i.getMonth()
+    }
+
+
+    var d=String(i.getDate())
+    if (d.length == 1){
+        zero_date='0'
+    }
+
+    else if(i.getDate() == 10){
+    zero_date='0'
+    }
+
+    else{
+     zero_date=''
+    }
+
+
+    var date_revarse= i.getDate() - 1
+    if (date_revarse == '0'){
+
+    if (i.getMonth() < 8){
+            if (i.getMonth() % 2 == 1){
+            var final_date=i.getFullYear()+5+'-'+zero+i.getMonth()+'-'+'31'
+            }
+
+
+
+            else if((i.getMonth() % 2 == 0) && (i.getMonth() == 2) && ((i.getFullYear()+5) % 4 != 0)){
+            var final_date=i.getFullYear()+5+'-'+zero+i.getMonth()+'-'+'28'
+            }
+
+            else if((i.getMonth() % 2 == 0) && (i.getMonth() == 2) && ((i.getFullYear()+5) % 4 == 0)){
+            var final_date=i.getFullYear()+5+'-'+zero+i.getMonth()+'-'+'29'
+            }
+            else if((i.getMonth() % 2 == 0) && (i.getMonth() != 00)) {
+            var final_date=i.getFullYear()+5+'-'+zero+i.getMonth()+'-'+'30'
+            }
+
+       else if(i.getMonth() == 0){
+        var final_date=i.getFullYear()+4+'-'+'12'+'-'+'31'
+        }
+
+    }
+    else if((i.getMonth() >7) && (i.getMonth() <12)){
+         if (i.getMonth() % 2 == 1){
+            var final_date=i.getFullYear()+5+'-'+zero+i.getMonth()+'-'+'30'
+            }
+           else if((i.getMonth() % 2 == 0) && (i.getMonth() != 00)) {
+            var final_date=i.getFullYear()+5+'-'+zero+i.getMonth()+'-'+'31'
+            }
+    }
+
+
+
+
+
+
+    }
+
+
+
+
+
+    else{
+     var final_date=i.getFullYear()+5+'-'+zero+(y+1)+'-'+zero_date+date_revarse
+
+    }
+
+
+    var divs = document.querySelectorAll(".field-license_end_date input");
+
+
+
+
+    for (i = 0; i < divs.length; i++) {
+        var speed = divs[i].getAttribute("id");
+        var replace1 = speed.replace( 'id_licensehistory_set-', '');
+        var replace2 = replace1.replace( '-license_end_date', '');
+        if (main_id1 == replace2){
+         divs[i].value=final_date
+         }
+    };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    });
+
+
+
+
+
+  });
+
+
+  $(function() {
+    $( ".field-license_end_date input" ).datepicker({
+        yearRange: "1900:2050",
+        changeYear: true,
+        changeMonth: true,
+        dateFormat: 'yy-mm-dd'
+
+
+      // You can put more options here.
+
+    });
+  });
+
+   $(function() {
+    $( "#id_date_of_birth" ).datepicker({
+      yearRange: "1900:2050",
+        changeYear: true,
+        changeMonth: true,
+      // You can put more options here.
+      dateFormat: 'yy-mm-dd',
+          autocomplete: false
+          });
+  });
+   $(function() {
+    $( "#id_bank_draft_date" ).datepicker({
+      yearRange: "1900:2050",
+        changeYear: true,
+        changeMonth: true,
+      // You can put more options here.
+      dateFormat: 'yy-mm-dd',
+      autocomplete: false
+
+
+    });
+  });
+
+
+       $('#id_district option').prop("hidden", true);
+    $("#id_division").change(function()
+    {
+        var division_id = $('#id_division').val();
+        var new_division = $('#id_division').val();
+        $.ajax({
+                type: "POST",
+                url: "/get_division_fisrt/",
+                dataType: "json",
+                data: { "division_id": division_id, 'csrfmiddlewaretoken': '{{ csrf_token }}' },
+                success: function (data)
+                {
+                    if (division_id == new_division){
+                    $('#id_district option').prop("hidden", true);
+                    $('#id_district').val('');
+                    $('#id_thana').val('');
+
+
+                    for (var i = 0; i < data.length; i++)
+                    {
+                            $('#id_district option[value='+data[i]+']').prop("hidden", false);
+                    }
+
+                    }
+
+
+                }
+            });
+    })
+
+
+
+
+
+
+
+$('#id_thana option').prop("hidden", true);
+        $("#id_district").change(function()
+    {
+        var district_id = $('#id_district').val();
+        var new_district = $('#id_district').val();
+        $.ajax({
+                type: "POST",
+                url: "/get_district_first/",
+                dataType: "json",
+                data: { "district_id": district_id, 'csrfmiddlewaretoken': '{{ csrf_token }}' },
+                success: function (data)
+                {
+                    if (district_id == new_district){
+                    $('#id_thana option').prop("hidden", true);
+                    $('#id_thana').val('');
+
+                    for (var i = 0; i < data.length; i++)
+                    {
+                            $('#id_thana option[value='+data[i]+']').prop("hidden", false);
+                    }
+                    }
+
+                }
+            });
+    })
+
+
+
+
+       $('#id_district_snd option').prop("hidden", true);
+    $("#id_division_snd").change(function()
+    {
+        var division_id = $('#id_division_snd').val();
+        var new_division = $('#id_division_snd').val();
+        $.ajax({
+                type: "POST",
+                url: "/get_division/",
+                dataType: "json",
+                data: { "division_id": division_id, 'csrfmiddlewaretoken': '{{ csrf_token }}' },
+                success: function (data)
+                {
+                    if (division_id == new_division){
+                    $('#id_district_snd option').prop("hidden", true);
+                    $('#id_district_snd').val('');
+                    $('#id_thana_snd').val('');
+
+
+                    for (var i = 0; i < data.length; i++)
+                    {
+                            $('#id_district_snd option[value='+data[i]+']').prop("hidden", false);
+                    }
+
+                    }
+
+
+                }
+            });
+    })
+
+
+
+
+
+
+
+$('#id_thana_snd option').prop("hidden", true);
+        $("#id_district_snd").change(function()
+    {
+        var district_id = $('#id_district_snd').val();
+        var new_district = $('#id_district_snd').val();
+        $.ajax({
+                type: "POST",
+                url: "/get_district/",
+                dataType: "json",
+                data: { "district_id": district_id, 'csrfmiddlewaretoken': '{{ csrf_token }}' },
+                success: function (data)
+                {
+                    if (district_id == new_district){
+                    $('#id_thana_snd option').prop("hidden", true);
+                    $('#id_thana_snd').val('');
+
+                    for (var i = 0; i < data.length; i++)
+                    {
+                            $('#id_thana_snd option[value='+data[i]+']').prop("hidden", false);
+                    }
+                    }
+
+                }
+            });
+    })
+
+
+
+
+
+var text = $('.form-row.field-permanent label').text()
+str = text.slice(0, -1);
+$('.form-row.field-permanent label').text(str)
+
+
+
+var text = $('.form-row.field-present label').text()
+str = text.slice(0, -1);
+$('.form-row.field-present label').text(str)
+
+
+
+
+
+    </script>
+
+
+    <script>
+
+
+        $(document).ready(function ()
+    {
+        $(document).on('change', 'input[Id="id_same_address"]', function (e)
+        {
+            if  ($(this).prop("checked") == true){
+
+            var divi_var= $('#id_division').val()
+             var thana_var= $('#id_thana').val()
+            var dis_var= $('#id_district').val()
+            $("#id_village_snd").val( $("#id_village").val())
+            $("#id_post_office_snd").val( $("#id_post_office").val())
+            $("#id_postal_code_snd").val( $("#id_postal_code").val())
+
+
+
+
+            var z = document.getElementById("id_division_snd").value  = divi_var;
+            var x = document.getElementById("id_district_snd").value  = dis_var;
+            var y = document.getElementById("id_thana_snd").value  = thana_var;
+
+
+            <!--$("#id_village_snd").val( $("#id_village").val())-->
+            <!--$("#id_post_office_snd").val( $("#id_post_office").val())-->
+            <!--$("#id_postal_code_snd").val( $("#id_postal_code").val())-->
+            <!--var division_index=$("#id_division option:selected").index();-->
+            <!--$("select#id_division_snd").prop('selectedIndex', division_index);-->
+            <!--var district_index=$("#id_district option:selected").index();-->
+            <!--var t=document.getElementById("id_district_snd").selectedIndex=district_index;-->
+            <!--var thana_var= $('#id_thana').val()-->
+            <!--var y = document.getElementById("id_thana_snd").selectedIndex = thana_var;-->
+            <!--alert(district_index)-->
+            <!--alert(t)-->
+
+
+
+
+
+
+
+
+            }
+
+
+            else if($(this).prop("checked") == false)
+            {
+              $("#id_village_snd").val('');
+              $("#id_post_office_snd").val('');
+              $("#id_postal_code_snd").val('');
+              $("#id_division_snd").val('');
+              $("#id_district_snd").val('');
+              $("#id_thana_snd").val('');
+            }
+        });
+            });
+
+
+
+
+$( "#licensehistory_set-group a" ).click(function() {
+  alert( "Handler for .click() called." );
+});
+
+$('#licensehistory_set-group .add-row').find('a').trigger('click');
+
+    </script>
+
+</div>
+</form></div>
+
+
+
+
+<style>
+
+    .form-row.field-is_old_data .readonly {
+    display: none;
+}    .form-row.field-permanent .readonly {
+    display: none;
+}
+  .form-row.field-present .readonly {
+    display: none;
+}
+
+
+.form-row.field-permanent {
+    background-color: #119146 !important;
+    color: #fff !important;
+    box-shadow: 0 8px 6px -6px black !important;
+    width: 20% !important;
+    height: 21px !important;
+    text-transform: capitalize !important;
+    text-align: center !important;
+    padding: 1px 0px 12px 0px !important;
+    margin: auto;
+    display: block;
+    margin-top: 6%;
+    margin-bottom: 2%;
+}
+.form-row.field-present {
+    background-color: #119146 !important;
+    color: #fff !important;
+    box-shadow: 0 8px 6px -6px black !important;
+    width: 20% !important;
+    height: 21px !important;
+    text-transform: capitalize !important;
+    text-align: center !important;
+    padding: 1px 0px 12px 0px !important;
+    margin: auto;
+    display: block;
+    margin-top: -4%;
+    margin-bottom: 2%;
+}
+
+.form-row.field-permanent label {
+    width: 100%;
+    font-size: 20px;
+    color: #fff;
+}
+.form-row.field-present label {
+    width: 100%;
+    font-size: 20px;
+    color: #fff;
+}
+
+
+.form-row.field-students {
+    display: none;
+}
+
+.form-row.field-program {
+    display: none;
+}
+
+
+.form-row.field-institution {
+    display: none;
+}
+
+.form-row.field-signature {
+    display: block;
+}
+
+.form-row.field-month_info {
+    width: 48%;
+    display: inline-block;
+    float: left;
+}
+
+img.sig {
+    width: 100% !important;
+}
+
+.form-row.field-sig {
+    position: relative;
+    float: right;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 0 10px 6px -6px #777;
+    background-image: url(/static/admin/img/sig.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+
+span.clearable-file-input {
+    display: none;
+}
+
+.form-row.field-is_old_data {
+    width: 45%;
+    display: inline-block;
+}
+</style>
+
+{% endblock %}

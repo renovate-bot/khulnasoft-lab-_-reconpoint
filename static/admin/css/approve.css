@@ -1,0 +1,580 @@
+
+::selection {
+    color: #fff;
+    background: orange;
+}
+
+span.thana_di {
+    display: inline-block;
+    float: left;
+    width: 216px;
+    height: 20px;
+}
+
+
+span.pst_ {
+    width: 15% !important;
+}
+
+
+
+.pst_ {
+
+    height: 20px!important;
+}
+
+
+
+
+
+span.thana_vill {
+    width: 83% !important;
+}
+
+
+span.pst {
+    width: 14% !important;
+}
+
+span.thanatt {
+    width: 86% !important;
+}
+
+span.thana_vill {
+    display: inline-block !important;
+    float: left !important;
+    height: 20px !important;
+}
+
+.ps_ {
+    width: 40px!important;
+    height: 20px!important;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.full_body {
+    width: 1200px;
+    height: 928px;
+    margin: auto;
+    display: block;
+}
+
+.header {
+    width: 1200px;
+    height: 178px;
+    display: block;
+        margin-top: 81px;
+}
+
+.image_he {
+    width: 80%;
+    margin: auto;
+    height: 176px;
+}
+
+
+img.logo {
+    width: 80%;
+    margin: auto;
+    display: block;
+}
+
+.image_he label {
+    text-align: center;
+    display: block;
+    font-size: 18px;
+    margin-left: 100px
+        margin-top: -3px;
+}
+
+.student_reg_n_img {
+    width: 80%;
+    height: 120px;
+            margin: auto;
+}
+
+
+
+.stu_reg label {
+    float: right;
+    border: 3px solid #827d7d;
+    padding: 9px;
+    font-size: 22px;
+    font-weight: bold;
+    margin-right: 12%;
+}
+
+
+.stu_reg {
+    width: 70%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+}
+
+.stu_label {
+    position: relative;
+}
+
+span.program_name {
+    position: absolute;
+    bottom: 15%;
+    right: -4.5%;
+    font-size: 22px;
+    text-align: center;
+    max-width: 499px;
+}
+
+label.info {
+    font-size: 14px;
+    font-weight: bold;
+        margin-top: 5px;
+}
+
+.stu_label {
+    width: 78%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+}
+
+
+
+.course_name {
+    width: 80%;
+    display: block;
+    margin: auto;
+    height: 86px;
+    text-align: center;
+}
+
+.course_name label {
+    font-size: 28px;
+    margin-top: 2%;
+    display: block;
+}
+
+
+
+.student_img {
+    width: 15%;
+    height: 100%;
+        display: inline-block;
+}
+
+
+.reg_label {
+    float: right;
+}
+
+.reg_label label {
+    font-size: 25px;
+    display: inline-block;
+    margin-left: -50%;
+    padding: 5px;
+    border: 3px solid #969696;
+}
+.main_information {
+    width: 1200px;
+height: 700px;
+    margin-top: 40px;
+}
+
+.full_body {
+    background-image: url(/static/admin/img/bacddg.png);
+    background-repeat: no-repeat;
+background-size: 78% 125%;
+background-position: top;
+}
+
+
+.program_name {
+    width: 80%;
+    height: 33px;
+    margin: auto;
+}
+
+.program_name span {
+    text-align: center;
+    display: block;
+    font-size: 23px;
+}
+
+.stu_info {
+width: 80%;
+    margin: auto;
+    height: 400px;
+}
+
+.name {
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+
+}
+
+
+
+  span.mo {
+    width: 28%;
+    display: inline-block;
+    height: 40px;
+    font-size: 19px;
+    font-family: sans-serif;
+    float: left;
+}
+
+span.par {
+    width: 28%;
+    display: inline-block;
+    height: 40px;
+    font-size: 19px;
+    font-family: sans-serif;
+    float: left;
+}
+
+.fathersname {
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+
+}
+
+.mothersname {
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+
+}
+
+.institute {
+    width: 100%;
+    height: 40px;
+    margin-top: 20;
+
+}
+
+.extra_text {
+    width: 100%;
+    height: 40px;
+    margin-top: 15px;
+
+    margin-bottom: 15px;
+}
+
+.extra_text span {
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.stu_re_no {
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+
+}
+.session {
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+
+}
+
+.admission_date {
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+}
+
+.name span {
+    display: inline-block;
+    width: 28%;
+    height: 40px;
+        font-size: 19px;
+    font-family: sans-serif;
+       float: left;
+}
+
+.fathersname span {
+    width: 28%;
+    display: inline-block;
+    height: 40px;
+        font-size: 19px;
+    font-family: sans-serif;
+        float: left;
+}
+
+.mothersname span {
+    width: 28%;
+    display: inline-block;
+    height: 40px;
+        font-size: 19px;
+    font-family: sans-serif;
+        float: left;
+}
+.institute span {
+    width: 28%;
+    display: inline-block;
+    height: 40px;
+        font-size: 19px;
+    font-family: sans-serif;
+        float: left;
+}
+
+.stu_re_no span {
+    width: 28%;
+    display: inline-block;
+    height: 40px;
+        font-size: 19px;
+    font-family: sans-serif;
+        float: left;
+}
+.session span {
+    width: 28%;
+    display: inline-block;
+    height: 40px;
+        font-size: 19px;
+    font-family: sans-serif;
+        float: left;
+}
+
+.admission_date span {
+    width: 28%;
+    display: inline-block;
+    height: 40px;
+        font-size: 19px;
+    font-family: sans-serif;
+        float: left;
+}
+
+.admission_date label {
+    display: inline-block;
+    width: 72%;
+    height: 40px;
+    float: left;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.session label {
+    display: inline-block;
+    width: 55%;
+    height: 40px;
+    float: left;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.stu_re_no label {
+    display: inline-block;
+    width: 55%;
+    height: 40px;
+    float: left;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.institute label {
+    display: inline-block;
+    width: 72%;
+    height: 40px;
+    float: left;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.mothersname label {
+    display: inline-block;
+    width: 72%;
+    height: 40px;
+    float: left;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.fathersname label {
+    display: inline-block;
+    width: 72%;
+    height: 40px;
+    float: left;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.name label {
+    display: inline-block;
+    width: 72%;
+    height: 40px;
+    float: left;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.student_img {
+    border: 1px solid;
+}
+
+.signature {
+    width: 50%;
+height: 130px;
+    display: inline-block;
+    float: right;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+
+
+label.vll_thana {
+    width: 100%;
+}
+
+span.ps {
+    width: 40px;
+    height: 20px;
+}
+
+
+
+span.thana_di {
+    display: inline-block;
+    float: left;
+    width: 196px;
+    height: 20px;
+}
+
+span.thana {
+    display: inline-block;
+    float: left;
+    width: 83%;
+        height: 20px;
+}
+
+span.ps_ {
+    width: 13% !important;
+}
+
+span.pst {
+    width: 14%;
+    height: 20px;
+}
+
+span.thanatt {
+    display: inline-block;
+    float: left;
+    width: 86%;
+    height: 20px;
+}
+
+
+.extra {
+    height: 67px;
+}
+
+.registaer_img {
+    margin-top: 45px;
+}
+
+.registaer_img {
+    width: 100%;
+    height: 50%;
+}
+
+.signature span {
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+.signature label {
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin-top: 12px;
+}
+
+.full_body {
+    page-break-before: always;
+}
+
+
+
+span.ps {
+    width: 13% !important;
+}
+
+
+.parmanent {
+    display: inline-block;
+    width: 72%;
+        height: 100%;
+    float: left;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+
+.thana_dis {
+    width: 100%;
+    height: 40px;
+    display: block;
+}
+
+
+.vill_post {
+    width: 100%;
+    height: 40px;
+    display: block;
+}
+
+.post {
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+}
+
+.vill {
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+}
+
+
+.dis {
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+}
+
+.tha {
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+}
+
+.last_part {
+    width: 100%;
+    height: 146px;
+}
+
+.user_name {
+    display: block;
+    width: 100%;
+    height: 100px;
+}
+
+.user_name label {
+    margin-top: 8%;
+    display: inline-block;
+    margin-left: 24px;
+    font-size: 17px;
+}

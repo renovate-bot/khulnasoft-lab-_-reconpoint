@@ -1,0 +1,67 @@
+div#content {
+    width: 1200px;
+    margin: auto;
+    background-color: #eee;
+}
+
+div#toolbar {
+    display: none;
+}
+
+ul.object-tools {
+    display: none;
+}
+
+form#changelist-form {
+    margin-top: 10%;
+}
+
+select#pro_id {
+    width: 58%;
+    margin: auto;
+    display: block;
+    height: 35px;
+}
+
+div#changelist {
+    background-color: #eee;
+}
+
+.actions {
+    background-color: #eee !important;
+}
+
+
+.ins_name {
+    width: 47% !important;
+}
+
+.program_cat {
+    width: 47% !important;
+}
+
+#session {
+    margin-left: 16.2% !important;
+}
+
+#reg_no {
+
+    margin-left: 8% !important;
+    padding: 4px 6px !important;
+
+}
+img.bc_im{
+
+max-width: 50px;
+max-height: 50px;
+}
+
+.bnc_s1{
+
+max-width: 50px;
+max-height: 50px;
+}
+
+#rendom {
+    margin-left: 9% !important;
+}

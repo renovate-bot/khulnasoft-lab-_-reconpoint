@@ -1,0 +1,98 @@
+.main {
+    width: 1000px;
+    margin: auto;
+    border: 1px solid;
+    height: 600px;
+}
+
+.header {
+    width: 100%;
+    margin: auto;
+    border-bottom: 1px solid;
+    height: 173px;
+}
+
+img.logo {
+    margin: auto;
+    display: block;
+    width: 80%;
+    height: 159px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.header_secd {
+    width: 100%;
+    display: block;
+    height: 100px;
+    border-bottom: 1px solid;
+}
+
+
+.date_exam {
+    width: 90%;
+    margin: auto;
+    height: 30px;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.exam_time {
+    width: 90%;
+    margin: auto;
+    height: 30px;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+
+.exam_center {
+    width: 90%;
+    margin: auto;
+    height: 30px;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.session {
+    width: 90%;
+    margin: auto;
+    height: 30px;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.exam {
+    width: 90%;
+    margin: auto;
+    height: 30px;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.name {
+    width: 90%;
+    margin: auto;
+    height: 30px;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.roll_no {
+    width: 90%;
+    margin: auto;
+    height: 30px;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.reg_no {
+    width: 90%;
+    margin: auto;
+    height: 30px;
+    font-size: 20px;
+    margin-top: 5px;
+}

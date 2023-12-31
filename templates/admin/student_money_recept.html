@@ -1,0 +1,510 @@
+﻿    {% extends "admin/base_site.html" %}
+
+
+{% block content %}
+
+
+        <style>
+
+        .inf {
+
+    height: 50px;
+    display: block;
+
+}
+
+.inf span {
+    display: block;
+}
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Set height of body and the document to 100% */
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial;
+        }
+
+        /* Style tab links */
+        .tablink {
+            background-color: #555;
+            color: white;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            font-size: 17px;
+            width: 25%;
+        }
+
+            .tablink:hover {
+                background-color: #777;
+            }
+
+        /* Style the tab content (and add height:100% for full page content) */
+        .tabcontent {
+            color: black;
+            display: none;
+            padding: 20px 20px;
+            height: 100%;
+            width: 100%;
+            margin: auto;
+        }
+
+        .typ_slct {
+            display: inline-block;
+            margin-right: 50px;
+        }
+
+        .typ_slct_pnt {
+            display: block;
+            max-width: 50%;
+            margin: auto;
+        }
+
+        #Home {
+            display: block;
+        }
+
+
+        #note {
+            min-width: 500px;
+		height:30px;
+            min-height: 20px;
+        }
+
+
+.tab_pnt 
+{
+        width: 60%;
+        margin: auto;
+        margin-top: auto;
+        height: 500px;
+        border: 1px solid #d7caca;
+        border-radius: 5px;
+        box-shadow: -2px 6px 14px 6px #c8bfbf;
+        margin-top: 20px;
+}
+
+.hed_div {
+    margin: 10px 0px 0 40px;
+    height: 450px;
+    min-height: 90px;
+    max-height: 250px;
+    overflow: scroll;
+}
+
+.heads 
+{
+    margin-top: 10px;
+}
+.lbl 
+{
+    display: inline-block;
+    min-width: 139px;
+}
+
+#reg_no_txt {
+    min-width: 260px;
+
+}
+
+.ins_all 
+{
+    margin-top: 10px;
+}
+
+#ins_all {
+
+    max-width: 500px;
+
+}
+
+
+input[type="submit"] {
+    margin: auto;
+    margin-top: auto;
+    display: block;
+    margin-top: 19px;
+    width: 150px;
+    height: 50px;
+
+}
+
+    </style>
+
+<div class="typ_slct_pnt">
+    <div class="typ_slct">
+        <input type="checkbox" onchange="openPage('Home', this, 'red')" class="checktype" value="dtgdg" />
+        <span>Use Student Registration Number</span>
+    </div>
+    <div class="typ_slct">
+        <input type="checkbox" onchange="openPage('News', this, 'green')" class="checktype" value="dtgdg" />
+        <span>Use RNM Rumber</span>
+    </div>
+    <div class="typ_slct">
+        <input type="checkbox" onchange="openPage('Contact', this, 'blue')" class="checktype" value="dtgdg" />
+        <span>Use Institution</span>
+    </div>
+</div>
+
+
+
+<script>
+
+
+
+
+        $('.checktype').on('change', function () {
+            $('.checktype').not(this).prop('checked', false);
+        });
+    </script>
+
+<div class="tab_pnt" id="tab_pnt">
+    <div id="Home" class="tabcontent">
+        <form onsubmit="myFunction()" target="_blank" action="/student_money_recept/" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="rq_type" value="reg" />
+            <div class="regno">
+                <span class="lbl">Registration No:</span>
+                <input type="number" name="reg_no" id="reg_no_txt" placeholder="enter your registration number" />
+            </div>
+            <div class="ins_all">
+                <span class="lbl">Select Your Programs</span>
+                <select name="reg_program" id="ins_all">
+                    {% for program in programs %}
+                    <option value="{{program.id}}">
+                        {{program.title}}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="hed_div">
+                {% for inc in Incomes %}
+                <div class="heads">
+                    <input type="checkbox" name="Incomes[]" value="{{inc.id}}" />
+                    <span>{{inc.name}} <span><b>{{inc.amount}}</b></span></span>
+
+                </div>
+                {% endfor %}
+
+            </div>
+
+            <div class="inf">
+                <span id="cre">Name: </span>
+                <span id="fcre">Father name: </span>
+
+            </div>
+
+
+            <div class="note_dv">
+                <span>Note</span>
+                <textarea name="note" id="note"></textarea>
+            </div>
+            <input id="stu" type="submit" value="submit" />
+        </form>
+    </div>
+
+    <div id="News" class="tabcontent">
+        <form onsubmit="myFunction()" target="_blank" action="/student_money_recept/" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="rq_type" value="license_reg" />
+            <div  class="regno">
+                <span class="lbl">License Registration number:</span>
+                <input class="li_in" type="number" name="li_reg_no" id="reg_no_txt" placeholder="enter your license Registration number" />
+            </div>
+            <div class="ins_all">
+                <span class="lbl">Select Your Programs</span>
+                <select class="prm_src" class="lic_i" name="license_program" id="ins_all">
+                    {% for program in programs %}
+                    <option value="{{program.id}}">
+                        {{program.title}}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="hed_div">
+                {% for inc in Incomes %}
+                <div class="heads">
+                    <input type="checkbox" name="Incomes[]" value="{{inc.id}}" />
+                    <span>{{inc.name}} <span><b>{{inc.amount}}</b></span></span>
+
+                </div>
+
+                {% endfor %}
+            </div>
+
+             <div class="inf">
+                <span id="cre_li">Name: </span>
+                <span id="fcre_li">Father name: </span>
+
+            </div>
+                <div class="note_dv">
+                    <span>Note</span>
+                    <textarea name="note" id="note"></textarea>
+                </div>
+                <input type="submit" value="submit" />
+</form>
+    </div>
+
+    <div id="Contact" class="tabcontent">
+        <form onsubmit="myFunction()" target="_blank" action="/student_money_recept/" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="rq_type" value="ins" />
+            <div class="ins_all">
+                <span class="lbl">Select Your institution</span>
+                <select class="ni_all" name="institution" id="ins_all">
+                    {% for ins in institution %}
+                    <option value="{{ins.id}}">
+                        {{ins.institution_name}}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="hed_div">
+                {% for inc in Incomes %}
+                <div class="heads">
+                    <input class="check" type="checkbox" name="Incomes[]" value="{{inc.id}}" id="{{inc.id}}" />
+                    <span>{{inc.name}} <span><b>{{inc.amount}}</b></span></span>
+                    <input value="" class="number" type="number" id="{{inc.id}}" name="number_of_item[]">
+                </div>
+                {% endfor %}
+
+
+
+                <script>
+function myFunction() {
+location.reload();
+}
+
+
+
+ 			$(document).ready(function() { $("#ins_all").select2(); });
+			 $(document).ready(function() { $(".prm_src").select2(); });
+			 $(document).ready(function() { $(".ni_all").select2(); });
+
+
+
+
+
+
+
+
+
+
+                    var prog1 = $('#ins_all').val()
+                    $("#ins_all").change(function(){
+
+
+                    var num = $('#reg_no_txt').val()
+                    var prog = $('#ins_all').val()
+
+                    if (num && prog){
+
+                    var div = document.getElementById('cre');
+                    var divf = document.getElementById('fcre');
+                    $.ajax({
+                    type: "POST",
+                    url: "/get_info_moneyrecipte/",
+                    dataType: "json",
+                    data: { "num": num, 'prog': prog, 'csrfmiddlewaretoken': '{{ csrf_token }}' },
+                    success: function (data)
+                    {
+                        if (data[0] == true)
+                        {
+                         div.innerHTML += data[2];
+                         divf.innerHTML += data[3];
+                        }
+                        else{
+                         alert('nai')
+                         div.innerHTML += '';
+                         divf.innerHTML += '';
+                        }
+
+
+
+                    }
+
+
+                        });
+
+                    }
+
+
+
+
+                    });
+
+
+
+
+
+
+                    $(".lic_i").change(function(){
+
+
+                    var num = $('.li_in').val()
+                    var prog = $('.lic_i').val()
+
+                    if (num && prog){
+
+
+
+                    $.ajax({
+                    type: "POST",
+                    url: "/get_info_moneyrecipte_li/",
+                    dataType: "json",
+                    data: { "num": num, 'prog': prog, 'csrfmiddlewaretoken': '{{ csrf_token }}' },
+                    success: function (data){
+
+                    if (data){
+                     var div = document.getElementById('cre_li');
+                     var divf = document.getElementById('fcre_li');
+
+                     div.innerHTML += data[2];
+                     divf.innerHTML += data[3];
+                    }
+
+                    else{
+
+
+                    var div = document.getElementById('cre_li');
+                    var divf = document.getElementById('fcre_li');
+
+                    div.innerHTML += '';
+                    divf.innerHTML += '';
+                    }
+
+                    }
+
+
+
+
+
+
+                        });
+
+                    }
+
+
+
+
+                    });
+
+
+
+
+
+
+
+
+                    <!--$(".number").keyup(function(){-->
+                            <!--var y = document.getElementsByClassName("number")[0].id;-->
+
+                            <!--var arr = [];-->
+                             <!--for (var i = 0; i < y.length; i++) {-->
+                             <!--arr.push(y);-->
+                             <!--alert(arr)-->
+
+                              <!--window.history.pushState("object or string", "Title", "/student_money_recept/?id="+arr);-->
+
+
+
+                            <!--}-->
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!---->
+                      <!--var x =$(".number").val();-->
+                      <!--var arr =[];-->
+                            <!--for(i=0;i<x.length;i++){-->
+
+                            <!--arr.push(i);-->
+
+
+                            <!--alert(arr)-->
+
+
+
+                            <!--}-->
+
+
+                      <!--$('.check').attr("id", x);-->
+                      <!--alert(x)-->
+                    <!--});-->
+
+
+
+                </script>
+            </div>
+                <div class="note_dv">
+                    <span>Note</span>
+                    <textarea name="note" id="note"></textarea>
+                </div>
+                <input type="submit" value="submit" />
+</form>
+    </div>
+
+</div>
+
+    <script>
+
+
+
+
+
+
+
+<!--$( window ).load(function() {-->
+
+<!--$("#tab_pnt").css("display", "none");-->
+<!--});-->
+
+
+
+<!--$( ".checktype" ).click(function() {-->
+  <!--$("#tab_pnt").css("display", "");-->
+
+
+<!--});-->
+
+    </script>
+
+    <script>
+    function openPage(pageName,elmnt,color) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+        }
+        document.getElementById(pageName).style.display = "block";
+        elmnt.style.backgroundColor = color;
+
+    }
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+
+
+
+
+
+
+    </script>
+    {% endblock %}

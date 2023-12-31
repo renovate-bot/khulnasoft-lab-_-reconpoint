@@ -1,0 +1,130 @@
+﻿<html>
+<head><meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+span.cls_002{font-family:Arial,serif;font-size:15.8px;color:rgb(51,51,51);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_002{font-family:Arial,serif;font-size:15.8px;color:rgb(51,51,51);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_003{font-family:Arial,serif;font-size:8.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_003{font-family:Arial,serif;font-size:8.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_004{font-family:Arial,serif;font-size:8.3px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_004{font-family:Arial,serif;font-size:8.3px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_005{font-family:Arial,serif;font-size:8.3px;color:rgb(0,128,0);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_005{font-family:Arial,serif;font-size:8.3px;color:rgb(0,128,0);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_006{font-family:Arial,serif;font-size:9.8px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_006{font-family:Arial,serif;font-size:9.8px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_007{font-family:Arial,serif;font-size:8.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_007{font-family:Arial,serif;font-size:8.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+-->
+</style>
+<script type="text/javascript" src="3294e558-b268-11e8-b59b-0cc47a792c0a_id_3294e558-b268-11e8-b59b-0cc47a792c0a_files/wz_jsgraphics.js"></script>
+</head>
+<body>
+<div style="position:absolute;left:50%;margin-left:-306px;top:0px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="/static/admin/print/admit_beg.jpg" width=612 height=792></div>
+<div style="position:absolute;left:155.61px;top:36.50px" class="cls_002"><span class="cls_002">Bangladesh Nursing and Midwifery Council</span></div>
+<div style="position:absolute;left:183.76px;top:62.75px" class="cls_003"><span class="cls_003">203, Shaheed Sayed Nazrul Islam Sarani, Bijoynagar, Dhaka-1000</span></div>
+<div style="position:absolute;left:272.59px;top:71.00px" class="cls_003"><span class="cls_003"> </span><A HREF="http://www.bnmc.gov.bd/">www.bnmc.gov.bd</A> </div>
+<div style="position:absolute;left:228.73px;top:79.25px" class="cls_004"><span class="cls_004">Comprehensive/Licensing Examination</span></div>
+<div style="position:absolute;left:222.55px;top:95.75px" class="cls_005"><span class="cls_005">Diploma in Nursing Science and Midwifery</span></div>
+<div style="position:absolute;left:279.48px;top:111.50px" class="cls_006"><span class="cls_006">Admit Card</span></div>
+<div style="position:absolute;left:154.13px;top:129.50px" class="cls_004"><span class="cls_004">Examination Center</span></div>
+<div style="position:absolute;left:490.22px;top:28.50px" class="cls_004">
+    <span class="cls_004">
+        {%if std_license.image_sec %}
+            <img width="100px" height="100px" src="{{std_license.image_sec}}" />
+        {% endif %}
+    </span>
+</div>
+
+<div style="position:absolute;left:515.22px;top:129.50px" class="cls_004"><span class="cls_004">Roll Number</span></div>
+<div style="position:absolute;left:391.52px;top:138.50px" class="cls_004"><span class="cls_004">Student ID: {{std_license.registration_no}}</span></div>
+<div style="position:absolute;left:525.98px;top:139.25px" class="cls_004"><span class="cls_004">100001</span></div>
+<div style="position:absolute;left:147.72px;top:140.75px" class="cls_005"><span class="cls_005">Dhaka Nursing College</span></div>
+<div style="position:absolute;left:99.82px;top:152.00px" class="cls_003"><span class="cls_003">Location: </span><span class="cls_005">Dhaka Nursing College (New Building)</span></div>
+<div style="position:absolute;left:388.06px;top:155.75px" class="cls_004"><span class="cls_004">Session: {{std_license.session}}</span></div>
+<div style="position:absolute;left:122.97px;top:163.25px" class="cls_003"><span class="cls_003">Room No:</span><span class="cls_005"> Class Room-1 (2nd Floor)</span></div>
+<div style="position:absolute;left:32.00px;top:179.00px" class="cls_003"><span class="cls_003">1. Name of Examinee:</span></div>
+<div style="position:absolute;left:164.75px;top:179.00px" class="cls_004"><span class="cls_004">{{std_license.first_name}} {{std_license.last_name}}</span></div>
+<div style="position:absolute;left:32.00px;top:190.25px" class="cls_003"><span class="cls_003">2. Father's Name:</span></div>
+<div style="position:absolute;left:164.75px;top:190.25px" class="cls_004"><span class="cls_004">{{std_license.fathers_name}}</span></div>
+<div style="position:absolute;left:32.00px;top:201.50px" class="cls_003"><span class="cls_003">3. Mother's Name:</span></div>
+<div style="position:absolute;left:164.75px;top:201.50px" class="cls_004"><span class="cls_004">{{std_license.mothers_name}}</span></div>
+<div style="position:absolute;left:32.00px;top:212.75px" class="cls_003"><span class="cls_003">4. Institute/ College:</span></div>
+<div style="position:absolute;left:164.75px;top:212.75px" class="cls_004"><span class="cls_004">{{std_license.institution}}</span></div>
+<div style="position:absolute;left:32.00px;top:224.00px" class="cls_003"><span class="cls_003">5. Examination Date:</span></div>
+<div style="position:absolute;left:164.75px;top:224.00px" class="cls_005"><span class="cls_005">{{std_license.program_title.exam_date|date}}</span></div>
+<div style="position:absolute;left:32.00px;top:235.25px" class="cls_003"><span class="cls_003">5. Examination Time:</span></div>
+<div style="position:absolute;left:164.75px;top:235.25px" class="cls_005"><span class="cls_005">{{std_license.program_title.exam_date|time}}</span></div>
+
+<div style="position:absolute;left:93.70px;top:248.25px" class="cls_004">
+    <span class="cls_004">
+        {% if std_license.signature_first %}
+        <img width="143px" height="23px" src="{{std_license.signature_first.url}}" />
+        {% endif %}
+    </span>
+</div>
+<div style="position:absolute;left:93.70px;top:265.25px" class="cls_004"><span class="cls_004">----------------------------------------------------</span></div>
+<div style="position:absolute;left:371.20px;top:265.25px" class="cls_004"><span class="cls_004">----------------------------------------------------</span></div>
+<div style="position:absolute;left:371.20px;top:245.25px" class="cls_004"><span class="cls_004">
+    {% if std_license.principal_signature %}
+    {{std_license.principal_signature}}
+    {% endif %}
+</span></div>
+
+<div style="position:absolute;left:120.65px;top:273.50px" class="cls_004"><span class="cls_004">Signature of Examinee</span></div>
+<div style="position:absolute;left:424.51px;top:273.50px" class="cls_004"><span class="cls_004">Registrar</span></div>
+<div style="position:absolute;left:29.75px;top:289.25px" class="cls_007"><span class="cls_007"><b>পরীক্ষার্থীদের প্রতি নির্দেশাবলীঃ </b> </span></div>
+
+<div style="position:absolute;left:30.50px;top:299.00px" class="cls_007"><span class="cls_007">১</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:47.75px;top:299.00px" class="cls_007"><span class="cls_007">পরী</span></div>
+<div style="position:absolute;left:69.76px;top:299.00px" class="cls_007"><span class="cls_007">াথ  উ  রপে  র িনধািরত অংশ ব তীত িনেজর নাম িলখেল বা অ</span></div>
+<div style="position:absolute;left:291.15px;top:299.00px" class="cls_007"><span class="cls_007">েয়াজনীয় দাগ িদেল উ  র প   বািতল বেল গণ  হেব।</span></div>
+<div style="position:absolute;left:30.50px;top:310.25px" class="cls_007"><span class="cls_007">২</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:47.75px;top:310.25px" class="cls_007"><span class="cls_007">উ রপে  র িনিদ   জায়গায় িনজ  রাল ন  র ও কাউ</span></div>
+<div style="position:absolute;left:231.91px;top:310.25px" class="cls_007"><span class="cls_007">েলর</span><span class="cls_003"> Student ID </span><span class="cls_007">ন</span><span class="cls_003">  </span><span class="cls_007">র</span><span class="cls_003"> </span><span class="cls_007">কােলা</span><span class="cls_003"> </span><span class="cls_007">কািলর</span><span class="cls_003"> </span><span class="cls_007">বলেপন</span></div>
+<div style="position:absolute;left:390.85px;top:310.25px" class="cls_007"><span class="cls_007">ারা িলেখ িনেচর স ঠক ব   পরণ করেত হেব।</span></div>
+<div style="position:absolute;left:30.50px;top:321.50px" class="cls_007"><span class="cls_007">৩</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:47.75px;top:321.50px" class="cls_007"><span class="cls_007">ব  স ঠকভােব পরণ না করা হেল উ রপ   বািতল বেল গণ  হেব।</span></div>
+<div style="position:absolute;left:30.50px;top:332.75px" class="cls_007"><span class="cls_007">৪</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:47.75px;top:332.75px" class="cls_007"><span class="cls_007">পরী</span></div>
+<div style="position:absolute;left:69.76px;top:332.75px" class="cls_007"><span class="cls_007">া চলাকালীন সমেয়  ক</span></div>
+<div style="position:absolute;left:162.45px;top:332.75px" class="cls_007"><span class="cls_007">ধােনর িস</span></div>
+<div style="position:absolute;left:199.57px;top:332.75px" class="cls_007"><span class="cls_007">া</span></div>
+<div style="position:absolute;left:210.76px;top:332.75px" class="cls_007"><span class="cls_007">চড়া   বেল গণ  হেব।</span></div>
+<div style="position:absolute;left:30.50px;top:344.00px" class="cls_007"><span class="cls_007">৫</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:47.75px;top:344.00px" class="cls_007"><span class="cls_007">পরী</span></div>
+<div style="position:absolute;left:69.76px;top:344.00px" class="cls_007"><span class="cls_007">া</span></div>
+<div style="position:absolute;left:91.32px;top:344.00px" class="cls_007"><span class="cls_007">হেত  শষ না হওয়া পয   পরী</span></div>
+<div style="position:absolute;left:199.35px;top:344.00px" class="cls_007"><span class="cls_007">াথ  হেলর বাইের  যেত পারেব না।</span></div>
+<div style="position:absolute;left:30.50px;top:355.25px" class="cls_007"><span class="cls_007">৬</span><span class="cls_003">.</span></div>
+<div style="position:absolute;left:47.75px;top:355.25px" class="cls_007"><span class="cls_007">পরী</span></div>
+<div style="position:absolute;left:69.76px;top:355.25px" class="cls_007"><span class="cls_007">ার হেল  য  কােনা অসদপায় অবল  ন করেল কাউ</span></div>
+<div style="position:absolute;left:250.79px;top:355.25px" class="cls_007"><span class="cls_007">েলর িনয়মানযায়ী শা</span></div>
+<div style="position:absolute;left:337.52px;top:355.25px" class="cls_007"><span class="cls_007">দান করা হেব।</span></div>
+<div style="position:absolute;left:47.75px;top:366.50px" class="cls_007"><span class="cls_007">পরী</span></div>
+<div style="position:absolute;left:69.76px;top:366.50px" class="cls_007"><span class="cls_007">ার হেল</span></div>
+<div style="position:absolute;left:102.58px;top:366.50px" class="cls_007"><span class="cls_007">েবশপ</span></div>
+<div style="position:absolute;left:130.50px;top:366.50px" class="cls_003"><span class="cls_003">, </span><span class="cls_007">কলম</span><span class="cls_003">,  </span><span class="cls_007">প</span><span class="cls_003">   </span><span class="cls_007">ল</span><span class="cls_003">,    </span><span class="cls_007">ল</span><span class="cls_003"> </span><span class="cls_007">ব</span><span class="cls_003"> </span><span class="cls_007">তীত</span><span class="cls_003"> </span><span class="cls_007">অিতির</span><span class="cls_003">   </span><span class="cls_007">কাগজ</span><span class="cls_003">,  </span><span class="cls_007">মাবাইল</span><span class="cls_003">  </span><span class="cls_007">ফান</span><span class="cls_003"> </span><span class="cls_007">ও</span><span class="cls_003">  </span><span class="cls_007">যেকান</span><span class="cls_003"> </span><span class="cls_007">ধরেনর</span><span class="cls_003"> </span><span class="cls_007">ইেলক</span><span class="cls_003">  </span><span class="cls_007">িন</span></div>
+<div style="position:absolute;left:454.44px;top:366.50px" class="cls_007"><span class="cls_007">িডভাইস</span><span class="cls_003">/</span><span class="cls_007">ক</span><span class="cls_003"> </span><span class="cls_007">ালকেলটর</span><span class="cls_003"> </span><span class="cls_007">িনেয়</span></div>
+<div style="position:absolute;left:557.27px;top:366.50px" class="cls_007"><span class="cls_007">েবশ</span></div>
+<div style="position:absolute;left:30.50px;top:370.25px" class="cls_007"><span class="cls_007">ক</span><span class="cls_003">)</span></div>
+<div style="position:absolute;left:47.75px;top:374.75px" class="cls_007"><span class="cls_007">িনেষধ।</span></div>
+<div style="position:absolute;left:47.75px;top:386.00px" class="cls_007"><span class="cls_007">পরী</span></div>
+<div style="position:absolute;left:69.76px;top:386.00px" class="cls_007"><span class="cls_007">ার হেল বা বাইের  কান পরী  ক বা পরী</span></div>
+<div style="position:absolute;left:211.67px;top:386.00px" class="cls_007"><span class="cls_007">া সংি</span></div>
+<div style="position:absolute;left:245.01px;top:386.00px" class="cls_007"><span class="cls_007">কান</span><span class="cls_003"> </span><span class="cls_007">ব</span><span class="cls_003"> </span><span class="cls_007">া</span><span class="cls_003">   </span><span class="cls_007">র</span><span class="cls_003"> </span><span class="cls_007">সােথ</span><span class="cls_003">/</span><span class="cls_007">অেশাভন</span><span class="cls_003"> </span><span class="cls_007">আচরণ</span><span class="cls_003"> /</span><span class="cls_007">ভাষা</span><span class="cls_003"> </span><span class="cls_007">ব</span><span class="cls_003"> </span><span class="cls_007">বহার</span><span class="cls_003">/ </span><span class="cls_007">ভীিত</span><span class="cls_003">   </span><span class="cls_007">দশন</span><span class="cls_003"> </span><span class="cls_007">করেল</span><span class="cls_003"> </span><span class="cls_007">কাউ</span></div>
+<div style="position:absolute;left:515.15px;top:386.00px" class="cls_007"><span class="cls_007">েলর িস</span></div>
+<div style="position:absolute;left:547.31px;top:386.00px" class="cls_007"><span class="cls_007">া</span></div>
+<div style="position:absolute;left:565.18px;top:386.00px" class="cls_007"><span class="cls_007">েম</span></div>
+<div style="position:absolute;left:30.50px;top:389.75px" class="cls_007"><span class="cls_007">খ</span><span class="cls_003">)</span></div>
+<div style="position:absolute;left:47.75px;top:394.25px" class="cls_007"><span class="cls_007">পরী</span></div>
+<div style="position:absolute;left:69.76px;top:394.25px" class="cls_007"><span class="cls_007">া হেত বিহ</span></div>
+<div style="position:absolute;left:110.41px;top:394.25px" class="cls_007"><span class="cls_007">ার করা হেব।</span></div>
+<div style="position:absolute;left:30.50px;top:405.50px" class="cls_007"><span class="cls_007">৭</span><span class="cls_003">.   </span><span class="cls_007">পরী</span></div>
+<div style="position:absolute;left:69.76px;top:405.50px" class="cls_007"><span class="cls_007">ার হেল ধমপান স   ণভােব িনিষ</span></div>
+<div style="position:absolute;left:187.39px;top:405.50px" class="cls_007"><span class="cls_007">।</span></div>
+</div>
+
+</body>
+</html>

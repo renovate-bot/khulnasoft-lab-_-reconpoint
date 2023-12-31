@@ -1,0 +1,158 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/settings.css" %}">{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block breadcrumbs %}
+  <div class="breadcrumbs">
+    <a href="{% url 'admin:index' %}">{% trans 'HOME' %}</a>
+    {% if title %} &rsaquo; {{ title }}{% endif %}
+    <a href="/admin/settings/"> › SETTINGS</a>
+  </div>
+
+{% endblock %}
+
+{% block content %}
+<!--<div id="content-main">-->
+
+
+
+
+
+<body class="settings">
+
+   <div class="settings_in">
+       <label class="setting_login">SETTINGS</label>
+   </div>
+
+    <div class="settings_content">
+
+        <div class="manage_user">
+            <a href="/admin/setting/user/">
+            <img src="{% static '/admin/img/user_manage.png' %}" class="manage_settings_bnmc" href="{% url 'admin:index' %}"/>
+            <label CLASS="user_manage">MANAGE USER permission</label>
+            </a>
+        </div>
+
+        <div class="manage_address">
+            <a href="/admin/setting/address/">
+                <img src="{% static '/admin/img/address.png' %}" class="manage_address_bnmc" href="{% url 'admin:index' %}"/>
+                <label CLASS="address_manage">MANAGE ADDRESS</label>
+            </a>
+        </div>
+
+        <div class="manage_session">
+            <a href="/admin/bnmc_project/session/">
+                <img src="{% static '/admin/img/Registration_number_icone.png' %}" class="manage_institute_session" href="{% url 'admin:index' %}"/>
+                <label CLASS="session_manage">MANAGE SESSION </label>
+            </a>
+        </div>
+
+
+
+        <div class="manage_program">
+            <a href="/admin/setting/program/">
+                <img src="{% static '/admin/img/program_icon.png' %}" class="manage_program_bnmc" href="{% url 'admin:index' %}"/>
+                <label CLASS="program_manage">MANAGE PROGRAM</label>
+            </a>
+        </div>
+
+        <div class="manage_institute">
+            <a href="/admin/setting/institution/">
+                <img src="{% static '/admin/img/institution.png' %}" class="manage_institute_bnmc" href="{% url 'admin:index' %}"/>
+                <label CLASS="institute_manage">MANAGE INSTITUTE </label>
+            </a>
+        </div>
+
+
+        <div class="manage_exam">
+            <a href="/admin/bnmc_project/exam/">
+                <img src="{% static '/admin/img/license_exem_icone.png' %}" class="manage_exam_bnmc" href="{% url 'admin:index' %}"/>
+                <label CLASS="exam_manage">MANAGE EXAM </label>
+            </a>
+        </div>
+
+
+
+        <div class="manage_exam_center">
+            <a href="/admin/bnmc_project/examcenter/">
+                <img src="{% static '/admin/img/manage_exam_center.png' %}" class="manage_exam_center_bnmc" href="{% url 'admin:index' %}"/>
+                <label CLASS="exam_center_manage">MANAGE EXAM CENTER </label>
+            </a>
+        </div>
+
+
+         <div class="manage_qualification">
+            <a href="/admin/bnmc_project/qualification/">
+                <img src="{% static '/admin/img/license_exem_icone.png' %}" class="manage_qualification_bnmc" href="{% url 'admin:index' %}"/>
+                <label CLASS="exam_qualification">MANAGE QUALIFICATION </label>
+            </a>
+        </div>
+
+
+          <div class="manage_guirdian_relations">
+            <a href="/admin/bnmc_project/relation_to_guardians/">
+                <img src="{% static '/admin/img/user_manage.png' %}" class="manage_grdian_relation_bnmc" href="{% url 'admin:index' %}"/>
+                <label CLASS="relation_to_guirdian">MANAGE RELATION TO GUARDIANS </label>
+            </a>
+        </div>
+
+
+
+         <div class="manage_quota">
+            <a href="/admin/bnmc_project/quota/">
+                <img src="{% static '/admin/img/program_icon.png' %}" class="manage_quota_bnmc" href="{% url 'admin:index' %}"/>
+                <label CLASS="quota">MANAGE QUOTA </label>
+            </a>
+        </div>
+
+
+         <div class="manage_nationality">
+            <a href="/admin/bnmc_project/nationality/">
+                <img src="{% static '/admin/img/institution.png' %}" class="manage_nationality_bnmc" href="{% url 'admin:index' %}"/>
+                <label CLASS="exam_qualification">MANAGE NATIONALITY </label>
+            </a>
+        </div>
+
+
+
+          <div class="notification">
+            <a href="/admin/send_notification/">
+            <img src="{% static '/admin/img/chat.png' %}" class="settings_bnmc" href="{% url 'admin:index' %}"/>
+            <label>Send Notification</label>
+            </a>
+        </div>
+
+
+
+          <div class="migrate">
+            <a href="/admin/bnmc_project/student_registration?migration=True">
+            <img src="{% static '/admin/img/mi.png' %}" class="mi" href="{% url 'admin:index' %}"/>
+            <label>Migration</label>
+            </a>
+        </div>
+
+
+        <!--<div class="migrate">-->
+            <!--<a href="/admin/bnmc_project/license_registrations/?approved=True">-->
+            <!--<img src="{% static '/admin/img/mi.png' %}" class="mi" href="{% url 'admin:index' %}"/>-->
+            <!--<label>Migration</label>-->
+            <!--</a>-->
+        <!--</div>-->
+
+    </div>
+
+
+
+
+
+
+
+{% endblock %}
+
+
+</body>

@@ -1,0 +1,522 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_urls static admin_modify %}
+
+{% block extrahead %}{{ block.super }}
+<script type="text/javascript" src="{% url 'admin:jsi18n' %}"></script>
+{{ media }}
+{% endblock %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/forms.css" %}" />
+<link rel="stylesheet" type="text/css" href="{% static "admin/css/exam_student.css" %}" />
+
+{% endblock %}
+
+{% block coltype %}colM{% endblock %}
+
+{% block bodyclass %}{{ block.super }} app-{{ opts.app_label }} model-{{ opts.model_name }} change-form{% endblock %}
+
+{% if not is_popup %}
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+<a href="{% url 'admin:index' %}">{% trans 'HOME' %}</a>
+    <a href="/admin/settings/"> › SETTINGS</a>
+
+<!--&rsaquo; <a href="{% url 'admin:app_list' app_label=opts.app_label %}">{{ opts.app_config.verbose_name }}</a>-->
+&rsaquo; {% if has_change_permission %}<a href="{% url opts|admin_urlname:'changelist' %}">{{ opts.verbose_name_plural|capfirst }}</a>{% else %}{{ opts.verbose_name_plural|capfirst }}{% endif %}
+&rsaquo; {% if add %}{% blocktrans with name=opts.verbose_name %}ADD {{ name }}{% endblocktrans %}{% else %}{{ original|truncatewords:"18" }}{% endif %}
+</div>
+{% endblock %}
+{% endif %}
+
+{% block content %}<div id="content-main">
+{% block object-tools %}
+{% if change %}{% if not is_popup %}
+  <ul class="object-tools">
+    {% block object-tools-items %}
+    <li>
+        <li>{% for p in user.staff_status.all %}
+            <button type="submit" id="approvalBtn" onclick="myFunction()" class="bubbly-button" value="{{p.id}}">{{p.permission_name}}</button>
+            {% endfor %}
+        </li>
+        {% url opts|admin_urlname:'history' original.pk|admin_urlquote as history_url %}
+        <a href="{% add_preserved_filters history_url %}" class="historylink">{% trans "History" %}</a>
+    </li>
+    {% if has_absolute_url %}<li><a href="{{ absolute_url }}" class="viewsitelink">{% trans "View on site" %}</a></li>{% endif %}
+    {% endblock %}
+  </ul>
+{% endif %}{% endif %}
+{% endblock %}
+<form {% if has_file_field %}enctype="multipart/form-data" {% endif %}action="{{ form_url }}" method="post" id="{{ opts.model_name }}_form" novalidate>{% csrf_token %}{% block form_top %}{% endblock %}
+<div>
+{% if is_popup %}<input type="hidden" name="{{ is_popup_var }}" value="1" />{% endif %}
+{% if to_field %}<input type="hidden" name="{{ to_field_var }}" value="{{ to_field }}" />{% endif %}
+{% if save_on_top %}{% block submit_buttons_top %}{% submit_row %}{% endblock %}{% endif %}
+{% if errors %}
+    <p class="errornote">
+    {% if errors|length == 1 %}{% trans "Please correct the error below." %}{% else %}{% trans "Please correct the errors below." %}{% endif %}
+    </p>
+    {{ adminform.form.non_field_errors }}
+{% endif %}
+
+{% block field_sets %}
+{% for fieldset in adminform %}
+  {% include "admin/includes/fieldset.html" %}
+{% endfor %}
+{% endblock %}
+
+{% block after_field_sets %}{% endblock %}
+
+{% block inline_field_sets %}
+{% for inline_admin_formset in inline_admin_formsets %}
+    {% include inline_admin_formset.opts.template %}
+{% endfor %}
+{% endblock %}
+
+{% block after_related_objects %}{% endblock %}
+
+{% block submit_buttons_bottom %}{% submit_row %}{% endblock %}
+
+{% block admin_change_form_document_ready %}
+    <script type="text/javascript"
+            id="django-admin-form-add-constants"
+            src="{% static 'admin/js/change_form.js' %}"
+            {% if adminform and add %}
+                data-model-name="{{ opts.model_name }}"
+            {% endif %}>
+    </script>
+ <input id="student" type="hidden" value="{{request.GET.student_registration}}">
+    <input id="prog_id" type="hidden" value="{{request.GET.program}}">
+
+
+    {% if not user.is_superuser %}
+<script>
+ $('#id_publish_result').attr("disabled", true);
+
+
+
+
+</script>
+<style>
+    #id_publish_result{
+    display: none;
+    }
+
+
+</style>
+
+
+
+{% endif %}
+
+    <script>
+
+    {%if not original.id%}
+     $('#id_subjects option').prop("hidden", true);
+     $('#examinationstudentregistration_form').attr( 'target', '_blank' );
+{% endif %}
+
+    document.getElementById('id_fathers_name').readOnly = true;
+    document.getElementById('id_mothers_name').readOnly = true;
+    document.getElementById('id_post_office').readOnly = true;
+    document.getElementById('id_village').readOnly = true;
+    document.getElementById('id_roll_number').readOnly = true;
+    document.getElementById('id_student_id').readOnly = true;
+    document.getElementById('id_last_name').readOnly = true;
+
+
+
+
+
+    $('#id_program').prop('disabled', true);
+    $('#id_institute').prop('disabled', true);
+
+    $('#id_division').prop('disabled', true);
+    $('#id_district').prop('disabled', true);
+    $('#id_thana').prop('disabled', true);
+
+
+
+    $('#id_subjects option').prop("hidden", true);
+
+    {%if original.id%}
+
+        var list_of_selected=[]
+       var values = $('#id_subjects').val();
+
+
+        $.each($("#id_subjects option:selected"), function(){
+            list_of_selected.push($(this).val());
+
+
+
+
+        });
+
+         for (var i = 0; i < list_of_selected.length; i++)
+                        {
+
+
+                                $('#id_subjects option[value='+list_of_selected[i]+']').prop("hidden", false);
+                        }
+
+
+
+        $(".bubbly-button").click(function()
+    {
+            var permission_id = $(this).val();
+
+                $.ajax({
+                    type: "POST",
+                    url: "/changeStatus_exam/",
+                    dataType: "json",
+                    data: { "permissionId": permission_id, "stdId":{{ original.id }}, 'csrfmiddlewaretoken': '{{ csrf_token }}' },
+                    success: function (data)
+
+
+                    {
+
+                       location.reload();
+
+                    }
+                });
+    })
+{% endif %}
+
+    $('#id_year option').prop("hidden", true);
+    var pro_id = $('#id_program').val()
+
+
+            if (pro_id != ''){
+
+
+              $.ajax({
+                type: "POST",
+                url: "/get_years/",
+                dataType: "json",
+                data: { "program_id": pro_id, 'csrfmiddlewaretoken': '{{ csrf_token }}' },
+                success: function (data)
+                {
+
+
+                    for (var i = 0; i < data.length; i++)
+                    {
+
+                            $('#id_year option[value='+data[i]+']').prop("hidden", false);
+                    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+                }
+            });
+
+
+
+
+
+
+               $( "#id_year" ).change(function() {
+               var e = document.getElementById("id_year");
+                var selectedEquipmentDropdown = e.options[e.selectedIndex].value;//change it here
+
+
+                 $('#id_subjects option').prop("hidden", true);
+                $.ajax({
+                type: "POST",
+                url: "/get_subjects/",
+                dataType: "json",
+                data: { "year_id": selectedEquipmentDropdown, 'csrfmiddlewaretoken': '{{ csrf_token }}' },
+                success: function (data)
+                {
+
+                    for (var i = 0; i < data.length; i++)
+                    {
+                            $('#id_subjects option[value='+data[i]+']').prop("hidden", false);
+                    }
+
+
+
+
+                    if (data == 'false'){
+
+                     $('#id_subjects option').prop("hidden", true);
+                    }
+
+
+
+
+
+
+
+
+                }
+            });
+
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+            }
+
+
+
+
+    $( "#examinationstudentregistration_form" ).submit(function( event ) {
+    $('#id_program').prop('disabled', false);
+    $('#id_institute').prop('disabled', false);
+
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+{% endblock %}
+
+{# JavaScript for prepopulated fields #}
+{% prepopulated_fields_js %}
+
+
+    {% if user.is_superuser %}
+
+
+    <input onclick="click_function()" type="button"name="static_no" id="static_no" value="Set Roll"></input>
+
+
+       <script>
+
+
+
+    function click_function() {
+
+                if (confirm("ARE YOU SURE SET STATIC ROLL") == true) {
+              $('.field-roll_number').attr('style', 'display: inline-block !important');
+              document.getElementById("id_roll_number").removeAttribute("readonly");
+          }
+           else {
+            return false;
+          }
+
+
+    }
+    </script>
+
+
+    {% endif %}
+
+
+    <script>
+
+
+            click=''
+            var container = document.createElement('div');
+            container.id = "wrapper";
+
+
+            $('.field-subjects').append(container);
+            var html="<input type='checkbox' id='check'><span>Select all</span>"
+            $('#wrapper').append(html)
+
+            $(document).ready(function ()
+                {
+                    $(document).on('change', 'input[Id="check"]', function (e)
+                    {
+                    var x = document.querySelectorAll("#id_subjects option");
+                        if  ($(this).prop("checked") == true){
+
+
+
+
+
+                        if (click == true){
+
+                            $('#id_subjects').empty()
+
+                            for (k=0; k < x.length;k++){
+
+
+
+                            var hidden_val = x[k].getAttribute('hidden')
+                            <!--var selected = x[k].getAttribute('selected')-->
+                            var val = x[k].getAttribute('value')
+
+                            if (hidden_val == false){
+                            hidden_val='hidden'
+                            selected=''
+                            }
+                            else{
+                            hidden_val=''
+
+                            selected='selected'
+                            }
+
+
+
+
+
+                             $('#id_subjects').append('<option '+ selected+' value='+'"'+val+'" '+hidden_val+' '+selected+'>'+x[k].text+'</option>')
+
+
+                            }
+
+                        }
+
+                        else{
+                         for (i = 0; i < x.length; i++) {
+
+
+                          var hidden=x[i].hasAttribute('hidden')
+                          if (hidden == false){
+
+
+
+                          x[i].setAttribute('selected','')
+
+                          }
+                        }
+
+
+
+
+                        }
+
+                        }
+
+
+                        else if($(this).prop("checked") == false)
+                        {
+
+
+                         for (i = 0; i < x.length; i++) {
+
+
+                          var hidden=x[i].hasAttribute('hidden')
+                          if (hidden == false){
+
+
+
+                          x[i].removeAttribute( "selected" )
+
+                          }
+
+
+
+                        }
+
+                        }
+                    });
+                });
+
+
+
+
+$('#id_subjects').on('change', function() {
+
+    click=true
+});
+
+
+    </script>
+
+</div>
+
+    <style>
+
+        fieldset.module.aligned a {
+    display: none;
+}
+
+fieldset.module.aligned select {
+    width: 330px;
+}
+
+fieldset.module.aligned input {
+    width: 320px !important;
+}
+
+
+fieldset.module.aligned .form-row {
+    display: inline-block;
+    width: 40%;
+    padding-left: 8%;
+}
+
+.form-row .readonly {
+    width: 330px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+
+.form-row.field-student_registration{
+ display: none !important;
+
+}
+
+.form-row.field-approved{
+display: none !important;
+}
+
+.form-row.field-roll_number{
+display: none !important;
+}
+
+div#wrapper input {
+    float: left;
+    width: 27px !important;
+    zoom: 1.4;
+    margin-top: 7px;
+}
+
+
+.form-row.field-subjects {
+    position: relative;
+    width: 43% !important;
+}
+
+div#wrapper {
+    position: absolute;
+    top: 0;
+    right: 19px;
+}
+
+div#wrapper span {
+    margin-top: 7px;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #999;
+}
+    </style>
+
+
+</form></div>
+{% endblock %}

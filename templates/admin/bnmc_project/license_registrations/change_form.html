@@ -1,0 +1,368 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_urls static admin_modify %}
+
+{% block extrahead %}{{ block.super }}
+<script type="text/javascript" src="{% url 'admin:jsi18n' %}"></script>
+
+
+
+
+{{ media }}
+{% endblock %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/forms.css" %}" />
+<link rel="stylesheet" type="text/css" href="{% static "admin/css/license_recieve.css" %}" />
+
+{% endblock %}
+
+{% block coltype %}colM{% endblock %}
+
+{% block bodyclass %}{{ block.super }} app-{{ opts.app_label }} model-{{ opts.model_name }} change-form{% endblock %}
+
+{% if not is_popup %}
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+<a href="{% url 'admin:index' %}">{% trans 'HOME' %}</a>
+     <a href="/admin/registration/"> › REGISTRATION</a>
+    <a href="/admin/registation_panel/?type=exams"> › LICENSE REGISTRATION</a>
+<!--&rsaquo; <a href="{% url 'admin:app_list' app_label=opts.app_label %}">{{ opts.app_config.verbose_name }}</a>-->
+&rsaquo; {% if has_change_permission %}<a href="{% url opts|admin_urlname:'changelist' %}">{{ opts.verbose_name_plural|capfirst }}</a>{% else %}{{ opts.verbose_name_plural|capfirst }}{% endif %}
+&rsaquo; {% if add %}{% blocktrans with name=opts.verbose_name %}ADD {{ name }}{% endblocktrans %}{% else %}{{ original|truncatewords:"18" }}{% endif %}
+</div>
+{% endblock %}
+{% endif %}
+
+{% block content %}<div id="content-main">
+
+        <div class="serch_main">
+          <!--<input type="search" value="{{request.GET.registration_no}}" placeholder="Enter ID" class="search_stu">-->
+      </div>
+
+
+{% block object-tools %}
+{% if change %}{% if not is_popup %}
+  <ul class="object-tools">
+    {% block object-tools-items %}
+
+
+
+        <h1 class="status">{{user.show_permission}}</h1>
+        <li>{% for p in user.staff_status.all %}
+            <button type="submit" id="approvalBtn" class="bubbly-button" value="{{p.id}}">{{p.permission_name}}</button>
+            {% endfor %}
+        </li>
+      <!--{% for p in user.show_permission.Permission.all%}-->
+           <!--<li>p</li><button id="approvalBtn" value="{{user.p.id_no}}-{{ original.id }}">{{user.show_permission}}</button>-->
+      <!--{% endfor %}-->
+
+
+
+
+
+
+
+
+
+        {% url opts|admin_urlname:'history' original.pk|admin_urlquote as history_url %}
+        <a href="{% add_preserved_filters history_url %}" class="historylink">{% trans "History" %}</a>
+    </li>
+    {% if has_absolute_url %}<li><a href="{{ absolute_url }}" class="viewsitelink">{% trans "View on site" %}</a></li>{% endif %}
+    {% endblock %}
+  </ul>
+{% endif %}{% endif %}
+{% endblock %}
+<form {% if has_file_field %}enctype="multipart/form-data" {% endif %}action="{{ form_url }}"  method="post" id="{{ opts.model_name }}_form"  novalidate>{% csrf_token %}{% block form_top %}{% endblock %}
+<div>
+
+
+
+{% if is_popup %}<input type="hidden" name="{{ is_popup_var }}" value="1" />{% endif %}
+{% if to_field %}<input type="hidden" name="{{ to_field_var }}" value="{{ to_field }}" />{% endif %}
+{% if save_on_top %}{% block submit_buttons_top %}{% submit_row %}{% endblock %}{% endif %}
+{% if errors %}
+    <p class="errornote">
+    {% if errors|length == 1 %}{% trans "Please correct the error below." %}{% else %}{% trans "Please correct the errors below." %}{% endif %}
+    </p>
+    {{ adminform.form.non_field_errors }}
+{% endif %}
+
+{% block field_sets %}
+{% for fieldset in adminform %}
+  {% include "admin/includes/fieldset.html" %}
+
+
+{% endfor %}
+
+{% endblock %}
+
+{% block after_field_sets %}{% endblock %}
+
+{% block inline_field_sets %}
+{% for inline_admin_formset in inline_admin_formsets %}
+    {% include inline_admin_formset.opts.template %}
+{% endfor %}
+
+{% endblock %}
+
+
+
+
+
+{% block after_related_objects %}{% endblock %}
+
+{% block submit_buttons_bottom %}{% submit_row %}{% endblock %}
+
+{% block admin_change_form_document_ready %}
+    <script type="text/javascript"
+            id="django-admin-form-add-constants"
+            src="{% static 'admin/js/change_form.js' %}"
+            {% if adminform and add %}
+                data-model-name="{{ opts.model_name }}"
+            {% endif %}>
+    </script>
+
+<script>
+
+
+
+</script>
+    <script type="text/javascript">//<![CDATA[
+    $(function(){
+            $('img').on('error', function () {
+            $(this).remove();
+        })
+     });//]]>
+</script>
+
+
+    <script>
+     {%if not original.id%}
+          $('#license_registrations_form').attr( 'target', '_blank' );
+        {%endif%}
+    {%if original.id%}
+
+
+
+    $(".bubbly-button").click(function()
+    {
+            var permission_id = $(this).val();
+                $.ajax({
+                    type: "POST",
+                    url: "/changeStatus_li/",
+                    dataType: "json",
+                    data: { "permissionId": permission_id, "stdId":{{ original.id }}, 'csrfmiddlewaretoken': '{{ csrf_token }}' },
+
+                    success: function (data)
+                    {
+                       location.reload();
+                    }
+                });
+    })
+
+{%endif%}
+
+
+
+
+
+
+    <!--$(".search_stu").keyup(function (e)-->
+    <!--{-->
+
+
+        <!--{% if request.GET.registration_no %}-->
+            <!--var registation_number = "{{request.GET.registration_no}}"-->
+            <!--$.ajax({-->
+                <!--type: "POST",-->
+                <!--url: "/get_std_lisence/",-->
+                <!--dataType: "json",-->
+                <!--data: { "registation_number": registation_number,  'csrfmiddlewaretoken': '{{ csrf_token }}', },-->
+                <!--success: function (data)-->
+                <!--{-->
+                <!--if(data[0]==true)-->
+                <!--{-->
+
+                    <!--$("#id_registration_no").val(data[1]);-->
+                    <!--$("#id_last_name").val(data[2]);-->
+                    <!--$("#id_fathers_name").val(data[3]);-->
+                    <!--$("#id_mothers_name").val(data[4]);-->
+                    <!--$("#id_students_mobile_no").val(data[5]);-->
+                    <!--$("#id_sex").val(data[6]);-->
+                    <!--$("#id_religions").val(data[7]);-->
+                    <!--$("#id_nationality").val(data[8]);-->
+                    <!--$("#id_division").val(data[9]).delay(1000);-->
+                    <!--$("#id_division").trigger('change');-->
+
+
+                     <!--setTimeout(-->
+                      <!--function()-->
+                      <!--{-->
+                        <!--$("#id_district").val(data[10]);-->
+                        <!--$("#id_district").trigger('change');-->
+                        <!--$("#id_thana").val(data[11]);-->
+                        <!--$("#id_thana").trigger('change');-->
+                      <!--}, 1000);-->
+
+                    <!--setTimeout(-->
+                      <!--function()-->
+                      <!--{-->
+                        <!--$("#id_thana").val(data[11]);-->
+                        <!--$("#id_thana").trigger('change');-->
+                      <!--}, 2000);-->
+
+                    <!--$("#id_village").val(data[12]);-->
+                    <!--$("#id_post_office").val(data[13]);-->
+                    <!--$("#id_postal_code").val(data[14]);-->
+                    <!--$(".field-image_li").append("<img src=/media/"+data[15]+">")-->
+                    <!--$("#id_image_field").val(data[16]);-->
+
+                     <!--var evt = document.createEvent("HTMLEvents");-->
+                     <!--evt.initEvent("change", false, true);-->
+                 if(location.search.indexOf("image_field")<0)
+                {
+                    if(location.search.indexOf("?")<0)
+                    {
+                        window.history.pushState("", "", window.location.href +  "?image_field="+data[15]);
+                    }
+                    else
+                    {
+                        window.history.pushState("", "", window.location.href +  "&image_field="+data[15]);
+                    }
+                }
+
+                 }
+
+                else{
+
+                }
+                }
+            });
+{% endif %}
+
+
+
+
+
+
+
+ <!--$(window).load(function()-->
+ <!--{-->
+    <!--setTimeout(function(){-->
+       <!--$("#id_thana").val($("#id_thana").attr("data-value"));-->
+    <!--}, 1000);-->
+<!--});-->
+
+
+
+
+
+
+
+ $(document).ready(function () {
+            if(window.location.href.indexOf("change") > -1)
+            {
+                 $('.field-image_sec').css("margin-top", "-64px");
+            }
+
+
+
+        });
+
+
+</script>
+
+
+
+
+
+
+
+
+        <script>
+
+
+
+$(document).ready(function() {
+document.getElementById('id_last_name').setAttribute("readonly", "readonly");
+document.getElementById('id_image').setAttribute("readonly", "readonly");
+document.getElementById('id_registration_no').setAttribute("readonly", "readonly");
+document.getElementById('id_fathers_name').setAttribute("readonly", "readonly");
+document.getElementById('id_mothers_name').setAttribute("readonly", "readonly");
+document.getElementById('id_village').setAttribute("readonly", "readonly");
+document.getElementById('id_post_office').setAttribute("readonly", "readonly");
+document.getElementById('id_postal_code').setAttribute("readonly", "readonly");
+document.getElementById('id_postal_code').setAttribute("readonly", "readonly");
+$('#id_nationality').css("pointer-events", "none");
+$('#id_centre').css("pointer-events", "none");
+$('#id_sex').css("pointer-events", "none");
+$('#id_religions').css("pointer-events", "none");
+$('#id_division').css("pointer-events", "none");
+$('#id_district').css("pointer-events", "none");
+$('#id_thana').css("pointer-events", "none");
+$('#id_session').css("pointer-events", "none");
+$('#id_institution').css("pointer-events", "none");
+});
+
+
+
+
+$(function() {
+    $( "#id_date_of_passing_on" ).datepicker({
+        yearRange: "1900:2050",
+        changeYear: true,
+        changeMonth: true,
+
+
+      // You can put more options here.
+
+    });
+  });
+
+
+    </script>
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+{# JavaScript for prepopulated fields #}
+{% prepopulated_fields_js %}
+{% if user.is_superuser %}
+
+
+    <input onclick="myFunction()" type="button"name="static_no" id="static_no" value="Set Roll"></input>
+
+
+       <script>
+
+    function myFunction() {
+
+                if (confirm("ARE YOU SURE SET STATIC ROLL") == true) {
+              $('.field-rool_number').css("display", "block");
+              document.getElementById("id_rool_number").removeAttribute("readonly");
+          }
+           else {
+            return false;
+          }
+
+
+    }
+    </script>
+
+
+    {% endif %}
+
+
+
+
+
+
+</div>
+</form></div>
+{% endblock %}

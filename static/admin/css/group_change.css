@@ -1,0 +1,60 @@
+.dashbord_in {
+    display: none;
+}
+
+.content_body {
+    margin-top: 4%;
+}
+
+#content {
+    width: 900px;
+    margin: auto;
+    background-color: #eee;
+}
+
+.actions {
+    background-color: #eee !important;
+}
+
+ul.object-tools {
+    margin-top: 1%;
+    z-index: 1000;
+}
+
+form#changelist-form {
+    background-color: #eee !important;
+}
+
+a.addlink {
+    border-radius: 0;
+}
+
+.row1 {
+    background-color: #eee;
+}
+
+.paginator {
+    background-color: #eee !important;
+}
+
+.app-auth.model-group.change-form .content_body {
+    margin-top: 1%;
+}
+
+.submit-row {
+    background-color: #eee;
+    padding: 0;
+}
+
+.selector h2 {
+    background-color: #119146 !important;
+    color: #fff !important;
+}
+
+.form-row.field-name {
+    background-color: #eee;
+}
+
+.form-row.field-permissions {
+    background-color: #eee;
+}

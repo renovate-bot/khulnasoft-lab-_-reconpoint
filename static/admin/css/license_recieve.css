@@ -1,0 +1,768 @@
+form#license_registrations_form {
+    width: 1290px;
+    margin: auto;
+}
+
+fieldset.module.aligned {
+    background-color: #eee;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+fieldset.module.aligned input {
+    height: 24px;
+    width: 300px;
+}
+
+.form-row input {
+    border-radius: 4px !important;
+}
+
+form#license_registration_form input, select {
+    border-radius: 0;
+}
+.form-row.field-image_sec {
+    width: 37%;
+    padding: 0;
+    float: right;
+    margin-top: -40px;
+}
+.form-row.field-image {
+    width: 37%;
+    display: block;
+}
+.form-row.field-image_second {
+    margin-right: 11%;
+    position: relative;
+    float: right;
+}
+
+
+.form-row.field-image_li {
+    position: relative;
+    display: inline-block;
+}
+
+.form-row.field-session {
+    width: 30%;
+    display: inline-block;
+    height: 70px;
+}
+
+.form-row.field-session label {
+    display: block;
+    float: left;
+    width: 100%;
+    text-align: center;
+        margin-bottom: 10px;
+}
+
+.form-row.field-registration_no {
+width: 34%;
+    display: inline-block;
+    height: 70px;
+}
+
+.form-row.field-centre {
+    width: 30%;
+    display: inline-block;
+    height: 70px;
+}
+
+.form-row.field-last_name {
+    width: 46%;
+    display: inline-block;
+}
+
+.form-row.field-sex {
+    width: 46%;
+    display: inline-block;
+}
+
+.form-row.field-fathers_name {
+    width: 46%;
+    display: inline-block;
+}
+
+.form-row.field-religions {
+    width: 46%;
+    display: inline-block;
+}
+
+.form-row.field-mothers_name {
+    width: 46%;
+    display: inline-block;
+}
+
+.form-row.field-nationality {
+    width: 46%;
+    display: inline-block;
+}
+
+.form-row.field-students_mobile_no {
+width: 57%;
+    padding-right: 0;
+}
+
+.form-row.field-division {
+    width: 46%;
+    display: inline-block;
+}
+.form-row.field-village {
+    width: 46%;
+    display: inline-block;
+}
+
+.form-row.field-district {
+    width: 46%;
+    display: inline-block;
+}
+
+.form-row.field-post_office {
+    width: 46%;
+    display: inline-block;
+}
+
+.form-row.field-thana {
+    width: 46%;
+    display: inline-block;
+}
+
+.form-row.field-postal_code {
+    width: 46%;
+    display: inline-block;
+}
+
+
+.form-row.field-program_title {
+    width: 46%;
+    display: inline-block;
+}
+
+.form-row.field-institution {
+
+    width: 46%;
+    display: inline-block;
+    margin-left: 2.5%;
+
+}
+.form-row.field-signature_first {
+    width: 46%;
+    display: inline-block;
+}
+.form-row.field-signature_sec {
+    width: 46%;
+    display: inline-block;
+    padding: 0;
+    float: right;
+}
+
+
+
+
+span.date-icon {
+    display: none !important;
+}
+
+.form-row.field-date_of_passing_on {
+    width: 40%;
+    margin: auto;
+height: 160px;
+    position: relative;
+    padding: 0;
+}
+span.timezonewarning {
+    display: none;
+}
+
+.form-row.field-date_of_passing_on label {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+span.datetimeshortcuts {
+    display: none;
+}
+
+input#id_date_of_passing_on {
+    display: block;
+    margin: auto;
+}
+
+.form-row.field-registration_no label {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+input#id_registration_no {
+    display: block;
+    margin: auto;
+}
+
+select#id_session {
+    width: 300px;
+    height: 34px;
+    border-radius: 4px;
+    display: block;
+    margin: auto;
+}
+
+.form-row.field-session div {
+    width: 100%;
+}
+
+.form-row.field-centre div {
+    width: 100%;
+}
+
+.form-row.field-centre label {
+    display: block;
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+select#id_centre {
+    width: 300px;
+    height: 34px;
+    border-radius: 4px;
+    display: block;
+    margin: auto;
+}
+
+.form-row.field-date_of_passing_on:after {
+    content: "Personal information";
+    left: 29%;
+    position: absolute;
+    font-size: 22px;
+    bottom: 13%;
+    background-color: #119146;
+    padding: 3px;
+    color: #fff;
+    box-shadow: 0 8px 6px -6px black;
+}
+
+
+.form-row.field-postal_code {
+    margin-left: 2%;
+}
+
+.form-row.field-thana {
+    margin-left: 2%;
+}
+
+.form-row.field-post_office {
+    margin-left: 2%;
+}
+
+.form-row.field-district {
+    margin-left: 2%;
+}
+
+.form-row.field-village {
+    margin-left: 2%;
+}
+
+.form-row.field-division {
+    margin-left: 2%;
+}
+
+.form-row.field-students_mobile_no {
+    margin-left: 2%;
+    width: 46%;
+    display: inline-block;
+}
+
+.form-row.field-nationality {
+    margin-left: 2%;
+}
+
+.form-row.field-mothers_name {
+    margin-left: 2%;
+}
+.form-row.field-religions {
+    margin-left: 2%;
+}
+
+
+.form-row.field-fathers_name {
+    margin-left: 2%;
+}
+
+.form-row.field-sex {
+    margin-left: 2%;
+}
+
+.form-row.field-last_name {
+    margin-left: 2%;
+}
+
+fieldset.module.aligned select {
+    width: 312px;
+    height: 36px;
+    border-radius: 4px;
+}
+
+.form-row.field-image label {
+
+}
+
+.form-row.field-image_tag_li {
+    background-image: url(/static/admin/img/sig.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.form-row.field-image_tag_li {
+    width: 20%;
+    margin-top: 15px;
+    margin-left: 6%;
+    height: 60px;
+    padding: 0;
+}
+
+.form-row.field-image_tag_li label {
+    display: none;
+}
+
+.form-row.field-image_tag_lis label {
+    display: none;
+}
+
+.form-row.field-image_tag_lis {
+    width: 20%;
+    margin-top: 15px;
+    margin-left: 6%;
+    height: 60px;
+    padding: 0;
+}
+
+.form-row.field-image_tag_lis {
+    background-image: url(/static/admin/img/sig.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+input#image-clear_id {
+    display: inline-block;
+    float: left;
+    width: 10%;
+}
+
+input#image_sec-clear_id {
+    display: inline-block;
+    float: left;
+    width: 5%;
+}
+
+img.bnc_s1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.form-row.field-image_tag_li {
+    position: relative;
+    display: inline-block;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 0 10px 6px -6px #777;
+}
+img.bnc_s2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.form-row.field-image_tag_lis {
+    position: relative;
+}
+
+.form-row.field-image_tag_lis {
+    margin-right: 11%;
+    position: relative;
+    float: right;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 0 10px 6px -6px #777;
+}
+input#signature_first-clear_id {
+    display: inline-block;
+    float: left;
+    width: 4%;
+}
+
+p.file-upload a {
+    display: none;
+}
+input#signature_sec-clear_id{
+
+    display: inline-block;
+    float: left;
+    width: 4%;
+}
+
+.form-row.field-image_li {
+    height: 130px;
+    width: 130px;
+    margin-top: 15px !important;
+    background-image: url(/static/admin/img/Facebook-no-profile-picture-icon-620x389.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 0;
+}
+
+.form-row.field-image_second {
+    height: 130px;
+    width: 130px;
+    margin-top: 15px !important;
+    display: block;
+    background-image: url(/static/admin/img/Facebook-no-profile-picture-icon-620x389.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 0;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 0 10px 6px -6px #777;
+}
+
+img.bc_im_sec {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 130px;
+    height: 130px;
+}
+
+img.bc_im {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 130px;
+    height: 130px;
+}
+
+.form-row.field-image_li img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 130px;
+    height: 130px;
+}
+
+.form-row.field-image_li {
+    margin-left: 9%;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 0 10px 6px -6px #777;
+}
+.form-row.field-image label {
+    width: 83px;
+}
+
+.form-row.field-image_sec label {
+    text-align: right;
+}
+
+.form-row.field-image_li label {
+    display: none;
+}
+
+.form-row.field-image_second label {
+    display: none;
+}
+ul.errorlist {
+    background-color: #eee;
+}
+
+.form-row.errors.field-session {
+    height: 100px;
+}
+
+.form-row.errors.field-centre {
+    height: 100px;
+}
+
+.form-row.errors.field-session a {
+    display: none;
+}
+
+.form-row.errors.field-centre a {
+    display: none;
+}
+
+.serch_main {
+    width: 400px;
+    display: block;
+    height: 50px;
+}
+
+input.search_stu {
+    width: 300px;
+    height: 35px;
+}
+
+.form-row.field-image_field {
+    display: none;
+}
+
+
+
+.form-row.field-program_title {
+    display: none;
+}
+
+.form-row.field-principal_signature {
+    width: 48%;
+    display: inline-block;
+}
+
+.form-row.field-principal_signature label {
+    text-align: center;
+    width: 100%;
+    text-indent: 163px;
+}
+
+
+
+
+.form-row.field-program {
+    display: none;
+}
+
+
+.form-row.field-student_registration {
+    display: none;
+}
+
+.form-row.field-approved {
+    display: none;
+}
+
+.form-row.field-received_filter {
+    display: none;
+}
+
+div#job_history_set-group h2 {
+    text-align: center;
+    width: 20%;
+    display: block;
+    margin: auto;
+    height: 24px;
+    padding-top: 0;
+    margin-top: 10px;
+    font-size: 17px;
+    background-color: #119146;
+    padding: 3px;
+    color: #fff;
+    box-shadow: 0 8px 6px -6px black;
+}
+
+.form-row.field-pass_mark {
+    margin-left: 2%;
+}
+
+.form-row.field-hall_name {
+    margin-left: 2%;
+}
+
+.form-row.field-rool_number {
+    margin-left: 2%;
+}
+
+.form-row.field-room_name {
+    margin-left: 2%;
+}
+
+.add-related, .change-related {
+    display: none;
+}
+
+
+div#job_history_set-group table {
+    margin-top: 10px;
+}
+
+
+.module tr {
+
+    background-color: #eee;
+
+}
+
+.inline-group .tabular fieldset.module {
+
+    background-color: #eee;
+
+}
+
+
+input#id_image_sec {
+    width: 250px;
+}
+
+.errorlist {
+
+    margin: 0 !important;
+    display: none;
+
+}
+
+.form-row.field-image_tag_lis img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.form-row.field-pass_mark {
+    display: none;
+}
+
+
+
+div#job_history_set-group{
+
+
+display: none;
+}
+
+
+p.file-upload {
+    margin-left: 0 !important;
+}
+
+
+
+.form-row.field-exam_title {
+    width: 30%;
+    display: inline-block;
+    height: 70px;
+}
+
+.form-row.field-exam_title label {
+
+    display: block;
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+
+}
+
+
+.form-row.field-exam_title div {
+
+    width: 100%;
+
+}
+
+
+#id_exam_title {
+    width: 300px;
+    height: 34px;
+    border-radius: 4px;
+    display: block;
+    margin: auto;
+}
+.form-row.field-centre {
+    display: none;
+}
+
+
+.form-row.field-text_field div {
+
+    display: none;
+
+}
+
+.form-row.field-text_field {
+
+    width: 40%;
+    margin: auto;
+    height: 50px;
+    position: relative;
+    padding: 0;
+
+}
+
+
+.form-row.field-text_field::after {
+
+    content: "Permanent Address";
+    left: 29%;
+    position: absolute;
+    font-size: 22px;
+    bottom: 13%;
+    background-color: #119146;
+    padding: 3px;
+    color: #fff;
+    box-shadow: 0 8px 6px -6px black;
+
+}
+
+
+.form-row.field-room_name {
+
+    display: none;
+
+}
+
+.form-row.field-rool_number {
+
+    display: none;
+
+}
+
+.form-row.field-hall_name {
+
+    display: none;
+
+}
+
+
+.form-row.field-students_mobile_no::before {
+    float: right;
+    margin-right: 16%;
+    color: red;
+    font-size: 23px;
+    margin-top: -2px;
+    content: "*";
+}
+
+
+.form-row.field-students_mobile_no input{
+background-color: #eef9f1;
+
+}
+
+.signature {
+    display: block;
+    margin-top: 52%;
+}
+
+
+
+
+

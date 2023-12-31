@@ -1,0 +1,652 @@
+#content {
+    width: 1200px;
+    margin: auto;
+    background-color: #eee;
+}
+
+ul.object-tools {
+    margin-top: 1%;
+    z-index: 1000;
+}
+
+a.addlink {
+    border-radius: 0;
+}
+
+.actions {
+    background-color: #eee !important;
+}
+
+tr.row1 {
+    background-color: #eee;
+}
+
+#result_list tr {
+    background-color: #eee;
+}
+
+p.paginator {
+    background-color: #eee !important;
+}
+
+#changelist table tbody tr.selected {
+    background-color: #fff !important;
+}
+
+
+.form-row.field-minimum_qualification {
+    width: 100%;
+    display: block;
+    background-color: #eee;
+}
+
+
+.form-row.field-name input {
+    width: 300px;
+    height: 26px;
+}
+
+.submit-row {
+    background-color: #eee;
+}
+
+.form-row.field-relation {
+    background-color: #eee;
+}
+
+.form-row.field-quota_name {
+    background-color: #eee;
+}
+
+.form-row.field-nationality_name {
+    background-color: #eee;
+}
+
+.form-row {
+    background-color: #eee;
+}
+
+fieldset.module.aligned input {
+    height: 24px;
+    width: 300px;
+}
+
+.form-row select {
+    width: 314px;
+    height: 36px;
+}
+
+
+div#changelist {
+    background-color: #eee;
+}
+
+.results {
+    width: 100% !important;
+}
+
+.actions {
+    width: 100%;
+}
+
+.form-row.field-nationality a {
+    display: none;
+}
+
+.datetimeshortcuts {
+    display: none;
+}
+
+.form-row.field-division a {
+    display: none;
+}
+
+.form-row.field-district a {
+    display: none;
+}
+
+.form-row.field-thana a {
+    display: none;
+}
+
+.form-row.field-program a {
+    display: none;
+}
+
+
+.form-row.field-institution a {
+    display: none;
+}
+
+
+.form-row.field-exam_name {
+    display: none;
+}
+
+.timezonewarning {
+    display: none;
+}
+
+.model-license_receive input:focus {
+    box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.01), 0px 0px 8px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+}
+
+
+.model-license_receive select:focus {
+    box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.01), 0px 0px 8px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+}
+
+.form-row.field-first_name {
+    width: 48%;
+    display: inline-block;
+    float: left;
+}
+
+.form-row.field-last_name {
+    display: inline-block;
+    width: 48%;
+    float: left;
+}
+
+.form-row.field-nationality {
+    width: 48%;
+    display: inline-block;
+    float: left;
+}
+
+.form-row.field-date_of_birth {
+    width: 48%;
+    display: inline-block;
+}
+
+.form-row.field-national_ID_No {
+    width: 48%;
+    display: inline-block;
+    float: left;
+}
+
+.form-row.field-division {
+    width: 48%;
+    display: inline-block;
+    float: left;
+}
+
+.form-row.field-district {
+    width: 48%;
+    display: inline-block;
+    float: left;
+}
+
+.form-row.field-thana {
+    width: 48%;
+    display: inline-block;
+    float: left;
+}
+
+.form-row.field-village {
+    width: 48%;
+    display: inline-block;
+}
+
+.form-row.field-post_office {
+    width: 48%;
+    display: inline-block;
+}
+
+.form-row.field-postal_code {
+    width: 48%;
+    display: inline-block;
+}
+
+.form-row.field-program {
+    width: 48%;
+    display: inline-block;
+    float: left;
+}
+
+.form-row.field-institution {
+    width: 48%;
+    display: inline-block;
+    float: left;
+}
+
+.form-row.field-license_start_date {
+    width: 48%;
+    display: inline-block;
+    float: left;
+}
+
+.form-row.field-license_end_date {
+    width: 48%;
+    display: inline-block;
+    float: left;
+}
+
+.form-row.field-student_id {
+    display: none;
+}
+
+.form-row.field-license_registrations_id {
+    display: none;
+}
+
+
+.form-row.field-license_registrations_refference {
+    width: 48%;
+    display: inline-block;
+    float: left;
+}
+
+
+.form-row.field-license_registrations_receive_id {
+    width: 48%;
+    display: inline-block;
+    float: left;
+}
+
+.form-row.field-registration_no {
+    width: 48%;
+    display: inline-block;
+    float: left;
+}
+
+.module {
+    background-color: #eee !important;
+}
+
+h2 {
+    display: block;
+    background-color: #119146 !important;
+    color: #fff !important;
+    box-shadow: 0 8px 6px -6px black !important;
+    width: 24% !important;
+    height: 18px !important;
+    margin: 15px auto !important;
+    text-transform: capitalize !important;
+    text-align: center !important;
+    font-size: 20px !important;
+    padding: 1px 0px 12px 0px !important;
+}
+
+#re_new_history_set-group .add-row {
+    display: none;
+}
+
+
+.form-row.field-status {
+    display: none;
+}
+
+.form-row.field-registration_no {
+    display: none;
+}
+
+.form-row.field-license_registrations_receive_id {
+    display: none;
+}
+
+.form-row.field-license_registrations_refference {
+    display: none;
+}
+
+.form-row.field-approved {
+    display: none;
+}
+
+
+.readonly img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 130px;
+    height: 130px;
+}
+
+.form-row.field-sig img {
+    height: 51px !important;
+}
+
+img.bc_img{
+max-width: 0;
+max-height: 0;
+}
+
+.form-row.field-image_tag {
+    height: 130px;
+    width: 130px;
+    margin-top: 15px !important;
+    display: block;
+    background-image: url(/static/admin/img/Facebook-no-profile-picture-icon-620x389.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 0;
+    margin: auto;
+}
+
+
+.form-row.field-image label {
+    text-align: right;
+    margin-top: 0.5px;
+}
+
+.form-row.field-image {
+    width: 40%;
+    margin: auto;
+    display: block;
+    padding: 0;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.form-row.field-image {
+    width: 40%;
+    margin: auto;
+    display: block;
+    padding: 0;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.form-row.field-image a{
+    display: none;
+}
+
+input#image-clear_id {
+    width: 15px !important;
+}
+
+.form-row.field-fathers_name {
+
+    width: 48%;
+    display: inline-block;
+    float: left;
+
+}
+
+.form-row.field-mothers_name {
+
+    width: 48%;
+    display: inline-block;
+    float: left;
+
+}
+
+.form-row.field-date_of_birth {
+
+    width: 48%;
+    display: inline-block;
+    float: left;
+
+}
+
+.form-row.field-sex {
+
+    width: 48%;
+    display: inline-block;
+    float: left;
+
+}
+
+.form-row.field-religions {
+
+    width: 48%;
+    display: inline-block;
+    float: left;
+
+}
+
+.form-row.field-marital_status {
+
+    width: 48%;
+    display: inline-block;
+    float: left;
+
+}
+
+.form-row.field-nationality {
+
+    width: 48%;
+    display: inline-block;
+    float: left;
+
+}
+
+.form-row.field-quota {
+
+    width: 48%;
+    display: inline-block;
+    float: left;
+
+}
+
+.form-row.field-national_ID_No {
+
+    width: 48%;
+    display: inline-block;
+    float: left;
+
+}
+
+.form-row.field-guardians_name {
+
+    width: 48%;
+    display: inline-block;
+    float: left;
+
+}
+
+.form-row.field-relation_to_guardians {
+
+    width: 48%;
+    display: inline-block;
+    float: left;
+
+}
+
+.form-row.field-passport_no {
+
+    width: 48%;
+    display: inline-block;
+
+}
+
+.form-row.field-students_mobile_no {
+
+    width: 48%;
+    display: inline-block;
+    float: left;
+
+}
+
+.form-row a {
+
+    display: none;
+
+}
+
+
+.form-row.field-students_mobile_no {
+
+    width: 48%;
+    display: inline-block;
+    float: left;
+
+}
+
+.form-row.field-email_address {
+
+    width: 48%;
+    display: inline-block;
+    float: left;
+
+}
+
+.form-row.field-license_registration_fee {
+
+    width: 48%;
+    display: inline-block;
+    float: left;
+
+}
+
+
+.form-row.field-payment_method {
+
+    width: 48%;
+    display: inline-block;
+    float: left;
+
+}
+
+.form-row.field-bank_draft_no {
+
+    width: 48%;
+    display: inline-block;
+    float: left;
+
+}
+
+.form-row.field-registration_fee {
+
+    width: 48%;
+    display: inline-block;
+    float: left;
+
+}
+
+
+
+.form-row.field-bank_draft_date {
+
+    width: 48%;
+    display: inline-block;
+    float: left;
+
+}
+
+
+.form-row.field-card_serial {
+
+    width: 48%;
+    display: inline-block;
+    float: left;
+
+}
+
+.form-row.field-division_snd {
+
+    width: 48%;
+    display: inline-block;
+    float: left;
+
+}
+
+
+.form-row.field-district_snd {
+
+    width: 48%;
+    display: inline-block;
+    float: left;
+
+}
+
+.form-row.field-thana_snd {
+
+    width: 48%;
+    display: inline-block;
+    float: left;
+
+}
+
+.form-row.field-village_snd {
+
+    width: 48%;
+    display: inline-block;
+
+
+}
+
+.form-row.field-post_office_snd {
+
+    width: 48%;
+    display: inline-block;
+
+
+}
+
+.form-row.field-postal_code_snd {
+
+    width: 48%;
+    display: inline-block;
+    float: left;
+
+}
+
+
+.field-click_me input {
+
+    width: 40px;
+    background-color: #119146;
+    border: 0;
+    border-radius: 50%;
+    color: #fff;
+
+}
+
+a.lick_print {
+    display: block;
+}
+
+
+td.field-main_id {
+    display: none;
+}
+
+#licensehistory_set-group th:nth-child(2) {
+    display: none;
+}
+
+
+#licensehistory_set-group input {
+    width: 70px;
+}
+
+#licensehistory_set-group select {
+    width: 130px;
+}
+
+.renew_id {
+    width: 59px !important;
+    padding: 5px !important;
+}
+
+
+
+td.custom_td a {
+    background-color: #119146;
+    width: 60px;
+    height: 22px;
+    text-align: center;
+    padding-top: 6px;
+    display: block;
+    margin-top: 3px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+div#changelist-filter {
+    display: block !important;
+}
+
+
+
+
+
+
