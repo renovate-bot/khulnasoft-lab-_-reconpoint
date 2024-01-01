@@ -12,7 +12,7 @@ RUN python -m pip install --upgrade pip setuptools
 RUN python -m pip install psycopg2-binary
 
 # Install other dependencies from requirements.txt
-COPY requirements.txt .
+COPY . .
 RUN python -m pip install -r requirements.txt
 
 # Create a non-root user (optional)
