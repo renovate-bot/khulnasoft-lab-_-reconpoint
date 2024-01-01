@@ -4,7 +4,7 @@ django-admin-list-filter-dropdown==1.0.3
 django-rest-framework==0.1.0
 django-ckeditor==4.5.3
 django-rest-framework==0.1.0
-django-rest-multiple-models==1.8.1
+django-rest-multiple-models==1.8.2
 psycopg2==2.7.2
 psycopg2-binary==2.9.9
 scramp>=1.4.4->pg8000
