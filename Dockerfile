@@ -1,4 +1,4 @@
-FROM python:3.7
+FROM python:3.13
 
 # Install build essentials and PostgreSQL development libraries
 RUN apt-get update && \
