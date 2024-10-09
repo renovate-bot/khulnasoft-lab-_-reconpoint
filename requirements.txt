@@ -1,4 +1,4 @@
-Django==2.0.4
+Django==4.2.16
 django-smart-selects==1.2.9
 django-admin-list-filter-dropdown==1.0.3
 django-rest-framework==0.1.0
